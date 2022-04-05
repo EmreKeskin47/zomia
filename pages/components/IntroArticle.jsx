@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import styled from "@emotion/styled";
+import Image from "next/image";
 
 export default function IntroArticle() {
   const StyledButton = styled(Button)(({ theme }) => ({
@@ -20,9 +21,10 @@ export default function IntroArticle() {
         <CardMedia
           component="img"
           height="400px"
-          image="../../assets/temp.jpg"
+          image="/static/tempImage.png"
           alt="zomia article"
         />
+        {/* <Image src="/static/tempImage.png" layout="fill" /> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Lizard

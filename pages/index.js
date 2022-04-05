@@ -1,71 +1,14 @@
-import { Box } from "@mui/system";
+import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
+import ContentSummary from "./components/ContentSummary";
+import IntroContentSummaries from "./components/IntroContentSummaries";
 
 function App() {
-    return (
-        <Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>{" "}
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>{" "}
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>{" "}
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-            <Box marginTop={6}>
-                <Typography color="secondary"> TEST TYPO</Typography>
-            </Box>
-        </Box>
-    );
+  return (
+    <Grid>
+      <IntroContentSummaries />
+    </Grid>
+  );
 }
 
 export default App;

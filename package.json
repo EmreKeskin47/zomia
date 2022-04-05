@@ -18,7 +18,9 @@
         "next": "12.1.4",
         "prop-types": "^15.8.1",
         "react": "18.0.0",
-        "react-dom": "18.0.0"
+        "react-dom": "18.0.0",
+        "react-material-ui-carousel": "^3.3.3",
+        "react-swipeable-views": "^0.14.0"
     },
     "devDependencies": {
         "eslint": "8.12.0",

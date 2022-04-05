@@ -14,10 +14,10 @@ function App() {
         justifyContent="space-between"
         sx={{ paddingLeft: "1rem", paddingRight: "1rem" }}
       >
-        <Grid item sx={{ width: "200px" }}>
+        <Grid item lg={6} md={6} sm={12}>
           <IntroCarousel />
         </Grid>
-        <Grid item>
+        <Grid item lg={6} md={6} sm={12}>
           <IntroContentSummaries />
         </Grid>
       </Grid>

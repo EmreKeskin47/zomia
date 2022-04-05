@@ -1,20 +1,27 @@
 {
-  "name": "zomia",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.1.4",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
-  },
-  "devDependencies": {
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.4"
-  }
+    "name": "zomia",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev -p 3005",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.7.0",
+        "@emotion/styled": "^11.6.0",
+        "@material-ui/core": "^4.12.4",
+        "@mui/icons-material": "^5.2.0",
+        "@mui/material": "^5.2.1",
+        "lodash": "^4.17.21",
+        "next": "12.1.4",
+        "prop-types": "^15.8.1",
+        "react": "18.0.0",
+        "react-dom": "18.0.0"
+    },
+    "devDependencies": {
+        "eslint": "8.12.0",
+        "eslint-config-next": "12.1.4"
+    }
 }

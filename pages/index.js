@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import ContentSummary from "./components/ContentSummary";
 import IntroContentSummaries from "./components/IntroContentSummaries";
-import IntroCarousel from "./components/IntroCarousel";
+import IntroArticle from "./components/IntroArticle";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
         justifyContent="space-between"
         sx={{ paddingLeft: "1rem", paddingRight: "1rem" }}
       >
-        <Grid item lg={6} md={6} sm={12}>
-          <IntroCarousel />
+        <Grid item lg={8} md={8} sm={12} sx={{ padding: "1rem" }}>
+          <IntroArticle />
         </Grid>
-        <Grid item lg={6} md={6} sm={12}>
+        <Grid item lg={4} md={4} sm={12}>
           <IntroContentSummaries />
         </Grid>
       </Grid>

@@ -16,11 +16,10 @@ export default function IntroArticle(props) {
     },
   }));
   return (
-    <Card sx={{ padding: "0rem" }}>
-      <CardActionArea>
+    <Card>
+      <CardActionArea sx={{ backgroundColor: "rgba(155, 155, 155, 0.1)" }}>
         <CardMedia
           component="img"
-          height="400px"
           image="/static/tempImage.png"
           alt="zomia article"
           sx={{ zIndex: "-1", position: "relative" }}
@@ -28,14 +27,13 @@ export default function IntroArticle(props) {
         {/* <Image src="/static/tempImage.png" layout="fill" /> */}
         <CardContent>
           <Grid
-            gutterBottom
             variant="h5"
             component="div"
-            sx={{ marginBottom: "-7rem" }}
+            sx={{ marginBottom: "-5rem" }}
           ></Grid>
           <Grid
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
               zIndex: "1",
             }}
           >
@@ -43,13 +41,16 @@ export default function IntroArticle(props) {
               variant="body2"
               color="white"
               sx={{
-                padding: "1rem",
+                padding: "0.5rem",
               }}
             >
               <Typography variant="h5" component="div">
                 This is the heading
               </Typography>
-              {!isMobile ? props.description : props.description.slice(0, 140)}
+              {!isMobile
+                ? props.description.slice(0, 280)
+                : props.description.slice(0, 140)}
+              ...
             </Typography>
           </Grid>
         </CardContent>

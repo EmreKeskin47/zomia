@@ -8,13 +8,15 @@ const IntroContentSummaries = () => {
     <Grid>
       {ContentSummaryArray.map((contentSummary, index) => {
         return (
-          <ContentSummary
-            key={index}
-            category={contentSummary.category}
-            heading={contentSummary.heading}
-            date={contentSummary.date}
-            author={contentSummary.author}
-          />
+          <Grid sx={{ padding: "0.5rem" }}>
+            <ContentSummary
+              key={index}
+              category={contentSummary.category}
+              heading={contentSummary.heading}
+              date={contentSummary.date}
+              author={contentSummary.author}
+            />
+          </Grid>
         );
       })}
     </Grid>

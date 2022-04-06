@@ -17,10 +17,4 @@ export const ContentSummaryArray = [
     date: "December 23, 2021",
     author: "Emre Yuvarlak",
   },
-  {
-    category: "Hot",
-    heading: "Till I Collapse",
-    date: "May 5, 1998",
-    author: "Ilgin Yuvarlak",
-  },
 ];

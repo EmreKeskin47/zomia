@@ -3,10 +3,14 @@ import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
 import { Container } from "@mui/material";
 import palette from "../theme/palette";
+import SectionBreaker from "./components/SectionBreaker";
+import { Divider } from "@mui/material";
 
 function App() {
   return (
-    <Grid sx={{ marginTop: { xs: 0, md: 5 } }}>
+    <Grid
+      sx={{ marginTop: { xs: 0, md: 5 }, backgroundColor: palette.black.main }}
+    >
       <Grid
         container
         justifyContent="center"
@@ -22,14 +26,13 @@ function App() {
           This will be the statement from Zomia
         </Typography>
       </Grid>
-      <Grid>
+      <Container>
         {/* Intro */}
         <Grid
           container
           direction="row"
           justifyContent="space-between"
           sx={{
-            backgroundColor: "#231F20",
             paddingTop: "3rem",
             paddingBottom: "3rem",
           }}
@@ -64,7 +67,10 @@ function App() {
             <IntroContentSummaries />
           </Grid>
         </Grid>
-      </Grid>
+        {/* End Intro */}
+      </Container>
+      {/* <SectionBreaker text="Articles" /> */}
+      <hr />
     </Grid>
   );
 }

@@ -48,6 +48,10 @@ const ORANGE = {
   white: "#fff",
 };
 
+const BLACK = {
+  main: "#231F20",
+};
+
 const SECONDARY = {
   lighter: "#D6E4FF",
   light: "#90caf9",
@@ -56,6 +60,7 @@ const SECONDARY = {
   darker: "#091A7A",
   contrastText: "#fff",
 };
+
 const INFO = {
   lighter: "#D0F2FF",
   light: "#74CAFF",
@@ -109,6 +114,7 @@ const palette = {
   common: { black: "#000", white: "#fff" },
   primary: { ...PRIMARY },
   orange: { ...ORANGE },
+  black: { ...BLACK },
   secondary: { ...SECONDARY },
   info: { ...INFO },
   success: { ...SUCCESS },

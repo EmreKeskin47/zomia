@@ -32,7 +32,7 @@ export default function IntroArticle(props) {
             image="/static/deneme2.png"
             alt="green iguana"
           />
-          <CardContent sx={{ backgroundColor: "#231F20" }}>
+          <CardContent sx={{ backgroundColor: palette.black.main }}>
             <Typography
               gutterBottom
               variant="h6"

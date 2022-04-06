@@ -17,10 +17,10 @@ export const ContentSummaryArray = [
     date: "December 23, 2021",
     author: "Emre Yuvarlak",
   },
-  {
-    category: "hot",
-    heading: "This is hot.",
-    date: "May 5, 1998",
-    author: "Ilgin Yuvarlak",
-  },
+  // {
+  //   category: "hot",
+  //   heading: "This is hot.",
+  //   date: "May 5, 1998",
+  //   author: "Ilgin Yuvarlak",
+  // },
 ];

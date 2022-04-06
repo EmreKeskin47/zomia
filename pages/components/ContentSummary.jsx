@@ -15,7 +15,7 @@ const ContentSummary = ({ category, heading, date, author }) => {
         <StyledLink
           href="#"
           underline="none"
-          color="inherit"
+          color="whitesmoke"
           align="left"
           variant="overline"
         >
@@ -26,7 +26,7 @@ const ContentSummary = ({ category, heading, date, author }) => {
         <StyledLink
           href="#"
           underline="none"
-          color="inherit"
+          color="whitesmoke"
           align="left"
           variant="h6"
           sx={{ fontWeight: "bold" }}
@@ -35,12 +35,20 @@ const ContentSummary = ({ category, heading, date, author }) => {
         </StyledLink>
       </Grid>
       <Grid item>
-        <Typography align="left" variant="caption" sx={{ fontStyle: "italic" }}>
+        <Typography
+          align="left"
+          variant="caption"
+          sx={{ fontStyle: "italic", color: "whitesmoke" }}
+        >
           {date} /
         </Typography>
       </Grid>
       <Grid item sx={{ paddingBottom: "1rem" }}>
-        <Typography align="left" variant="caption" sx={{ fontStyle: "italic" }}>
+        <Typography
+          align="left"
+          variant="caption"
+          sx={{ fontStyle: "italic", color: "whitesmoke" }}
+        >
           {author}
         </Typography>
       </Grid>

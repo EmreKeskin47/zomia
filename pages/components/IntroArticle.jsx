@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import { isMobile } from "react-device-detect";
+import palette from "../../theme/palette";
 
 export default function IntroArticle(props) {
   const StyledButton = styled(Button)(({ theme }) => ({
@@ -16,48 +17,37 @@ export default function IntroArticle(props) {
     },
   }));
   return (
-    <Card>
-      <CardActionArea sx={{ backgroundColor: "rgba(155, 155, 155, 0.1)" }}>
-        <CardMedia
-          component="img"
-          image="/static/tempImage.png"
-          alt="zomia article"
-          sx={{ zIndex: "-1", position: "relative" }}
-        />
-        {/* <Image src="/static/tempImage.png" layout="fill" /> */}
-        <CardContent>
-          <Grid
-            variant="h5"
-            component="div"
-            sx={{ marginBottom: "-5rem" }}
-          ></Grid>
-          <Grid
-            sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.8)",
-              zIndex: "1",
-            }}
-          >
+    <Grid
+      sx={{ borderRadius: 0, borderColor: palette.orange.main, border: "10px" }}
+    >
+      <Card
+        sx={{
+          maxWidth: 1,
+        }}
+      >
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            // sx={{ height: height / 2 }}
+            image="/static/deneme2.png"
+            alt="green iguana"
+          />
+          <CardContent sx={{ backgroundColor: "#231F20" }}>
             <Typography
-              variant="body2"
-              color="white"
-              sx={{
-                padding: "0.5rem",
-              }}
+              gutterBottom
+              variant="h6"
+              component="div"
+              sx={{ color: "whitesmoke" }}
             >
-              <Typography variant="h5" component="div">
-                This is the heading
-              </Typography>
-              {!isMobile
-                ? props.description.slice(0, 280)
-                : props.description.slice(0, 140)}
-              ...
+              Lizard
             </Typography>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-      {/* <CardActions>
-        <StyledButton size="small">Read More</StyledButton>
-      </CardActions> */}
-    </Card>
+            <Typography variant="subtitle1" sx={{ color: "whitesmoke" }}>
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
   );
 }

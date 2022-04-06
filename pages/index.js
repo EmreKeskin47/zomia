@@ -5,7 +5,6 @@ import { Container } from "@mui/material";
 import palette from "../theme/palette";
 
 function App() {
-  //#DCCFAC
   return (
     <Grid sx={{ marginTop: { xs: 0, md: 5 } }}>
       <Grid
@@ -23,10 +22,19 @@ function App() {
           This will be the statement from Zomia
         </Typography>
       </Grid>
-      <Container>
+      <Grid>
         {/* Intro */}
-        <Grid container direction="row" justifyContent="space-between">
-          <Grid item lg={8} md={8} sm={12} sx={{ padding: "1rem" }}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          sx={{
+            backgroundColor: "#231F20",
+            paddingTop: "3rem",
+            paddingBottom: "3rem",
+          }}
+        >
+          <Grid item lg={7} md={7} sm={12} sx={{ padding: "1rem" }}>
             <IntroArticle
               description=" Lizards are a widespread group of squamate reptiles, with over
               6,000 species, ranging across all continents except Antarctica
@@ -42,12 +50,21 @@ function App() {
               6,000 species, ranging across all continents except Antarctica"
             />
           </Grid>
-          <Grid item lg={4} md={4} sm={12} sx={{ paddingTop: "0.5rem" }}>
-            <IntroContentSummaries />
+          <Grid
+            item
+            lg={5}
+            md={5}
+            sm={12}
+            sx={{
+              paddingTop: "0rem",
+              paddingRight: "2rem",
+              paddingLeft: "2rem",
+            }}
+          >
             <IntroContentSummaries />
           </Grid>
         </Grid>
-      </Container>
+      </Grid>
     </Grid>
   );
 }

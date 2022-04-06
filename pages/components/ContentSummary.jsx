@@ -10,12 +10,7 @@ const ContentSummary = ({ category, heading, date, author }) => {
     },
   }));
   return (
-    <Grid
-      container
-      direction="column"
-      justifyContent="center"
-      sx={{ padding: "1rem", boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)" }}
-    >
+    <Grid container direction="column" justifyContent="center">
       <Grid item sx={{ paddingBottom: "1rem" }}>
         <StyledLink
           href="#"
@@ -49,6 +44,7 @@ const ContentSummary = ({ category, heading, date, author }) => {
           {author}
         </Typography>
       </Grid>
+      <hr />
     </Grid>
   );
 };

@@ -9,7 +9,10 @@ import { Divider } from "@mui/material";
 function App() {
   return (
     <Grid
-      sx={{ marginTop: { xs: 0, md: 5 }, backgroundColor: palette.black.main }}
+      sx={{
+        marginTop: { xs: 0, md: 5 },
+        backgroundColor: palette.black.main,
+      }}
     >
       <Grid
         container
@@ -69,8 +72,7 @@ function App() {
         </Grid>
         {/* End Intro */}
       </Container>
-      {/* <SectionBreaker text="Articles" /> */}
-      <hr />
+      <SectionBreaker text="Articles" color="whitesmoke" />
     </Grid>
   );
 }

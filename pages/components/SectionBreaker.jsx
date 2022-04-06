@@ -5,27 +5,11 @@ import { Divider } from "@mui/material";
 
 const SectionBreaker = (props) => {
   return (
-    <Grid container direction="row" justifyContent="space-between">
-      <Grid>
-        <hr style={{ height: "5px", color: "whitesmoke" }} />
-      </Grid>
-      <Grid item>
-        <Typography
-          variant="h5"
-          component="div"
-          sx={{
-            paddingLeft: "0.5rem",
-            paddingRight: "0.5rem",
-            color: props.color,
-          }}
-        >
-          {props.text}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Divider sx={{ color: "whitesmoke" }} />
-      </Grid>
-    </Grid>
+    <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "5rem" }}>
+      <Typography variant="h4" component="div" sx={{ color: props.color }}>
+        {props.text}
+      </Typography>
+    </Divider>
   );
 };
 

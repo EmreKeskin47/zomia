@@ -37,6 +37,17 @@ const PRIMARY = {
   contrastText: "#fff",
   white: "#fff",
 };
+
+const ORANGE = {
+  lighter: "#C8FACD",
+  light: "#5BE584",
+  main: "#F9A21B",
+  dark: "#007B55",
+  darker: "#005249",
+  contrastText: "#fff",
+  white: "#fff",
+};
+
 const SECONDARY = {
   lighter: "#D6E4FF",
   light: "#90caf9",
@@ -97,6 +108,7 @@ const CHART_COLORS = {
 const palette = {
   common: { black: "#000", white: "#fff" },
   primary: { ...PRIMARY },
+  orange: { ...ORANGE },
   secondary: { ...SECONDARY },
   info: { ...INFO },
   success: { ...SUCCESS },

@@ -6,7 +6,7 @@ import { alpha, styled } from "@mui/material/styles";
 const ContentSummary = ({ category, heading, date, author }) => {
   const StyledLink = styled(Link)(({ theme }) => ({
     "&:hover": {
-      color: theme.palette.secondary.main,
+      color: theme.palette.orange.main,
     },
   }));
   return (

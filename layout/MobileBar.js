@@ -40,11 +40,6 @@ const MobileBar = () => {
 
                 <ListItem button>
                     <Link href="/">
-                        <ListItemText primary="Articles" />
-                    </Link>
-                </ListItem>
-                <ListItem button>
-                    <Link href="/">
                         <ListItemText primary="Admin" />
                     </Link>
                 </ListItem>

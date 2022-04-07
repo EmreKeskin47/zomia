@@ -7,7 +7,7 @@ const ArticlePage = (props) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        setData(mockArticles[id]);
+        setData(mockArticles[id - 1]);
     }, [id]);
     return (
         <div style={{ marginTop: 25 }}>

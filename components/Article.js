@@ -5,6 +5,8 @@ import { AppBar, Box, Grid, Paper } from "@mui/material";
 import { MakeArticleParagraph2 } from "../utils/ArticleParagraph";
 import OnlyTabsBar from "../layout/OnlyTabsBar";
 import VerticalDivider from "./VerticalDivider";
+import RenderSubtitle from "./RenderSubtitle";
+import RenderBody from "./RenderBody";
 
 const Article = (props) => {
     const { article } = props;
@@ -83,27 +85,21 @@ const Article = (props) => {
                                     {article.text
                                         .split("<br />")
                                         .map((paragraph, index) => {
-                                            return (
-                                                <Box
-                                                    key={index}
-                                                    marginY={3}
-                                                    sx={{
-                                                        marginLeft: {
-                                                            lg: 15,
-                                                        },
-                                                    }}
-                                                >
-                                                    {paragraph.includes(".") ? (
-                                                        <Typography variant="body1">
-                                                            {paragraph}
-                                                        </Typography>
-                                                    ) : (
-                                                        <Typography variant="h4">
-                                                            {paragraph}
-                                                        </Typography>
-                                                    )}
-                                                </Box>
-                                            );
+                                            if (paragraph.includes(".")) {
+                                                return (
+                                                    <RenderBody
+                                                        key={index}
+                                                        text={paragraph}
+                                                    />
+                                                );
+                                            } else {
+                                                return (
+                                                    <RenderSubtitle
+                                                        key={index}
+                                                        text={paragraph}
+                                                    />
+                                                );
+                                            }
                                         })}
                                 </Grid>
                             </Box>

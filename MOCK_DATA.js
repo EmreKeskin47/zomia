@@ -73,7 +73,7 @@ Al-Jat, Oun al-Dadat, Tukhar, Qratah, Arab Hasan, al-Muhsenli, al-Farat, Um Adas
  
 List of villages of al-Arima included in the 2017 SDF – Regime Deal:
  
-Qarat, Yaran, Kaukli, Korhiok, al-Buyahji, al-Bughazi, Jablah al-Hamra, al-Yashli, and Aozari
+Qarat, Yaran, Kaukli, Korhiok, al-Buyahji, al-Bughazi, Jablah al-Hamra, al-Yashli, and Aozari.
 
 
 

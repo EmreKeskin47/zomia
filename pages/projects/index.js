@@ -5,7 +5,8 @@ import { mockProjects } from "../../MOCK_DATA";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { MakeArticleParagraph } from "../../utils/ArticleParagraph";
-import VerticalDivider from "../../components/VerticalDivider";
+import RenderTitle from "../../components/RenderTitle";
+import RenderBody from "../../components/RenderBody";
 
 const Projects = () => {
     const data = MakeArticleParagraph(mockProjects);
@@ -35,22 +36,15 @@ const Projects = () => {
 
                 {data.map((project, index) => {
                     return (
-                        <Grid item xs={10} lg={9} alignSelf={"center"}>
+                        <Grid
+                            key={index}
+                            item
+                            xs={10}
+                            lg={9}
+                            alignSelf={"center"}
+                        >
                             <Box marginY={5}>
-                                <Box
-                                    display="flex"
-                                    alignItems="center"
-                                    marginY={5}
-                                >
-                                    <VerticalDivider />
-
-                                    <Typography
-                                        variant="h2"
-                                        sx={{ marginY: 3 }}
-                                    >
-                                        {project.name}
-                                    </Typography>
-                                </Box>
+                                <RenderTitle text={project.name} />
 
                                 <Box>
                                     <Image
@@ -73,19 +67,10 @@ const Projects = () => {
                                         .split("<br />")
                                         .map((paragraph, index) => {
                                             return (
-                                                <Box
+                                                <RenderBody
                                                     key={index}
-                                                    marginY={3}
-                                                    sx={{
-                                                        marginLeft: {
-                                                            lg: 15,
-                                                        },
-                                                    }}
-                                                >
-                                                    <Typography variant="body1">
-                                                        {paragraph}
-                                                    </Typography>
-                                                </Box>
+                                                    text={paragraph}
+                                                />
                                             );
                                         })}
                                 </Grid>

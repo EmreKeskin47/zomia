@@ -6,3 +6,7 @@ export const MakeArticleParagraph = (longText) => {
     });
     return longText;
 };
+
+export const MakeArticleParagraph2 = (text) => {
+    return text.replace(/\r\n/g, "<br />").replace(/[\r\n]/g, "<br />");
+};

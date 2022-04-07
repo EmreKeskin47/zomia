@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { Toolbar } from "@material-ui/core";
 import FullAppBar from "./FullAppBar";
 import OnlyTabsBar from "./OnlyTabsBar";
 import MobileBar from "./MobileBar";
 import Box from "@mui/material/Box";
+import AppBar from "@mui/material/AppBar";
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -68,14 +69,14 @@ const AppNavBar = (props) => {
                         }}
                     >
                         <ElevationScroll {...props}>
-                            <AppBar position="fixed" color="tertiary">
+                            <AppBar position="fixed">
                                 <Toolbar>
                                     <OnlyTabsBar />
                                 </Toolbar>
                             </AppBar>
                         </ElevationScroll>
                         <HideOnScroll {...props}>
-                            <AppBar position="fixed" color="tertiary">
+                            <AppBar position="fixed">
                                 <Toolbar>
                                     <FullAppBar />
                                 </Toolbar>

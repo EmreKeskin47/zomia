@@ -23,7 +23,7 @@ const FullAppBar = () => {
                 alignItems={"center"}
             >
                 <Image
-                    src="/static/logo.svg"
+                    src="/static/logo.jpeg"
                     alt="Logo"
                     width="220px"
                     height="100px"

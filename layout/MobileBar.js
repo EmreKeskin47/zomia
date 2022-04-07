@@ -5,14 +5,11 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
-import { Typography } from "@material-ui/core";
 import Link from "next/link";
-import { AppBar } from "@material-ui/core";
 import Image from "next/image";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import AppBar from "@mui/material/AppBar";
 
 const MobileBar = () => {
     const [drawer, setDrawer] = useState(false);
@@ -70,17 +67,17 @@ const MobileBar = () => {
             <Drawer anchor={"left"} open={drawer} onClose={toggleDrawer()}>
                 {drawerItemList()}
             </Drawer>
-            <AppBar color="tertiary">
+            <AppBar>
                 <Box
                     width={"100%"}
                     display={"flex"}
                     justifyContent={"space-between"}
                 >
                     <Image
-                        src="/static/logo.svg"
+                        src="/static/logo.jpeg"
                         alt="Logo"
-                        width="224px"
-                        height="54px"
+                        width="140px"
+                        height="64px"
                     />
                     <IconButton
                         edge="start"

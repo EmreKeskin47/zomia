@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import { Box } from "@mui/system";
-import Link from "next/link";
+import Link from "@mui/material/Link";
 
 const Tabs = (props) => {
     const { border } = props;
@@ -16,8 +16,8 @@ const Tabs = (props) => {
                 borderTop: border && "1px solid #2c253c",
             }}
         >
-            <Link href="/" sx={{ borderRight: "10px solid #000" }}>
-                <Typography variant="h6" color="text.primary">
+            <Link href="/">
+                <Typography variant="h6" color="text.secondary">
                     Home
                 </Typography>
             </Link>

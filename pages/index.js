@@ -101,7 +101,7 @@ function App() {
       {/* End Reports Section */}
       <SectionBreaker text="Popular Stories" color="whitesmoke" />
       {/* Popular Reads Section */}
-      <Grid sx={{ paddingBottom: "5rem" }}>
+      <Container>
         <PopularRead
           heading={
             "The Captagon Threat: A Profile The Captagon Threat: A Profile The Captagon Threat: A Profile"
@@ -119,7 +119,7 @@ function App() {
           author={"Simon Arda Yuvarlak"}
           date={"05/02/1997"}
         />
-      </Grid>
+      </Container>
       {/* End Popular Reads Section */}
     </Grid>
   );

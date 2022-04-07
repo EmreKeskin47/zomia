@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { AppBar, Box, Grid, Paper, Toolbar } from "@mui/material";
+import { AppBar, Box, Grid, Paper } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { MakeArticleParagraph2 } from "../utils/ArticleParagraph";
 import OnlyTabsBar from "../layout/OnlyTabsBar";
@@ -106,9 +106,15 @@ const Article = (props) => {
                                                         },
                                                     }}
                                                 >
-                                                    <Typography variant="body1">
-                                                        {paragraph}
-                                                    </Typography>
+                                                    {paragraph.includes(".") ? (
+                                                        <Typography variant="body1">
+                                                            {paragraph}
+                                                        </Typography>
+                                                    ) : (
+                                                        <Typography variant="h4">
+                                                            {paragraph}
+                                                        </Typography>
+                                                    )}
                                                 </Box>
                                             );
                                         })}

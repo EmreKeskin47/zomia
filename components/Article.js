@@ -2,9 +2,9 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { AppBar, Box, Grid, Paper } from "@mui/material";
-import Divider from "@mui/material/Divider";
 import { MakeArticleParagraph2 } from "../utils/ArticleParagraph";
 import OnlyTabsBar from "../layout/OnlyTabsBar";
+import VerticalDivider from "./VerticalDivider";
 
 const Article = (props) => {
     const { article } = props;
@@ -40,20 +40,7 @@ const Article = (props) => {
                                     alignItems="center"
                                     marginY={5}
                                 >
-                                    <Divider
-                                        orientation="vertical"
-                                        variant="fullWidth"
-                                        sx={{
-                                            minHeight: "200px",
-                                            borderRightWidth: 8,
-                                            borderLeftWidth: 8,
-                                            height: "100%",
-                                            borderRadius: 8,
-                                            width: 10,
-                                            background: "#bfa359",
-                                            marginRight: 10,
-                                        }}
-                                    ></Divider>
+                                    <VerticalDivider />
                                     <Box>
                                         <Typography
                                             variant="h2"

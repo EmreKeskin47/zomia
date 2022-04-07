@@ -5,7 +5,7 @@ import { mockProjects } from "../../MOCK_DATA";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { MakeArticleParagraph } from "../../utils/ArticleParagraph";
-import Divider from "@mui/material/Divider";
+import VerticalDivider from "../../components/VerticalDivider";
 
 const Projects = () => {
     const data = MakeArticleParagraph(mockProjects);
@@ -42,20 +42,8 @@ const Projects = () => {
                                     alignItems="center"
                                     marginY={5}
                                 >
-                                    <Divider
-                                        orientation="vertical"
-                                        variant="fullWidth"
-                                        sx={{
-                                            minHeight: "200px",
-                                            borderRightWidth: 8,
-                                            borderLeftWidth: 8,
-                                            height: "100%",
-                                            borderRadius: 8,
-                                            width: 10,
-                                            background: "#bfa359",
-                                            marginRight: 10,
-                                        }}
-                                    ></Divider>
+                                    <VerticalDivider />
+
                                     <Typography
                                         variant="h2"
                                         sx={{ marginY: 3 }}

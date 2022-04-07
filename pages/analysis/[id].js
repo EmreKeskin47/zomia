@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Article from "../../components/Article";
+import { mockArticles } from "../../MOCK_DATA";
 
 const ArticlePage = (props) => {
-    console.log(props);
+    const { id } = props;
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        setData(mockArticles[id - 1]);
+    }, [id]);
     return (
-        <div>
-            <h1>Article Page</h1>
+        <div style={{ marginTop: 25 }}>
+            {data && <Article article={data} />}
         </div>
     );
 };
@@ -12,7 +19,7 @@ const ArticlePage = (props) => {
 export default ArticlePage;
 
 export async function getServerSideProps(context) {
-    const id = context.params.id; // Get ID from slug `/book/1`
+    const id = await context.params.id;
     return {
         props: { id },
     };

@@ -69,14 +69,14 @@ const AppNavBar = (props) => {
                         }}
                     >
                         <ElevationScroll {...props}>
-                            <AppBar position="fixed">
+                            <AppBar position="fixed" sx={{ zIndex: 1 }}>
                                 <Toolbar>
                                     <OnlyTabsBar />
                                 </Toolbar>
                             </AppBar>
                         </ElevationScroll>
                         <HideOnScroll {...props}>
-                            <AppBar position="fixed">
+                            <AppBar position="fixed" sx={{ zIndex: 3 }}>
                                 <Toolbar>
                                     <FullAppBar />
                                 </Toolbar>

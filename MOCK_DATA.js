@@ -73,7 +73,7 @@ Al-Jat, Oun al-Dadat, Tukhar, Qratah, Arab Hasan, al-Muhsenli, al-Farat, Um Adas
  
 List of villages of al-Arima included in the 2017 SDF – Regime Deal:
  
-Qarat, Yaran, Kaukli, Korhiok, al-Buyahji, al-Bughazi, Jablah al-Hamra, al-Yashli, and Aozari
+Qarat, Yaran, Kaukli, Korhiok, al-Buyahji, al-Bughazi, Jablah al-Hamra, al-Yashli, and Aozari.
 
 
 
@@ -229,7 +229,7 @@ export const mockArticles = [
     new Article(
         1,
         "The Rise of the New Sunni Elite in Iraq: The Case of Fallujah",
-        "article1",
+        "/static/articles/1.png",
         "November 2020",
         "Jeremy Hodge and Anand Gopal",
         "CATEGORY?",
@@ -240,7 +240,7 @@ export const mockArticles = [
     new Article(
         2,
         "American Withdrawal and the Creeping Syrian Regime: The View from Manbij",
-        "article2",
+        "/static/articles/2.png",
         "October 23, 2019",
         "Zomia team-member based in Manbij, Syria",
         "CATEGORY?",
@@ -251,7 +251,7 @@ export const mockArticles = [
     new Article(
         3,
         "ISIS and Syria’s Urban—Rural Divide",
-        "article3",
+        "/static/articles/3.png",
         "10 July, 2019",
         "Jeremy Hodge",
         "CATEGORY",
@@ -262,7 +262,7 @@ export const mockArticles = [
     new Article(
         4,
         "Al-Shabab Governance",
-        "article4",
+        "/static/articles/4.png",
         "10 July, 2019",
         "Robert Kluijver with thanks to Leela Jacinto and Hussein Sheikh Ali ",
         "CATEGORY",

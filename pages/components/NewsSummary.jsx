@@ -40,7 +40,7 @@ const NewsSummary = (props) => {
         </CardActionArea>
         <CardActions sx={{ backgroundColor: palette.black.main }}>
           <Button size="small" sx={{ color: palette.orange.main }}>
-            Share
+            4 min read
           </Button>
         </CardActions>
       </Card>

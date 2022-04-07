@@ -5,6 +5,7 @@ import { Container } from "@mui/material";
 import palette from "../theme/palette";
 import SectionBreaker from "./components/SectionBreaker";
 import NewsSummary from "./components/NewsSummary";
+import PopularRead from "./components/PopularRead";
 
 function App() {
   return (
@@ -98,6 +99,24 @@ function App() {
         <NewsSummary type="report" />
       </Grid>
       {/* End Reports Section */}
+      <SectionBreaker text="Popular Stories" color="whitesmoke" />
+      {/* Popular Reads Section */}
+      <PopularRead
+        heading={"The Captagon Threat: A Profile"}
+        author={"Simon Arda Yuvarlak"}
+        date={"05/02/1997"}
+      />
+      <PopularRead
+        heading={"The Captagon Threat: A Profile"}
+        author={"Simon Arda Yuvarlak"}
+        date={"05/02/1997"}
+      />
+      <PopularRead
+        heading={"The Captagon Threat: A Profile"}
+        author={"Simon Arda Yuvarlak"}
+        date={"05/02/1997"}
+      />
+      {/* End Popular Reads Section */}
     </Grid>
   );
 }

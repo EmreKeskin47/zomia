@@ -1,18 +1,12 @@
 import { Grid, Typography, Link } from "@mui/material";
 import React from "react";
-// import { CustomLink } from "../../styles/StyledComponents";
 import { alpha, styled } from "@mui/material/styles";
 
 const ContentSummary = ({ category, heading, date, author }) => {
-  const StyledLink = styled(Link)(({ theme }) => ({
-    "&:hover": {
-      color: theme.palette.orange.main,
-    },
-  }));
   return (
     <Grid container direction="column" justifyContent="center">
       <Grid item sx={{ paddingBottom: "1rem" }}>
-        <StyledLink
+        <Link
           href="#"
           underline="none"
           color="whitesmoke"
@@ -20,10 +14,10 @@ const ContentSummary = ({ category, heading, date, author }) => {
           variant="overline"
         >
           {category.toUpperCase()}
-        </StyledLink>
+        </Link>
       </Grid>
       <Grid item sx={{ paddingBottom: "0.5rem" }}>
-        <StyledLink
+        <Link
           href="#"
           underline="none"
           color="whitesmoke"
@@ -32,7 +26,7 @@ const ContentSummary = ({ category, heading, date, author }) => {
           sx={{ fontWeight: "bold" }}
         >
           {heading}
-        </StyledLink>
+        </Link>
       </Grid>
       <Grid item>
         <Typography

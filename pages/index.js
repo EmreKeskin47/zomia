@@ -102,7 +102,9 @@ function App() {
       <SectionBreaker text="Popular Stories" color="whitesmoke" />
       {/* Popular Reads Section */}
       <PopularRead
-        heading={"The Captagon Threat: A Profile"}
+        heading={
+          "The Captagon Threat: A Profile The Captagon Threat: A Profile The Captagon Threat: A Profile"
+        }
         author={"Simon Arda Yuvarlak"}
         date={"05/02/1997"}
       />
@@ -112,7 +114,7 @@ function App() {
         date={"05/02/1997"}
       />
       <PopularRead
-        heading={"The Captagon Threat: A Profile"}
+        heading={"The Captagon Threat: A Profile The Captagon Threat:"}
         author={"Simon Arda Yuvarlak"}
         date={"05/02/1997"}
       />

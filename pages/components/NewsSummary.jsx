@@ -13,6 +13,7 @@ const NewsSummary = (props) => {
         borderRadius: 0,
         borderColor: palette.orange.main,
         border: "10px",
+        paddingBottom: "5rem",
       }}
     >
       <Card sx={{ maxWidth: 345 }}>

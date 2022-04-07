@@ -13,7 +13,7 @@ const VerticalDivider = () => {
                 height: "100%",
                 borderRadius: 8,
                 width: 10,
-                background: "#bfa359",
+                background: "#e5c15e",
                 marginRight: 10,
             }}
         ></Divider>

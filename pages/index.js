@@ -6,6 +6,7 @@ import palette from "../theme/palette";
 import SectionBreaker from "./components/SectionBreaker";
 import NewsSummary from "./components/NewsSummary";
 import PopularRead from "./components/PopularRead";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -121,6 +122,11 @@ function App() {
         />
       </Container>
       {/* End Popular Reads Section */}
+      {/* Footer */}
+      <Grid>
+        <Footer />
+      </Grid>
+      {/* End Footer */}
     </Grid>
   );
 }

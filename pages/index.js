@@ -80,11 +80,24 @@ function App() {
         justifyContent="space-around"
         sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
       >
-        <NewsSummary />
-        <NewsSummary />
-        <NewsSummary />
+        <NewsSummary type="article" />
+        <NewsSummary type="article" />
+        <NewsSummary type="article" />
       </Grid>
       {/* End Articles Section */}
+      <SectionBreaker text="Reports" color="whitesmoke" />
+      {/* Reports Section */}
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-around"
+        sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
+      >
+        <NewsSummary type="report" />
+        <NewsSummary type="report" />
+        <NewsSummary type="report" />
+      </Grid>
+      {/* End Reports Section */}
     </Grid>
   );
 }

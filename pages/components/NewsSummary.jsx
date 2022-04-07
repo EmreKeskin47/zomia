@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import palette from "../../theme/palette";
 
-const NewsSummary = () => {
+const NewsSummary = (props) => {
   return (
     <Grid
       sx={{

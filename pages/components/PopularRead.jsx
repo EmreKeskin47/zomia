@@ -13,7 +13,7 @@ const PopularRead = ({ heading, date, author }) => {
       justifyContent="center"
       sx={{ paddingBottom: "5rem" }}
     >
-      <Grid item sx={{ marginRight: "0rem" }} sm={12} xs={12} md={6} lg={6}>
+      <Grid item sm={12} xs={12} md={6} lg={6}>
         <Image
           src={popularImage}
           //   layout="fill"

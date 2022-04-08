@@ -99,7 +99,7 @@ const Footer = () => {
               </Grid>
               <Grid item sx={{ padding: "1rem", border: "2px #000" }}>
                 <StyledButton>
-                  <Typography variant="subtitle1" component="div">
+                  <Typography variant="h6" component="div">
                     Sign Up
                   </Typography>
                 </StyledButton>

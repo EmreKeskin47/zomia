@@ -48,14 +48,10 @@ const FullAppBar = () => {
                         justifyContent={"space-around"}
                     >
                         <Link href="/">
-                            <Typography variant="h6" color="text.primary">
-                                Magazine
-                            </Typography>
+                            <Typography variant="h6">Magazine</Typography>
                         </Link>
                         <Link href="/">
-                            <Typography variant="h6" color="text.primary">
-                                Subscribe
-                            </Typography>
+                            <Typography variant="h6">Subscribe</Typography>
                         </Link>
                     </Box>
                     <Box

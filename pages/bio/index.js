@@ -2,10 +2,8 @@ import React from "react";
 import { Box, Grid, Paper } from "@mui/material";
 import { team, directors } from "./bio";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
-import Image from "next/image";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
-import RenderBulletPoint from "../../components/RenderBulletPoint";
 import RenderSubtitle from "../../components/RenderSubtitle";
 
 const Bio = () => {

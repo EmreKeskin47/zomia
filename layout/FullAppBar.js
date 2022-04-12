@@ -47,8 +47,8 @@ const FullAppBar = () => {
                         width={"30%"}
                         justifyContent={"space-around"}
                     >
-                        <Link href="/">
-                            <Typography variant="h6">Magazine</Typography>
+                        <Link href="/admin">
+                            <Typography variant="h6">Admin</Typography>
                         </Link>
                         <Link href="/">
                             <Typography variant="h6">Subscribe</Typography>

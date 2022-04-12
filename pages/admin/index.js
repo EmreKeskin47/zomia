@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { Grid } from "@mui/material";
+import { Article } from "../../models/article";
+import Box from "@mui/material/Box";
+import ReportForm from "../../components/admin/ReportCreateForm";
 
 const Admin = () => {
+    const saveArticle = () => {
+        console.log("save article", image);
+        const newArticle = new Article(
+            0,
+            title,
+            image,
+            date,
+            author,
+            category,
+            description,
+            link,
+            text
+        );
+        console.log(newArticle);
+    };
+
+    const deleteArticle = () => {
+        console.log("delete article");
+    };
+
     return (
-        <div>
-            <h1>Admin</h1>
-        </div>
+        <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
+            <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
+                <ReportForm />
+            </Grid>
+        </Box>
     );
 };
 

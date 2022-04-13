@@ -100,7 +100,7 @@ function App() {
         <NewsSummary type="report" />
       </Grid>
       {/* End Reports Section */}
-      <SectionBreaker text="Popular Stories" color="whitesmoke" />
+      <SectionBreaker text="More Stories" color="whitesmoke" />
       {/* Popular Reads Section */}
       <Container>
         <PopularRead

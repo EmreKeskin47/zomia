@@ -6,6 +6,7 @@ import palette from "../theme/palette";
 import SectionBreaker from "./components/SectionBreaker";
 import NewsSummary from "./components/NewsSummary";
 import PopularRead from "./components/PopularRead";
+import Partners from "../components/Partners";
 
 function App() {
     return (
@@ -117,6 +118,10 @@ function App() {
                     date={"05/02/1997"}
                 />
             </Container>
+            <SectionBreaker text="Partners" color="whitesmoke" />
+            <Grid paddingBottom={10}>
+                <Partners />
+            </Grid>
             {/* End Popular Reads Section */}
         </Grid>
     );

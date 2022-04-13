@@ -7,6 +7,7 @@ import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
 import RenderBulletPoint from "../../components/RenderBulletPoint";
 import RenderSubtitle from "../../components/RenderSubtitle";
+import Partners from "../../components/Partners";
 
 const Mission = () => {
     const mission = MakeArticleParagraph2(MISSION);
@@ -80,20 +81,8 @@ const Mission = () => {
                                 "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. Our federal ID number is 30-1201889. Contributions may be submitted online, or by wire transfer. For information about wire transfers, please contact us via the form above."
                             }
                         />
-
                         <RenderTitle text="Partners" />
-                        <Box display="flex" marginLeft={15}>
-                            <Image
-                                src="/static/partners/partner1.png"
-                                width={550}
-                                height={250}
-                            />
-                            <Image
-                                src="/static/partners/partner2.png"
-                                width={550}
-                                height={250}
-                            />
-                        </Box>
+                        <Partners />
                     </Box>
                 </Grid>
             </Grid>

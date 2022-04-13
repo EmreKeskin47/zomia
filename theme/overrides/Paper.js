@@ -1,5 +1,7 @@
 // ----------------------------------------------------------------------
 
+import palette from "../palette";
+
 export default function Paper() {
     return {
         MuiPaper: {
@@ -11,7 +13,7 @@ export default function Paper() {
                 root: {
                     backgroundImage: "none",
                     // backgroundColor: "#000",
-                    backgroundColor: "#fff",
+                    backgroundColor: palette.black.main,
                 },
             },
         },

@@ -14,11 +14,7 @@ const Mission = () => {
     const bullet2 = MakeArticleParagraph2(bulletList2);
 
     return (
-        <Paper
-            sx={{
-                marginTop: { xs: 5, md: 10 },
-            }}
-        >
+        <Paper sx={{ paddingTop: 5 }}>
             <Grid
                 container
                 justifyItems={"center"}

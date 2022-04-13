@@ -23,11 +23,7 @@ const Article = (props) => {
                     </AppBar>
                 </AppBar>
 
-                <Paper
-                    sx={{
-                        marginTop: { xs: 5, md: 10 },
-                    }}
-                >
+                <Paper>
                     <Grid
                         container
                         justifyItems={"center"}

@@ -7,6 +7,7 @@ import SectionBreaker from "./components/SectionBreaker";
 import NewsSummary from "./components/NewsSummary";
 import PopularRead from "./components/PopularRead";
 import Partners from "../components/Partners";
+import SectionBreaker2 from "./components/SectionBreaker2";
 
 function App() {
   return (
@@ -116,68 +117,11 @@ function App() {
           date={"05/02/1997"}
         />
       </Container>
-      <SectionBreaker text="Partners" color="whitesmoke" />
-      <Grid paddingBottom={10}>
+      <Grid paddingBottom={10} sx={{ backgroundColor: "white" }}>
+        <SectionBreaker2 text="More Stories" />
         <Partners />
       </Grid>
       {/* End Popular Reads Section */}
-      {/* End Intro */}
-      <SectionBreaker text="Articles" color="whitesmoke" />
-      {/* Articles Section */}
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-around"
-        sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
-      >
-        <NewsSummary type="article" text="This is an example test." />
-        <NewsSummary type="article" text="This is an example test." />
-        <NewsSummary type="article" text="This is an example test." />
-      </Grid>
-      {/* End Articles Section */}
-      <SectionBreaker text="Reports" color="whitesmoke" />
-      {/* Reports Section */}
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-around"
-        sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
-      >
-        <NewsSummary
-          type="report"
-          text={"This is an example test.".slice(0, 240)}
-        />
-        <NewsSummary type="report" text="This is an example test." />
-        <NewsSummary type="report" text="This is an example test." />
-      </Grid>
-      {/* End Reports Section */}
-      <SectionBreaker text="More Stories" color="whitesmoke" />
-      {/* Popular Reads Section */}
-      <Container>
-        <PopularRead
-          heading={
-            "The Captagon Threat: A Profile The Captagon Threat: A Profile The Captagon Threat: A Profile"
-          }
-          author={"Simon Arda Yuvarlak"}
-          date={"05/02/1997"}
-        />
-        <PopularRead
-          heading={"The Captagon Threat: A Profile"}
-          author={"Simon Arda Yuvarlak"}
-          date={"05/02/1997"}
-        />
-        <PopularRead
-          heading={"The Captagon Threat: A Profile The Captagon Threat:"}
-          author={"Simon Arda Yuvarlak"}
-          date={"05/02/1997"}
-        />
-      </Container>
-      {/* End Popular Reads Section */}
-      {/* Footer */}
-      <Grid>
-        <Footer />
-      </Grid>
-      {/* End Footer */}
     </Grid>
   );
 }

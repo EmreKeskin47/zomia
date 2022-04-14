@@ -1,10 +1,10 @@
-import { Link, Typography } from "@mui/material";
+import { Link, Paper, Typography } from "@mui/material";
 import React from "react";
 import { mockArticles } from "../../MOCK_DATA";
 
 const Analysis = () => {
     return (
-        <div style={{ marginTop: 155, background: "#424242" }}>
+        <Paper sx={{ paddingTop: 5 }}>
             {mockArticles.map((article, index) => {
                 return (
                     <Link key={index} href={`/analysis/${article.id}`}>
@@ -12,7 +12,7 @@ const Analysis = () => {
                     </Link>
                 );
             })}
-        </div>
+        </Paper>
     );
 };
 

@@ -3,7 +3,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
+import {
+    Button,
+    CardActionArea,
+    CardActions,
+    Grid,
+    Paper,
+} from "@mui/material";
 import palette from "../../theme/palette";
 import { mockReports } from "../../MOCK_PDF";
 import { useRouter } from "next/router";
@@ -11,7 +17,7 @@ import { useRouter } from "next/router";
 const Investigations = () => {
     const router = useRouter();
     return (
-        <Grid container marginTop={10}>
+        <Paper sx={{ paddingTop: 5 }}>
             {mockReports.map((report) => {
                 return (
                     <Grid
@@ -73,7 +79,7 @@ const Investigations = () => {
                     </Grid>
                 );
             })}
-        </Grid>
+        </Paper>
     );
 };
 

@@ -1,3 +1,4 @@
+import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Article from "../../components/Article";
 import { mockArticles } from "../../MOCK_DATA";
@@ -10,9 +11,9 @@ const ArticlePage = (props) => {
         setData(mockArticles[id - 1]);
     }, [id]);
     return (
-        <div style={{ marginTop: 25 }}>
+        <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}
-        </div>
+        </Paper>
     );
 };
 

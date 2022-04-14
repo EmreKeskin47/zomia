@@ -47,20 +47,24 @@ const Article = (props) => {
                                         >
                                             {article.title}
                                         </Typography>
-                                        <Typography
-                                            variant="subtitle1"
-                                            fontStyle={"italic"}
-                                            sx={{ marginY: 3 }}
-                                        >
-                                            {"by " + article.author}
-                                        </Typography>
-                                        <Typography
-                                            variant="subtitle1"
-                                            fontStyle={"italic"}
-                                            sx={{ marginY: 3 }}
-                                        >
-                                            {"on " + article.date}
-                                        </Typography>
+                                        {article.author && (
+                                            <>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    fontStyle={"italic"}
+                                                    sx={{ marginY: 3 }}
+                                                >
+                                                    {"by " + article.author}
+                                                </Typography>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    fontStyle={"italic"}
+                                                    sx={{ marginY: 3 }}
+                                                >
+                                                    {"on " + article.date}
+                                                </Typography>
+                                            </>
+                                        )}
                                     </Box>
                                 </Box>
 

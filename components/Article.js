@@ -10,6 +10,7 @@ import RenderBody from "./RenderBody";
 
 const Article = (props) => {
     const { article } = props;
+    console.log(article);
 
     if (article) {
         article.text = MakeArticleParagraph2(article.text);

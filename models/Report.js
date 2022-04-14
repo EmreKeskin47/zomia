@@ -8,7 +8,7 @@ export class Report {
         date,
         author,
         category,
-        description,
+        text,
         pdfLink,
         additionalImages
     ) {
@@ -18,7 +18,7 @@ export class Report {
         this.date = date;
         this.author = author;
         this.category = category;
-        this.description = description;
+        this.text = text;
         this.pdfLink = pdfLink;
         this.additionalImages = additionalImages;
     }

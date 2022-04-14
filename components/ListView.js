@@ -1,11 +1,9 @@
 import * as React from "react";
-import { Grid, Typography, Link, Divider } from "@mui/material";
-import palette from "../../theme/palette";
+import { Grid, Typography, Link } from "@mui/material";
 import Image from "next/image";
-import popularImage from "../../public/static/deneme2.png";
-import { isMobile } from "react-device-detect";
+import palette from "../theme/palette";
 
-const PopularRead = ({ heading, date, author }) => {
+const ListView = ({ heading, date, author, image, minRead, href }) => {
     return (
         <Grid
             container
@@ -13,10 +11,9 @@ const PopularRead = ({ heading, date, author }) => {
             justifyContent="center"
             sx={{ paddingBottom: "5rem" }}
         >
-            <Grid item sm={12} xs={12} md={6} lg={6}>
+            <Grid item xs={11} md={6}>
                 <Image
-                    src={popularImage}
-                    //   layout="fill"
+                    src={image}
                     width="450px"
                     height="300px"
                     alt="zomia article"
@@ -25,30 +22,33 @@ const PopularRead = ({ heading, date, author }) => {
                     }}
                 />
             </Grid>
-            <Grid item sm={12} xs={12} md={6} lg={6}>
+            <Grid item sm={11} md={6} alignSelf={"center"}>
                 <Grid
                     container
                     direction="column"
                     justifyContent="space-evenly"
                 >
-                    <Typography
-                        variant="overline"
-                        component="div"
-                        color="whitesmoke"
-                    >
-                        4 min read
+                    <Typography variant="overline">
+                        {minRead ? minRead : "4 min read"}
                     </Typography>
-                    <Link variant="h4" sx={{ paddingTop: "2rem" }}>
-                        {heading}
-                    </Link>
                     <Typography
-                        variant="overline"
-                        component="div"
+                        variant="h4"
+                        sx={{
+                            paddingTop: "2rem",
+                            ":hover": { color: palette.orange.main },
+                        }}
+                    >
+                        {heading}
+                    </Typography>
+                    <Typography
+                        variant="subtitle1"
                         fontStyle={"italic"}
-                        color="whitesmoke"
                         sx={{ paddingTop: "2rem" }}
                     >
-                        {date} / {author}
+                        {"by " + author}
+                    </Typography>
+                    <Typography variant="subtitle2" fontStyle={"italic"}>
+                        {"on " + date}
                     </Typography>
                 </Grid>
             </Grid>
@@ -56,4 +56,4 @@ const PopularRead = ({ heading, date, author }) => {
     );
 };
 
-export default PopularRead;
+export default ListView;

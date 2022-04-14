@@ -82,9 +82,9 @@ function App() {
         justifyContent="space-around"
         sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
       >
-        <NewsSummary type="article" />
-        <NewsSummary type="article" />
-        <NewsSummary type="article" />
+        <NewsSummary type="article" text="This is an example test." />
+        <NewsSummary type="article" text="This is an example test." />
+        <NewsSummary type="article" text="This is an example test." />
       </Grid>
       {/* End Articles Section */}
       <SectionBreaker text="Reports" color="whitesmoke" />
@@ -95,9 +95,12 @@ function App() {
         justifyContent="space-around"
         sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
       >
-        <NewsSummary type="report" />
-        <NewsSummary type="report" />
-        <NewsSummary type="report" />
+        <NewsSummary
+          type="report"
+          text={"This is an example test.".slice(0, 240)}
+        />
+        <NewsSummary type="report" text="This is an example test." />
+        <NewsSummary type="report" text="This is an example test." />
       </Grid>
       {/* End Reports Section */}
       <SectionBreaker text="More Stories" color="whitesmoke" />

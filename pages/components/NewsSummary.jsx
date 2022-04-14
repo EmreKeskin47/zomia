@@ -9,7 +9,11 @@ import Badge from "@mui/material/Badge";
 
 const NewsSummary = (props) => {
   return (
-    <Badge badgeContent={"4 mins read"} color={"black"} sx={{}}>
+    <Badge
+      badgeContent={"4 mins read"}
+      color="black"
+      sx={{ color: "whitesmoke", backgroundColor: "black" }}
+    >
       <Grid
         sx={{
           borderRadius: 0,
@@ -36,8 +40,7 @@ const NewsSummary = (props) => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="whitesmoke">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                {props.text}
               </Typography>
             </CardContent>
           </CardActionArea>

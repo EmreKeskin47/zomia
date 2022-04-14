@@ -19,7 +19,7 @@ const CardList = ({ type }) => {
                   image={item.image}
                   title={item.title}
                   date={item.date}
-                  description={item.description.slice(0, 240) + "..."}
+                  description={item.description.slice(0, 140) + "..."}
                   author={item.author}
                 />
               </Link>

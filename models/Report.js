@@ -9,7 +9,8 @@ export class Report {
         author,
         category,
         description,
-        pdfLink
+        pdfLink,
+        additionalImages
     ) {
         this.id = id;
         this.title = title;
@@ -19,5 +20,6 @@ export class Report {
         this.category = category;
         this.description = description;
         this.pdfLink = pdfLink;
+        this.additionalImages = additionalImages;
     }
 }

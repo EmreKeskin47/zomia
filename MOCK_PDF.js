@@ -7,31 +7,34 @@ export const mockReports = [
   new Report(
     "1",
     "Proxy War in the Northern Corridor",
-    "../../public/static/deneme2.jpg",
+    "/reports/1.png",
     "date",
     "Jeremy Hodge & Hussein Nasser",
     "category",
     desc1,
-    "articles/1.pdf"
+    "1.pdf",
+    ["/reports/1-2.png", "/reports/1-3.png"]
   ),
   new Report(
     "2",
     "Social Networks, Class, and the Syrian Proxy War",
-    "/static/deneme2.png",
+    "/reports/2.png",
     "April 2021",
     "Anand Gopal & Jeremy Hodge",
     "category",
     desc2,
-    "./articles/2.pdf"
+    "2.pdf",
+    []
   ),
   new Report(
     "3",
     "The Secret Life of Mullah Omar",
-    "/static/deneme2.png",
+    "/reports/3.png",
     "date",
     "BETTE DAM",
     "category",
     desc3,
-    "3.pdf"
+    "3.pdf",
+    ["/reports/3-1.png", "/reports/3-2.png", "/reports/3-3.png"]
   ),
 ];

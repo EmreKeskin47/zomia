@@ -10,6 +10,7 @@ import RenderBody from "./RenderBody";
 
 const Article = (props) => {
     const { article } = props;
+    console.log(article);
 
     if (article) {
         article.text = MakeArticleParagraph2(article.text);
@@ -46,18 +47,24 @@ const Article = (props) => {
                                         >
                                             {article.title}
                                         </Typography>
-                                        <Typography
-                                            variant="subtitle1"
-                                            sx={{ marginY: 3 }}
-                                        >
-                                            {"by " + article.author}
-                                        </Typography>
-                                        <Typography
-                                            variant="subtitle1"
-                                            sx={{ marginY: 3 }}
-                                        >
-                                            {"on " + article.date}
-                                        </Typography>
+                                        {article.author && (
+                                            <>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    fontStyle={"italic"}
+                                                    sx={{ marginY: 3 }}
+                                                >
+                                                    {"by " + article.author}
+                                                </Typography>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    fontStyle={"italic"}
+                                                    sx={{ marginY: 3 }}
+                                                >
+                                                    {"on " + article.date}
+                                                </Typography>
+                                            </>
+                                        )}
                                     </Box>
                                 </Box>
 

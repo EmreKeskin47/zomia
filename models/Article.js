@@ -11,7 +11,8 @@ export class Article {
         category,
         description,
         link,
-        text
+        text,
+        additionalImages
     ) {
         this.id = id;
         this.title = title;
@@ -22,5 +23,6 @@ export class Article {
         this.description = description;
         this.link = link;
         this.text = text;
+        this.additionalImages = additionalImages;
     }
 }

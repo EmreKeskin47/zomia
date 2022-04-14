@@ -27,21 +27,6 @@ const modalStyle = {
     display: "block",
 };
 
-/// TODO: CUSTOM SCROLLBAR
-// sx={{
-//     "&::-webkit-scrollbar": {
-//         width: "112rem",
-//     },
-//     "&::-webkit-scrollbar-track": {
-//         boxShadow: "inset 0 0 6px #fff",
-//         webkitBoxShadow: "inset 0 0 6px #fff",
-//     },
-//     "&::-webkit-scrollbar-thumb": {
-//         backgroundColor: "#e5c15e",
-//         outline: "1px solid #e5c15e",
-//     },
-// }}
-
 export default function PDFViewer(props) {
     const { article } = props;
     const [file, setFile] = useState("1.pdf");
@@ -57,7 +42,12 @@ export default function PDFViewer(props) {
 
     return (
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <Box width={"100%"} textAlign={"center"} paddingY={5}>
+                <Button onClick={handleOpen}>
+                    <Typography variant="h4">READ MORE</Typography>
+                </Button>
+            </Box>
+
             <Modal
                 open={open}
                 onClose={handleClose}

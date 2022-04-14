@@ -8,6 +8,7 @@ import NewsSummary from "./components/NewsSummary";
 import PopularRead from "./components/PopularRead";
 import Partners from "../components/Partners";
 import SectionBreaker2 from "./components/SectionBreaker2";
+import CardList from "./components/CardList";
 
 function App() {
   return (
@@ -72,16 +73,6 @@ function App() {
       </Container>
       <SectionBreaker text="Articles" color="whitesmoke" />
       {/* Articles Section */}
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-around"
-        sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
-      >
-        <NewsSummary type="article" />
-        <NewsSummary type="article" />
-        <NewsSummary type="article" />
-      </Grid>
       {/* End Articles Section */}
       <SectionBreaker text="Reports" color="whitesmoke" />
       {/* Reports Section */}
@@ -91,9 +82,7 @@ function App() {
         justifyContent="space-around"
         sx={{ paddingTop: "5rem", paddingBottom: "5rem" }}
       >
-        <NewsSummary type="report" />
-        <NewsSummary type="report" />
-        <NewsSummary type="report" />
+        <CardList type={"report"} />
       </Grid>
       {/* End Reports Section */}
       <SectionBreaker text="More Stories" color="whitesmoke" />

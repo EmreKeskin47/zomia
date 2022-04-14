@@ -3,7 +3,14 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
+import {
+  Button,
+  CardActionArea,
+  CardActions,
+  Divider,
+  Grid,
+  Link,
+} from "@mui/material";
 import palette from "../../theme/palette";
 import Badge from "@mui/material/Badge";
 
@@ -27,7 +34,8 @@ const NewsSummary = (props) => {
             <CardMedia
               component="img"
               height="250"
-              image="/static/deneme2.png"
+              // image="/static/deneme2.png"
+              image={props.image}
               alt="green iguana"
             />
             <CardContent sx={{ backgroundColor: palette.black.main }}>
@@ -37,10 +45,26 @@ const NewsSummary = (props) => {
                 component="div"
                 color="whitesmoke"
               >
-                Lizard
+                {props.title}
               </Typography>
               <Typography variant="body2" color="whitesmoke">
-                {props.text}
+                {props.description}
+              </Typography>
+              <Divider sx={{ marginTop: 2, marginBottom: 2 }}></Divider>
+              <Typography
+                align="left"
+                variant="caption"
+                sx={{ fontStyle: "italic", color: "whitesmoke" }}
+              >
+                {props.date} /
+              </Typography>
+
+              <Typography
+                align="left"
+                variant="caption"
+                sx={{ fontStyle: "italic", color: "whitesmoke" }}
+              >
+                {props.author}
               </Typography>
             </CardContent>
           </CardActionArea>

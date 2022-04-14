@@ -4,34 +4,34 @@ const desc3 = `Very little is known about Mullah Omar, the notorious supreme lea
 
 import { Report } from "./models/Report";
 export const mockReports = [
-    new Report(
-        "1",
-        "Proxy War in the Northern Corridor",
-        "1.png",
-        "date",
-        "Jeremy Hodge & Hussein Nasser",
-        "category",
-        desc1,
-        "articles/1.pdf"
-    ),
-    new Report(
-        "2",
-        "Social Networks, Class, and the Syrian Proxy War",
-        "2.png",
-        "April 2021",
-        "Anand Gopal & Jeremy Hodge",
-        "category",
-        desc2,
-        "./articles/2.pdf"
-    ),
-    new Report(
-        "3",
-        "The Secret Life of Mullah Omar",
-        "3.png",
-        "date",
-        "BETTE DAM",
-        "category",
-        desc3,
-        "3.pdf"
-    ),
+  new Report(
+    "1",
+    "Proxy War in the Northern Corridor",
+    "../../public/static/deneme2.jpg",
+    "date",
+    "Jeremy Hodge & Hussein Nasser",
+    "category",
+    desc1,
+    "articles/1.pdf"
+  ),
+  new Report(
+    "2",
+    "Social Networks, Class, and the Syrian Proxy War",
+    "/static/deneme2.png",
+    "April 2021",
+    "Anand Gopal & Jeremy Hodge",
+    "category",
+    desc2,
+    "./articles/2.pdf"
+  ),
+  new Report(
+    "3",
+    "The Secret Life of Mullah Omar",
+    "/static/deneme2.png",
+    "date",
+    "BETTE DAM",
+    "category",
+    desc3,
+    "3.pdf"
+  ),
 ];

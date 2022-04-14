@@ -16,7 +16,7 @@ const CardList = ({ type }) => {
               >
                 <NewsSummary
                   key={item.id}
-                  img={item.image}
+                  image={item.image}
                   title={item.title}
                   date={item.date}
                   description={item.description.slice(0, 240) + "..."}

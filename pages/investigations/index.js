@@ -13,6 +13,7 @@ const Investigations = () => {
           marginY={15}
           textAlign="center"
           paddingBottom={10}
+          fontFamily={"Montserrat"}
         >
           Reports
         </Typography>

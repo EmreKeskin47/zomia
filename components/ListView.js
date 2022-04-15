@@ -22,7 +22,7 @@ const ListView = ({ heading, date, author, image, minRead, href }) => {
                     }}
                 />
             </Grid>
-            <Grid item sm={11} md={6} alignSelf={"center"}>
+            <Grid item xs={10} md={6} alignSelf={"center"}>
                 <Grid
                     container
                     direction="column"

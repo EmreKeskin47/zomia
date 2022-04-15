@@ -13,17 +13,19 @@ import Tab from "@mui/material/Tab";
 
 function renderProject(project, index) {
     return (
-        <Grid key={index} item xs={10} lg={12} alignSelf={"center"}>
-            <Box marginY={5}>
-                <RenderTitle text={project.name} />
+        <Grid key={index} item xs={12} lg={12} alignSelf={"center"}>
+            <Grid marginY={5}>
+                <Grid>
+                    <RenderTitle text={project.name} />
+                </Grid>
 
-                <Box>
+                <Grid>
                     <Image
                         src={`/static/projects/${project.image}.png`}
                         width={1300}
                         height={750}
                     />
-                </Box>
+                </Grid>
 
                 <Grid
                     item
@@ -38,7 +40,7 @@ function renderProject(project, index) {
                         return <RenderBody key={index} text={paragraph} />;
                     })}
                 </Grid>
-            </Box>
+            </Grid>
         </Grid>
     );
 }
@@ -56,7 +58,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box>
-                    <Typography>{children}</Typography>
+                    <Box>{children}</Box>
                 </Box>
             )}
         </div>
@@ -103,8 +105,8 @@ const Projects = () => {
                         </Typography>
                     </Grid>
 
-                    <Box xs={11}>
-                        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                    <Grid item xs={11}>
+                        <Grid sx={{ borderBottom: 1, borderColor: "divider" }}>
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
@@ -123,14 +125,14 @@ const Projects = () => {
                                     {...a11yProps(1)}
                                 />
                             </Tabs>
-                        </Box>
+                        </Grid>
                         <TabPanel value={value} index={0}>
                             {renderProject(data[0], 0)}
                         </TabPanel>
                         <TabPanel value={value} index={1}>
                             {renderProject(data[1], 1)}
                         </TabPanel>
-                    </Box>
+                    </Grid>
                 </Grid>
             </Container>
         </Paper>

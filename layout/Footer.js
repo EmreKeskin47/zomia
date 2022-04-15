@@ -6,6 +6,7 @@ import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import SendIcon from "@mui/icons-material/Send";
 import styled from "@emotion/styled";
+import { isMobile } from "react-device-detect";
 
 const Footer = () => {
   const StyledButton = styled(Button)(({ theme }) => ({
@@ -61,19 +62,19 @@ const Footer = () => {
         </StyledButton>
       </Grid>
       <Grid item>
-        <Divider
-          orientation="vertical"
-          variant="fullWidth"
-          sx={{
-            minHeight: "20px",
-            borderRightWidth: 8,
-            borderLeftWidth: 8,
-            height: "100%",
-            width: 10,
-            background: palette.black.main,
-            borderRadius: 6,
-          }}
-        ></Divider>
+        {!isMobile && (
+          <Divider
+            orientation="vertical"
+            variant="fullWidth"
+            sx={{
+              minHeight: "20px",
+              height: "100%",
+              width: 10,
+              background: palette.black.main,
+              borderRadius: 6,
+            }}
+          ></Divider>
+        )}
       </Grid>
       {/* Third Column */}
       <Grid item>
@@ -126,3 +127,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Anasayfada reports kayik
+// More stories yerine partners olacak
+// mobilde footer cok kotu

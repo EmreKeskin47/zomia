@@ -21,13 +21,18 @@ const FullAppBar = () => {
                 justifyContent="center"
                 display="flex"
                 alignItems={"center"}
+                sx={{
+                    cursor: "pointer",
+                }}
             >
-                <Image
-                    src="/static/logo.jpeg"
-                    alt="Logo"
-                    width="220px"
-                    height="100px"
-                />
+                <Link href="/">
+                    <Image
+                        src="/static/logo.jpeg"
+                        alt="Logo"
+                        width="220px"
+                        height="90px"
+                    />
+                </Link>
             </Box>
 
             <Box width={"70%"}>

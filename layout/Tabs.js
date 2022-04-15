@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
+import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Tabs = (props) => {
     const [anchorElUser, setAnchorElUser] = useState(null);

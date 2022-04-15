@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/system";
 import Image from "next/image";
 import Tabs from "./Tabs";
+import Link from "next/link";
 
 const OnlyTabsBar = () => {
     return (
@@ -11,15 +12,18 @@ const OnlyTabsBar = () => {
                 justifyContent="center"
                 display="flex"
                 alignItems={"center"}
+                sx={{ cursor: "pointer" }}
             >
-                <Image
-                    src="/static/logo.svg"
-                    alt="Logo"
-                    width="250px"
-                    height="50px"
-                />
+                <Link href="/">
+                    <Image
+                        src="/static/logo.svg"
+                        alt="Logo"
+                        width="250px"
+                        height="50px"
+                    />
+                </Link>
             </Box>
-            <Box width={"60%"}>
+            <Box width={"60%"} sx={{ marginRight: "5%" }}>
                 <Tabs />
             </Box>
         </Box>

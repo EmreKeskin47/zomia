@@ -10,7 +10,8 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const font = createTheme({
   typography: {
     fontFamily: [
-      "Montserrat",
+      "Raleway",
+      // "Montserrat",
       "Nunito",
       "Roboto",
       "Helvetica Neue",

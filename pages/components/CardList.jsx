@@ -15,8 +15,9 @@ const CardList = ({ type }) => {
                     {mockReports.map((item) => (
                         <Grid item>
                             <Link
-                                href={item.pdfLink}
+                                href={`/investigations/${item.id}`}
                                 sx={{ paddingLeft: 5, paddingRight: 5 }}
+                                replace
                             >
                                 <NewsSummary
                                     key={item.id}

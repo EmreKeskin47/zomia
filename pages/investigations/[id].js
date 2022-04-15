@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { mockReports } from "../../MOCK_PDF";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Image from "next/image";
-import { Box, Grid } from "@mui/material";
-import { MakeArticleParagraph } from "../../utils/ArticleParagraph";
-import RenderTitle from "../../components/RenderTitle";
-import RenderBody from "../../components/RenderBody";
 import Article from "../../components/Article";
+import Link from "next/link";
+import { Box, Typography } from "@mui/material";
 
 const Investigations = (props) => {
     const { id } = props;
-    const PDFViewer = dynamic(() => import("./PDFViewer"), {
-        ssr: true,
-    });
-
     const [report, setReport] = useState(null);
 
     useEffect(() => {
@@ -24,8 +16,24 @@ const Investigations = (props) => {
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
-            {report && <Article article={report} />}
-            {report && <PDFViewer article={report} />}
+            {report && <Article article={report} isReport={true} />}
+            {report && (
+                <Link href={"/" + report.pdfLink} replace>
+                    <Box sx={{ paddingY: 10 }}>
+                        <Typography
+                            variant="h5"
+                            textAlign={"center"}
+                            sx={{
+                                textDecoration: "none",
+                                color: "whitesmoke",
+                                fontSize: 20,
+                            }}
+                        >
+                            Click to view the full report
+                        </Typography>
+                    </Box>
+                </Link>
+            )}
         </Paper>
     );
 };

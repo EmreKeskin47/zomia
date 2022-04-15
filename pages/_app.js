@@ -1,4 +1,4 @@
-import { Paper } from "@mui/material";
+import { Paper, Grid } from "@mui/material";
 import AppBar from "../layout/AppNavBar";
 import Footer from "../layout/Footer";
 import ThemeConfig from "../theme";
@@ -27,8 +27,15 @@ function MyApp({ Component, pageProps }) {
       >
         <Component {...pageProps} />
       </Paper>
-
-      <Footer />
+      <Grid
+        sx={
+          isMobile && {
+            marginRight: -10,
+          }
+        }
+      >
+        <Footer />
+      </Grid>
     </ThemeConfig>
   );
 }

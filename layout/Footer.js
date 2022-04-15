@@ -7,6 +7,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import SendIcon from "@mui/icons-material/Send";
 import styled from "@emotion/styled";
 import { isMobile } from "react-device-detect";
+import ShuffleIcon from "@mui/icons-material/Shuffle";
 
 const Footer = () => {
   const StyledButton = styled(Button)(({ theme }) => ({
@@ -61,6 +62,20 @@ const Footer = () => {
           </Grid>
         </StyledButton>
       </Grid>
+      <Grid item sx={{ padding: "1rem" }}>
+        <StyledButton>
+          <Grid container direction={"row"} sx={{ paddingLeft: isMobile && 5 }}>
+            <Grid item sx={{ paddingRight: "0.5rem" }}>
+              <ShuffleIcon />
+            </Grid>
+            <Grid item>
+              <StyledTypography variant="subtitle1" component="div">
+                Read a random article
+              </StyledTypography>
+            </Grid>
+          </Grid>
+        </StyledButton>
+      </Grid>
       <Grid item>
         {!isMobile && (
           <Divider
@@ -87,10 +102,10 @@ const Footer = () => {
                   color={palette.black.main}
                   sx={{ padding: "1rem" }}
                 >
-                  Stay Up To Date !
+                  Subscribe to our newsletter
                 </Typography>
               </Grid>
-              <Grid item paddingLeft={"2rem"}>
+              <Grid item paddingLeft={"1rem"}>
                 <Box
                   sx={{
                     display: "flex",
@@ -127,7 +142,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// Anasayfada reports kayik
-// More stories yerine partners olacak
-// mobilde footer cok kotu

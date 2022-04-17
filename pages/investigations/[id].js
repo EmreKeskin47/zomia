@@ -27,6 +27,7 @@ const Investigations = (props) => {
                                 textDecoration: "none",
                                 color: "whitesmoke",
                                 fontSize: 20,
+                                cursor: "pointer",
                             }}
                         >
                             Click to view the full report

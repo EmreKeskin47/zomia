@@ -19,6 +19,7 @@ const OnlyTabsBar = () => {
                     <Image
                         src="/static/logo.svg"
                         loader={imageLoader}
+                        unoptimized
                         alt="Logo"
                         width="250px"
                         height="50px"

@@ -90,6 +90,7 @@ const MobileBar = () => {
                         <Image
                             src="/static/logo.jpeg"
                             loader={imageLoader}
+                            unoptimized
                             alt="Logo"
                             width="140px"
                             height="64px"

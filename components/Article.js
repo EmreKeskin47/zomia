@@ -13,7 +13,6 @@ import imageLoader from "../loader";
 
 const Article = (props) => {
     const { article, isReport } = props;
-    console.log(article);
 
     if (article) {
         article.text = MakeArticleParagraph2(article.text);

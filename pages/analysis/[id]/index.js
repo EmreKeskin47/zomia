@@ -1,7 +1,7 @@
 import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Article from "../../components/Article";
-import { mockArticles } from "../../MOCK_DATA";
+import Article from "../../../components/Article";
+import { mockArticles } from "../../../MOCK_DATA";
 
 const ArticlePage = (props) => {
     const { id } = props;

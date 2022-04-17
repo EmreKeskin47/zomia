@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { mockReports } from "../../MOCK_PDF";
+import { mockReports } from "../../../MOCK_PDF";
 import Paper from "@mui/material/Paper";
-import Article from "../../components/Article";
+import Article from "../../../components/Article";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 

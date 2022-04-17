@@ -18,7 +18,6 @@ const Investigations = () => {
                     Reports
                 </Typography>
                 {mockReports.map((report, index) => {
-                    console.log(report);
                     return (
                         <Link key={index} href={`/investigations/${report.id}`}>
                             <ListView

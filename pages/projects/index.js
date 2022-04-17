@@ -10,6 +10,7 @@ import RenderBody from "../../components/RenderBody";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import imageLoader from "../../loader";
 
 function renderProject(project, index) {
     return (
@@ -22,6 +23,7 @@ function renderProject(project, index) {
                 <Grid>
                     <Image
                         src={`/static/projects/${project.image}.png`}
+                        loader={imageLoader}
                         width={1300}
                         height={750}
                     />

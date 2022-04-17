@@ -9,6 +9,7 @@ import RenderSubtitle from "./RenderSubtitle";
 import RenderBody from "./RenderBody";
 import CardList from "../pages/components/CardList";
 import SectionBreaker from "../pages/components/SectionBreaker";
+import imageLoader from "../loader";
 
 const Article = (props) => {
     const { article, isReport } = props;
@@ -73,8 +74,10 @@ const Article = (props) => {
                                 <Box>
                                     <Image
                                         src={article.image}
-                                        width={1300}
-                                        height={750}
+                                        loader={imageLoader}
+                                        width={"1300px"}
+                                        height={"750px"}
+                                        alt="zomia article"
                                     />
                                 </Box>
 

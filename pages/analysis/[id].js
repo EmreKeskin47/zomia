@@ -2,11 +2,9 @@ import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Article from "../../components/Article";
 import { mockArticles } from "../../MOCK_DATA";
-import { useRouter } from "next/router";
 
 const ArticlePage = (props) => {
-    const router = useRouter();
-    const { id } = router.query;
+    const { id } = props;
 
     const [data, setData] = useState(null);
 
@@ -21,3 +19,23 @@ const ArticlePage = (props) => {
 };
 
 export default ArticlePage;
+export async function getStaticPaths() {
+    return {
+        paths: [
+            { params: { id: "1" } },
+            { params: { id: "2" } },
+            { params: { id: "3" } },
+            { params: { id: "4" } },
+        ],
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const id = params.id;
+    return {
+        props: {
+            id,
+        },
+    };
+}

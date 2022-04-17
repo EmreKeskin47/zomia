@@ -4,9 +4,10 @@
     "private": true,
     "scripts": {
         "dev": "next dev -p 3005",
-        "build": "next build && next export",
+        "build": "next build ",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "deploy": "next build && next export && firebase deploy"
     },
     "dependencies": {
         "@emotion/react": "^11.7.0",

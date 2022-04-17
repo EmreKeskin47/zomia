@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import Image from "next/image";
 import Tabs from "./Tabs";
 import Link from "next/link";
+import imageLoader from "../loader";
 
 const OnlyTabsBar = () => {
     return (
@@ -17,6 +18,7 @@ const OnlyTabsBar = () => {
                 <Link href="/">
                     <Image
                         src="/static/logo.svg"
+                        loader={imageLoader}
                         alt="Logo"
                         width="250px"
                         height="50px"

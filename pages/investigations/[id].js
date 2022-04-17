@@ -4,12 +4,9 @@ import Paper from "@mui/material/Paper";
 import Article from "../../components/Article";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
-import { useRouter } from "next/router";
 
 const Investigations = (props) => {
-    const router = useRouter();
-    const { id } = router.query;
-
+    const { id } = props;
     const [report, setReport] = useState(null);
 
     useEffect(() => {
@@ -42,3 +39,23 @@ const Investigations = (props) => {
 };
 
 export default Investigations;
+
+export async function getStaticProps({ params }) {
+    const id = params.id;
+    return {
+        props: {
+            id,
+        },
+    };
+}
+
+export async function getStaticPaths() {
+    return {
+        paths: [
+            { params: { id: "1" } },
+            { params: { id: "2" } },
+            { params: { id: "3" } },
+        ],
+        fallback: false,
+    };
+}

@@ -4,6 +4,7 @@ import palette from "../../theme/palette";
 import Image from "next/image";
 import popularImage from "../../public/static/deneme2.png";
 import { isMobile } from "react-device-detect";
+import imageLoader from "../../loader";
 
 const PopularRead = ({ heading, date, author }) => {
     return (
@@ -17,6 +18,7 @@ const PopularRead = ({ heading, date, author }) => {
                 <Image
                     src={popularImage}
                     //   layout="fill"
+                    loader={imageLoader}
                     width="450px"
                     height="300px"
                     alt="zomia article"

@@ -12,6 +12,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SearchIcon from "@mui/icons-material/Search";
 import Tabs from "./Tabs";
+import imageLoader from "../loader";
 
 const FullAppBar = () => {
     return (
@@ -28,6 +29,7 @@ const FullAppBar = () => {
                 <Link href="/">
                     <Image
                         src="/static/logo.jpeg"
+                        loader={imageLoader}
                         alt="Logo"
                         width="220px"
                         height="90px"

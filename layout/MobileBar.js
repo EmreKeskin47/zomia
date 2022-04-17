@@ -10,6 +10,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import AppBar from "@mui/material/AppBar";
 import Drawer from "@mui/material/Drawer";
+import imageLoader from "../loader";
 
 const MobileBar = () => {
     const [drawer, setDrawer] = useState(false);
@@ -88,6 +89,7 @@ const MobileBar = () => {
                     <Link href="/">
                         <Image
                             src="/static/logo.jpeg"
+                            loader={imageLoader}
                             alt="Logo"
                             width="140px"
                             height="64px"

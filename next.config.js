@@ -9,8 +9,7 @@ module.exports = {
         webpack5: true,
     },
     images: {
-        loader: "akamai",
-        path: "",
+        loader: "custom",
     },
     webpack: (config) => {
         // load worker files as a urls with `file-loader`

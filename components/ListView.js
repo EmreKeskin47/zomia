@@ -2,6 +2,7 @@ import * as React from "react";
 import { Grid, Typography, Link } from "@mui/material";
 import Image from "next/image";
 import palette from "../theme/palette";
+import imageLoader from "../loader";
 
 const ListView = ({ heading, date, author, image, minRead }) => {
     return (
@@ -14,6 +15,7 @@ const ListView = ({ heading, date, author, image, minRead }) => {
             <Grid item xs={11} md={6}>
                 <Image
                     src={image}
+                    loader={imageLoader}
                     width="450px"
                     height="300px"
                     alt="zomia article"

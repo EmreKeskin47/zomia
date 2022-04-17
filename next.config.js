@@ -8,6 +8,10 @@ module.exports = {
     future: {
         webpack5: true,
     },
+    images: {
+        loader: "akamai",
+        path: "",
+    },
     webpack: (config) => {
         // load worker files as a urls with `file-loader`
         config.module.rules.unshift({

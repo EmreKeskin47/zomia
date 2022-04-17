@@ -11,7 +11,7 @@ const ContentSummary = ({ id, category, heading, date, author }) => {
                     align="left"
                     variant="overline"
                 >
-                    {category.toUpperCase()}
+                    {category && category.toUpperCase()}
                 </Link>
             </Grid>
             <Grid item sx={{ paddingBottom: "0.5rem" }}>

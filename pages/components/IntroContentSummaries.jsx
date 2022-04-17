@@ -1,6 +1,6 @@
 import React from "react";
 import ContentSummary from "./ContentSummary";
-import { ContentSummaryArray } from "./ContentSumaryArray";
+import { ContentSummaryArray } from "../../components/data/ContentSumaryArray";
 import { Grid } from "@mui/material";
 
 const IntroContentSummaries = () => {
@@ -8,9 +8,8 @@ const IntroContentSummaries = () => {
         <Grid>
             {ContentSummaryArray.map((contentSummary, index) => {
                 return (
-                    <Grid sx={{ padding: "0.5rem" }}>
+                    <Grid sx={{ padding: "0.5rem" }} key={index}>
                         <ContentSummary
-                            key={index}
                             id={contentSummary.id}
                             category={contentSummary.category}
                             heading={contentSummary.heading}

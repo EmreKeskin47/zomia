@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Paper } from "@mui/material";
-import { team, directors } from "./bio";
+import { team, directors } from "../../components/data/bio";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";

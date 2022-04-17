@@ -1,8 +1,11 @@
 import React from "react";
 import { Box, Grid, Paper } from "@mui/material";
-import { bulletList1, bulletList2, MISSION } from "./mission";
+import {
+    bulletList1,
+    bulletList2,
+    MISSION,
+} from "../../components/data/mission";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
-import Image from "next/image";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
 import RenderBulletPoint from "../../components/RenderBulletPoint";

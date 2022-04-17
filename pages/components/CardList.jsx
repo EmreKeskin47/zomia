@@ -13,14 +13,13 @@ const CardList = ({ type }) => {
                     justifyContent={"space-around"}
                 >
                     {mockReports.map((item) => (
-                        <Grid item>
+                        <Grid item key={item.id}>
                             <Link
                                 href={`/investigations/${item.id}`}
                                 sx={{ paddingLeft: 5, paddingRight: 5 }}
                                 replace
                             >
                                 <NewsSummary
-                                    key={item.id}
                                     image={item.image}
                                     title={item.title}
                                     date={item.date}

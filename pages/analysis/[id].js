@@ -2,9 +2,12 @@ import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Article from "../../components/Article";
 import { mockArticles } from "../../MOCK_DATA";
+import { useRouter } from "next/router";
 
 const ArticlePage = (props) => {
-    const { id } = props;
+    const router = useRouter();
+    const { id } = router.query;
+
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -18,10 +21,3 @@ const ArticlePage = (props) => {
 };
 
 export default ArticlePage;
-
-export async function getServerSideProps(context) {
-    const id = await context.params.id;
-    return {
-        props: { id },
-    };
-}

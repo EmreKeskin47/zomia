@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import { mockReports } from "../../MOCK_PDF";
 import Paper from "@mui/material/Paper";
 import Article from "../../components/Article";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
+import { useRouter } from "next/router";
 
 const Investigations = (props) => {
-    const { id } = props;
+    const router = useRouter();
+    const { id } = router.query;
+
     const [report, setReport] = useState(null);
 
     useEffect(() => {
@@ -40,9 +42,3 @@ const Investigations = (props) => {
 };
 
 export default Investigations;
-export async function getServerSideProps(context) {
-    const id = await context.params.id;
-    return {
-        props: { id },
-    };
-}

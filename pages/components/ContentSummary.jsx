@@ -32,7 +32,7 @@ const ContentSummary = ({ id, category, heading, date, author }) => {
                     variant="caption"
                     sx={{ fontStyle: "italic", color: "whitesmoke" }}
                 >
-                    {date} /
+                    {"on " + date}
                 </Typography>
             </Grid>
             <Grid item sx={{ paddingBottom: "1rem" }}>
@@ -41,7 +41,7 @@ const ContentSummary = ({ id, category, heading, date, author }) => {
                     variant="caption"
                     sx={{ fontStyle: "italic", color: "whitesmoke" }}
                 >
-                    {author}
+                    {"by " + author}
                 </Typography>
             </Grid>
             <hr />

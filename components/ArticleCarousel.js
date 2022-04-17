@@ -124,7 +124,7 @@ function ArticleCarousel() {
                                 <Box
                                     component="img"
                                     sx={{
-                                        height: 455,
+                                        height: 655,
                                         display: "block",
                                         maxWidth: 1400,
                                         overflow: "hidden",

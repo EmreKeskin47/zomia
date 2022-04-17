@@ -24,6 +24,7 @@ function renderProject(project, index) {
                     <Image
                         src={`/static/projects/${project.image}.png`}
                         loader={imageLoader}
+                        unoptimized
                         width={1300}
                         height={750}
                     />

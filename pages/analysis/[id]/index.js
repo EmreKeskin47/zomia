@@ -27,12 +27,12 @@ export async function getStaticPaths() {
             { params: { id: "3" } },
             { params: { id: "4" } },
         ],
-        fallback: false,
+        fallback: true,
     };
 }
 
 export async function getStaticProps({ params }) {
-    const id = params.id;
+    const id = await params.id;
     return {
         props: {
             id,

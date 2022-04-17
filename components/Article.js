@@ -74,6 +74,7 @@ const Article = (props) => {
                                     <Image
                                         src={article.image}
                                         loader={imageLoader}
+                                        unoptimized
                                         width={"1300px"}
                                         height={"750px"}
                                         alt="zomia article"

@@ -17,7 +17,7 @@ const Investigations = (props) => {
         <Paper sx={{ paddingTop: 5 }}>
             {report && <Article article={report} isReport={true} />}
             {report && (
-                <Link href={"/" + report.pdfLink} replace>
+                <Link href={"/" + report.pdfLink} replace="true" passHref>
                     <Box sx={{ paddingY: 10 }}>
                         <Typography
                             variant="h5"
@@ -55,6 +55,7 @@ export async function getStaticPaths() {
             { params: { id: "1" } },
             { params: { id: "2" } },
             { params: { id: "3" } },
+            { params: { id: "4" } },
         ],
         fallback: false,
     };

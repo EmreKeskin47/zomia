@@ -19,6 +19,7 @@ const PopularRead = ({ heading, date, author }) => {
                     src={popularImage}
                     //   layout="fill"
                     loader={imageLoader}
+                    unoptimized
                     width="450px"
                     height="300px"
                     alt="zomia article"

@@ -13,6 +13,7 @@ const Partners = () => {
             <Grid item xs={12} md={6}>
                 <Image
                     src="/static/partners/partner1.png"
+                    unoptimized
                     loader={imageLoader}
                     width={400}
                     height={150}
@@ -21,6 +22,7 @@ const Partners = () => {
             <Grid item xs={12} md={6}>
                 <Image
                     src="/static/partners/partner2.png"
+                    unoptimized
                     loader={imageLoader}
                     width={300}
                     height={150}

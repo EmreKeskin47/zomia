@@ -16,6 +16,7 @@ const ListView = ({ heading, date, author, image, minRead }) => {
                 <Image
                     src={image}
                     loader={imageLoader}
+                    unoptimized
                     width="450px"
                     height="300px"
                     alt="zomia article"

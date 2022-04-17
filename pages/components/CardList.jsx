@@ -17,7 +17,7 @@ const CardList = ({ type }) => {
                             <Link
                                 href={`/investigations/${item.id}`}
                                 sx={{ paddingLeft: 5, paddingRight: 5 }}
-                                replace
+                                replace="true"
                             >
                                 <NewsSummary
                                     image={item.image}

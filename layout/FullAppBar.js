@@ -30,6 +30,7 @@ const FullAppBar = () => {
                     <Image
                         src="/static/logo.jpeg"
                         loader={imageLoader}
+                        unoptimized
                         alt="Logo"
                         width="220px"
                         height="90px"

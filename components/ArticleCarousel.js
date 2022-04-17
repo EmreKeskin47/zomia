@@ -37,8 +37,8 @@ function ArticleCarousel() {
             sx={{
                 maxWidth: 1400,
                 flexGrow: 1,
-                width: "80%",
-                marginLeft: "10%",
+                width: { xs: "100%", md: "80%" },
+                marginLeft: { md: "10%" },
             }}
         >
             <SwipeableViews
@@ -52,8 +52,7 @@ function ArticleCarousel() {
                             <Box>
                                 <Box
                                     display={"flex"}
-                                    alignContent="center"
-                                    justifyContent={"center"}
+                                    justifyContent={"space-between"}
                                     sx={{
                                         position: "absolute",
                                         width: "100%",
@@ -64,7 +63,7 @@ function ArticleCarousel() {
                                     }}
                                 >
                                     <Button
-                                        size="large"
+                                        size="small"
                                         onClick={handleBack}
                                         sx={{
                                             left: "0",
@@ -78,9 +77,7 @@ function ArticleCarousel() {
                                     <Paper
                                         elevation={2}
                                         sx={{
-                                            width: "70%",
-                                            marginLeft: "15%",
-                                            marginRight: "15%",
+                                            width: { xs: "100%", md: "70%" },
                                             opacity: 0.89,
                                         }}
                                     >
@@ -96,7 +93,7 @@ function ArticleCarousel() {
                                             >
                                                 {article.text.substring(
                                                     0,
-                                                    240
+                                                    140
                                                 ) + "..."}
                                             </Typography>
 

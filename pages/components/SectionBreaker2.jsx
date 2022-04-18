@@ -6,12 +6,7 @@ import palette from "../../theme/palette";
 const SectionBreaker2 = (props) => {
   return (
     <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "5rem" }}>
-      <Typography
-        href="#"
-        underline="none"
-        color={palette.black.main}
-        variant="h4"
-      >
+      <Typography href="#" underline="none" color={"whitesmoke"} variant="h4">
         {props.text}
       </Typography>
     </Divider>

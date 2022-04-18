@@ -12,9 +12,9 @@ export default function Paper() {
       styleOverrides: {
         root: {
           backgroundImage:
-            "url(https://background-tiles.com/overview/grey/patterns/large/1005.png)",
+            "url(https://background-tiles.com/overview/black/patterns/large/1001.png)",
           backgroundSize: "175px auto",
-          backgroundColor: palette.black.main,
+          // backgroundColor: palette.black.main,
         },
       },
     },

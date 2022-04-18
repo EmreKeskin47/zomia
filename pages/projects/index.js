@@ -17,7 +17,7 @@ function renderProject(project, index) {
         <Grid key={index} item xs={12} lg={12} alignSelf={"center"}>
             <Grid marginY={5}>
                 <Grid>
-                    <RenderTitle text={project.name} />
+                    <RenderTitle text={project.name} height={"150px"} />
                 </Grid>
 
                 <Grid>

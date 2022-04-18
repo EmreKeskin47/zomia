@@ -23,6 +23,9 @@ export default function GlobalStyles() {
         body: {
           width: "100%",
           height: "100%",
+          backgroundImage:
+            "url(https://background-tiles.com/overview/grey/patterns/large/1002.png)",
+          backgroundSize: "175px auto",
           "&::-moz-selection, & *::-moz-selection": {
             backgroundColor: "000",
           },

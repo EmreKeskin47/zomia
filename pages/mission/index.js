@@ -28,7 +28,10 @@ const Mission = () => {
             >
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>
-                        <RenderTitle text="About" />
+                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                            <RenderTitle text="About" height="100px" />
+                        </Box>
+
                         <Grid
                             item
                             xs={12}
@@ -78,13 +81,19 @@ const Mission = () => {
                             }
                         />
 
-                        <RenderTitle text="Support Zomia" />
+                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                            <RenderTitle text="Support Zomia" height="100px" />
+                        </Box>
+
                         <RenderBody
                             text={
                                 "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. Our federal ID number is 30-1201889. Contributions may be submitted online, or by wire transfer. For information about wire transfers, please contact us via the form above."
                             }
                         />
-                        <RenderTitle text="Partners" />
+
+                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                            <RenderTitle text="Partners" height="100px" />
+                        </Box>
                         <Partners />
                     </Box>
                 </Grid>

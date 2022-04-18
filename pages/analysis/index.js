@@ -18,11 +18,7 @@ const Analysis = () => {
                 </Typography>
                 {mockArticles.map((article, index) => {
                     return (
-                        <Link
-                            key={index}
-                            href={`/analysis/${article.id}`}
-                            passHref
-                        >
+                        <Link key={index} href={`/analysis/${article.id}`}>
                             <ListView
                                 heading={article.title}
                                 date={article.date}

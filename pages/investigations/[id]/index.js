@@ -17,7 +17,7 @@ const Investigations = (props) => {
         <Paper sx={{ paddingTop: 5 }}>
             {report && <Article article={report} isReport={true} />}
             {report && (
-                <Link href={"/" + report.pdfLink} replace="true" passHref>
+                <Link href={"/" + report.pdfLink} replace>
                     <Box sx={{ paddingY: 10 }}>
                         <Typography
                             variant="h5"

@@ -21,8 +21,14 @@ const Article = (props) => {
             <>
                 <AppBar position="fixed" sx={{ zIndex: 2 }}>
                     <OnlyTabsBar />
-                    <AppBar position="relative" color="secondary">
-                        <Typography>{article.title}</Typography>
+                    <AppBar
+                        position="relative"
+                        color="secondary"
+                        sx={{ marginTop: 1.4, textIndent: "1rem" }}
+                    >
+                        <Typography variant="h6" fontStyle={"italic"}>
+                            {article.title}
+                        </Typography>
                     </AppBar>
                 </AppBar>
 
@@ -44,7 +50,7 @@ const Article = (props) => {
                                     <VerticalDivider />
                                     <Box>
                                         <Typography
-                                            variant="h2"
+                                            variant="h3"
                                             sx={{ marginY: 3 }}
                                         >
                                             {article.title}

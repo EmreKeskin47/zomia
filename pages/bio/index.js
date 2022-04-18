@@ -21,7 +21,9 @@ const Bio = () => {
             >
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>
-                        <RenderTitle text="Team" />
+                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                            <RenderTitle text="Team" height="100px" />
+                        </Box>
                         <Grid
                             item
                             xs={12}
@@ -51,8 +53,12 @@ const Bio = () => {
                                     }
                                 })}
                         </Grid>
-
-                        <RenderTitle text="Board Of Directors" />
+                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                            <RenderTitle
+                                text="Board Of Directors"
+                                height="100px"
+                            />
+                        </Box>
                         <Grid
                             item
                             xs={12}

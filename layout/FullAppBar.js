@@ -15,79 +15,63 @@ import Tabs from "./Tabs";
 import imageLoader from "../loader";
 
 const FullAppBar = () => {
-    return (
-        <Box justifyContent="space-around" display="flex" width={"100%"}>
-            <Box
-                width={"20%"}
-                justifyContent="center"
-                display="flex"
-                alignItems={"center"}
-                sx={{
-                    cursor: "pointer",
-                }}
-            >
-                <Link href="/">
-                    <Image
-                        src="/static/logo.jpeg"
-                        loader={imageLoader}
-                        unoptimized
-                        alt="Logo"
-                        width="220px"
-                        height="90px"
-                    />
-                </Link>
-            </Box>
+  return (
+    <Box justifyContent="space-around" display="flex" width={"100%"}>
+      <Box
+        width={"20%"}
+        justifyContent="center"
+        display="flex"
+        alignItems={"center"}
+        sx={{
+          cursor: "pointer",
+        }}
+      >
+        <Link href="/">
+          <Image
+            src="/static/logo.jpeg"
+            loader={imageLoader}
+            unoptimized
+            alt="Logo"
+            width="220px"
+            height="90px"
+          />
+        </Link>
+      </Box>
 
-            <Box width={"70%"}>
-                <Box
-                    display="flex"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    height={54}
-                    sx={{
-                        cursor: "pointer",
-                    }}
-                >
-                    <Box
-                        borderLeft={"1px solid #2c253c"}
-                        borderRight={"1px solid #2c253c"}
-                        display="flex"
-                        width={"30%"}
-                        justifyContent={"space-around"}
-                    >
-                        <Link href="/admin">
-                            <Typography variant="h6">Admin</Typography>
-                        </Link>
-                        <Link href="/">
-                            <Typography variant="h6">Subscribe</Typography>
-                        </Link>
-                    </Box>
-                    <Box
-                        display="flex"
-                        width={"40%"}
-                        justifyContent={"space-around"}
-                    >
-                        <InstagramIcon />
-                        <TwitterIcon />
-                        <FacebookIcon />
-                        <EmailIcon />
-                        <YouTubeIcon />
-                        <LinkedInIcon />
-                        <NotificationsIcon />
-                    </Box>
-                    <Box
-                        display="flex"
-                        width={"10%"}
-                        justifyContent={"space-around"}
-                        borderLeft={"1px solid #2c253c"}
-                    >
-                        <SearchIcon />
-                    </Box>
-                </Box>
-                <Tabs border={true} />
-            </Box>
+      <Box width={"70%"}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          height={54}
+          sx={{
+            cursor: "pointer",
+          }}
+        >
+          <Box
+            borderLeft={"1px solid #2c253c"}
+            borderRight={"1px solid #2c253c"}
+            display="flex"
+            width={"80%"}
+            justifyContent={"space-around"}
+          >
+            <Link href="/admin">
+              <Typography variant="h6">Admin</Typography>
+            </Link>
+            <Link href="/">
+              <Typography variant="h6">Newsletter</Typography>
+            </Link>
+          </Box>
+          <Box display="flex" width={"20%"} justifyContent={"space-around"}>
+            <TwitterIcon />
+            <EmailIcon />
+            <LinkedInIcon />
+          </Box>
         </Box>
-    );
+        <Tabs border={true} />
+      </Box>
+    </Box>
+  );
 };
 
 export default FullAppBar;

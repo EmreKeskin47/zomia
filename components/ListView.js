@@ -20,9 +20,6 @@ const ListView = ({ heading, date, author, image, minRead }) => {
                     width="450px"
                     height="300px"
                     alt="zomia article"
-                    style={{
-                        borderRadius: "10px",
-                    }}
                 />
             </Grid>
             <Grid item xs={10} md={6} alignSelf={"center"}>

@@ -25,8 +25,8 @@ function renderProject(project, index) {
                         src={`/static/projects/${project.image}.png`}
                         loader={imageLoader}
                         unoptimized
-                        width={1300}
-                        height={750}
+                        width={"1300"}
+                        height={"750"}
                     />
                 </Grid>
 

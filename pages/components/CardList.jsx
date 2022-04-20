@@ -13,7 +13,11 @@ const CardList = ({ type }) => {
                     justifyContent={"space-around"}
                 >
                     {mockReports.map((item) => (
-                        <Grid item key={item.id}>
+                        <Grid
+                            item
+                            key={item.id}
+                            sx={{ paddingLeft: 5, paddingRight: 5 }}
+                        >
                             <Link
                                 href={`/investigations/${item.id}`}
                                 sx={{ paddingLeft: 5, paddingRight: 5 }}

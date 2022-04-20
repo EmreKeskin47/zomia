@@ -200,8 +200,8 @@ In my recent two weeks of research in Mogadishu, I could not find a single Somal
 export const mockProjects = [
     {
         name: "The Legacy of War Program",
-        image: "legacy",
-        secondaryImage: "legacy2",
+        image: "Legacy",
+        secondaryImage: "Legacy2",
         body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. The Legacy of War Program seeks to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. The Program also studies the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seeks to advocate on behalf of those affected by dictatorship and extremism. 
 
         Support for Survivors of Coalition Airstrikes – the U.S.-led air war against the Islamic State has potentially killed tens of thousands of civilians in Iraq and Syria. Until now, most of these victims and their loved ones have not received condolence payments that they are eligible for under U.S. law, nor have they received support for medical bills and lifelong disabilities. At Zomia, we are working with survivors and legal experts to redress civilian harm and to coordinate medical support.
@@ -214,7 +214,7 @@ export const mockProjects = [
     },
     {
         name: "Public Health Partners Program",
-        image: ["health1"],
+        image: ["Health1"],
         body: `Public health is a population-centric approach to the medical needs of individuals and communities. While third-party NGOs can administer broad-based public health programs, such as vaccination and awareness campaigns, effective long-term public health planning requires democratic accountability and population-level management—which governments, not private entities, are most well-suited to deliver. Zomia assists non-state actors and community groups in taking on the responsibilities of public health delivery, especially in conflict settings or in regions where population-centric healthcare faces challenges.
  
         Vaccination Study – Since 2001, the number of civil wars across the globe has increased 30 percent, leading to a proliferation of ungoverned and semi-governed spaces — territory under the control of militias, insurgent groups, or other autonomous local actors. This poses an acute challenge to public health; one scholar noted that "75 percent of epidemics during the last three decades have occurred in countries where war, conflict, and prolonged political violence have crippled their capacity to respond, leaving their neighbors and the world vulnerable.” In particular, these areas are potential sources of pandemics and “superbugs.” But successful public health programs require strong state actors, international coordination, and systemic solutions. This ongoing study explores public health in non-state spaces, focusing attention particularly on how basic health services become privatized during times of war, and the inherent weaknesses of relying on third-party actors (such as international NGOs) to implement public health programs. The current phase of the study focuses on vaccine delivery. 

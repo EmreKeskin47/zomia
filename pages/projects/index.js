@@ -119,11 +119,13 @@ const Projects = () => {
                             >
                                 <Tab
                                     label={data[0].name}
+                                    sx={{ fontSize: "1.5rem" }}
                                     wrapped
                                     {...a11yProps(0)}
                                 />
                                 <Tab
                                     label={data[1].name}
+                                    sx={{ fontSize: "1.5rem" }}
                                     wrapped
                                     {...a11yProps(1)}
                                 />

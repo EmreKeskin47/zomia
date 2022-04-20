@@ -13,7 +13,7 @@ const RenderBody = (props) => {
                 },
             }}
         >
-            <Typography variant="body1">{text}</Typography>
+            <Typography variant="h6">{text}</Typography>
         </Box>
     );
 };

@@ -1,9 +1,7 @@
 import * as React from "react";
-import { Grid, Typography, Link, Divider } from "@mui/material";
-import palette from "../../theme/palette";
+import { Grid, Typography, Link } from "@mui/material";
 import Image from "next/image";
 import popularImage from "../../public/static/deneme2.png";
-import { isMobile } from "react-device-detect";
 import imageLoader from "../../loader";
 
 const PopularRead = ({ heading, date, author }) => {
@@ -23,9 +21,6 @@ const PopularRead = ({ heading, date, author }) => {
                     width="450px"
                     height="300px"
                     alt="zomia article"
-                    style={{
-                        borderRadius: "10px",
-                    }}
                 />
             </Grid>
             <Grid item sm={12} xs={12} md={6} lg={6}>

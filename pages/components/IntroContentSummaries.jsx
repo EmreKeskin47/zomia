@@ -10,7 +10,7 @@ const IntroContentSummaries = () => {
                 return (
                     <Grid
                         sx={{
-                            padding: { xs: "0.5rem", md: "1.5rem" },
+                            padding: "0.5rem",
                         }}
                         key={index}
                     >

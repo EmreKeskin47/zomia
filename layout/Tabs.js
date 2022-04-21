@@ -61,7 +61,7 @@ const Tabs = (props) => {
                     </Typography>
                 </Box>
                 <Menu
-                    sx={{ mt: "30px", ml: "30px", background: "white" }}
+                    sx={{ mt: "30px", ml: "30px" }}
                     id="menu-appbar"
                     anchorEl={anchorElUser}
                     anchorOrigin={{

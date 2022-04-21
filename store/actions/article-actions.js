@@ -2,9 +2,7 @@ export const FETCH_ARTICLES = "FETCH_ARTICLES";
 export const CREATE_ARTICLE = "CREATE_ARTICLE";
 export const DELETE_ARTICLE = "DELETE_ARTICLE";
 export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
-import { collection, getDocs } from "firebase/firestore";
-
-import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 const db = getFirestore();
 
 /*

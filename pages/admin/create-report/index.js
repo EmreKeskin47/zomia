@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import ReportForm from "../../../components/admin/ReportCreateForm";
+import ReportForm from "../../../components/admin/ReportForm";
 
 const CreateReport = () => {
     return (

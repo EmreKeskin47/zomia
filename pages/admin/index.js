@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import { Article } from "../../models/Article";
 import Box from "@mui/material/Box";
-import ReportForm from "../../components/admin/ReportCreateForm";
+import ReportForm from "../../components/admin/ReportForm";
 import AdminAppBar from "../../components/admin/AdminAppBar";
 
 const Admin = () => {

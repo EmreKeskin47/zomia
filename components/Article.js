@@ -90,7 +90,7 @@ const Article = (props) => {
                                 <Grid
                                     item
                                     xs={12}
-                                    lg={10}
+                                    lg={11.5}
                                     justifyItems={"center"}
                                     justifyContent={"center"}
                                     alignItems={"center"}
@@ -99,7 +99,10 @@ const Article = (props) => {
                                     {article.text
                                         .split("<br />")
                                         .map((paragraph, index) => {
-                                            if (paragraph.includes(".")) {
+                                            if (
+                                                paragraph.includes(".") ||
+                                                paragraph.includes("@")
+                                            ) {
                                                 return (
                                                     <RenderBody
                                                         key={index}

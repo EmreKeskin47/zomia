@@ -28,7 +28,13 @@ const Investigations = (props) => {
             {report && <Article article={report} isReport={true} />}
             {report && (
                 <Link href={"/" + report.pdfLink} replace>
-                    <Box sx={{ paddingBottom: 10 }}>
+                    <Box
+                        sx={{
+                            paddingBottom: 10,
+                            display: "flex",
+                            justifyContent: "center",
+                        }}
+                    >
                         <StyledTypography
                             variant="h5"
                             textAlign={"center"}
@@ -37,6 +43,10 @@ const Investigations = (props) => {
                                 color: "whitesmoke",
                                 fontSize: 20,
                                 cursor: "pointer",
+                                borderStyle: "solid",
+                                borderWidth: "2.5px",
+                                width: "40%",
+                                padding: "2px",
                             }}
                         >
                             Click to view the full report

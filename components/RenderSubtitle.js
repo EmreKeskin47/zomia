@@ -6,14 +6,14 @@ const RenderSubtitle = (props) => {
     const { text } = props;
     return (
         <Box
-            marginY={3}
+            marginY={4}
             sx={{
                 marginLeft: {
-                    lg: 15,
+                    lg: 0,
                 },
             }}
         >
-            <Typography variant="h4">{text}</Typography>
+            <Typography variant="h3">{text}</Typography>
         </Box>
     );
 };

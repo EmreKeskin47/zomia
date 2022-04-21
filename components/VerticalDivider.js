@@ -17,7 +17,7 @@ const VerticalDivider = (props) => {
                 height: "100%",
                 borderRadius: 8,
                 width: 10,
-                background: "#e5c15e",
+                background: "#F9A21B",
                 marginRight: { xs: 5, md: 10 },
             }}
         ></Divider>

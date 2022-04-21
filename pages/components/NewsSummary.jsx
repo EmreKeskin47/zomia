@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Divider, Grid } from "@mui/material";
+import { Box, CardActionArea, Divider, Grid } from "@mui/material";
 import palette from "../../theme/palette";
 
 const NewsSummary = (props) => {
@@ -25,7 +25,16 @@ const NewsSummary = (props) => {
                         image={props.image}
                         alt="green iguana"
                     />
-                    <CardContent sx={{ backgroundColor: palette.black.main }}>
+                    <CardContent
+                        sx={{
+                            backgroundColor: palette.black.main,
+                            minHeight: 350,
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            display: "flex",
+                        }}
+                    >
                         <Typography
                             gutterBottom
                             variant="h5"
@@ -34,33 +43,36 @@ const NewsSummary = (props) => {
                         >
                             {props.title}
                         </Typography>
+
                         <Typography variant="body2" color="whitesmoke">
                             {props.description}
                         </Typography>
                         <Divider
                             sx={{ marginTop: 2, marginBottom: 2 }}
                         ></Divider>
-                        <Typography
-                            align="left"
-                            variant="caption"
-                            sx={{
-                                fontStyle: "italic",
-                                color: "whitesmoke",
-                            }}
-                        >
-                            {props.date} /
-                        </Typography>
+                        <Box sx={{ textAlign: "left", width: "100%" }}>
+                            <Typography
+                                align="left"
+                                variant="caption"
+                                sx={{
+                                    fontStyle: "italic",
+                                    color: "whitesmoke",
+                                }}
+                            >
+                                {props.date} /
+                            </Typography>
 
-                        <Typography
-                            align="left"
-                            variant="caption"
-                            sx={{
-                                fontStyle: "italic",
-                                color: "whitesmoke",
-                            }}
-                        >
-                            {props.author}
-                        </Typography>
+                            <Typography
+                                align="left"
+                                variant="caption"
+                                sx={{
+                                    fontStyle: "italic",
+                                    color: "whitesmoke",
+                                }}
+                            >
+                                {props.author}
+                            </Typography>
+                        </Box>
                     </CardContent>
                 </CardActionArea>
             </Card>

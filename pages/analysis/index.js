@@ -9,12 +9,12 @@ const Analysis = () => {
         <Paper sx={{ paddingTop: 5 }}>
             <Container>
                 <Typography
-                    variant="h2"
+                    variant="h4"
                     marginY={15}
                     textAlign="center"
                     paddingBottom={10}
                 >
-                    Articles
+                    Analysis
                 </Typography>
                 {mockArticles.map((article, index) => {
                     return (

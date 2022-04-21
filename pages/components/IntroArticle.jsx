@@ -3,19 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
-import styled from "@emotion/styled";
+import { CardActionArea, Grid } from "@mui/material";
+import { useRouter } from "next/router";
 import palette from "../../theme/palette";
 
 export default function IntroArticle(props) {
-    const StyledButton = styled(Button)(({ theme }) => ({
-        color: "#000",
-        "&:hover": {
-            color: theme.palette.secondary.main,
-            backgroundColor: "transparent",
-        },
-    }));
-
+    const router = useRouter();
     return (
         <Grid
             sx={{
@@ -29,7 +22,9 @@ export default function IntroArticle(props) {
                     maxWidth: 1,
                 }}
             >
-                <CardActionArea>
+                <CardActionArea
+                    onClick={() => router.push("/investigations/1")}
+                >
                     <CardMedia
                         component="img"
                         image="/static/articles/2.png"
@@ -42,14 +37,18 @@ export default function IntroArticle(props) {
                             component="div"
                             sx={{ color: "whitesmoke" }}
                         >
-                            American Withdrawal and the Creeping Syrian Regime:
-                            The View from Manbij
+                            Proxy War in the Northern Corridor: How Inequality
+                            Shaped the Syrian War: The Case of Mare’a
                         </Typography>
                         <Typography
                             variant="subtitle1"
                             sx={{ color: "whitesmoke" }}
                         >
-                            Short Description or first line of the article
+                            During the Syrian civil war, towns and cities across
+                            the country overthrew the central government and
+                            governed themselves. Ultimately, however, this
+                            experiment in self-rule collapsed: some cities
+                            fell...
                         </Typography>
                     </CardContent>
                 </CardActionArea>

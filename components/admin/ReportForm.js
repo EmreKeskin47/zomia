@@ -12,63 +12,64 @@ import { ToastContainer, toast } from "react-toastify";
 import { Box } from "@mui/system";
 
 const Input = styled("input")({
-  display: "none",
+    display: "none",
 });
 
 const useStyles = makeStyles({
-  subHeader: {
-    marginTop: 10,
-  },
-  divider: {
-    marginBottom: 10,
-    marginTop: 25,
-  },
-  textField: {
-    marginTop: 10,
-    marginBottom: 10,
-    backgroundColor: "#fafafa",
-  },
+    subHeader: {
+        marginTop: 10,
+    },
+    divider: {
+        marginBottom: 10,
+        marginTop: 25,
+    },
+    textField: {
+        marginTop: 10,
+        marginBottom: 10,
+        backgroundColor: "#fafafa",
+    },
 });
 
 const ReportForm = (props) => {
-  const firestore = getFirestore();
-  const classes = useStyles();
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
-  const [date, setDate] = useState("");
-  const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [text, setText] = useState("");
+    const { pageTitle } = props;
+    const firestore = getFirestore();
+    const classes = useStyles();
+    const [title, setTitle] = useState("");
+    const [image, setImage] = useState("");
+    const [date, setDate] = useState("");
+    const [author, setAuthor] = useState("");
+    const [category, setCategory] = useState("");
+    const [description, setDescription] = useState("");
+    const [link, setLink] = useState("");
+    const [text, setText] = useState("");
 
-  const addArticle = async () => {
-    try {
-      await setDoc(
-        doc(firestore, "articles"),
-        {
-          author: author,
-          date: date,
-          id: id,
-          text: text,
-          title: title,
-        },
-        { merge: true }
-      );
-      toast.success("Article has been uploaded");
-    } catch (e) {
-      toast.error(e.message);
-    }
-  };
+    const addArticle = async () => {
+        try {
+            await setDoc(
+                doc(firestore, "articles"),
+                {
+                    author: author,
+                    date: date,
+                    id: id,
+                    text: text,
+                    title: title,
+                },
+                { merge: true }
+            );
+            toast.success("Article has been uploaded");
+        } catch (e) {
+            toast.error(e.message);
+        }
+    };
 
-  const saveArticle = () => {
-    // const newArticle = new Report();
-    addArticle();
-  };
+    const saveArticle = () => {
+        // const newArticle = new Report();
+        addArticle();
+    };
 
-  const deleteArticle = () => {
-    console.log("delete article");
-  };
+    const deleteArticle = () => {
+        console.log("delete article");
+    };
 
     return (
         <>
@@ -156,16 +157,16 @@ const ReportForm = (props) => {
                     </Button>
                 </label>
 
-        <Button
-          onClick={saveArticle}
-          variant="contained"
-          endIcon={<SendIcon />}
-        >
-          Save
-        </Button>
-      </Stack>
-    </>
-  );
+                <Button
+                    onClick={saveArticle}
+                    variant="contained"
+                    endIcon={<SendIcon />}
+                >
+                    Save
+                </Button>
+            </Stack>
+        </>
+    );
 };
 
 export default ReportForm;

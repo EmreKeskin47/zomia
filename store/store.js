@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createWrapper } from "next-redux-wrapper";
 import articleReducer from "./reducers/article-reducer";
+import reportReducer from "./reducers/report-reducer";
 
 // initial states here
 const initalState = {};
@@ -10,7 +11,10 @@ const initalState = {};
 // middleware
 const middleware = [thunk];
 
-const rootReducer = combineReducers({ articleStore: articleReducer });
+const rootReducer = combineReducers({
+    articleStore: articleReducer,
+    reportStore: reportReducer,
+});
 
 // creating store
 export const store = createStore(

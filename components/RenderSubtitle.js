@@ -9,7 +9,7 @@ const RenderSubtitle = (props) => {
             marginY={4}
             sx={{
                 marginLeft: {
-                    lg: 0,
+                    lg: 3,
                 },
             }}
         >

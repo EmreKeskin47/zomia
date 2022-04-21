@@ -7,7 +7,7 @@ import palette from "../theme/palette";
 import { isMobile } from "react-device-detect";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./contants/firebase";
+import { firebaseConfig } from "./components/contants/firebase";
 import { wrapper, store } from "../store/store";
 import { Provider } from "react-redux";
 
@@ -26,7 +26,7 @@ const font = createTheme({
 });
 
 function MyApp({ Component, pageProps }) {
-  initializeApp(firebaseConfig);
+    initializeApp(firebaseConfig);
     return (
         <Provider store={store}>
             <ThemeConfig>

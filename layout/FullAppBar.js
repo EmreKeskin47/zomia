@@ -3,14 +3,9 @@ import { Typography } from "@material-ui/core";
 import Link from "next/link";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SearchIcon from "@mui/icons-material/Search";
 import Tabs from "./Tabs";
 import imageLoader from "../loader";
 

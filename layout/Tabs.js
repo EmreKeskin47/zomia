@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Link from "next/link";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import { MenuItem, Typography } from "@material-ui/core";
 
 const Tabs = (props) => {
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -77,15 +76,20 @@ const Tabs = (props) => {
                     onClose={handleCloseUserMenu}
                 >
                     <MenuItem onClick={handleCloseUserMenu}>
-                        <Box>
+                        <Box
+                            sx={{
+                                color: "whitesmoke",
+                                height: "20%",
+                            }}
+                        >
                             <Link href="/mission" passhref="true">
-                                <Typography variant="h6" color="text.primary">
+                                <Typography variant="h6" color="">
                                     Mission
                                 </Typography>
                             </Link>
 
                             <Link href="/bio" passhref="true">
-                                <Typography variant="h6" color="text.primary">
+                                <Typography variant="h6" color="text.secondary">
                                     Bio
                                 </Typography>
                             </Link>

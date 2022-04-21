@@ -9,7 +9,7 @@ const RenderBody = (props) => {
             marginY={3}
             sx={{
                 marginLeft: {
-                    lg: 0,
+                    lg: 3,
                 },
             }}
         >

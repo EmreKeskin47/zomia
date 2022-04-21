@@ -16,27 +16,19 @@ const AdminAppBar = () => {
                         cursor: "pointer",
                     }}
                 >
-                    <Link href="/admin/create-article">
-                        <Typography variant="h6" color="text.secondary">
-                            Create Article
-                        </Typography>
+                    <Link href="/admin/create-article" passhref="true">
+                        <Typography variant="h6">Create Article</Typography>
                     </Link>
-                    <Link href="/admin/edit-article">
-                        <Typography variant="h6" color="text.secondary">
-                            Edit Article
-                        </Typography>
+                    <Link href="/admin/edit-article" passhref="true">
+                        <Typography variant="h6">Edit Article</Typography>
                     </Link>
 
-                    <Link href="/admin/create-report">
-                        <Typography variant="h6" color="text.secondary">
-                            Create Report
-                        </Typography>
+                    <Link href="/admin/create-report" passhref="true">
+                        <Typography variant="h6">Create Report</Typography>
                     </Link>
 
-                    <Link href="/admin/edit-report">
-                        <Typography variant="h6" color="text.secondary">
-                            Edit Report
-                        </Typography>
+                    <Link href="/admin/edit-report" passhref="true">
+                        <Typography variant="h6">Edit Report</Typography>
                     </Link>
                 </Box>
             </Box>

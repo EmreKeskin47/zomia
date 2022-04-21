@@ -14,6 +14,9 @@ export default (state = initialState, action) => {
         case FETCH_ARTICLES:
             state.articles = action.payload;
             return state;
+        case DELETE_ARTICLE:
+            state.articles.filter((item) => item.id === action.payload);
+            return state;
     }
     return state;
 };

@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import { Article } from "../../models/Article";
 import Box from "@mui/material/Box";
 import ReportForm from "../../components/admin/ReportForm";
 import AdminAppBar from "../../components/admin/AdminAppBar";
+import { useDispatch } from "react-redux";
+import * as articleActions from "../../store/actions/article-actions";
 
 const Admin = () => {
-    const saveArticle = () => {
-        console.log("save article", image);
-        const newArticle = new Article(
-            0,
-            title,
-            image,
-            date,
-            author,
-            category,
-            description,
-            link,
-            text
-        );
-        console.log(newArticle);
-    };
+    const dispatch = useDispatch();
 
-    const deleteArticle = () => {
-        console.log("delete article");
-    };
+    useEffect(() => {
+        dispatch(articleActions.fetchArticles());
+        dispatch(articleActions.deleteArticle(2));
+    }, []);
 
     return (
         <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>

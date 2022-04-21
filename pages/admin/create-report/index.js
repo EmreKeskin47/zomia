@@ -1,14 +1,16 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
+import AdminAppBar from "../../../components/admin/AdminAppBar";
 import ReportForm from "../../../components/admin/ReportCreateForm";
 
 const CreateReport = () => {
     return (
-        <Grid container justifyContent="center" padding={4}>
-            <Grid item xs={10}>
+        <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
+            <AdminAppBar />
+            <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
                 <ReportForm />
             </Grid>
-        </Grid>
+        </Box>
     );
 };
 

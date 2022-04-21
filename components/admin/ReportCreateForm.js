@@ -52,7 +52,6 @@ const ReportForm = (props) => {
             <Grid container marginTop={5}>
                 <Typography variant="h4">Create Report</Typography>
 
-                <Divider className={classes.divider} />
                 <TextField
                     id="outlined-multiline-static"
                     label="Title"

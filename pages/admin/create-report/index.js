@@ -8,7 +8,7 @@ const CreateReport = () => {
         <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
             <AdminAppBar />
             <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
-                <ReportForm />
+                <ReportForm pageTitle={"Create Report"} />
             </Grid>
         </Box>
     );

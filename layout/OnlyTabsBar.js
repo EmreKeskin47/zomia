@@ -15,7 +15,7 @@ const OnlyTabsBar = () => {
                 alignItems={"center"}
                 sx={{ cursor: "pointer" }}
             >
-                <Link href="/">
+                <Link href="/" passHref>
                     <Image
                         src="/static/logo.svg"
                         loader={imageLoader}

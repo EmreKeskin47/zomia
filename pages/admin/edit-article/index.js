@@ -13,7 +13,7 @@ const EditArticle = () => {
                     width={"90%"}
                     marginX={"5%"}
                 >
-                    <ReportForm />
+                    <ReportForm pageTitle={"Edit Article"} />
                 </Grid>
             </Box>
         </>

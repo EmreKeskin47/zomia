@@ -28,13 +28,15 @@ const useStyles = makeStyles({
     },
 });
 
-const ReportForm = (props) => {
+const ArticleForm = (props) => {
     const { pageTitle } = props;
+    const classes = useStyles();
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [date, setDate] = useState("");
     const [author, setAuthor] = useState("");
     const [category, setCategory] = useState("");
+    const [description, setDescription] = useState("");
     const [link, setLink] = useState("");
     const [text, setText] = useState("");
 
@@ -90,7 +92,7 @@ const ReportForm = (props) => {
                 />
                 <TextField
                     id="outlined-multiline-static"
-                    label="Description Text"
+                    label="Text"
                     multiline
                     fullWidth
                     minRows={15}
@@ -119,18 +121,6 @@ const ReportForm = (props) => {
                         Upload Image
                     </Button>
                 </label>
-                <label htmlFor="contained-button-file">
-                    <Input
-                        accept="image/*"
-                        id="contained-button-file"
-                        multiple
-                        type="file"
-                        onChange={(e) => setImage(e.target.files[0])}
-                    />
-                    <Button variant="contained" component="span">
-                        Upload PDF
-                    </Button>
-                </label>
 
                 <Button
                     onClick={saveArticle}
@@ -144,4 +134,4 @@ const ReportForm = (props) => {
     );
 };
 
-export default ReportForm;
+export default ArticleForm;

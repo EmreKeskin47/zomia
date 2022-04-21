@@ -1,7 +1,8 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import ReportForm from "../../../components/admin/ReportCreateForm";
+import ArticleForm from "../../../components/admin/ArticleForm";
+
 const EditArticle = () => {
     return (
         <>
@@ -13,7 +14,7 @@ const EditArticle = () => {
                     width={"90%"}
                     marginX={"5%"}
                 >
-                    <ReportForm pageTitle={"Edit Article"} />
+                    <ArticleForm pageTitle={"Edit Article"} />
                 </Grid>
             </Box>
         </>

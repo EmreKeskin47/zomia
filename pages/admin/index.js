@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import { Article } from "../../models/Article";
 import Box from "@mui/material/Box";
 import ReportForm from "../../components/admin/ReportCreateForm";
+import AdminAppBar from "../../components/admin/AdminAppBar";
 
 const Admin = () => {
     const saveArticle = () => {
@@ -27,6 +28,7 @@ const Admin = () => {
 
     return (
         <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
+            <AdminAppBar />
             <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
                 <ReportForm />
             </Grid>

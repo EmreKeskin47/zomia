@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Typography, Divider } from "@material-ui/core";
+import Typography from "@mui/material/Typography";
+
 import { makeStyles } from "@material-ui/styles";
-import { Grid } from "@mui/material";
+import { Divider, Grid, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import { Report } from "../../models/Report";
+import { Button } from "@material-ui/core";
 
 const Input = styled("input")({
     display: "none",
@@ -19,10 +19,12 @@ const useStyles = makeStyles({
     },
     divider: {
         marginBottom: 10,
+        marginTop: 25,
     },
     textField: {
         marginTop: 10,
         marginBottom: 10,
+        backgroundColor: "#fafafa",
     },
 });
 
@@ -47,10 +49,8 @@ const ReportForm = (props) => {
 
     return (
         <>
-            <Grid item xs={10}>
-                <Typography variant="h5" className={classes.subHeader}>
-                    Create Report
-                </Typography>
+            <Grid container marginTop={5}>
+                <Typography variant="h4">Create Report</Typography>
 
                 <Divider className={classes.divider} />
                 <TextField
@@ -91,7 +91,7 @@ const ReportForm = (props) => {
                 />
                 <TextField
                     id="outlined-multiline-static"
-                    label="Text "
+                    label="Text"
                     multiline
                     fullWidth
                     minRows={15}

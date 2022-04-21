@@ -27,24 +27,24 @@ const Tabs = (props) => {
                 borderTop: border && "1px solid #2c253c",
             }}
         >
-            <Link href="/" passHref>
+            <Link href="/" passhref="true">
                 <Typography variant="h6" color="text.secondary">
                     Home
                 </Typography>
             </Link>
-            <Link href="/analysis" passHref>
+            <Link href="/analysis" passhref="true">
                 <Typography variant="h6" color="text.secondary">
                     Analysis
                 </Typography>
             </Link>
 
-            <Link href="/projects" passHref>
+            <Link href="/projects" passhref="true">
                 <Typography variant="h6" color="text.secondary">
                     Projects
                 </Typography>
             </Link>
 
-            <Link href="/investigations" passHref>
+            <Link href="/investigations" passhref="true">
                 <Typography variant="h6" color="text.secondary">
                     Investigations
                 </Typography>
@@ -52,7 +52,11 @@ const Tabs = (props) => {
 
             <Box sx={{ flexGrow: 0 }}>
                 <Box onClick={handleOpenUserMenu}>
-                    <Typography variant="h6" color="text.secondary" passHref>
+                    <Typography
+                        variant="h6"
+                        color="text.secondary"
+                        passhref="true"
+                    >
                         About
                     </Typography>
                 </Box>
@@ -74,13 +78,13 @@ const Tabs = (props) => {
                 >
                     <MenuItem onClick={handleCloseUserMenu}>
                         <Box>
-                            <Link href="/mission" passHref>
+                            <Link href="/mission" passhref="true">
                                 <Typography variant="h6" color="text.primary">
                                     Mission
                                 </Typography>
                             </Link>
 
-                            <Link href="/bio" passHref>
+                            <Link href="/bio" passhref="true">
                                 <Typography variant="h6" color="text.primary">
                                     Bio
                                 </Typography>

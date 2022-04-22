@@ -8,21 +8,22 @@ import { useDispatch } from "react-redux";
 import * as articleActions from "../../store/actions/article-actions";
 
 const Admin = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(articleActions.fetchArticles());
-        dispatch(articleActions.deleteArticle(2));
-    }, []);
+  useEffect(() => {
+    dispatch(articleActions.fetchArticles());
+    dispatch(articleActions.deleteArticle(2));
+    dispatch(articleActions.saveArticle());
+  }, []);
 
-    return (
-        <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
-            <AdminAppBar />
-            <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
-                <ReportForm pageTitle={"Create Report"} />
-            </Grid>
-        </Box>
-    );
+  return (
+    <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
+      <AdminAppBar />
+      <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
+        <ReportForm pageTitle={"Create Report"} />
+      </Grid>
+    </Box>
+  );
 };
 
 export default Admin;

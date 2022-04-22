@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Grid, Typography, Button, Link } from "@mui/material";
 import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
@@ -7,9 +8,13 @@ import SectionBreaker from "./components/SectionBreaker";
 import CardList from "./components/CardList";
 import { mockArticles } from "../MOCK_DATA";
 import ListView from "../components/ListView";
-import ArticleCarousel from "../components/ArticleCarousel";
+import { Box } from "@mui/system";
+import { mockReports } from "../MOCK_PDF";
 
 function App() {
+    const [latestCount, setLatestCount] = useState(4);
+    const data = [...mockArticles, ...mockReports];
+
     return (
         <Grid>
             <Grid
@@ -97,7 +102,7 @@ function App() {
             <SectionBreaker text="Latest" link="#" color="whitesmoke" />
             {/* Popular Reads Section */}
             <Container>
-                {mockArticles.map((article, index) => {
+                {data.slice(0, latestCount).map((article, index) => {
                     return (
                         <Link key={index} href={`/analysis/${article.id}`}>
                             <ListView
@@ -109,6 +114,32 @@ function App() {
                         </Link>
                     );
                 })}
+                <Box
+                    sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        paddingBottom: 15,
+                    }}
+                >
+                    <Button
+                        onClick={() => {
+                            setLatestCount(latestCount + 4);
+                        }}
+                    >
+                        <Typography
+                            variant="h5"
+                            textAlign={"center"}
+                            sx={{
+                                cursor: "pointer",
+                                borderStyle: "solid",
+                                borderWidth: "2.5px",
+                                padding: "12px",
+                            }}
+                        >
+                            Load more
+                        </Typography>
+                    </Button>
+                </Box>
             </Container>
 
             {/* End Popular Reads Section */}

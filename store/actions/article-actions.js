@@ -6,33 +6,28 @@ import { collection, getDocs, getFirestore, addDoc } from "firebase/firestore";
 import { title } from "process";
 import { db } from "../store";
 
-export const saveArticle = () => {
+export const saveArticle = (item) => {
   return async (dispatch) => {
     try {
       const docRef = await addDoc(collection(db, "articles"), {
-        title: "trial",
+        article: item,
       });
       console.log("Document written with ID: ", docRef.id);
       dispatch({
-        type: CREATE_ARTICLES,
-        payload: { title: "trial" },
+        type: CREATE_ARTICLE,
+        payload: {
+          title: item.title,
+          author: item.author,
+          date: item.date,
+          image: item.image,
+          text: item.text,
+          links: item.link,
+        },
       });
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
-  //   console.log("save article", image);
-  //   const newArticle = new Article(
-  //     0,
-  //     title,
-  //     image,
-  //     date,
-  //     author,
-  //     category,
-  //     description,
-  //     link,
-  //     text
-  //   );
 };
 
 // const deleteArticle = () => {

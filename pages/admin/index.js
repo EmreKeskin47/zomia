@@ -13,7 +13,6 @@ const Admin = () => {
   useEffect(() => {
     dispatch(articleActions.fetchArticles());
     dispatch(articleActions.deleteArticle(2));
-    dispatch(articleActions.saveArticle());
   }, []);
 
   return (

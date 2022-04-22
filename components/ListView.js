@@ -4,7 +4,7 @@ import Image from "next/image";
 import palette from "../theme/palette";
 import imageLoader from "../loader";
 
-const ListView = ({ heading, date, author, image, minRead }) => {
+const ListView = ({ heading, date, author, image, minRead, latest }) => {
     return (
         <Grid
             container
@@ -17,8 +17,8 @@ const ListView = ({ heading, date, author, image, minRead }) => {
                     src={image}
                     loader={imageLoader}
                     unoptimized
-                    width="450px"
-                    height="300px"
+                    width={latest ? "480px" : "450px"}
+                    height={latest ? "350px" : "300px"}
                     alt="zomia article"
                 />
             </Grid>
@@ -32,7 +32,7 @@ const ListView = ({ heading, date, author, image, minRead }) => {
                         {minRead ? minRead : "4 min read"}
                     </Typography>
                     <Typography
-                        variant="h4"
+                        variant={latest ? "h3" : "h4"}
                         sx={{
                             paddingTop: "2rem",
                             ":hover": { color: palette.orange.main },
@@ -41,7 +41,7 @@ const ListView = ({ heading, date, author, image, minRead }) => {
                         {heading}
                     </Typography>
                     <Typography
-                        variant="subtitle1"
+                        variant={latest ? "h6" : "subtitle1"}
                         fontStyle={"italic"}
                         sx={{ paddingTop: "2rem" }}
                     >

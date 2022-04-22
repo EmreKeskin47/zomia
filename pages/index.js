@@ -62,7 +62,22 @@ function App() {
                 color="whitesmoke"
             />
             {/* Articles Section */}
-            <ArticleCarousel />
+            <Container>
+                {mockArticles.map((article, index) => {
+                    return (
+                        <Link key={index} href={`/analysis/${article.id}`}>
+                            <ListView
+                                heading={article.title}
+                                date={article.date}
+                                author={article.author}
+                                image={article.image}
+                                latest={article.id === 1}
+                            />
+                        </Link>
+                    );
+                })}{" "}
+            </Container>
+
             {/* End Articles Section */}
             <SectionBreaker
                 text="Investigations"

@@ -29,5 +29,12 @@ export default function Card(theme) {
                 },
             },
         },
+        MuiCardActionArea: {
+            styleOverrides: {
+                root: {
+                    display: "block !important",
+                },
+            },
+        },
     };
 }

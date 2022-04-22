@@ -6,10 +6,10 @@ import GlobalStyles from "../theme/globalStyles";
 import palette from "../theme/palette";
 import { isMobile } from "react-device-detect";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./components/contants/firebase";
 import { wrapper, store } from "../store/store";
 import { Provider } from "react-redux";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../store/firebase";
 
 const font = createTheme({
     typography: {
@@ -27,6 +27,7 @@ const font = createTheme({
 
 function MyApp({ Component, pageProps }) {
     initializeApp(firebaseConfig);
+
     return (
         <Provider store={store}>
             <ThemeConfig>

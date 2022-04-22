@@ -4,7 +4,7 @@ export const UPDATE_REPORT = "UPDATE_REPORT";
 export const CREATE_REPORT = "CREATE_REPORT";
 
 import { collection, getDocs, getFirestore } from "firebase/firestore";
-const db = getFirestore();
+import { db } from "../store";
 
 export const fetchArticles = () => {
     return async (dispatch) => {

@@ -9,9 +9,9 @@ import { Report } from "./models/Report";
 export const mockReports = [
     new Report(
         "1",
-        "Proxy War in the Northern Corridor: How Inequality Shaped the Syrian War: The Case of Mare’a",
+        "Proxy War in the Northern Corridor, How Inequality Shaped the Syrian War: The Case of Mare’a",
         "/reports/1.png",
-        "date",
+        "May 2022",
         "Jeremy Hodge & Hussein Nasser",
         "category",
         desc1,
@@ -33,7 +33,7 @@ export const mockReports = [
         "3",
         "The Secret Life of Mullah Omar",
         "/reports/3.png",
-        "date",
+        "March 10 2019",
         "BETTE DAM",
         "category",
         desc3,

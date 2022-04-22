@@ -13,12 +13,14 @@ const FullAppBar = () => {
     return (
         <Box justifyContent="space-around" display="flex" width={"100%"}>
             <Box
-                width={"20%"}
+                width={"30%"}
                 justifyContent="center"
                 display="flex"
                 alignItems={"center"}
                 sx={{
                     cursor: "pointer",
+                    background:
+                        "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
                 }}
             >
                 <Link href="/">

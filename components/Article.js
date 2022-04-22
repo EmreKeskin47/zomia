@@ -124,7 +124,10 @@ const Article = (props) => {
                     </Grid>
                     {!isReport && (
                         <>
-                            <SectionBreaker text="Related Articles" />
+                            <SectionBreaker
+                                text="Related Articles"
+                                link="/investigations"
+                            />
                             <CardList type="report" />
                         </>
                     )}

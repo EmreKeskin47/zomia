@@ -27,35 +27,23 @@ const Tabs = (props) => {
             }}
         >
             <Link href="/" passhref="true">
-                <Typography variant="h6" color="text.secondary">
-                    Home
-                </Typography>
+                <Typography variant="h6">Home</Typography>
             </Link>
             <Link href="/analysis" passhref="true">
-                <Typography variant="h6" color="text.secondary">
-                    Analysis
-                </Typography>
+                <Typography variant="h6">Analysis</Typography>
             </Link>
 
             <Link href="/projects" passhref="true">
-                <Typography variant="h6" color="text.secondary">
-                    Projects
-                </Typography>
+                <Typography variant="h6">Projects</Typography>
             </Link>
 
             <Link href="/investigations" passhref="true">
-                <Typography variant="h6" color="text.secondary">
-                    Investigations
-                </Typography>
+                <Typography variant="h6">Investigations</Typography>
             </Link>
 
             <Box sx={{ flexGrow: 0 }}>
                 <Box onClick={handleOpenUserMenu}>
-                    <Typography
-                        variant="h6"
-                        color="text.secondary"
-                        passhref="true"
-                    >
+                    <Typography variant="h6" passhref="true">
                         About
                     </Typography>
                 </Box>
@@ -89,9 +77,7 @@ const Tabs = (props) => {
                             </Link>
 
                             <Link href="/bio" passhref="true">
-                                <Typography variant="h6" color="text.secondary">
-                                    Bio
-                                </Typography>
+                                <Typography variant="h6">Bio</Typography>
                             </Link>
                         </Box>
                     </MenuItem>

@@ -17,14 +17,13 @@ function App() {
                 justifyContent="center"
                 alignItems="center"
                 direction="row"
-                sx={{ backgroundColor: palette.orange.main }}
-            >
-                <Typography
-                    variant="overline"
-                    component="div"
-                    sx={{ color: "black", padding: "2rem" }}
-                ></Typography>
-            </Grid>
+                sx={{
+                    backgroundColor: palette.orange.main,
+                    boxShadow:
+                        " 3px 2px 4px -1px rgb(145 158 171 / 20%), 0px 4px 5px 0px rgb(145 180 171 / 34%), 0px 1px 10px 0px rgb(145 158 171 / 62%)",
+                    padding: "0.5rem",
+                }}
+            ></Grid>
             <Container>
                 {/* Intro */}
                 <Grid
@@ -57,11 +56,19 @@ function App() {
                 </Grid>
                 {/* End Intro */}
             </Container>
-            <SectionBreaker text="Articles" color="whitesmoke" />
+            <SectionBreaker
+                text="Analysis"
+                link="/analysis"
+                color="whitesmoke"
+            />
             {/* Articles Section */}
             <ArticleCarousel />
             {/* End Articles Section */}
-            <SectionBreaker text="Reports" color="whitesmoke" />
+            <SectionBreaker
+                text="Investigations"
+                link="/investigations"
+                color="whitesmoke"
+            />
             {/* Reports Section */}
             <Grid
                 container
@@ -72,7 +79,7 @@ function App() {
                 <CardList type={"report"} />
             </Grid>
             {/* End Reports Section */}
-            <SectionBreaker text="More Stories" color="whitesmoke" />
+            <SectionBreaker text="Latest" link="#" color="whitesmoke" />
             {/* Popular Reads Section */}
             <Container>
                 {mockArticles.map((article, index) => {

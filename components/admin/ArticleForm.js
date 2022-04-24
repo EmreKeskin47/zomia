@@ -10,6 +10,8 @@ import { Button } from "@material-ui/core";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
 import * as articleActions from "../../store/actions/article-actions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled("input")({
   display: "none",
@@ -34,16 +36,21 @@ const ArticleForm = (props) => {
 
   const saveArticle = () => {
     // const newArticle = new Report();
-    dispatch(
-      articleActions.saveArticle({
-        title: title,
-        author: author,
-        date: date,
-        description: description,
-        text: text,
-        links: link,
-      })
-    );
+    try {
+      dispatch(
+        articleActions.saveArticle({
+          title: title,
+          author: author,
+          date: date,
+          description: description,
+          text: text,
+          links: link,
+        })
+      );
+      toast("Article has been successfully added");
+    } catch (e) {
+      toast("HAVING PROBLEMS UPLOADING THE FILE`");
+    }
   };
 
   const { pageTitle } = props;
@@ -143,6 +150,7 @@ const ArticleForm = (props) => {
         >
           Save
         </Button>
+        <ToastContainer />
       </Stack>
     </>
   );

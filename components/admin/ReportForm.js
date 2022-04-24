@@ -8,10 +8,11 @@ import SendIcon from "@mui/icons-material/Send";
 import { Report } from "../../models/Report";
 import { Button } from "@material-ui/core";
 import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
-import { ToastContainer, toast } from "react-toastify";
 import { Box } from "@mui/system";
 import * as reportActions from "../../store/actions/report-actions";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled("input")({
   display: "none",
@@ -47,16 +48,20 @@ const ReportForm = (props) => {
   const dispatch = useDispatch();
 
   const saveReport = () => {
-    // const newArticle = new Report();
-    dispatch(
-      reportActions.saveReport({
-        title: title,
-        author: author,
-        date: date,
-        text: text,
-        links: link,
-      })
-    );
+    try {
+      dispatch(
+        reportActions.saveReport({
+          title: title,
+          author: author,
+          date: date,
+          text: text,
+          links: link,
+        })
+      );
+      toast("Report has been successfully added");
+    } catch (e) {
+      toast("HAVING PROBLEMS UPLOADING THE FILE");
+    }
   };
 
   const deleteArticle = () => {
@@ -147,6 +152,7 @@ const ReportForm = (props) => {
         <Button onClick={saveReport} variant="contained" endIcon={<SendIcon />}>
           Save
         </Button>
+        <ToastContainer />
       </Stack>
     </>
   );

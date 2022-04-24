@@ -10,6 +10,8 @@ import { isMobile } from "react-device-detect";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import { collection, getDocs, getFirestore, addDoc } from "firebase/firestore";
 import { db } from "../store/store";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -38,9 +40,9 @@ const Footer = () => {
       const docRef = await addDoc(collection(db, "emails"), {
         email: email,
       });
-      console.log("Document written with ID: ", docRef.id);
+      toast("Your email has been successfully added to the newsletter");
     } catch (e) {
-      console.error("Error adding document: ", e);
+      toast("HAVING PROBLEMS GETTING YOUR EMAIL`");
     }
   };
 
@@ -155,6 +157,7 @@ const Footer = () => {
                     Sign Up
                   </StyledTypography>
                 </StyledButton>
+                <ToastContainer />
               </Grid>
             </Grid>
           </Grid>

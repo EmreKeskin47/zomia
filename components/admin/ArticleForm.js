@@ -39,6 +39,7 @@ const ArticleForm = (props) => {
         title: title,
         author: author,
         date: date,
+        description: description,
         text: text,
         links: link,
       })
@@ -51,7 +52,6 @@ const ArticleForm = (props) => {
   const [image, setImage] = useState("");
   const [date, setDate] = useState("");
   const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [link, setLink] = useState("");
   const [text, setText] = useState("");
@@ -97,6 +97,17 @@ const ArticleForm = (props) => {
           sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
           value={link}
           onChange={(e) => setLink(e.target.value)}
+        />
+        <TextField
+          id="outlined-multiline-static"
+          label="Description"
+          multiline
+          fullWidth
+          minRows={5}
+          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+          variant="outlined"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <TextField
           id="outlined-multiline-static"

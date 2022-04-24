@@ -20,6 +20,7 @@ export const saveArticle = (item) => {
           date: item.date,
           image: item.image,
           text: item.text,
+          description: item.description,
           links: item.link,
         },
       });

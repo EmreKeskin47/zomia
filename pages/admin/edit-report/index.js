@@ -1,11 +1,11 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import ReportForm from "../../../components/admin/ReportForm";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import EditReportForm from "../../../components/admin/EditReportForm";
 
 const EditReport = () => {
     const [age, setAge] = React.useState("");
@@ -52,7 +52,7 @@ const EditReport = () => {
                         })}
                     </Select>
                 </FormControl>
-                <ReportForm pageTitle={"Edit Report"} />
+                <EditReportForm pageTitle={"Edit Report"} />
             </Grid>
         </Box>
     );

@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import ArticleForm from "../../../components/admin/ArticleForm";
+import CreateArticleForm from "../../../components/admin/CreateArticleForm";
 
 const CreateArticle = () => {
     return (
@@ -14,7 +14,7 @@ const CreateArticle = () => {
                     width={"90%"}
                     marginX={"5%"}
                 >
-                    <ArticleForm pageTitle={"Create Article"} />
+                    <CreateArticleForm pageTitle={"Create Article"} />
                 </Grid>
             </Box>
         </>

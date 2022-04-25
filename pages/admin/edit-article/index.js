@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import ArticleForm from "../../../components/admin/ArticleForm";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
+import EditArticleForm from "../../../components/admin/EditArticleForm";
 
 const EditArticle = () => {
     const [age, setAge] = React.useState("");
@@ -60,7 +60,7 @@ const EditArticle = () => {
                             })}
                         </Select>
                     </FormControl>
-                    <ArticleForm pageTitle={"Edit Article"} />
+                    <EditArticleForm pageTitle={"Edit Article"} />
                 </Grid>
             </Box>
         </>

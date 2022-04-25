@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     },
 });
 
-const ReportForm = (props) => {
+const EditReportForm = (props) => {
     const { pageTitle } = props;
     const classes = useStyles();
     const [title, setTitle] = useState("");
@@ -261,4 +261,4 @@ const ReportForm = (props) => {
     );
 };
 
-export default ReportForm;
+export default EditReportForm;

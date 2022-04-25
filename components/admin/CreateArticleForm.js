@@ -5,13 +5,17 @@ import { Grid, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import SendIcon from "@mui/icons-material/Send";
-import { Report } from "../../models/Report";
 import { Button } from "@material-ui/core";
-import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
 import * as articleActions from "../../store/actions/article-actions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+    getStorage,
+    ref,
+    uploadBytesResumable,
+    getDownloadURL,
+} from "firebase/storage";
 
 const Input = styled("input")({
     display: "none",
@@ -32,10 +36,19 @@ const useStyles = makeStyles({
 });
 
 const CreateArticleForm = (props) => {
+    const { pageTitle } = props;
+    const [title, setTitle] = useState("");
+    const [image, setImage] = useState("");
+    const [date, setDate] = useState("");
+    const [author, setAuthor] = useState("");
+    const [description, setDescription] = useState("");
+    const [link, setLink] = useState("");
+    const [text, setText] = useState("");
+    const [uploading, setUploading] = useState(false);
+    const [percent, setPercent] = useState(0);
     const dispatch = useDispatch();
 
     const saveArticle = () => {
-        // const newArticle = new Report();
         try {
             dispatch(
                 articleActions.saveArticle({
@@ -45,6 +58,7 @@ const CreateArticleForm = (props) => {
                     description: description,
                     text: text,
                     links: link,
+                    image: image,
                 })
             );
             toast("Article has been successfully added");
@@ -53,15 +67,57 @@ const CreateArticleForm = (props) => {
         }
     };
 
-    const { pageTitle } = props;
-    const classes = useStyles();
-    const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
-    const [date, setDate] = useState("");
-    const [author, setAuthor] = useState("");
-    const [description, setDescription] = useState("");
-    const [link, setLink] = useState("");
-    const [text, setText] = useState("");
+    const handleImageUpload = async (event) => {
+        console.log(event.target.files[0]);
+        const metadata = {
+            contentType: "image/jpeg",
+        };
+
+        const storage = getStorage();
+        const storageRef = ref(storage, `article/${title}.pdf`);
+
+        const uploadTask = uploadBytesResumable(
+            storageRef,
+            event.target.files[0],
+            metadata
+        );
+
+        // Register three observers:
+        // 1. 'state_changed' observer, called any time the state changes
+        // 2. Error observer, called on failure
+        // 3. Completion observer, called on successful completion
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                // Observe state change events such as progress, pause, and resume
+                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                setUploading(true);
+                const progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                setPercent(progress);
+                console.log("Upload is " + progress + "% done");
+                switch (snapshot.state) {
+                    case "paused":
+                        console.log("Upload is paused");
+                        break;
+                    case "running":
+                        console.log("Upload is running");
+                        break;
+                }
+            },
+            (error) => {
+                // Handle unsuccessful uploads
+            },
+            () => {
+                // Handle successful uploads on complete
+                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    setUploading(false);
+                    setImage(downloadURL);
+                });
+            }
+        );
+    };
 
     return (
         <>
@@ -129,6 +185,10 @@ const CreateArticleForm = (props) => {
                 />
             </Grid>
 
+            {uploading &&
+                percent > 0 &&
+                toast("Upload is " + percent + "% done")}
+
             <Stack
                 direction="row"
                 alignItems="end"
@@ -141,7 +201,7 @@ const CreateArticleForm = (props) => {
                         id="contained-button-file"
                         multiple
                         type="file"
-                        onChange={(e) => setImage(e.target.files[0])}
+                        onChange={handleImageUpload}
                     />
                     <Button variant="contained" component="span">
                         Upload Image

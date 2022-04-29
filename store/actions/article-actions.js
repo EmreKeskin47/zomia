@@ -2,7 +2,15 @@ export const FETCH_ARTICLES = "FETCH_ARTICLES";
 export const CREATE_ARTICLE = "CREATE_ARTICLE";
 export const DELETE_ARTICLE = "DELETE_ARTICLE";
 export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import {
+    collection,
+    getDocs,
+    addDoc,
+    doc,
+    updateDoc,
+    deleteDoc,
+    deleteField,
+} from "firebase/firestore";
 import { db } from "../store";
 import { Article } from "../../models/Article";
 
@@ -46,15 +54,15 @@ export const fetchArticles = () => {
                 articles.push(
                     new Article(
                         doc.id,
-                        doc.data().article.title,
-                        doc.data().article.image,
-                        doc.data().article.date,
-                        doc.data().article.author,
-                        doc.data().article.category,
-                        doc.data().article.description,
-                        doc.data().article.link,
-                        doc.data().article.text,
-                        doc.data().article.additionalImages
+                        doc.data().article.title ?? "",
+                        doc.data().article.image ?? "",
+                        doc.data().article.date ?? "",
+                        doc.data().article.author ?? "",
+                        doc.data().article.category ?? "",
+                        doc.data().article.description ?? "",
+                        doc.data().article.link ?? "",
+                        doc.data().article.text ?? "",
+                        doc.data().article.additionalImages ?? ""
                     )
                 );
             });
@@ -71,8 +79,10 @@ export const fetchArticles = () => {
 export const deleteArticle = (id) => {
     return async (dispatch) => {
         try {
-            const res = await db.collection("articles").doc(id).delete();
-            console.log(res);
+            const cityRef = doc(db, "articles", id);
+            console.log(cityRef);
+
+            await deleteDoc(cityRef);
             dispatch({
                 type: DELETE_ARTICLE,
                 payload: id,

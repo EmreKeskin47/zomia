@@ -4,10 +4,12 @@ export const UPDATE_REPORT = "UPDATE_REPORT";
 export const CREATE_REPORT = "CREATE_REPORT";
 import {
     collection,
-    doc,
     getDocs,
-    getFirestore,
     addDoc,
+    doc,
+    updateDoc,
+    deleteDoc,
+    deleteField,
 } from "firebase/firestore";
 import { db } from "../store";
 import { Report } from "../../models/Report";
@@ -69,13 +71,15 @@ export const fetchReports = () => {
     };
 };
 
-export const deleteArticle = (id) => {
+export const deleteReport = (id) => {
     return async (dispatch) => {
         try {
-            const res = await db.collection("reports").doc(id).delete();
-            console.log(res);
+            const cityRef = doc(db, "reports", id);
+            console.log(cityRef);
+
+            await deleteDoc(cityRef);
             dispatch({
-                type: DELETE_ARTICLE,
+                type: DELETE_REPORT,
                 payload: id,
             });
         } catch (err) {

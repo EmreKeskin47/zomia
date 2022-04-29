@@ -34,6 +34,7 @@ const EditReport = () => {
     const handleChange = (event) => {
         console.log(event.target.value);
     };
+    const [id, setId] = useState("");
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [date, setDate] = useState("");
@@ -167,7 +168,8 @@ const EditReport = () => {
 
     const deleteReport = () => {
         try {
-            console.log(report);
+            dispatch(reportActions.deleteReport(id));
+            toast("Report has been successfully deleted");
         } catch (err) {
             toast("HAVING PROBLEMS DELETING THE REPORT");
         }
@@ -209,6 +211,7 @@ const EditReport = () => {
                                             value={item.title}
                                             onClick={() => {
                                                 setReport(item);
+                                                setId(item.id);
                                                 setTitle(item.title);
                                                 setAuthor(item.author);
                                                 setDate(item.date);

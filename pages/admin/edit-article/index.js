@@ -22,15 +22,12 @@ const Input = styled("input")({
 
 const EditArticle = () => {
     const dispatch = useDispatch();
-
     const articleList = useSelector((state) => state.articleStore.articles);
-
     useEffect(() => {
         dispatch(articleActions.fetchArticles());
     }, [dispatch, articleList]);
 
     const [article, setArticle] = useState();
-
     const handleChange = (event) => {
         setId(event.target.value);
     };
@@ -48,10 +45,11 @@ const EditArticle = () => {
 
     const deleteArticle = () => {
         try {
-            console.log(id);
-            toast("Article has been successfully added");
+            console.log(article);
+            dispatch(articleActions.deleteArticle(1));
+            toast("Article has been successfully deleted");
         } catch (e) {
-            toast("HAVING PROBLEMS UPLOADING THE FILE`");
+            toast("HAVING PROBLEMS WITH DELETE");
         }
     };
 

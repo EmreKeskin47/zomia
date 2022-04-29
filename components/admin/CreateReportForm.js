@@ -40,7 +40,7 @@ const CreateReportForm = (props) => {
     const [author, setAuthor] = useState("");
     const [link, setLink] = useState("");
     const [text, setText] = useState("");
-    const [pdf, setPdf] = useState();
+    const [pdf, setPdf] = useState("");
     const [uploading, setUploading] = useState(false);
     const [percent, setPercent] = useState(0);
 

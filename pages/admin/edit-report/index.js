@@ -2,6 +2,7 @@ import { Box, Grid } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
 import InputLabel from "@mui/material/InputLabel";
+import { styled } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -20,7 +21,9 @@ import {
     uploadBytesResumable,
     getDownloadURL,
 } from "firebase/storage";
-
+const Input = styled("input")({
+    display: "none",
+});
 const EditReport = () => {
     const [report, setReport] = useState("");
     const dispatch = useDispatch();
@@ -288,20 +291,30 @@ const EditReport = () => {
                         spacing={2}
                         marginBottom={10}
                     >
-                        <input
-                            accept=".pdf"
-                            id="contained-button-file"
-                            type="file"
-                            onChange={handlePDFUpload}
-                        />
-                        <label htmlFor="contained-button-file"></label>
                         <label htmlFor="contained-button-file">
-                            <input
-                                accept=".jpg,.jpeg,.png"
+                            <Input
+                                accept=".pdf"
                                 id="contained-button-file"
+                                multiple
+                                type="file"
+                                onChange={handlePDFUpload}
+                            />
+                            <Button variant="contained" component="span">
+                                Upload PDF
+                            </Button>
+                        </label>
+
+                        <label htmlFor="contained-image-file">
+                            <Input
+                                accept=".jpg,.jpeg,.png"
+                                id="contained-image-file"
+                                multiple
                                 type="file"
                                 onChange={handleImageUpload}
                             />
+                            <Button variant="contained" component="span">
+                                Upload Image
+                            </Button>
                         </label>
 
                         <Button

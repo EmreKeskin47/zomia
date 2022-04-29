@@ -45,7 +45,12 @@ const CreateReportForm = (props) => {
     const [percent, setPercent] = useState(0);
 
     const dispatch = useDispatch();
-
+    const preserveLineBreak = (text) => {
+        while (text.includes("\n")) {
+            text = text.replace("\n", "\\n");
+        }
+        return text;
+    };
     const handlePDFUpload = async (event) => {
         const metadata = {
             contentType: "application/pdf",
@@ -155,7 +160,7 @@ const CreateReportForm = (props) => {
                     title: title,
                     author: author,
                     date: date,
-                    text: text,
+                    text: preserveLineBreak(text),
                     links: link,
                     pdf: pdf,
                     image: image,

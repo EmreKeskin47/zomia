@@ -34,6 +34,13 @@ const EditReport = () => {
         console.log(event.target.value);
     };
 
+    const preserveLineBreak = (text) => {
+        while (text.includes("\n")) {
+            text = text.replace("\n", "\\n");
+        }
+        return text;
+    };
+
     const [id, setId] = useState(report.id ?? "");
     const [title, setTitle] = useState(report.title ?? "");
     const [image, setImage] = useState(report.image ?? "");
@@ -154,7 +161,7 @@ const EditReport = () => {
                     title: title,
                     author: author,
                     date: date,
-                    text: text,
+                    text: preserveLineBreak(text),
                     pdf: pdf,
                     image: image,
                 })

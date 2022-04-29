@@ -29,7 +29,14 @@ const EditArticle = () => {
 
     const [article, setArticle] = useState();
     const handleChange = (event) => {
-        setId(event.target.value);
+        console.log(event);
+    };
+
+    const preserveLineBreak = (text) => {
+        while (text.includes("\n")) {
+            text = text.replace("\n", "\\n");
+        }
+        return text;
     };
 
     const [id, setId] = useState(article ? article.id : "");
@@ -45,8 +52,7 @@ const EditArticle = () => {
 
     const deleteArticle = () => {
         try {
-            console.log(article);
-            dispatch(articleActions.deleteArticle(1));
+            dispatch(articleActions.deleteArticle(id));
             toast("Article has been successfully deleted");
         } catch (e) {
             toast("HAVING PROBLEMS WITH DELETE");
@@ -54,6 +60,7 @@ const EditArticle = () => {
     };
 
     const saveArticle = () => {
+        console.log(id, title, "save article");
         try {
             dispatch(
                 articleActions.updateArticle({
@@ -61,8 +68,8 @@ const EditArticle = () => {
                     title: title,
                     author: author,
                     date: date,
-                    description: description,
-                    text: text,
+                    description: preserveLineBreak(description),
+                    text: preserveLineBreak(text),
                     links: link,
                 })
             );
@@ -97,7 +104,7 @@ const EditArticle = () => {
                         <Select
                             labelId="demo-simple-select-autowidth-label"
                             id="demo-simple-select-autowidth"
-                            value={title ?? ""}
+                            value={title}
                             onChange={(e) => handleChange(e)}
                             sx={{
                                 background: "whitesmoke",
@@ -107,7 +114,7 @@ const EditArticle = () => {
                         >
                             {articleList &&
                                 articleList !== [] &&
-                                articleList.map((item, id) => {
+                                articleList.map((item) => {
                                     return (
                                         <div
                                             style={{
@@ -115,13 +122,15 @@ const EditArticle = () => {
                                                 padding: 5,
                                                 paddingLeft: 20,
                                             }}
-                                            key={id}
+                                            key={item.id}
                                         >
                                             <MenuItem
                                                 key={item.id}
-                                                value={item.id}
+                                                value={item.title}
                                                 onClick={() => {
+                                                    console.log(item.id);
                                                     setId(item.id);
+                                                    console.log(id);
                                                     setArticle(item);
                                                     setTitle(item.title);
                                                     setImage(item.image);

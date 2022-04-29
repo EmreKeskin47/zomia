@@ -76,10 +76,7 @@ export const fetchArticles = () => {
 export const deleteArticle = (id) => {
     return async (dispatch) => {
         try {
-            const cityRef = doc(db, "articles", id);
-            console.log(cityRef);
-
-            await deleteDoc(cityRef);
+            await deleteDoc(doc(db, "articles", id.toString()));
             dispatch({
                 type: DELETE_ARTICLE,
                 payload: id,
@@ -93,6 +90,7 @@ export const deleteArticle = (id) => {
 export const updateArticle = (item) => {
     return async (dispatch) => {
         try {
+            console.log(item);
             await setDoc(doc(db, "articles", item.id), {
                 article: item,
             });

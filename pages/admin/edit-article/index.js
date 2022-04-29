@@ -54,10 +54,10 @@ const EditArticle = () => {
     };
 
     const saveArticle = () => {
-        // const newArticle = new Report();
         try {
             dispatch(
-                articleActions.saveArticle({
+                articleActions.updateArticle({
+                    id: id,
                     title: title,
                     author: author,
                     date: date,

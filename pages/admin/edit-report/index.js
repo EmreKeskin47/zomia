@@ -25,12 +25,11 @@ const EditReport = () => {
     const [report, setReport] = useState("");
     const dispatch = useDispatch();
 
+    const reports = useSelector((state) => state.reportStore.reports);
+
     useEffect(() => {
         dispatch(reportActions.fetchReports());
     }, [dispatch, reports]);
-
-    const reports = useSelector((state) => state.reportStore.reports);
-
     const handleChange = (event) => {
         console.log(event.target.value);
     };

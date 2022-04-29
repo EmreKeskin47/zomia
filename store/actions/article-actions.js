@@ -10,6 +10,7 @@ import {
     updateDoc,
     deleteDoc,
     deleteField,
+    setDoc,
 } from "firebase/firestore";
 import { db } from "../store";
 import { Article } from "../../models/Article";
@@ -38,10 +39,6 @@ export const saveArticle = (item) => {
         }
     };
 };
-
-// const deleteArticle = () => {
-//     console.log("delete article");
-// };
 
 export const fetchArticles = () => {
     return async (dispatch) => {
@@ -89,6 +86,32 @@ export const deleteArticle = (id) => {
             });
         } catch (err) {
             console.log(err);
+        }
+    };
+};
+
+export const updateArticle = (item) => {
+    return async (dispatch) => {
+        try {
+            await setDoc(doc(db, "articles", item.id), {
+                article: item,
+            });
+
+            dispatch({
+                type: UPDATE_ARTICLE,
+                payload: {
+                    title: item.title,
+                    author: item.author,
+                    date: item.date,
+                    image: item.image,
+                    text: item.text,
+                    description: item.description,
+                    links: item.link,
+                },
+                id: item.id,
+            });
+        } catch (e) {
+            console.error("Error adding document: ", e);
         }
     };
 };

@@ -4,7 +4,7 @@ export const DELETE_ARTICLE = "DELETE_ARTICLE";
 export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../store";
-import Article from "../../models/Article";
+import { Article } from "../../models/Article";
 
 export const saveArticle = (item) => {
     return async (dispatch) => {

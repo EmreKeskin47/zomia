@@ -33,14 +33,14 @@ const EditReport = () => {
     const handleChange = (event) => {
         console.log(event.target.value);
     };
-    const [id, setId] = useState("");
-    const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
-    const [date, setDate] = useState("");
-    const [author, setAuthor] = useState("");
-    const [link, setLink] = useState("");
-    const [text, setText] = useState("");
-    const [pdf, setPdf] = useState();
+
+    const [id, setId] = useState(report.id ?? "");
+    const [title, setTitle] = useState(report.title ?? "");
+    const [image, setImage] = useState(report.image ?? "");
+    const [date, setDate] = useState(report.date ?? "");
+    const [author, setAuthor] = useState(report.author ?? "");
+    const [text, setText] = useState(report.text ?? "");
+    const [pdf, setPdf] = useState(report.pdfLink ?? "");
     const [uploading, setUploading] = useState(false);
     const [percent, setPercent] = useState(0);
 
@@ -149,17 +149,17 @@ const EditReport = () => {
     const saveReport = () => {
         try {
             dispatch(
-                reportActions.saveReport({
+                reportActions.updateReport({
+                    id: id,
                     title: title,
                     author: author,
                     date: date,
                     text: text,
-                    links: link,
                     pdf: pdf,
                     image: image,
                 })
             );
-            toast("Report has been successfully added");
+            toast("Report has been successfully updated");
         } catch (e) {
             toast("HAVING PROBLEMS UPLOADING THE FILE");
         }
@@ -185,7 +185,7 @@ const EditReport = () => {
                     <Select
                         labelId="demo-simple-select-autowidth-label"
                         id="demo-simple-select-autowidth"
-                        value={title ?? ""}
+                        value={title}
                         onChange={(e) => handleChange(e)}
                         sx={{
                             background: "whitesmoke",
@@ -215,8 +215,7 @@ const EditReport = () => {
                                                 setAuthor(item.author);
                                                 setDate(item.date);
                                                 setText(item.text);
-                                                setLink(item.links);
-                                                setPdf(item.pdf);
+                                                setPdf(item.pdfLink);
                                                 setImage(item.image);
                                             }}
                                         >
@@ -259,15 +258,7 @@ const EditReport = () => {
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                         />
-                        <TextField
-                            id="outlined-multiline-static"
-                            label="Link(s)"
-                            fullWidth
-                            variant="outlined"
-                            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-                            value={link}
-                            onChange={(e) => setLink(e.target.value)}
-                        />
+
                         <TextField
                             id="outlined-multiline-static"
                             label="Description Text"

@@ -8,6 +8,7 @@ import {
     addDoc,
     doc,
     updateDoc,
+    setDoc,
     deleteDoc,
     deleteField,
 } from "firebase/firestore";
@@ -84,6 +85,31 @@ export const deleteReport = (id) => {
             });
         } catch (err) {
             console.log(err);
+        }
+    };
+};
+
+export const updateReport = (item) => {
+    return async (dispatch) => {
+        try {
+            await setDoc(doc(db, "reports", item.id), {
+                report: item,
+            });
+
+            dispatch({
+                type: UPDATE_REPORT,
+                payload: {
+                    title: item.title,
+                    author: item.author,
+                    date: item.date,
+                    image: item.image,
+                    text: item.text,
+                    pdfLink: item.pdfLink,
+                },
+                id: item.id,
+            });
+        } catch (e) {
+            console.error("Error adding document: ", e);
         }
     };
 };

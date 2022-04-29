@@ -17,6 +17,14 @@ export default (state = initialState, action) => {
         case DELETE_REPORT:
             state.reports.filter((item) => item.id === action.payload);
             return state;
+        case CREATE_REPORT:
+            state.reports.push(action.payload);
+        case UPDATE_REPORT:
+            const index = state.reports.findIndex(
+                (report) => report.id === action.id
+            );
+            state.reports[index] = action.payload;
+            return state;
     }
     return state;
 };

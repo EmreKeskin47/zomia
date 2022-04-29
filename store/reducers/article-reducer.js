@@ -24,7 +24,6 @@ export default (state = initialState, action) => {
                 (article) => article.id === action.id
             );
             state.articles[index] = action.payload;
-            console.log(state.articles[index]);
             return state;
     }
     return state;

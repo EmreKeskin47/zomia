@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, TextField } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import SendIcon from "@mui/icons-material/Send";
 import { Button } from "@material-ui/core";
@@ -16,6 +17,9 @@ import {
     getDownloadURL,
 } from "firebase/storage";
 
+const Input = styled("input")({
+    display: "none",
+});
 const useStyles = makeStyles({
     subHeader: {
         marginTop: 10,
@@ -236,21 +240,30 @@ const CreateReportForm = (props) => {
                 spacing={2}
                 marginBottom={10}
             >
-                <input
-                    accept=".pdf"
-                    className={classes.input}
-                    id="contained-button-file"
-                    type="file"
-                    onChange={handlePDFUpload}
-                />
-                <label htmlFor="contained-button-file"></label>
                 <label htmlFor="contained-button-file">
-                    <input
-                        accept=".jpg,.jpeg,.png"
+                    <Input
+                        accept=".pdf"
                         id="contained-button-file"
+                        multiple
+                        type="file"
+                        onChange={handlePDFUpload}
+                    />
+                    <Button variant="contained" component="span">
+                        Upload PDF
+                    </Button>
+                </label>
+
+                <label htmlFor="contained-image-file">
+                    <Input
+                        accept=".jpg,.jpeg,.png"
+                        id="contained-image-file"
+                        multiple
                         type="file"
                         onChange={handleImageUpload}
                     />
+                    <Button variant="contained" component="span">
+                        Upload Image
+                    </Button>
                 </label>
 
                 <Button

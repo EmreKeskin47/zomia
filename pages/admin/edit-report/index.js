@@ -1,20 +1,28 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import EditReportForm from "../../../components/admin/EditReportForm";
+import { useDispatch, useSelector } from "react-redux";
+import * as reportActions from "../../../store/actions/report-actions";
 
 const EditReport = () => {
-    const [age, setAge] = React.useState("");
+    const [report, setReport] = useState("");
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(reportActions.fetchReports());
+    }, [dispatch]);
+
+    const reports = useSelector((state) => state.reportStore.reports);
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        console.log(event.target.value);
     };
 
-    const data = [1, 2, 3];
     return (
         <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
             <AdminAppBar />
@@ -26,15 +34,18 @@ const EditReport = () => {
                     <Select
                         labelId="demo-simple-select-autowidth-label"
                         id="demo-simple-select-autowidth"
-                        value={age}
-                        onChange={handleChange}
+                        value={report}
+                        defaultValue={""}
+                        onChange={(e) => {
+                            handleChange(e);
+                        }}
                         sx={{
                             background: "whitesmoke",
                             width: " 100%",
                         }}
                         label="Report"
                     >
-                        {data.map((item, id) => {
+                        {reports.map((item, id) => {
                             return (
                                 <div
                                     style={{
@@ -44,8 +55,8 @@ const EditReport = () => {
                                     }}
                                     key={id}
                                 >
-                                    <MenuItem value="">
-                                        <em>{item + "report"}</em>
+                                    <MenuItem value={item.id}>
+                                        <em>{item.title}</em>
                                     </MenuItem>
                                 </div>
                             );

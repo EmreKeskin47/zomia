@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
-import { makeStyles } from "@material-ui/styles";
 import { Grid, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import SendIcon from "@mui/icons-material/Send";
-import { Report } from "../../models/Report";
 import { Button } from "@material-ui/core";
-import { Box } from "@mui/system";
-import { useDispatch } from "react-redux";
 import * as articleActions from "../../store/actions/article-actions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,22 +13,15 @@ const Input = styled("input")({
     display: "none",
 });
 
-const useStyles = makeStyles({
-    subHeader: {
-        marginTop: 10,
-    },
-    divider: {
-        marginBottom: 10,
-        marginTop: 25,
-    },
-    textField: {
-        marginTop: 10,
-        marginBottom: 10,
-    },
-});
-
 const EditArticleForm = (props) => {
-    const dispatch = useDispatch();
+    const { pageTitle } = props;
+    const [title, setTitle] = useState("");
+    const [image, setImage] = useState("");
+    const [date, setDate] = useState("");
+    const [author, setAuthor] = useState("");
+    const [description, setDescription] = useState("");
+    const [link, setLink] = useState("");
+    const [text, setText] = useState("");
 
     const saveArticle = () => {
         // const newArticle = new Report();
@@ -52,16 +41,6 @@ const EditArticleForm = (props) => {
             toast("HAVING PROBLEMS UPLOADING THE FILE`");
         }
     };
-
-    const { pageTitle } = props;
-    const classes = useStyles();
-    const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
-    const [date, setDate] = useState("");
-    const [author, setAuthor] = useState("");
-    const [description, setDescription] = useState("");
-    const [link, setLink] = useState("");
-    const [text, setText] = useState("");
 
     return (
         <>

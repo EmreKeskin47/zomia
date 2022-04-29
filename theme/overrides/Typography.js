@@ -11,7 +11,7 @@ export default function Typography(theme) {
           marginBottom: theme.spacing(1),
         },
         root: {
-          color: "#FFFFFF",
+          // color: "#FFFFFF",
           "&::-moz-selection, & *::-moz-selection": {
             backgroundColor: palette.orange.main,
           },

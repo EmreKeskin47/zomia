@@ -3,8 +3,11 @@ import React from "react";
 import ListView from "../../components/ListView";
 import { mockArticles } from "../../MOCK_DATA";
 import { Container } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const Analysis = () => {
+    const articleList = useSelector((state) => state.articleStore.articles);
+
     return (
         <Paper sx={{ paddingTop: 5 }}>
             <Container>
@@ -16,7 +19,7 @@ const Analysis = () => {
                 >
                     Analysis
                 </Typography>
-                {mockArticles.map((article, index) => {
+                {articleList.map((article, index) => {
                     return (
                         <Link key={index} href={`/analysis/${article.id}`}>
                             <ListView

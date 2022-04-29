@@ -10,19 +10,30 @@ import { mockArticles } from "../MOCK_DATA";
 import ListView from "../components/ListView";
 import { Box } from "@mui/system";
 import { mockReports } from "../MOCK_PDF";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as articleActions from "../store/actions/article-actions";
 import * as reportActions from "../store/actions/report-actions";
 
 function App() {
     const [latestCount, setLatestCount] = useState(4);
-    const data = [...mockArticles, ...mockReports];
+    const articleList = useSelector((state) => state.articleStore.articles);
+    const reportList = useSelector((state) => state.reportStore.reports);
+
+    const data = [
+        ...mockArticles,
+        ...mockReports,
+        ...articleList,
+        ...reportList,
+    ];
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(articleActions.fetchArticles());
         dispatch(reportActions.fetchReports());
-    });
+    }, [dispatch, articleList, reportList]);
+
+    console.log(articleList);
+    console.log(reportList);
 
     return (
         <Grid>
@@ -77,7 +88,7 @@ function App() {
             />
             {/* Articles Section */}
             <Container>
-                {mockArticles.map((article, index) => {
+                {articleList.map((article, index) => {
                     return (
                         <Link key={index} href={`/analysis/${article.id}`}>
                             <ListView

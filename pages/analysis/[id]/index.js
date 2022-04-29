@@ -1,16 +1,23 @@
 import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Article from "../../../components/Article";
 import { mockArticles } from "../../../MOCK_DATA";
+import { useArticleData } from "../../../store/hooks/useData";
 
 const ArticlePage = (props) => {
     const { id } = props;
 
     const [data, setData] = useState(null);
+    const articleList = useArticleData();
 
     useEffect(() => {
-        setData(mockArticles[id - 1]);
-    }, [id]);
+        if (articleList) {
+            setData(articleList.find((item) => item.id === id));
+        }
+    }, [id, articleList]);
+
+    console.log(articleList);
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}

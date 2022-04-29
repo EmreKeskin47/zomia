@@ -76,16 +76,18 @@ const Article = (props) => {
                                     </Box>
                                 </Box>
 
-                                <Box>
-                                    <Image
-                                        src={article.image}
-                                        loader={imageLoader}
-                                        unoptimized
-                                        width={"1300px"}
-                                        height={"750px"}
-                                        alt="zomia article"
-                                    />
-                                </Box>
+                                {article.image && (
+                                    <Box>
+                                        <Image
+                                            src={article.image}
+                                            loader={imageLoader}
+                                            unoptimized
+                                            width={"1300px"}
+                                            height={"750px"}
+                                            alt="zomia article"
+                                        />
+                                    </Box>
+                                )}
 
                                 <Grid
                                     item

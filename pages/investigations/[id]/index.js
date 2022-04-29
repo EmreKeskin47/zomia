@@ -5,15 +5,18 @@ import Article from "../../../components/Article";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import styled from "@emotion/styled";
-import palette from "../../../theme/palette";
+import { useReportData } from "../../../store/hooks/useData";
 
 const Investigations = (props) => {
     const { id } = props;
     const [report, setReport] = useState(null);
+    const reportList = useReportData();
 
     useEffect(() => {
-        setReport(mockReports[id - 1]);
-    }, [id]);
+        if (reportList) {
+            setReport(reportList.find((item) => item.id === id));
+        }
+    }, [id, reportList]);
 
     const StyledTypography = styled(Typography)(({ theme }) => ({
         color: "whitesmoke",
@@ -27,7 +30,7 @@ const Investigations = (props) => {
         <Paper sx={{ paddingTop: 5 }}>
             {report && <Article article={report} isReport={true} />}
             {report && (
-                <Link href={"/" + report.pdfLink} replace>
+                <Link href={report.pdfLink} replace>
                     <Box
                         sx={{
                             paddingBottom: 10,
@@ -60,15 +63,6 @@ const Investigations = (props) => {
 
 export default Investigations;
 
-export async function getStaticProps({ params }) {
-    const id = params.id;
-    return {
-        props: {
-            id,
-        },
-    };
-}
-
 export async function getStaticPaths() {
     return {
         paths: [
@@ -77,6 +71,15 @@ export async function getStaticPaths() {
             { params: { id: "3" } },
             { params: { id: "4" } },
         ],
-        fallback: false,
+        fallback: true,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const id = await params.id;
+    return {
+        props: {
+            id,
+        },
     };
 }

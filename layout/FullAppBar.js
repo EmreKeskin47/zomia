@@ -25,8 +25,9 @@ const FullAppBar = () => {
         alignItems={"center"}
         sx={{
           cursor: "pointer",
-          background:
-            "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
+          background: context.darkMode
+            ? "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)"
+            : "radial-gradient(circle, rgba(0,0,0,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
         }}
       >
         <Link href="/">
@@ -73,7 +74,12 @@ const FullAppBar = () => {
         </Box>
         <Tabs border={true} />
       </Box>
-      <Box width={"20%"}>
+      <Box
+        width={"20%"}
+        justifyContent="center"
+        display="flex"
+        alignItems={"center"}
+      >
         <Checkbox
           icon={<WbSunnyIcon />}
           checkedIcon={<NightsStayIcon />}

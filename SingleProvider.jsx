@@ -8,7 +8,7 @@ const SingleProvider = (props) => {
     <singleContext.Provider
       value={{
         darkMode: isDarkMode,
-        toogleDarkMode: () => {
+        toggleDarkMode: () => {
           if (isDarkMode) {
             setIsDarkMode(false);
           } else {

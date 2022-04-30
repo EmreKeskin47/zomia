@@ -1,6 +1,9 @@
 import palette from "../palette";
+import { useContext } from "react";
+import singleContext from "../../SingleContext";
 
 export default function Typography(theme) {
+  const context = useContext(singleContext);
   return {
     MuiTypography: {
       styleOverrides: {
@@ -11,7 +14,7 @@ export default function Typography(theme) {
           marginBottom: theme.spacing(1),
         },
         root: {
-          // color: "#FFFFFF",
+          color: context.isDark ? "FFF" : palette.black.main,
           "&::-moz-selection, & *::-moz-selection": {
             backgroundColor: palette.orange.main,
           },

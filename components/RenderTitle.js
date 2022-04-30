@@ -9,9 +9,7 @@ const RenderTitle = (props) => {
     <Box display="flex" alignItems="center" marginY={5}>
       <VerticalDivider height={height} />
       <Box>
-        <Typography variant="h3" sx={{ marginY: 3 }}>
-          {text}
-        </Typography>
+        <Typography variant="h3">{text}</Typography>
       </Box>
     </Box>
   );

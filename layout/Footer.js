@@ -42,8 +42,6 @@ const Footer = () => {
     let index = 0;
     let route = "";
     const writingList = context.reportList.concat(context.articleList);
-    console.log("writingList: ");
-    console.log(writingList);
     writingList.map((writing) => {
       let sepArr = writing.date.split(" ");
       years.push(Number(sepArr[2]));
@@ -77,8 +75,6 @@ const Footer = () => {
     } else {
       route = `/investigations/${writingList[index].id}`;
     }
-    console.log(writingList[index]);
-    console.log(route);
     router.push(route);
   };
 
@@ -99,9 +95,6 @@ const Footer = () => {
   }));
 
   const saveEmail = async () => {
-    console.log("saveEmail has been clicked");
-    console.log(email);
-    console.log("save email inside the async part");
     try {
       const docRef = await addDoc(collection(db, "emails"), {
         email: email,
@@ -117,7 +110,7 @@ const Footer = () => {
       container
       direction="row"
       justifyContent={"space-evenly"}
-      bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
+      bgcolor={palette.orange.main}
       sx={{ padding: "1rem" }}
     >
       <Grid item sx={{ padding: "1rem" }}>
@@ -126,13 +119,13 @@ const Footer = () => {
             <Grid item sx={{ paddingRight: "0.5rem" }}>
               <SendIcon
                 sx={{
-                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                  color: palette.black.main,
                 }}
               />
             </Grid>
             <Grid item>
               <StyledTypography variant="subtitle1" component="div">
-                <Link>Send Email</Link>
+                Send Email
               </StyledTypography>
             </Grid>
           </Grid>
@@ -144,13 +137,13 @@ const Footer = () => {
             <Grid item sx={{ paddingRight: "0.5rem" }}>
               <TwitterIcon
                 sx={{
-                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                  color: palette.black.main,
                 }}
               />
             </Grid>
             <Grid item>
               <StyledTypography variant="subtitle1" component="div">
-                <Link>Follow us on Twitter</Link>
+                Follow us on Twitter
               </StyledTypography>
             </Grid>
           </Grid>
@@ -162,13 +155,13 @@ const Footer = () => {
             <Grid item sx={{ paddingRight: "0.5rem" }}>
               <ShuffleIcon
                 sx={{
-                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                  color: palette.black.main,
                 }}
               />
             </Grid>
             <Grid item onClick={getLatestWriting}>
               <StyledTypography variant="subtitle1" component="div">
-                <Link>Read latest</Link>
+                Read latest
               </StyledTypography>
             </Grid>
           </Grid>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import palette from "../theme/palette";
 import { Grid, Typography, Box, TextField, Button } from "@mui/material";
 import { Divider } from "@mui/material";
@@ -12,9 +12,72 @@ import { collection, getDocs, getFirestore, addDoc } from "firebase/firestore";
 import { db } from "../store/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import singleContext from "../SingleContext";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [latestWriting, setLatestWriting] = useState({});
+
+  const context = useContext(singleContext);
+
+  const monthList = {
+    january: "1",
+    february: "2",
+    march: "3",
+    april: "4",
+    may: "5",
+    june: "6",
+    july: "7",
+    august: "8",
+    september: "9",
+    october: "10",
+    november: "11",
+    december: "12",
+  };
+
+  const getLatestWriting = () => {
+    let years = [];
+    let months = [];
+    let days = [];
+    let index = 0;
+    const writingList = context.reportList.concat(context.articleList);
+    console.log("writingList: ");
+    console.log(writingList);
+    writingList.map((writing) => {
+      let sepArr = writing.date.split(" ");
+      years.push(Number(sepArr[2]));
+      months.push(sepArr[0].toLowerCase());
+      days.push(Number(sepArr[1]));
+    });
+    years.push(9999);
+    for (let i = 0; i < years.length - 1; i++) {
+      if (years[i] > years[i + 1]) {
+        if (years[i] > years[index]) {
+          index = i;
+        }
+      } else if (years[i] === years[i + 1]) {
+        if (
+          monthList[months[i].toLowerCase()] >
+          monthList[months[i + 1].toLowerCase()]
+        ) {
+          index = i;
+        } else if (
+          monthList[months[i].toLowerCase()] ===
+          monthList[months[i + 1].toLowerCase()]
+        ) {
+          if (days[i] > days[i + 1]) {
+            index = i;
+          }
+        }
+      }
+    }
+    console.log(monthList["january"]);
+    console.log(years);
+    console.log(months);
+    console.log(days);
+    console.log(writingList[index]);
+    return writingList[index];
+  };
 
   const StyledButton = styled(Button)(({ theme }) => ({
     color: "#000",
@@ -88,7 +151,7 @@ const Footer = () => {
             <Grid item sx={{ paddingRight: "0.5rem" }}>
               <ShuffleIcon />
             </Grid>
-            <Grid item>
+            <Grid item onClick={getLatestWriting}>
               <StyledTypography variant="subtitle1" component="div">
                 Read latest
               </StyledTypography>

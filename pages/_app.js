@@ -28,7 +28,6 @@ const font = createTheme({
 
 function MyApp({ Component, pageProps }) {
   initializeApp(firebaseConfig);
-
   return (
     <Provider store={store}>
       <SingleProvider>

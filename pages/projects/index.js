@@ -116,7 +116,7 @@ const Projects = () => {
               >
                 <Tab
                   label={data[0].name}
-                  sx={{ fontSize: "1.5rem", backgroundColor: "red" }}
+                  sx={{ fontSize: "1.5rem", bcolor: "red" }}
                   wrapped
                   {...a11yProps(0)}
                 />

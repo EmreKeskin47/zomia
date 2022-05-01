@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import singleContext from "./SingleContext";
+import { useReportData, useArticleData } from "./store/hooks/useData";
 
 const SingleProvider = (props) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const reportList = useReportData();
+  const articleList = useArticleData();
 
   return (
     <singleContext.Provider
@@ -15,6 +18,8 @@ const SingleProvider = (props) => {
             setIsDarkMode(true);
           }
         },
+        reportList: reportList,
+        articleList: articleList,
       }}
     >
       {props.children}

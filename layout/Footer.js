@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import palette from "../theme/palette";
-import { Grid, Typography, Box, TextField, Button } from "@mui/material";
+import { Grid, Typography, Box, TextField, Button, Link } from "@mui/material";
 import { Divider } from "@mui/material";
 import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -13,12 +13,12 @@ import { db } from "../store/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import singleContext from "../SingleContext";
+import { useRouter } from "next/router";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const [latestWriting, setLatestWriting] = useState({});
-
   const context = useContext(singleContext);
+  const router = useRouter();
 
   const monthList = {
     january: "1",
@@ -40,6 +40,7 @@ const Footer = () => {
     let months = [];
     let days = [];
     let index = 0;
+    let route = "";
     const writingList = context.reportList.concat(context.articleList);
     console.log("writingList: ");
     console.log(writingList);
@@ -71,12 +72,14 @@ const Footer = () => {
         }
       }
     }
-    console.log(monthList["january"]);
-    console.log(years);
-    console.log(months);
-    console.log(days);
+    if (writingList[index].desciption) {
+      route = `/analysis/${writingList[index].id}`;
+    } else {
+      route = `/investigations/${writingList[index].id}`;
+    }
     console.log(writingList[index]);
-    return writingList[index];
+    console.log(route);
+    router.push(route);
   };
 
   const StyledButton = styled(Button)(({ theme }) => ({
@@ -114,18 +117,22 @@ const Footer = () => {
       container
       direction="row"
       justifyContent={"space-evenly"}
-      bgcolor={palette.orange.main}
+      bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
       sx={{ padding: "1rem" }}
     >
       <Grid item sx={{ padding: "1rem" }}>
         <StyledButton>
           <Grid container direction={"row"}>
             <Grid item sx={{ paddingRight: "0.5rem" }}>
-              <SendIcon />
+              <SendIcon
+                sx={{
+                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                }}
+              />
             </Grid>
             <Grid item>
               <StyledTypography variant="subtitle1" component="div">
-                Send Email
+                <Link>Send Email</Link>
               </StyledTypography>
             </Grid>
           </Grid>
@@ -135,11 +142,15 @@ const Footer = () => {
         <StyledButton>
           <Grid container direction={"row"}>
             <Grid item sx={{ paddingRight: "0.5rem" }}>
-              <TwitterIcon />
+              <TwitterIcon
+                sx={{
+                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                }}
+              />
             </Grid>
             <Grid item>
               <StyledTypography variant="subtitle1" component="div">
-                Follow us on Twitter
+                <Link>Follow us on Twitter</Link>
               </StyledTypography>
             </Grid>
           </Grid>
@@ -149,11 +160,15 @@ const Footer = () => {
         <StyledButton>
           <Grid container direction={"row"} sx={{ paddingLeft: isMobile && 5 }}>
             <Grid item sx={{ paddingRight: "0.5rem" }}>
-              <ShuffleIcon />
+              <ShuffleIcon
+                sx={{
+                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                }}
+              />
             </Grid>
             <Grid item onClick={getLatestWriting}>
               <StyledTypography variant="subtitle1" component="div">
-                Read latest
+                <Link>Read latest</Link>
               </StyledTypography>
             </Grid>
           </Grid>

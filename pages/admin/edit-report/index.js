@@ -22,6 +22,7 @@ import {
 } from "firebase/storage";
 import { useReportData } from "../../../store/hooks/useData";
 import { connect } from "react-redux";
+import { Report } from "../../../models/Report";
 
 const Input = styled("input")({
     display: "none",
@@ -163,19 +164,20 @@ const EditReport = (props) => {
         );
     };
 
-    const saveReport = () => {
+    const updateReport = () => {
+        const newReport = new Report(
+            id,
+            title,
+            image,
+            date,
+            author,
+            "",
+            preserveLineBreak(text),
+            pdf,
+            ""
+        );
         try {
-            dispatch(
-                reportActions.updateReport({
-                    id: id,
-                    title: title,
-                    author: author,
-                    date: date,
-                    text: preserveLineBreak(text),
-                    pdf: pdf,
-                    image: image,
-                })
-            );
+            dispatch(reportActions.updateReport(newReport));
             toast("Report has been successfully updated");
         } catch (e) {
             toast("HAVING PROBLEMS UPLOADING THE FILE");
@@ -325,7 +327,7 @@ const EditReport = (props) => {
                         </label>
 
                         <Button
-                            onClick={saveReport}
+                            onClick={updateReport}
                             variant="contained"
                             endIcon={<SendIcon />}
                         >

@@ -6,7 +6,7 @@ const ContentSummary = ({ id, category, heading, date, author }) => {
         <Grid container direction="column" justifyContent="center">
             <Grid item sx={{ paddingBottom: "0.5rem" }}>
                 <Link
-                    href={`/investigations/${id}`}
+                    href={`/analysis/${id}`}
                     underline="none"
                     color="whitesmoke"
                     align="left"

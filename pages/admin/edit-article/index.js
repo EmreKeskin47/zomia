@@ -16,6 +16,7 @@ import { Button } from "@material-ui/core";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useArticleData } from "../../../store/hooks/useData";
+import { Article } from "../../../models/Article";
 
 const Input = styled("input")({
     display: "none",
@@ -69,18 +70,19 @@ const EditArticle = (props) => {
 
     const saveArticle = () => {
         console.log(id, title, "save article");
+        const newArticle = new Article(
+            id,
+            title,
+            image,
+            date,
+            author,
+            "",
+            preserveLineBreak(description),
+            link,
+            preserveLineBreak(text)
+        );
         try {
-            dispatch(
-                articleActions.updateArticle({
-                    id: id,
-                    title: title,
-                    author: author,
-                    date: date,
-                    description: preserveLineBreak(description),
-                    text: preserveLineBreak(text),
-                    links: link,
-                })
-            );
+            dispatch(articleActions.updateArticle(newArticle));
             toast("Article has been successfully added");
         } catch (e) {
             toast("HAVING PROBLEMS UPLOADING THE FILE`");

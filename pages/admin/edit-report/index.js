@@ -21,13 +21,13 @@ import {
     getDownloadURL,
 } from "firebase/storage";
 import { useReportData } from "../../../store/hooks/useData";
-import { connect } from "react-redux";
-import { Report } from "../../../models/Report";
+import { connect, useDispatch } from "react-redux";
 
 const Input = styled("input")({
     display: "none",
 });
 const EditReport = (props) => {
+    const dispatch = useDispatch();
     const [report, setReport] = useState("");
     const [connectReport, setConnectReport] = useState([]);
 
@@ -165,32 +165,21 @@ const EditReport = (props) => {
     };
 
     const updateReport = () => {
-        const newReport = new Report(
-            id,
-            title,
-            image,
-            date,
-            author,
-            "",
-            preserveLineBreak(text),
-            pdf,
-            ""
+        dispatch(
+            reportActions.updateReport({
+                id: id,
+                title: title,
+                author: author,
+                date: date,
+                text: preserveLineBreak(text),
+                pdf: pdf,
+                image: image,
+            })
         );
-        try {
-            dispatch(reportActions.updateReport(newReport));
-            toast("Report has been successfully updated");
-        } catch (e) {
-            toast("HAVING PROBLEMS UPLOADING THE FILE");
-        }
     };
 
     const deleteReport = () => {
-        try {
-            dispatch(reportActions.deleteReport(id));
-            toast("Report has been successfully deleted");
-        } catch (err) {
-            toast("HAVING PROBLEMS DELETING THE REPORT");
-        }
+        dispatch(reportActions.deleteReport(id));
     };
 
     return (

@@ -158,22 +158,17 @@ const CreateReportForm = (props) => {
     };
 
     const saveReport = () => {
-        try {
-            dispatch(
-                reportActions.saveReport({
-                    title: title,
-                    author: author,
-                    date: date,
-                    text: preserveLineBreak(text),
-                    links: link,
-                    pdf: pdf,
-                    image: image,
-                })
-            );
-            toast("Report has been successfully added");
-        } catch (e) {
-            toast("HAVING PROBLEMS UPLOADING THE FILE");
-        }
+        dispatch(
+            reportActions.saveReport({
+                title: title,
+                author: author,
+                date: date,
+                text: preserveLineBreak(text),
+                links: link,
+                pdf: pdf,
+                image: image,
+            })
+        );
     };
 
     return (

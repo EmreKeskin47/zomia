@@ -7,13 +7,12 @@ import {
     getDocs,
     addDoc,
     doc,
-    updateDoc,
     setDoc,
     deleteDoc,
-    deleteField,
 } from "firebase/firestore";
 import { db } from "../store";
 import { Report } from "../../models/Report";
+import { toast } from "react-toastify";
 
 export const saveReport = (item) => {
     return async (dispatch) => {
@@ -34,8 +33,9 @@ export const saveReport = (item) => {
                     pdf: item.pdf,
                 },
             });
+            toast("Report has been successfully created");
         } catch (e) {
-            console.error("Error adding document: ", e);
+            toast("Error creating report: " + e);
         }
     };
 };
@@ -83,8 +83,9 @@ export const deleteReport = (id) => {
                 type: DELETE_REPORT,
                 payload: id,
             });
-        } catch (err) {
-            console.log(err);
+            toast("Report has been successfully deleted");
+        } catch (e) {
+            toast("Error deleting report: " + e);
         }
     };
 };
@@ -108,8 +109,9 @@ export const updateReport = (item) => {
                 },
                 id: item.id,
             });
+            toast("Report has been successfully updated");
         } catch (e) {
-            console.error("Error adding document: ", e);
+            toast("Error updating report: " + e);
         }
     };
 };

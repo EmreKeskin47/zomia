@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { mockReports } from "../../../MOCK_PDF";
 import Paper from "@mui/material/Paper";
 import Article from "../../../components/Article";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { useReportData } from "../../../store/hooks/useData";
+import { connect, useSelector } from "react-redux";
+import * as reportActions from "../../../store/actions/report-actions";
 
 const Investigations = (props) => {
     const { id } = props;
     const [report, setReport] = useState(null);
     const reportList = useReportData();
 
+    const [connectReport, setConnectReport] = useState([]);
+
     useEffect(() => {
+        const fetch = async () => {
+            await props.fetchReports();
+            setConnectReport(props.reports);
+        };
+        fetch();
         if (reportList) {
             setReport(reportList.find((item) => item.id === id));
         }
-    }, [id, reportList]);
+    }, [props.fetchReports, props.report, id, reportList]);
+
+    const reports = useReportData();
 
     const StyledTypography = styled(Typography)(({ theme }) => ({
         color: "whitesmoke",
@@ -61,8 +71,6 @@ const Investigations = (props) => {
     );
 };
 
-export default Investigations;
-
 export async function getStaticPaths() {
     return {
         paths: [
@@ -83,3 +91,17 @@ export async function getStaticProps({ params }) {
         },
     };
 }
+
+const mapStateToProps = (state) => {
+    return {
+        reports: state.reportStore.reports,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchReports: () => dispatch(reportActions.fetchReports()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Investigations);

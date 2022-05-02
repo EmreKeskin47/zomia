@@ -1,9 +1,9 @@
 import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Article from "../../../components/Article";
-import { mockArticles } from "../../../MOCK_DATA";
 import { useArticleData } from "../../../store/hooks/useData";
+import * as articleActions from "../../../store/actions/article-actions";
 
 const ArticlePage = (props) => {
     const { id } = props;
@@ -11,13 +11,18 @@ const ArticlePage = (props) => {
     const [data, setData] = useState(null);
     const articleList = useArticleData();
 
+    const [connectArticle, setConnectArticle] = useState([]);
+
     useEffect(() => {
+        const fetch = async () => {
+            await props.fetchArticles();
+            setConnectArticle(props.articles);
+        };
+        fetch();
         if (articleList) {
             setData(articleList.find((item) => item.id === id));
         }
-    }, [id, articleList]);
-
-    console.log(articleList);
+    }, [props.articles, connectArticle, id, articleList]);
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}
@@ -25,7 +30,18 @@ const ArticlePage = (props) => {
     );
 };
 
-export default ArticlePage;
+const mapStateToProps = (state) => {
+    return {
+        articles: state.articleStore.articles,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+    };
+};
+
 export async function getStaticPaths() {
     return {
         paths: [
@@ -46,3 +62,5 @@ export async function getStaticProps({ params }) {
         },
     };
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);

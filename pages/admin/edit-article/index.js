@@ -5,7 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import * as articleActions from "../../../store/actions/article-actions";
 import Typography from "@mui/material/Typography";
 import { Grid, TextField } from "@mui/material";
@@ -15,17 +15,25 @@ import SendIcon from "@mui/icons-material/Send";
 import { Button } from "@material-ui/core";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useArticleData } from "../../../store/hooks/useData";
 
 const Input = styled("input")({
     display: "none",
 });
 
-const EditArticle = () => {
+const EditArticle = (props) => {
     const dispatch = useDispatch();
-    const articleList = useSelector((state) => state.articleStore.articles);
+    const articleList = useArticleData();
+
+    const [connectArticle, setConnectArticle] = useState([]);
+
     useEffect(() => {
-        dispatch(articleActions.fetchArticles());
-    }, [dispatch, articleList]);
+        const fetch = async () => {
+            await props.fetchArticles();
+            setConnectArticle(props.articles);
+        };
+        fetch();
+    }, [props.articles, connectArticle]);
 
     const [article, setArticle] = useState();
     const handleChange = (event) => {
@@ -278,4 +286,16 @@ const EditArticle = () => {
     );
 };
 
-export default EditArticle;
+const mapStateToProps = (state) => {
+    return {
+        articles: state.articleStore.articles,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditArticle);

@@ -1,45 +1,63 @@
 import { Link, Paper, Typography, Grid } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ListView from "../../components/ListView";
-import { mockArticles } from "../../MOCK_DATA";
 import { Container } from "@mui/material";
-import singleContext from "../../SingleContext";
+import { connect } from "react-redux";
+import { useArticleData } from "../../store/hooks/useData";
+import * as articleActions from "../../store/actions/article-actions";
+const Analysis = (props) => {
+    //   const context = useContext(singleContext);
+    const articleList = useArticleData();
 
-const Analysis = () => {
-  //   const context = useContext(singleContext);
-  const [context, setContext] = useState({});
+    const [connectArticle, setConnectArticle] = useState([]);
 
-  useEffect(() => {
-    setContext(singleContext);
-  });
+    useEffect(() => {
+        const fetch = async () => {
+            await props.fetchArticles();
+            setConnectArticle(props.articles);
+        };
+        fetch();
+    }, [props.articles, connectArticle]);
 
-  return (
-    <Paper sx={{ paddingTop: 5 }}>
-      <Container>
-        <Typography
-          variant="h4"
-          marginY={15}
-          textAlign="center"
-          paddingBottom={10}
-        >
-          Analysis
-        </Typography>
-        {context.articleList &&
-          context.articleList.map((article, index) => {
-            return (
-              <Link key={index} href={`/analysis/${article.id}`}>
-                <ListView
-                  heading={article.title}
-                  date={article.date}
-                  author={article.author}
-                  image={article.image}
-                />
-              </Link>
-            );
-          })}
-      </Container>
-    </Paper>
-  );
+    return (
+        <Paper sx={{ paddingTop: 5 }}>
+            <Container>
+                <Typography
+                    variant="h4"
+                    marginY={15}
+                    textAlign="center"
+                    paddingBottom={10}
+                >
+                    Analysis
+                </Typography>
+                {articleList &&
+                    articleList.map((article, index) => {
+                        return (
+                            <Link key={index} href={`/analysis/${article.id}`}>
+                                <ListView
+                                    heading={article.title}
+                                    date={article.date}
+                                    author={article.author}
+                                    image={article.image}
+                                />
+                            </Link>
+                        );
+                    })}
+            </Container>
+        </Paper>
+    );
 };
 
-export default Analysis;
+const mapStateToProps = (state) => {
+    return {
+        articles: state.articleStore.articles,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Analysis);

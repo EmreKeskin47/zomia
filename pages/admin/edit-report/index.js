@@ -6,7 +6,6 @@ import { styled } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { useDispatch, useSelector } from "react-redux";
 import * as reportActions from "../../../store/actions/report-actions";
 import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
@@ -21,18 +20,26 @@ import {
     uploadBytesResumable,
     getDownloadURL,
 } from "firebase/storage";
+import { useReportData } from "../../../store/hooks/useData";
+import { connect } from "react-redux";
+
 const Input = styled("input")({
     display: "none",
 });
-const EditReport = () => {
+const EditReport = (props) => {
     const [report, setReport] = useState("");
-    const dispatch = useDispatch();
-
-    const reports = useSelector((state) => state.reportStore.reports);
+    const [connectReport, setConnectReport] = useState([]);
 
     useEffect(() => {
-        dispatch(reportActions.fetchReports());
-    }, [dispatch, reports]);
+        const fetch = async () => {
+            await props.fetchReports();
+            setConnectReport(props.reports);
+        };
+        fetch();
+    }, [props.fetchReports, props.report]);
+
+    const reports = useReportData();
+
     const handleChange = (event) => {
         console.log(event.target.value);
     };
@@ -336,4 +343,16 @@ const EditReport = () => {
     );
 };
 
-export default EditReport;
+const mapStateToProps = (state) => {
+    return {
+        reports: state.reportStore.reports,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchReports: () => dispatch(reportActions.fetchReports()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditReport);

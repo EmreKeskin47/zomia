@@ -9,7 +9,7 @@ const initialState = {
     reports: [],
 };
 
-export default (state = initialState, action) => {
+export default (state = Object.assign({}, initialState), action) => {
     switch (action.type) {
         case FETCH_REPORTS:
             state.reports = action.payload;

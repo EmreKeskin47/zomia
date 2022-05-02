@@ -13,58 +13,58 @@ import { firebaseConfig } from "../store/firebase";
 import SingleProvider from "../SingleProvider";
 
 const font = createTheme({
-  typography: {
-    fontFamily: [
-      "Raleway",
-      // "Montserrat",
-      "Nunito",
-      "Roboto",
-      "Helvetica Neue",
-      "Arial",
-      "sans-serif",
-    ].join(","),
-  },
+    typography: {
+        fontFamily: [
+            "Raleway",
+            // "Montserrat",
+            "Nunito",
+            "Roboto",
+            "Helvetica Neue",
+            "Arial",
+            "sans-serif",
+        ].join(","),
+    },
 });
 
 function MyApp({ Component, pageProps }) {
-  initializeApp(firebaseConfig);
-  return (
-    <Provider store={store}>
-      <SingleProvider>
-        <ThemeConfig>
-          <ThemeProvider theme={font}>
-            <GlobalStyles />
-            <AppBar></AppBar>
-            <Paper
-              sx={
-                isMobile
-                  ? {
-                      paddingTop: { xs: 0, md: 5 },
-                      backgroundColor: palette.black.main,
-                      width: isMobile && "120%",
-                    }
-                  : {
-                      paddingTop: { xs: 0, md: 5 },
-                      backgroundColor: palette.black.main,
-                    }
-              }
-            >
-              <Component {...pageProps} />
-            </Paper>
-            <Grid
-              sx={
-                isMobile && {
-                  marginRight: -10,
-                }
-              }
-            >
-              <Footer />
-            </Grid>
-          </ThemeProvider>
-        </ThemeConfig>
-      </SingleProvider>
-    </Provider>
-  );
+    initializeApp(firebaseConfig);
+    return (
+        <Provider store={store}>
+            <SingleProvider>
+                <ThemeConfig>
+                    <ThemeProvider theme={font}>
+                        <GlobalStyles />
+                        <AppBar></AppBar>
+                        <Paper
+                            sx={
+                                isMobile
+                                    ? {
+                                          paddingTop: { xs: 0, md: 5 },
+                                          backgroundColor: palette.black.main,
+                                          width: isMobile && "120%",
+                                      }
+                                    : {
+                                          paddingTop: { xs: 0, md: 5 },
+                                          backgroundColor: palette.black.main,
+                                      }
+                            }
+                        >
+                            <Component {...pageProps} />
+                        </Paper>
+                        <Grid
+                            sx={
+                                isMobile && {
+                                    marginRight: -10,
+                                }
+                            }
+                        >
+                            <Footer />
+                        </Grid>
+                    </ThemeProvider>
+                </ThemeConfig>
+            </SingleProvider>
+        </Provider>
+    );
 }
 
 export default wrapper.withRedux(MyApp);

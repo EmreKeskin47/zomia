@@ -59,34 +59,75 @@ const EditArticle = (props) => {
     const [link, setLink] = useState(article ? article.link : "");
     const [text, setText] = useState(article ? article.text : "");
 
+    const handleImageUpload = async (event) => {
+        console.log(event.target.files[0]);
+        const metadata = {
+            contentType: "image/jpeg",
+        };
+
+        const storage = getStorage();
+        const storageRef = ref(storage, `article/${title}.pdf`);
+
+        const uploadTask = uploadBytesResumable(
+            storageRef,
+            event.target.files[0],
+            metadata
+        );
+
+        // Register three observers:
+        // 1. 'state_changed' observer, called any time the state changes
+        // 2. Error observer, called on failure
+        // 3. Completion observer, called on successful completion
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                // Observe state change events such as progress, pause, and resume
+                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                setUploading(true);
+                const progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                setPercent(progress);
+                console.log("Upload is " + progress + "% done");
+                switch (snapshot.state) {
+                    case "paused":
+                        console.log("Upload is paused");
+                        break;
+                    case "running":
+                        console.log("Upload is running");
+                        break;
+                }
+            },
+            (error) => {
+                // Handle unsuccessful uploads
+            },
+            () => {
+                // Handle successful uploads on complete
+                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    setUploading(false);
+                    setImage(downloadURL);
+                });
+            }
+        );
+    };
+
     const deleteArticle = () => {
-        try {
-            dispatch(articleActions.deleteArticle(id));
-            toast("Article has been successfully deleted");
-        } catch (e) {
-            toast("HAVING PROBLEMS WITH DELETE");
-        }
+        dispatch(articleActions.deleteArticle(id));
     };
 
     const saveArticle = () => {
-        console.log(id, title, "save article");
-        const newArticle = new Article(
-            id,
-            title,
-            image,
-            date,
-            author,
-            "",
-            preserveLineBreak(description),
-            link,
-            preserveLineBreak(text)
+        dispatch(
+            articleActions.updateArticle({
+                id: id,
+                title: title,
+                author: author,
+                date: date,
+                description: preserveLineBreak(description),
+                text: preserveLineBreak(text),
+                links: link,
+                image: image,
+            })
         );
-        try {
-            dispatch(articleActions.updateArticle(newArticle));
-            toast("Article has been successfully added");
-        } catch (e) {
-            toast("HAVING PROBLEMS UPLOADING THE FILE`");
-        }
     };
 
     return (
@@ -258,9 +299,7 @@ const EditArticle = (props) => {
                                     id="contained-button-file"
                                     multiple
                                     type="file"
-                                    onChange={(e) =>
-                                        setImage(e.target.files[0])
-                                    }
+                                    onChange={handleImageUpload}
                                 />
                                 <Button variant="contained" component="span">
                                     Upload Image

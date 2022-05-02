@@ -7,21 +7,21 @@ import {
     getDocs,
     addDoc,
     doc,
-    updateDoc,
     deleteDoc,
-    deleteField,
     setDoc,
 } from "firebase/firestore";
 import { db } from "../store";
 import { Article } from "../../models/Article";
+import { toast } from "react-toastify";
 
 export const saveArticle = (item) => {
     return async (dispatch) => {
         try {
+            console.log(item);
             const docRef = await addDoc(collection(db, "articles"), {
                 article: item,
             });
-            console.log("Document written with ID: ", docRef.id);
+            console.log(docRef.id);
             dispatch({
                 type: CREATE_ARTICLE,
                 payload: {
@@ -34,8 +34,9 @@ export const saveArticle = (item) => {
                     links: item.link,
                 },
             });
+            toast("Article has been successfully created");
         } catch (e) {
-            console.error("Error adding document: ", e);
+            toast("Error adding document: " + e);
         }
     };
 };
@@ -68,7 +69,7 @@ export const fetchArticles = () => {
                 payload: articles,
             });
         } catch (err) {
-            console.log(err);
+            toast("fetch article error" + err);
         }
     };
 };
@@ -81,8 +82,9 @@ export const deleteArticle = (id) => {
                 type: DELETE_ARTICLE,
                 payload: id,
             });
+            toast("Article has been successfully deleted");
         } catch (err) {
-            console.log(err);
+            toast("delete article error" + err);
         }
     };
 };
@@ -108,8 +110,9 @@ export const updateArticle = (item) => {
                 },
                 id: item.id,
             });
+            toast("Article has been successfully updated");
         } catch (e) {
-            console.error("Error adding document: ", e);
+            toast("Error updating document: " + e);
         }
     };
 };

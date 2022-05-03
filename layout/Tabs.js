@@ -7,6 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import singleContext from "../SingleContext";
+import palette from "../theme/palette";
 
 const Tabs = (props) => {
   const context = useContext(singleContext);
@@ -33,24 +34,52 @@ const Tabs = (props) => {
       }}
     >
       <Link href="/" passhref="true">
-        <Typography variant="h6">Home</Typography>
+        <Typography variant="h6">
+          <span
+            style={{ color: context.darkMode ? "#fff" : palette.black.main }}
+          >
+            Home
+          </span>
+        </Typography>
       </Link>
       <Link href="/analysis" passhref="true">
-        <Typography variant="h6">Analysis</Typography>
+        <Typography variant="h6">
+          <span
+            style={{ color: context.darkMode ? "#fff" : palette.black.main }}
+          >
+            Analysis
+          </span>
+        </Typography>
       </Link>
 
       <Link href="/projects" passhref="true">
-        <Typography variant="h6">Projects</Typography>
+        <Typography variant="h6">
+          <span
+            style={{ color: context.darkMode ? "#fff" : palette.black.main }}
+          >
+            Projects
+          </span>
+        </Typography>
       </Link>
 
       <Link href="/investigations" passhref="true">
-        <Typography variant="h6">Investigations</Typography>
+        <Typography variant="h6">
+          <span
+            style={{ color: context.darkMode ? "#fff" : palette.black.main }}
+          >
+            Investigations
+          </span>
+        </Typography>
       </Link>
 
       <Box sx={{ flexGrow: 0 }}>
         <Box onClick={handleOpenUserMenu}>
           <Typography variant="h6" passhref="true">
-            About
+            <span
+              style={{ color: context.darkMode ? "#fff" : palette.black.main }}
+            >
+              About
+            </span>
           </Typography>
         </Box>
         <Menu
@@ -72,12 +101,15 @@ const Tabs = (props) => {
           <MenuItem onClick={handleCloseUserMenu}>
             <Box
               sx={{
-                color: "whitesmoke",
+                color: context.darkMode ? "#fff" : palette.black.main,
                 height: "20%",
               }}
             >
               <Link href="/mission" passhref="true">
-                <Typography variant="h6" color="">
+                <Typography
+                  variant="h6"
+                  sx={{ color: context.darkMode ? "#fff" : palette.black.main }}
+                >
                   Mission
                 </Typography>
               </Link>

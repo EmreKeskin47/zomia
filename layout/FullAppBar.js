@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tabs from "./Tabs";
 import imageLoader from "../loader";
 import singleContext from "../SingleContext";
+import palette from "../theme/palette";
 
 const FullAppBar = () => {
   const context = useContext(singleContext);
@@ -56,17 +57,38 @@ const FullAppBar = () => {
             width={"80%"}
             justifyContent={"space-around"}
           >
-            <Link href="/admin/create-report">
+            {/* <Link href="/admin/create-report">
               <Typography variant="h6">Admin</Typography>
             </Link>
             <Link href="/">
               <Typography variant="h6">Newsletter</Typography>
-            </Link>
+            </Link> */}
+            <Typography variant="h6">
+              <span
+                style={{
+                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                }}
+              >
+                Follow us on social media
+              </span>
+            </Typography>
           </Box>
           <Box display="flex" width={"20%"} justifyContent={"space-around"}>
-            <TwitterIcon />
-            <EmailIcon />
-            <LinkedInIcon />
+            <TwitterIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
+            <EmailIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
+            <LinkedInIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
           </Box>
         </Box>
         <Tabs border={true} />

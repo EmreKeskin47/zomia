@@ -22,10 +22,8 @@ import {
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
 
-  const articleList = useArticleData();
-  const reportList = useReportData();
-  //   console.log(reportList);
-  //   const reportList = useSortedReportData();
+  const articleList = useArticleData().slice(0, 3);
+  const reportList = useReportData().slice(0, 3);
 
   const [connectArticle, setConnectArticle] = useState([]);
   const [connectReport, setConnectReport] = useState([]);

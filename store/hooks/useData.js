@@ -3,6 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import * as reportActions from "../actions/report-actions";
 import * as articleActions from "../actions/article-actions";
 
+const monthList = {
+  january: "1",
+  february: "2",
+  march: "3",
+  april: "4",
+  may: "5",
+  june: "6",
+  july: "7",
+  august: "8",
+  september: "9",
+  october: "10",
+  november: "11",
+  december: "12",
+};
+
 const getLatestWriting = (writingList) => {
   let years = [];
   let months = [];
@@ -50,24 +65,6 @@ export function useReportData() {
   return data;
 }
 
-// export function useSortedReportData() {
-//   let data = null;
-//   while (data === null) {
-//     data = useReportData();
-//   }
-//   if (data) {
-//     console.log(data);
-//     let sortedList = [];
-//     while (data.length > 0) {
-//       let latest = getLatestWriting(data);
-//       sortedList.push(latest);
-//       reports = reports.filter((report) => report.id !== latest.id);
-//     }
-//     console.log(sortedList);
-//     return sortedList;
-//   }
-// }
-
 const sortList = (reports) => {
   let sortedList = [];
   while (reports.length > 0) {
@@ -86,7 +83,7 @@ export function useArticleData() {
 
   useEffect(() => {
     dispatch(articleActions.fetchArticles());
-    setData(articleList);
+    setData(sortList(articleList).reverse());
   }, [dispatch, articleList, data]);
   return data;
 }

@@ -9,9 +9,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tabs from "./Tabs";
 import imageLoader from "../loader";
 import singleContext from "../SingleContext";
-import Checkbox from "@mui/material/Checkbox";
-import NightsStayIcon from "@mui/icons-material/NightsStay";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 const FullAppBar = () => {
   const context = useContext(singleContext);
@@ -73,22 +70,6 @@ const FullAppBar = () => {
           </Box>
         </Box>
         <Tabs border={true} />
-      </Box>
-      <Box
-        width={"20%"}
-        justifyContent="center"
-        display="flex"
-        alignItems={"center"}
-      >
-        <Checkbox
-          icon={<WbSunnyIcon />}
-          checkedIcon={<NightsStayIcon />}
-          onClick={() => {
-            console.log(context);
-            context.toggleDarkMode();
-            console.log(context);
-          }}
-        />
       </Box>
     </Box>
   );

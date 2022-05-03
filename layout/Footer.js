@@ -12,7 +12,6 @@ import { collection, getDocs, getFirestore, addDoc } from "firebase/firestore";
 import { db } from "../store/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import singleContext from "../SingleContext";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 import * as articleActions from "../store/actions/article-actions";
@@ -21,7 +20,6 @@ import { useArticleData, useReportData } from "../store/hooks/useData";
 
 const Footer = (props) => {
   const [email, setEmail] = useState("");
-  const context = useContext(singleContext);
   const router = useRouter();
   const articleList = useArticleData();
   const reportList = useReportData();

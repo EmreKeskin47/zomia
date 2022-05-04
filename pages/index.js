@@ -22,8 +22,8 @@ import {
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
 
-  const articleList = useArticleData().slice(0, 3);
-  const reportList = useReportData().slice(0, 3);
+  const articleList = useArticleData();
+  const reportList = useReportData();
 
   const [connectArticle, setConnectArticle] = useState([]);
   const [connectReport, setConnectReport] = useState([]);
@@ -102,7 +102,7 @@ function App(props) {
       {/* Articles Section */}
       <Container>
         {articleList &&
-          articleList.map((article, index) => {
+          articleList.slice(0, 3).map((article, index) => {
             return (
               <Link key={index} href={`/analysis/${article.id}`}>
                 <ListView

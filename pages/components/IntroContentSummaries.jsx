@@ -1,35 +1,36 @@
 import React from "react";
 import ContentSummary from "./ContentSummary";
-import { ContentSummaryArray } from "../../components/data/ContentSumaryArray";
 import { Grid } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useArticleData } from "../../store/hooks/useData";
 
 const IntroContentSummaries = () => {
-    const articleList = useSelector((state) => state.articleStore.articles);
+  const articleList = useArticleData();
 
-    return (
-        <Grid>
-            {articleList.map((contentSummary, index) => {
-                return (
-                    <Grid
-                        sx={{
-                            padding: "0.5rem",
-                        }}
-                        key={index}
-                    >
-                        <ContentSummary
-                            id={contentSummary.id}
-                            category={contentSummary.category}
-                            heading={contentSummary.title}
-                            date={contentSummary.date}
-                            author={contentSummary.author}
-                            style={{ paddingBottom: "5rem" }}
-                        />
-                    </Grid>
-                );
-            })}
-        </Grid>
-    );
+  return (
+    <Grid>
+      {articleList &&
+        articleList.slice(0, 3).map((contentSummary, index) => {
+          return (
+            <Grid
+              sx={{
+                padding: "0.5rem",
+              }}
+              key={index}
+            >
+              <ContentSummary
+                id={contentSummary.id}
+                category={contentSummary.category}
+                description={contentSummary.description}
+                heading={contentSummary.title}
+                date={contentSummary.date}
+                author={contentSummary.author}
+                style={{ paddingBottom: "5rem" }}
+              />
+            </Grid>
+          );
+        })}
+    </Grid>
+  );
 };
 
 export default IntroContentSummaries;

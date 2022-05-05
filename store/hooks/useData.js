@@ -72,7 +72,6 @@ const sortList = (reports) => {
     sortedList.push(latest);
     reports = reports.filter((report) => report.id !== latest.id);
   }
-  console.log(sortedList);
   return sortedList.reverse();
 };
 

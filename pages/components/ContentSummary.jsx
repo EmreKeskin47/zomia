@@ -1,7 +1,7 @@
 import { Grid, Typography, Link } from "@mui/material";
 import React from "react";
 
-const ContentSummary = ({ id, category, heading, date, author }) => {
+const ContentSummary = ({ id, description, heading, date, author }) => {
   return (
     <Grid container direction="column" justifyContent="center">
       <Grid item sx={{ paddingBottom: "0.5rem" }}>
@@ -15,6 +15,11 @@ const ContentSummary = ({ id, category, heading, date, author }) => {
         >
           {heading}
         </Link>
+      </Grid>
+      <Grid item>
+        <Typography align="left" variant="caption">
+          {description}
+        </Typography>
       </Grid>
       <Grid item>
         <Typography align="left" variant="caption" sx={{ fontStyle: "italic" }}>

@@ -110,6 +110,7 @@ function App(props) {
                   date={article.date}
                   author={article.author}
                   image={article.image}
+                  description={article.description}
                   latest={article.id === 1}
                 />
               </Link>
@@ -144,6 +145,7 @@ function App(props) {
                   heading={article.title}
                   date={article.date}
                   author={article.author}
+                  description={article.description}
                   image={article.image}
                 />
               </Link>

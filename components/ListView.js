@@ -4,7 +4,7 @@ import Image from "next/image";
 import palette from "../theme/palette";
 import imageLoader from "../loader";
 
-const ListView = ({ heading, date, author, image, latest }) => {
+const ListView = ({ heading, date, author, image, latest, description }) => {
   return (
     <Grid
       container
@@ -34,6 +34,13 @@ const ListView = ({ heading, date, author, image, latest }) => {
             }}
           >
             {heading}
+          </Typography>
+          <Typography
+            variant={latest ? "h6" : "subtitle1"}
+            fontStyle={"italic"}
+            sx={{ paddingTop: "2rem" }}
+          >
+            {description}
           </Typography>
           <Typography
             variant={latest ? "h6" : "subtitle1"}

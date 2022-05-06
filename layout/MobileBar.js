@@ -104,7 +104,7 @@ const MobileBar = () => {
         >
           <Link href="/">
             <Image
-              src="/static/logo.jpeg"
+              src="/static/logo.png"
               loader={imageLoader}
               unoptimized
               alt="Logo"

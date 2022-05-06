@@ -1,4 +1,5 @@
 // ----------------------------------------------------------------------
+import palette from "../palette";
 import React, { useContext } from "react";
 import singleContext from "../../SingleContext";
 
@@ -12,10 +13,11 @@ export default function Paper() {
 
       styleOverrides: {
         root: {
-          backgroundImage: context.darkMode
-            ? "url(https://background-tiles.com/overview/black/patterns/large/1001.png)"
-            : "url(https://background-tiles.com/overview/white/patterns/large/1014.png)",
-          backgroundSize: "175px auto",
+          // backgroundImage: context.darkMode
+          // ? "url('https://www.transparenttextures.com/patterns/black-thread-light.png')"
+          // : "url('https://www.transparenttextures.com/patterns/black-thread.png')",
+          // backgroundSize: "175px auto",
+          background: context.darkMode ? palette.black.main : "whitesmoke",
         },
       },
     },

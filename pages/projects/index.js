@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { mockProjects } from "../../MOCK_DATA";
@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import imageLoader from "../../loader";
+import singleContext from "../../SingleContext";
 
 function renderProject(project, index) {
   return (
@@ -80,6 +81,7 @@ function a11yProps(index) {
 }
 
 const Projects = () => {
+  const context = useContext(singleContext);
   const data = MakeArticleParagraph(mockProjects);
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -98,10 +100,15 @@ const Projects = () => {
         >
           <Grid item xs={12}>
             <Typography variant="subtitle1" paragraph={true}>
-              The Center is involved in over a dozen projects in Syria, Iraq,
-              Yemen, Afghanistan, and the United States. The projects fall under
-              two broad programs, the Legacy of War and Public Health Partners,
-              in which Zomia collaborates with local and international partners.
+              <span
+                style={{ color: context.darkMode ? "whitesmoke" : "black" }}
+              >
+                The Center is involved in over a dozen projects in Syria, Iraq,
+                Yemen, Afghanistan, and the United States. The projects fall
+                under two broad programs, the Legacy of War and Public Health
+                Partners, in which Zomia collaborates with local and
+                international partners.
+              </span>
             </Typography>
           </Grid>
 

@@ -14,15 +14,36 @@ import SingleProvider from "../SingleProvider";
 
 const font = createTheme({
   typography: {
-    fontFamily: [
-      "Raleway",
-      // "Montserrat",
-      "Nunito",
-      "Roboto",
-      "Helvetica Neue",
-      "Arial",
-      "sans-serif",
-    ].join(","),
+    h6: {
+      fontFamily: "Monsterrat",
+    },
+    h5: {
+      fontFamily: "Raleway",
+    },
+    h4: {
+      fontFamily: "Raleway",
+    },
+    h3: {
+      fontFamily: "Raleway",
+    },
+    h2: {
+      fontFamily: "Raleway",
+    },
+    h1: {
+      fontFamily: "Raleway",
+    },
+    subtitle1: {
+      fontFamily: "Monsterrat",
+    },
+    // fontFamily: [
+    //   "Raleway",
+    //   "Montserrat",
+    //   "Nunito",
+    //   "Roboto",
+    //   "Helvetica Neue",
+    //   "Arial",
+    //   "sans-serif",
+    // ].join(","),
   },
 });
 

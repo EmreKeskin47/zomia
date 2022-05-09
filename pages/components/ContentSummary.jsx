@@ -10,14 +10,14 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
           underline="none"
           color="whitesmoke"
           align="left"
-          variant="h6"
+          variant="h5"
           sx={{ fontWeight: "bold" }}
         >
           {heading}
         </Link>
       </Grid>
       <Grid item>
-        <Typography align="left" variant="caption">
+        <Typography align="left" variant="h6">
           {description}
         </Typography>
       </Grid>

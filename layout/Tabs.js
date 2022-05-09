@@ -47,7 +47,7 @@ const Tabs = (props) => {
       }}
     >
       <Link href="/" passhref="true">
-        <Typography variant="h6">
+        <Typography variant="h5">
           <span
             style={{ color: context.darkMode ? "#fff" : palette.black.main }}
           >
@@ -56,7 +56,7 @@ const Tabs = (props) => {
         </Typography>
       </Link>
       <Link href="/analysis" passhref="true">
-        <Typography variant="h6">
+        <Typography variant="h5">
           <span
             style={{ color: context.darkMode ? "#fff" : palette.black.main }}
           >
@@ -66,7 +66,7 @@ const Tabs = (props) => {
       </Link>
 
       <Link href="/projects" passhref="true">
-        <Typography variant="h6">
+        <Typography variant="h5">
           <span
             style={{ color: context.darkMode ? "#fff" : palette.black.main }}
           >
@@ -76,7 +76,7 @@ const Tabs = (props) => {
       </Link>
 
       <Link href="/investigations" passhref="true">
-        <Typography variant="h6">
+        <Typography variant="h5">
           <span
             style={{ color: context.darkMode ? "#fff" : palette.black.main }}
           >
@@ -87,7 +87,7 @@ const Tabs = (props) => {
 
       <Box sx={{ flexGrow: 0 }}>
         <Box onClick={handleOpenUserMenu}>
-          <Typography variant="h6" passhref="true">
+          <Typography variant="h5" passhref="true">
             <span
               style={{ color: context.darkMode ? "#fff" : palette.black.main }}
             >

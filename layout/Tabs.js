@@ -8,6 +8,19 @@ import NightsStayIcon from "@mui/icons-material/NightsStay";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import singleContext from "../SingleContext";
 import palette from "../theme/palette";
+import { withStyles } from "@material-ui/core/styles";
+
+const checkBoxStyles = (theme) => ({
+  root: {
+    // "&$checked": {
+    //   color: "#3D70B2",
+    // },
+    color: "black",
+  },
+  // checked: {},
+});
+
+const CustomCheckbox = withStyles(checkBoxStyles)(Checkbox);
 
 const Tabs = (props) => {
   const context = useContext(singleContext);
@@ -121,7 +134,7 @@ const Tabs = (props) => {
           </MenuItem>
         </Menu>
       </Box>
-      <Checkbox
+      <CustomCheckbox
         icon={<NightsStayIcon />}
         checkedIcon={<WbSunnyIcon />}
         onClick={() => {

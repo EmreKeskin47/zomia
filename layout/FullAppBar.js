@@ -15,32 +15,40 @@ const FullAppBar = () => {
   const context = useContext(singleContext);
 
   return (
-    <Box justifyContent="space-around" display="flex" width={"100%"}>
+    <Box
+      justifyContent="space-evenly"
+      display="flex"
+      width={"100%"}
+      height={"105px"}
+      bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
+      sx={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+    >
       <Box
-        width={"30%"}
+        width={"20%"}
         justifyContent="center"
         display="flex"
         alignItems={"center"}
-        sx={{
-          cursor: "pointer",
-          background: context.darkMode
-            ? "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)"
-            : "radial-gradient(circle, rgba(0,0,0,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
-        }}
+        marginTop={"-1rem"}
+        // sx={{
+        //   cursor: "pointer",
+        //   background: context.darkMode
+        //     ? "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)"
+        //     : "radial-gradient(circle, rgba(0,0,0,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
+        // }}
       >
         <Link href="/">
           <Image
-            src="/static/logo.jpeg"
+            src="/static/logo.png"
             loader={imageLoader}
             unoptimized
             alt="Logo"
-            width="220px"
-            height="90px"
+            width="100px"
+            height="50px"
           />
         </Link>
       </Box>
 
-      <Box width={"50%"}>
+      <Box width={"80%"}>
         <Box
           display="flex"
           justifyContent="space-between"

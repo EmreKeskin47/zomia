@@ -33,7 +33,7 @@ const NewsSummary = (props) => {
                 ? palette.black.main
                 : "whitesmoke",
               minHeight: 350,
-              justifyContent: "center",
+              justifyContent: "flex-start",
               flexDirection: "column",
               alignItems: "center",
               display: "flex",
@@ -42,7 +42,6 @@ const NewsSummary = (props) => {
             <Typography gutterBottom variant="h5" component="div">
               {props.title}
             </Typography>
-
             <Typography variant="body2">{props.description}</Typography>
             <Divider sx={{ marginTop: 2, marginBottom: 2 }}></Divider>
             <Box sx={{ textAlign: "left", width: "100%" }}>

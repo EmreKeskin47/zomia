@@ -125,9 +125,7 @@ const Tabs = (props) => {
         icon={<NightsStayIcon />}
         checkedIcon={<WbSunnyIcon />}
         onClick={() => {
-          console.log(context);
           context.toggleDarkMode();
-          console.log(context);
         }}
       />
     </Box>

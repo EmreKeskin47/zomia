@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Typography, Button, Link } from "@mui/material";
+import { Grid, Typography, Button, Link, Paper } from "@mui/material";
 import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
 import { Container } from "@mui/material";
@@ -53,7 +53,7 @@ function App(props) {
   }
 
   return (
-    <Grid>
+    <Paper>
       <Grid
         container
         justifyContent="center"
@@ -180,7 +180,7 @@ function App(props) {
       </Container>
 
       {/* End Popular Reads Section */}
-    </Grid>
+    </Paper>
   );
 }
 

@@ -75,6 +75,7 @@ const FullAppBar = () => {
               <span
                 style={{
                   color: context.darkMode ? "whitesmoke" : palette.black.main,
+                  cursor: "default",
                 }}
               >
                 Follow us on social media

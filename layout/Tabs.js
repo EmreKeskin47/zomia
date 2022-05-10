@@ -15,7 +15,8 @@ const checkBoxStyles = (theme) => ({
         // "&$checked": {
         //   color: "#3D70B2",
         // },
-        color: "black",
+        color: "black ",
+        marginRight: 15,
     },
     // checked: {},
 });
@@ -162,7 +163,7 @@ const Tabs = (props) => {
                 </Menu>
             </Box>
             <CustomCheckbox
-                icon={<NightsStayIcon />}
+                icon={<NightsStayIcon color={"black"} />}
                 checkedIcon={<WbSunnyIcon />}
                 onClick={() => {
                     context.toggleDarkMode();

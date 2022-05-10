@@ -24,7 +24,7 @@ const Article = (props) => {
                     <AppBar
                         position="relative"
                         color="secondary"
-                        sx={{ marginTop: 1.4, textIndent: "1rem" }}
+                        sx={{ paddingTop: 0.4, textIndent: "1rem" }}
                     >
                         <Typography variant="h6" fontStyle={"italic"}>
                             {article.title}

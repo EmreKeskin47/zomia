@@ -11,6 +11,7 @@ import IconButton from "./IconButton";
 import Autocomplete from "./Autocomplete";
 import Link from "./Link";
 import AppBar from "./AppBar";
+import ToolBar from "./Toolbar";
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +28,7 @@ export default function ComponentsOverrides(theme) {
         IconButton(theme),
         Autocomplete(theme),
         Link(theme),
-        AppBar(theme)
+        AppBar(theme),
+        ToolBar(theme)
     );
 }

@@ -163,32 +163,34 @@ function App(props) {
                             </Link>
                         );
                     })}
-                <Box
-                    sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        paddingBottom: 15,
-                    }}
-                >
-                    <Button
-                        onClick={() => {
-                            setLatestCount(latestCount + 4);
+                {data && data.length > latestCount && (
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            paddingBottom: 15,
                         }}
                     >
-                        <Typography
-                            variant="h5"
-                            textAlign={"center"}
-                            sx={{
-                                cursor: "pointer",
-                                borderStyle: "solid",
-                                borderWidth: "2.5px",
-                                padding: "12px",
+                        <Button
+                            onClick={() => {
+                                setLatestCount(latestCount + 4);
                             }}
                         >
-                            Load more
-                        </Typography>
-                    </Button>
-                </Box>
+                            <Typography
+                                variant="h5"
+                                textAlign={"center"}
+                                sx={{
+                                    cursor: "pointer",
+                                    borderStyle: "solid",
+                                    borderWidth: "2.5px",
+                                    padding: "12px",
+                                }}
+                            >
+                                Load more
+                            </Typography>
+                        </Button>
+                    </Box>
+                )}
             </Container>
 
             {/* End Popular Reads Section */}

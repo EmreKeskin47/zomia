@@ -33,11 +33,13 @@ export default function IntroArticle(props) {
                 <CardActionArea
                     onClick={() => router.push(`investigations/${data.id}`)}
                 >
-                    <CardMedia
-                        component="img"
-                        image={data.image}
-                        alt="top article"
-                    />
+                    {data && data.image && (
+                        <CardMedia
+                            component="img"
+                            image={data.image}
+                            alt="top article"
+                        />
+                    )}
                     <CardContent
                         sx={{
                             backgroundColor: context.darkMode

@@ -123,13 +123,13 @@ const Projects = () => {
               >
                 <Tab
                   label={data[0].name}
-                  sx={{ fontSize: "1.5rem", bcolor: "red" }}
+                  sx={{ fontSize: "1.5rem", color: "#F9A21B !important" }}
                   wrapped
                   {...a11yProps(0)}
                 />
                 <Tab
                   label={data[1].name}
-                  sx={{ fontSize: "1.5rem" }}
+                  sx={{ fontSize: "1.5rem", color: "#F9A21B !important" }}
                   wrapped
                   {...a11yProps(1)}
                 />

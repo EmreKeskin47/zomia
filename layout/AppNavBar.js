@@ -80,8 +80,7 @@ const AppNavBar = (props) => {
                                 <Toolbar
                                     disableGutters={true}
                                     sx={{
-                                        paddingLeft: 0,
-                                        paddingRight: 0,
+                                        padding: 0,
                                         minHeight: "48px !important",
                                     }}
                                 >

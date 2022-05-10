@@ -40,7 +40,7 @@ const Tabs = (props) => {
         <Box
             justifyContent="space-between"
             display="flex"
-            height={54}
+            height={"48px"}
             alignItems={"center"}
             sx={{
                 cursor: "pointer",

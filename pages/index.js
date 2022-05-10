@@ -27,7 +27,9 @@ function App(props) {
 
     const [connectArticle, setConnectArticle] = useState([]);
     const [connectReport, setConnectReport] = useState([]);
+
     var data = [];
+    var featuredReport;
 
     useEffect(() => {
         const fetch = async () => {
@@ -48,6 +50,11 @@ function App(props) {
 
     if (reportList && reportList != []) {
         data.push(...reportList);
+        reportList.forEach((report) => {
+            if (report.featured) {
+                featuredReport = report;
+            }
+        });
     }
     if (articleList && articleList != []) {
         data.push(...articleList);
@@ -79,7 +86,7 @@ function App(props) {
                     }}
                 >
                     <Grid item lg={7} md={7} sm={12} sx={{ padding: "1rem" }}>
-                        <IntroArticle />
+                        <IntroArticle data={featuredReport} />
                     </Grid>
                     <Grid
                         item

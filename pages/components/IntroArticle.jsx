@@ -7,10 +7,16 @@ import { CardActionArea, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
+import { adjustNewLines } from "../../utils/ArticleParagraph";
 
 export default function IntroArticle(props) {
     const context = useContext(singleContext);
     const router = useRouter();
+    const { data } = props;
+    var description = "No description provided";
+    if (data && data.text) {
+        description = adjustNewLines(data.text);
+    }
     return (
         <Grid
             sx={{
@@ -24,10 +30,12 @@ export default function IntroArticle(props) {
                     maxWidth: 1,
                 }}
             >
-                <CardActionArea onClick={() => router.push("")}>
+                <CardActionArea
+                    onClick={() => router.push(`investigations/${data.id}`)}
+                >
                     <CardMedia
                         component="img"
-                        image="/static/articles/2.png"
+                        image={data.image}
                         alt="top article"
                     />
                     <CardContent
@@ -38,15 +46,10 @@ export default function IntroArticle(props) {
                         }}
                     >
                         <Typography gutterBottom variant="h5" component="div">
-                            Proxy War in the Northern Corridor: How Inequality
-                            Shaped the Syrian War: The Case of Mare’a
+                            {data && data.title}
                         </Typography>
                         <Typography variant="subtitle1">
-                            During the Syrian civil war, towns and cities across
-                            the country overthrew the central government and
-                            governed themselves. Ultimately, however, this
-                            experiment in self-rule collapsed: some cities
-                            fell...
+                            {description.substring(0, 330)}...
                         </Typography>
                     </CardContent>
                 </CardActionArea>

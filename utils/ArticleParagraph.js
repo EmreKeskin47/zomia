@@ -12,5 +12,5 @@ export const MakeArticleParagraph2 = (text) => {
 };
 
 export const adjustNewLines = (text) => {
-    return text.replace(/\r\n/g, "<br />").replace(/[\r\n]/g, "<br />");
+    return text.replace(/\r\n/g, "<br/>").replace(/[\r\n]/g, "<br/>");
 };

@@ -4,10 +4,10 @@ import { Box } from "@mui/material";
 import VerticalDivider from "./VerticalDivider";
 
 const RenderTitle = (props) => {
-    const { text, height } = props;
+    const { text, height, onlyLogo } = props;
     return (
         <Box display="flex" alignItems="center" marginY={5}>
-            <VerticalDivider height={height} />
+            <VerticalDivider height={height} onlyLogo={onlyLogo} />
 
             <Box>
                 <Typography variant="h3">{text}</Typography>

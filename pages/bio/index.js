@@ -22,7 +22,11 @@ const Bio = () => {
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>
                         <Box sx={{ marginLeft: { md: 2.5 } }}>
-                            <RenderTitle text="Team" height="100px" />
+                            <RenderTitle
+                                text="Team"
+                                height="100px"
+                                onlyLogo={true}
+                            />
                         </Box>
                         <Grid
                             item

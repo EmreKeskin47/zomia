@@ -99,7 +99,7 @@ const Article = (props) => {
                                     justifySelf={"center"}
                                 >
                                     {article.text
-                                        .split("<br />")
+                                        .split("<br/>" || "<br>")
                                         .map((paragraph, index) => {
                                             if (
                                                 paragraph.includes(".") ||

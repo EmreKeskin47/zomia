@@ -29,13 +29,17 @@ const Mission = () => {
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>
                         <Box sx={{ marginLeft: { md: 2.5 } }}>
-                            <RenderTitle text="About" height="100px" />
+                            <RenderTitle
+                                text="About"
+                                height="100px"
+                                onlyLogo={true}
+                            />
                         </Box>
 
                         <Grid
                             item
                             xs={12}
-                            lg={10}
+                            lg={12}
                             justifyItems={"center"}
                             justifyContent={"center"}
                             alignItems={"center"}
@@ -50,7 +54,7 @@ const Mission = () => {
                         <RenderSubtitle text="Current Initiatives" />
 
                         <Box marginBottom={10}>
-                            {bullet1.split("<br />").map((paragraph, index) => {
+                            {bullet1.split("<br/>").map((paragraph, index) => {
                                 return (
                                     <RenderBulletPoint
                                         key={index}
@@ -66,7 +70,7 @@ const Mission = () => {
                         />
                         <RenderSubtitle text="Current Themes" />
                         <Box marginBottom={10}>
-                            {bullet2.split("<br />").map((paragraph, index) => {
+                            {bullet2.split("<br/>").map((paragraph, index) => {
                                 return (
                                     <RenderBulletPoint
                                         key={index}

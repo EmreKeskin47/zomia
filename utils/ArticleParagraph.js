@@ -8,7 +8,7 @@ export const MakeArticleParagraph = (longText) => {
 };
 
 export const MakeArticleParagraph2 = (text) => {
-    return text.replace(/\\n/g, "<br />");
+    return text.replace(/\\n/g, "<br/>");
 };
 
 export const adjustNewLines = (text) => {

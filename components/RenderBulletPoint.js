@@ -10,7 +10,7 @@ const RenderBulletPoint = (props) => {
             marginY={3}
             sx={{
                 marginLeft: {
-                    lg: 15,
+                    lg: 10,
                 },
             }}
         >

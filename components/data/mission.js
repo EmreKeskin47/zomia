@@ -11,14 +11,14 @@ The core strength of the Center is its alliance of researchers and specialists. 
 The Center's projects are diverse.
 `;
 
-export const bulletList1 = `Public health surveillance in Syria to assist the design of vaccination campaigns, including Covid-19
-Programs to help victims of U.S. airstrikes navigate legal hurdles and obtain condolence payments from the U.S. government
-Projects designed to support local organizations catalog individuals forcibly disappeared by ISIS, with the aim of helping to bring closure to loved ones
+export const bulletList1 = `Public health surveillance in Syria to assist the design of vaccination campaigns, including Covid-19 <br/>
+Programs to help victims of U.S. airstrikes navigate legal hurdles and obtain condolence payments from the U.S. government <br/>
+Projects designed to support local organizations catalog individuals forcibly disappeared by ISIS, with the aim of helping to bring closure to loved ones <br/>
 Programs to support women in Afghanistan and Afghan refugees elsewhere `;
 
-export const bulletList2 = `Collecting local, community-level histories in order to understand the hegemony of “political” Islam as a discourse of resistance
-The modalities of rebel governance
-The role of neoliberalism in producing and shaping the contours of anti-state resistance
-Public health and epidemiology in non-state spaces
-The role of imperialism and proxy warfare in producing and maintaining non-state spaces
-Alternative modes of humanitarian delivery, including direct cash transfers and universal basic income`;
+export const bulletList2 = `Collecting local, community-level histories in order to understand the hegemony of “political” Islam as a discourse of resistance <br/>
+The modalities of rebel governance <br/>
+The role of neoliberalism in producing and shaping the contours of anti-state resistance <br/>
+Public health and epidemiology in non-state spaces <br/>
+The role of imperialism and proxy warfare in producing and maintaining non-state spaces <br/>
+Alternative modes of humanitarian delivery, including direct cash transfers and universal basic income `;

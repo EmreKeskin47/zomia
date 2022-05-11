@@ -108,10 +108,11 @@ const MobileBar = () => {
             </Drawer>
             <AppBar>
                 <Box
-                    width={"100%"}
+                    width={"95%"}
                     display={"flex"}
                     justifyContent={"space-between"}
                     sx={{ cursor: "pointer" }}
+                    marginLeft={"2.5%"}
                 >
                     <Link href="/">
                         <Image
@@ -119,7 +120,7 @@ const MobileBar = () => {
                             loader={imageLoader}
                             unoptimized
                             alt="Logo"
-                            width="140px"
+                            width="64px"
                             height="64px"
                         />
                     </Link>

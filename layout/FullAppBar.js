@@ -27,7 +27,6 @@ const FullAppBar = () => {
                 justifyContent="center"
                 display="flex"
                 alignItems={"center"}
-                marginTop={"-1rem"}
                 // sx={{
                 //   cursor: "pointer",
                 //   background: context.darkMode
@@ -41,8 +40,8 @@ const FullAppBar = () => {
                         loader={imageLoader}
                         unoptimized
                         alt="Logo"
-                        width="100px"
-                        height="50px"
+                        width="200px"
+                        height="200px"
                     />
                 </Link>
             </Box>

@@ -17,6 +17,7 @@ const Admin = () => {
   useEffect(() => {
     dispatch(articleActions.fetchArticles());
     dispatch(articleActions.deleteArticle(2));
+    console.log(context.auth);
   }, []);
 
   const handleEmail = (event) => {
@@ -36,6 +37,8 @@ const Admin = () => {
         const user = userCredential.user;
         context.signInAdmin();
         setAdminAuth(true);
+        console.log("signed in");
+        console.log(context.auth);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -61,37 +64,41 @@ const Admin = () => {
           </Grid>
         </Grid>
       ) : (
-        <Grid container flexDirection={"row"} justifyContent={"center"}>
-          <Grid
-            container
+        <Grid
+          container
+          flexDirection={"row"}
+          justifyContent={"center"}
+          sx={{ paddingBottom: "300px", paddingTop: "300px" }}
+        >
+          <TextField
             item
-            justifyContent={"center"}
-            flexDirection={"column"}
+            id="filled-basic"
+            label="Email"
+            variant="filled"
+            sx={{ backgroundColor: "whitesmoke" }}
+            onChange={handleEmail}
+          />
+          <TextField
+            item
+            id="filled-basic"
+            label="Password"
+            variant="filled"
+            type={"password"}
+            sx={{
+              backgroundColor: "whitesmoke",
+              marginLeft: 5,
+              marginRight: 5,
+            }}
+            onChange={handlePassword}
+          />
+          <Button
+            item
+            variant="text"
+            sx={{ marginLeft: 5, color: "whitesmoke !important" }}
+            onClick={signIn}
           >
-            <Grid item>
-              <TextField
-                id="filled-basic"
-                label="Email"
-                variant="filled"
-                sx={{ backgroundColor: "whitesmoke" }}
-                onChange={handleEmail}
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                id="filled-basic"
-                label="Password"
-                variant="filled"
-                sx={{ backgroundColor: "whitesmoke" }}
-                onChange={handlePassword}
-              />
-            </Grid>
-            <Grid item>
-              <Button variant="contained" onClick={signIn}>
-                SignIn
-              </Button>
-            </Grid>
-          </Grid>
+            SignIn
+          </Button>
         </Grid>
       )}
     </Box>

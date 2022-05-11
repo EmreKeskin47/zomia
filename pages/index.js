@@ -6,18 +6,12 @@ import { Container } from "@mui/material";
 import palette from "../theme/palette";
 import SectionBreaker from "./components/SectionBreaker";
 import CardList from "./components/CardList";
-import { mockArticles } from "../MOCK_DATA";
 import ListView from "../components/ListView";
 import { Box } from "@mui/system";
-import { mockReports } from "../MOCK_PDF";
 import { connect } from "react-redux";
 import * as articleActions from "../store/actions/article-actions";
 import * as reportActions from "../store/actions/report-actions";
-import {
-    useArticleData,
-    useReportData,
-    useSortedReportData,
-} from "../store/hooks/useData";
+import { useArticleData, useReportData } from "../store/hooks/useData";
 
 function App(props) {
     const [latestCount, setLatestCount] = useState(4);

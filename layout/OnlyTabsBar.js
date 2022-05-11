@@ -30,16 +30,16 @@ const OnlyTabsBar = () => {
             >
                 <Link href="/" passhref="true">
                     <Image
-                        src="/static/amblem.png"
+                        src="/static/logo.png"
                         loader={imageLoader}
                         unoptimized
                         alt="Logo"
-                        width="70px"
-                        height="50px"
+                        width="80px"
+                        height="64px"
                     />
                 </Link>
             </Box>
-            <Box width={"60%"} sx={{ marginRight: "5%" }}>
+            <Box width={"60%"} sx={{ marginRight: "5%", alignSelf: "center" }}>
                 <Tabs />
             </Box>
         </Box>

@@ -12,13 +12,9 @@ import { withStyles } from "@material-ui/core/styles";
 
 const checkBoxStyles = (theme) => ({
     root: {
-        // "&$checked": {
-        //   color: "#3D70B2",
-        // },
-        color: "black ",
-        marginRight: 15,
+        color: "#F9A21B ",
+        marginRight: "5%",
     },
-    // checked: {},
 });
 
 const CustomCheckbox = withStyles(checkBoxStyles)(Checkbox);
@@ -163,8 +159,23 @@ const Tabs = (props) => {
                 </Menu>
             </Box>
             <CustomCheckbox
-                icon={<NightsStayIcon color={"black"} />}
-                checkedIcon={<WbSunnyIcon />}
+                icon={
+                    <NightsStayIcon
+                        color={"#F9A21B"}
+                        sx={{
+                            color: "#F9A21B !important",
+                            marginRight: "5% !important",
+                        }}
+                    />
+                }
+                checkedIcon={
+                    <WbSunnyIcon
+                        sx={{
+                            color: "#F9A21B !important",
+                            marginRight: "5% !important",
+                        }}
+                    />
+                }
                 onClick={() => {
                     context.toggleDarkMode();
                 }}

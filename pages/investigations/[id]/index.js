@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import Article from "../../../components/Article";
 import Link from "next/link";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { useReportData } from "../../../store/hooks/useData";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import * as reportActions from "../../../store/actions/report-actions";
 
 const Investigations = (props) => {
@@ -43,6 +43,29 @@ const Investigations = (props) => {
                 <Link href={report.pdfLink} replace>
                     <Box
                         sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            paddingBottom: 15,
+                        }}
+                    >
+                        <Button>
+                            <Typography
+                                variant="h5"
+                                textAlign={"center"}
+                                sx={{
+                                    cursor: "pointer",
+                                    borderStyle: "solid",
+                                    borderWidth: "2.5px",
+                                    padding: "12px",
+                                }}
+                            >
+                                Click to view the full report
+                            </Typography>
+                        </Button>
+                    </Box>
+
+                    {/* <Box
+                        sx={{
                             paddingBottom: 10,
                             display: "flex",
                             justifyContent: "center",
@@ -64,7 +87,7 @@ const Investigations = (props) => {
                         >
                             Click to view the full report
                         </StyledTypography>
-                    </Box>
+                    </Box> */}
                 </Link>
             )}
         </Paper>

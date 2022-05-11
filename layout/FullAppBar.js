@@ -46,7 +46,7 @@ const FullAppBar = () => {
                 </Link>
             </Box>
 
-            <Box width={"80%"}>
+            <Box width={"70%"}>
                 <Box
                     display="flex"
                     justifyContent="space-between"
@@ -63,12 +63,6 @@ const FullAppBar = () => {
                         width={"80%"}
                         justifyContent={"space-around"}
                     >
-                        {/* <Link href="/admin/create-report">
-              <Typography variant="h6">Admin</Typography>
-            </Link>
-            <Link href="/">
-              <Typography variant="h6">Newsletter</Typography>
-            </Link> */}
                         <Typography variant="h6">
                             <span
                                 style={{

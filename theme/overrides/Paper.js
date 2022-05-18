@@ -13,11 +13,10 @@ export default function Paper() {
 
       styleOverrides: {
         root: {
-          // backgroundImage: context.darkMode
-          // ? "url('https://www.transparenttextures.com/patterns/black-thread-light.png')"
-          // : "url('https://www.transparenttextures.com/patterns/black-thread.png')",
-          // backgroundSize: "175px auto",
-          background: context.darkMode ? palette.black.main : "whitesmoke",
+          backgroundImage: context.darkMode
+            ? "url('https://www.transparenttextures.com/patterns/black-thread.png')"
+            : "url('https://www.transparenttextures.com/patterns/black-thread-light.png')",
+          backgroundColor: context.darkMode ? "#0f0e0f" : "#faf2f0",
         },
       },
     },

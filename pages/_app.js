@@ -14,9 +14,15 @@ import SingleProvider from "../SingleProvider";
 
 const font = createTheme({
   typography: {
+    //Contents
+    //h6 is bigger and subtitle1 is smaller
     h6: {
       fontFamily: "Monsterrat",
     },
+    subtitle1: {
+      fontFamily: "Monsterrat",
+    },
+    //Heading
     h5: {
       fontFamily: "Raleway",
     },
@@ -31,9 +37,6 @@ const font = createTheme({
     },
     h1: {
       fontFamily: "Raleway",
-    },
-    subtitle1: {
-      fontFamily: "Monsterrat",
     },
     // fontFamily: [
     //   "Raleway",

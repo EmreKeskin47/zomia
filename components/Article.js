@@ -50,18 +50,10 @@ const Article = (props) => {
                     </Typography>
                     {article.author && (
                       <>
-                        <Typography
-                          variant="subtitle1"
-                          fontStyle={"italic"}
-                          sx={{ marginY: 3 }}
-                        >
+                        <Typography variant="subtitle1" sx={{ marginY: 3 }}>
                           {"by " + article.author}
                         </Typography>
-                        <Typography
-                          variant="subtitle1"
-                          fontStyle={"italic"}
-                          sx={{ marginY: 3 }}
-                        >
+                        <Typography variant="subtitle1" sx={{ marginY: 3 }}>
                           {article.date}
                         </Typography>
                       </>

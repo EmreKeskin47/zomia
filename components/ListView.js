@@ -38,21 +38,17 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
           </Typography>
           <Typography
             variant={latest ? "h6" : "subtitle1"}
-            fontStyle={"italic"}
             sx={{ paddingTop: "2rem" }}
           >
             {description}
           </Typography>
           <Typography
             variant={latest ? "h6" : "subtitle1"}
-            fontStyle={"italic"}
             sx={{ paddingTop: "2rem" }}
           >
             {"by " + author}
           </Typography>
-          <Typography variant="subtitle2" fontStyle={"italic"}>
-            {date}
-          </Typography>
+          <Typography variant="subtitle2">{date}</Typography>
         </Grid>
       </Grid>
     </Grid>

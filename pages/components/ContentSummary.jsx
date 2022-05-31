@@ -22,12 +22,12 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
         </Typography>
       </Grid> */}
       <Grid item>
-        <Typography align="left" variant="caption" sx={{ fontStyle: "italic" }}>
+        <Typography align="left" variant="caption">
           {date}
         </Typography>
       </Grid>
       <Grid item sx={{ paddingBottom: "1rem" }}>
-        <Typography align="left" variant="caption" sx={{ fontStyle: "italic" }}>
+        <Typography align="left" variant="caption">
           {"by " + author}
         </Typography>
       </Grid>

@@ -65,7 +65,7 @@ function App(props) {
           backgroundColor: palette.orange.main,
           boxShadow:
             " 3px 2px 4px -1px rgb(145 158 171 / 20%), 0px 4px 5px 0px rgb(145 180 171 / 34%), 0px 1px 10px 0px rgb(145 158 171 / 62%)",
-          padding: "0.5rem",
+          padding: "0.25rem",
         }}
       ></Grid>
       <Container>

@@ -40,7 +40,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
             variant={latest ? "h6" : "subtitle1"}
             sx={{ paddingTop: "2rem" }}
           >
-            {description}
+            {description && description.substring(0, 250)}
           </Typography>
           <Typography
             variant={latest ? "h6" : "subtitle1"}

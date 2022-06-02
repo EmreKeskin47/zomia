@@ -18,8 +18,8 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
             src={image}
             loader={imageLoader}
             unoptimized
-            width={latest ? "500px" : "475px"}
-            height={latest ? "400px" : "350px"}
+            width={"475px"}
+            height={"350px"}
             alt="zomia article"
             sx={{ alignSelf: "center" }}
           />

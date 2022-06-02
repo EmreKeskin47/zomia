@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Grid } from "@mui/material";
+import { CardActionArea, Grid, Box } from "@mui/material";
 import { useRouter } from "next/router";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
@@ -42,8 +42,19 @@ export default function IntroArticle(props) {
             }}
           >
             <Typography gutterBottom variant="h5" component="div">
-              {data && data.title}
+              {data && data.title.substring(0, 72)}
             </Typography>
+            <Box sx={{ textAlign: "left", width: "100%" }}>
+              <Typography align="left" variant="caption">
+                {data && data.date} /
+              </Typography>
+              <Typography align="left" variant="caption">
+                {data && data.author}
+              </Typography>
+            </Box>
+            <hr
+              style={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}
+            />
             <Typography variant="subtitle1">
               {description && description.substring(0, 250)}
             </Typography>

@@ -79,13 +79,13 @@ function App(props) {
             paddingBottom: "3rem",
           }}
         >
-          <Grid item lg={7} md={7} sm={12} sx={{ padding: "1rem" }}>
+          <Grid item lg={8} md={8} sm={12} sx={{ padding: "1rem" }}>
             <IntroArticle data={featuredReport} />
           </Grid>
           <Grid
             item
-            lg={5}
-            md={5}
+            lg={4}
+            md={4}
             sm={12}
             sx={{
               paddingTop: "0rem",

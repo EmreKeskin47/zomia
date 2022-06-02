@@ -10,20 +10,20 @@ const CardList = ({ type }) => {
   const generateList = () => {
     if (type === "report") {
       return (
-        <Grid container direction={"row"} justifyContent={"space-around"}>
+        <Grid container direction={"row"} justifyContent={"center"}>
           {reportList &&
             reportList.slice(0, 3).map((item) => (
-              <Grid item key={item.id} sx={{ paddingLeft: 5, paddingRight: 5 }}>
+              <Grid item key={item.id} sx={{ paddingLeft: 3, paddingRight: 3 }}>
                 <Link
                   href={`/investigations/${item.id}`}
-                  sx={{ paddingLeft: 5, paddingRight: 5 }}
+                  sx={{ paddingLeft: 3, paddingRight: 3 }}
                   replace="true"
                 >
                   <NewsSummary
                     image={item.image}
                     title={item.title}
                     date={item.date}
-                    description={item.text.slice(0, 140) + "..."}
+                    description={item.text.slice(0, 250) + "..."}
                     author={item.author}
                   />
                 </Link>

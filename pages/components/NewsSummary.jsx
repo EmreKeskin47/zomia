@@ -15,14 +15,14 @@ const NewsSummary = (props) => {
         borderRadius: 0,
         borderColor: palette.orange.main,
         border: "10px",
-        paddingBottom: "5rem",
+        paddingBottom: "2rem",
       }}
     >
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 375 }}>
         <CardActionArea>
           <CardMedia
             component="img"
-            height="250"
+            height="300"
             // image="/static/deneme2.png"
             image={props.image}
             alt="green iguana"
@@ -32,7 +32,7 @@ const NewsSummary = (props) => {
               backgroundColor: context.darkMode
                 ? palette.black.main
                 : "whitesmoke",
-              minHeight: 350,
+              minHeight: 300,
               justifyContent: "flex-start",
               flexDirection: "column",
               alignItems: "center",
@@ -40,33 +40,23 @@ const NewsSummary = (props) => {
             }}
           >
             <Typography gutterBottom variant="h5" component="div">
-              {props.title}
+              {props.title && props.title.substring(0, 72)}
             </Typography>
-            <Typography variant="body2">{props.description}</Typography>
-            <Divider sx={{ marginTop: 2, marginBottom: 2 }}></Divider>
             <Box sx={{ textAlign: "left", width: "100%" }}>
-              <Typography
-                align="left"
-                variant="caption"
-                sx={{
-                  fontStyle: "italic",
-                  color: "whitesmoke",
-                }}
-              >
+              <Typography align="left" variant="caption">
                 {props.date} /
               </Typography>
-
-              <Typography
-                align="left"
-                variant="caption"
-                sx={{
-                  fontStyle: "italic",
-                  color: "whitesmoke",
-                }}
-              >
+              <Typography align="left" variant="caption">
                 {props.author}
               </Typography>
             </Box>
+            <hr
+              style={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}
+            />
+            <Typography variant="body2" sx={{ paddingTop: 1 }}>
+              {props.description && props.description.substring(0, 250)}
+            </Typography>
+            {/* <Divider sx={{ marginTop: 2, marginBottom: 0 }}></Divider> */}
           </CardContent>
         </CardActionArea>
       </Card>

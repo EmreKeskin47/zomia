@@ -189,11 +189,14 @@ const Footer = (props) => {
                 }}
               />
             </Grid>
-            <Grid item onClick={getLatestWriting}>
-              <StyledTypography variant="subtitle1" component="div">
-                Read latest
-              </StyledTypography>
-            </Grid>
+            <StyledTypography
+              variant="subtitle1"
+              component="div"
+              item
+              onClick={getLatestWriting}
+            >
+              Read latest
+            </StyledTypography>
           </Grid>
         </StyledButton>
       </Grid>

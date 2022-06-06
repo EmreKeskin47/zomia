@@ -23,12 +23,31 @@ const Article = (props) => {
           <OnlyTabsBar />
           <AppBar
             position="relative"
-            color="secondary"
-            sx={{ paddingTop: 0, textIndent: "1rem" }}
+            sx={{ marginTop: "-20px", textIndent: "1rem" }}
           >
-            <Typography variant="h6" fontStyle={"italic"}>
-              {article.title}
-            </Typography>
+            <Grid container flexDirection={"row"} justifyContent={"flex-start"}>
+              <Grid item>
+                <Image
+                  src="/static/o-logo.png"
+                  loader={imageLoader}
+                  unoptimized
+                  alt="Zomia Amblem"
+                  width="40px"
+                  height="40px"
+                />
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="h6"
+                  fontStyle={"italic"}
+                  color="whitesmoke"
+                  bgcolor={"black"}
+                  paddingTop={1}
+                >
+                  {article.title}
+                </Typography>
+              </Grid>
+            </Grid>
           </AppBar>
         </AppBar>
 

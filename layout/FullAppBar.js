@@ -12,102 +12,92 @@ import singleContext from "../SingleContext";
 import palette from "../theme/palette";
 
 const FullAppBar = () => {
-    const context = useContext(singleContext);
+  const context = useContext(singleContext);
 
-    return (
+  return (
+    <Box
+      justifyContent="space-evenly"
+      display="flex"
+      width={"100%"}
+      height={"105px"}
+      bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
+    >
+      <Box
+        width={"20%"}
+        justifyContent="center"
+        display="flex"
+        alignItems={"center"}
+        // sx={{
+        //   cursor: "pointer",
+        //   background: context.darkMode
+        //     ? "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)"
+        //     : "radial-gradient(circle, rgba(0,0,0,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
+        // }}
+      >
+        <Link href="/">
+          <Image
+            src={
+              context.darkMode ? "/static/white-logo.png" : "/static/logo.png"
+            }
+            loader={imageLoader}
+            unoptimized
+            alt="Logo"
+            width="200px"
+            height="200px"
+          />
+        </Link>
+      </Box>
+
+      <Box width={"70%"}>
         <Box
-            justifyContent="space-evenly"
-            display="flex"
-            width={"100%"}
-            height={"105px"}
-            bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          height={54}
+          sx={{
+            cursor: "pointer",
+          }}
         >
-            <Box
-                width={"20%"}
-                justifyContent="center"
-                display="flex"
-                alignItems={"center"}
-                // sx={{
-                //   cursor: "pointer",
-                //   background: context.darkMode
-                //     ? "radial-gradient(circle, rgba(255,255,255,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)"
-                //     : "radial-gradient(circle, rgba(0,0,0,100) 50%, rgba(227,222,222,1) 64%, #858181 74%, rgba(0,0,0,1) 83%)",
-                // }}
-            >
-                <Link href="/">
-                    <Image
-                        src="/static/logo.png"
-                        loader={imageLoader}
-                        unoptimized
-                        alt="Logo"
-                        width="200px"
-                        height="200px"
-                    />
-                </Link>
-            </Box>
-
-            <Box width={"70%"}>
-                <Box
-                    display="flex"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    height={54}
-                    sx={{
-                        cursor: "pointer",
-                    }}
-                >
-                    <Box
-                        borderLeft={"1px solid #2c253c"}
-                        borderRight={"1px solid #2c253c"}
-                        display="flex"
-                        width={"80%"}
-                        justifyContent={"space-around"}
-                    >
-                        <Typography variant="h6">
-                            <span
-                                style={{
-                                    color: context.darkMode
-                                        ? "whitesmoke"
-                                        : palette.black.main,
-                                    cursor: "default",
-                                }}
-                            >
-                                Follow us on social media
-                            </span>
-                        </Typography>
-                    </Box>
-                    <Box
-                        display="flex"
-                        width={"20%"}
-                        justifyContent={"space-around"}
-                    >
-                        <TwitterIcon
-                            sx={{
-                                color: context.darkMode
-                                    ? "#fff"
-                                    : palette.black.main,
-                            }}
-                        />
-                        <EmailIcon
-                            sx={{
-                                color: context.darkMode
-                                    ? "#fff"
-                                    : palette.black.main,
-                            }}
-                        />
-                        <LinkedInIcon
-                            sx={{
-                                color: context.darkMode
-                                    ? "#fff"
-                                    : palette.black.main,
-                            }}
-                        />
-                    </Box>
-                </Box>
-                <Tabs border={true} />
-            </Box>
+          <Box
+            borderLeft={"1px solid #2c253c"}
+            borderRight={"1px solid #2c253c"}
+            display="flex"
+            width={"80%"}
+            justifyContent={"space-around"}
+          >
+            <Typography variant="h6">
+              <span
+                style={{
+                  color: context.darkMode ? "whitesmoke" : palette.black.main,
+                  cursor: "default",
+                }}
+              >
+                Follow us on social media
+              </span>
+            </Typography>
+          </Box>
+          <Box display="flex" width={"20%"} justifyContent={"space-around"}>
+            <TwitterIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
+            <EmailIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
+            <LinkedInIcon
+              sx={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            />
+          </Box>
         </Box>
-    );
+        <Tabs border={true} />
+      </Box>
+    </Box>
+  );
 };
 
 export default FullAppBar;

@@ -28,7 +28,9 @@ const OnlyTabsBar = () => {
       >
         <Link href="/" passhref="true">
           <Image
-            src="/static/logo.png"
+            src={
+              context.darkMode ? "/static/white-logo.png" : "/static/logo.png"
+            }
             loader={imageLoader}
             unoptimized
             alt="Logo"

@@ -34,6 +34,14 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const StyledLink = styled(Link)(({ theme }) => ({
+  color: "#000",
+  "&:hover": {
+    color: "purple",
+    backgroundColor: "transparent",
+  },
+}));
+
 const Footer = (props) => {
   const [email, setEmail] = useState("");
   const router = useRouter();
@@ -265,6 +273,21 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
+      </Grid>
+      <Grid container justifyContent={"center"} flexDirection={"row"}>
+        <Grid item>
+          <Typography
+            variant="subtitle2"
+            // color={"whitesmoke !important"}
+            sx={{ paddingRight: "6rem" }}
+          >
+            Developed by
+            <StyledLink href="https://www.wowfreelance.com">
+              {" "}
+              wowfreelance.com
+            </StyledLink>
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

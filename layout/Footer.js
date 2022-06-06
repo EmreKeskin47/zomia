@@ -277,12 +277,8 @@ const Footer = (props) => {
       </Grid>
       <Grid container justifyContent={"center"} flexDirection={"row"}>
         <Grid item>
-          <Typography
-            variant="subtitle2"
-            // color={"whitesmoke !important"}
-            sx={{ paddingRight: "6rem" }}
-          >
-            Developed by
+          <Typography variant="subtitle2" sx={{ paddingRight: "6rem" }}>
+            <span style={{ color: "black !important" }}>Developed by</span>
             <StyledLink href="https://www.wowfreelance.com">
               {" "}
               wowfreelance.com

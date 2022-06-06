@@ -40,6 +40,7 @@ const Article = (props) => {
                 <Typography
                   variant="h6"
                   fontStyle={"italic"}
+                  fontFamily="Raleway !important"
                   color="whitesmoke"
                   bgcolor={"black"}
                   paddingTop={1}

@@ -15,7 +15,7 @@ const VerticalDivider = (props) => {
           loader={imageLoader}
           unoptimized
           alt="Logo"
-          width="80px"
+          width="100px"
           height="120px"
         />
       </Box>

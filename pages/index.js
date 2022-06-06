@@ -11,18 +11,25 @@ import { Box } from "@mui/system";
 import { connect } from "react-redux";
 import * as articleActions from "../store/actions/article-actions";
 import * as reportActions from "../store/actions/report-actions";
-import { useArticleData, useReportData } from "../store/hooks/useData";
+import {
+  useArticleData,
+  useReportData,
+  useWritingData,
+} from "../store/hooks/useData";
+import { lastIndexOf } from "lodash";
 
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
 
   const articleList = useArticleData();
   const reportList = useReportData();
+  const writingList = useWritingData();
 
   const [connectArticle, setConnectArticle] = useState([]);
   const [connectReport, setConnectReport] = useState([]);
 
   var data = [];
+  const writings = [];
   var featuredReport;
 
   useEffect(() => {
@@ -52,6 +59,9 @@ function App(props) {
   }
   if (articleList && articleList != []) {
     data.push(...articleList);
+  }
+  if (reportList && reportList != [] && articleList && articleList != []) {
+    writings.push(...writingList);
   }
 
   return (
@@ -139,20 +149,30 @@ function App(props) {
       <SectionBreaker text="Latest" link="#" color="whitesmoke" />
       {/* Popular Reads Section */}
       <Container>
-        {data &&
-          data.slice(0, latestCount).map((article, index) => {
-            return (
-              <Link key={index} href={`/analysis/${article.id}`}>
-                <ListView
-                  heading={article.title}
-                  date={article.date}
-                  author={article.author}
-                  description={article.description}
-                  image={article.image}
-                />
-              </Link>
-            );
-          })}
+        {writings &&
+          writings
+            .reverse()
+            .slice(0, latestCount)
+            .map((article, index) => {
+              return (
+                <Link
+                  key={index}
+                  href={
+                    article.pdfLink
+                      ? `/investigations/${article.id}`
+                      : `/analysis/${article.id}`
+                  }
+                >
+                  <ListView
+                    heading={article.title}
+                    date={article.date}
+                    author={article.author}
+                    description={article.description}
+                    image={article.image}
+                  />
+                </Link>
+              );
+            })}
         {data && data.length > latestCount && (
           <Box
             sx={{

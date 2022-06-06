@@ -86,3 +86,22 @@ export function useArticleData() {
   }, [dispatch, articleList, data]);
   return data;
 }
+
+export function useWritingData() {
+  const dispatch = useDispatch();
+  // const [reportData, setReportData] = useState(null);
+  const reportList = useSelector((state) => state.reportStore.reports);
+  // const [articleData, setArticleData] = useState(null);
+  const articleList = useSelector((state) => state.articleStore.articles);
+  const [writingData, setWritingData] = useState(null);
+  useEffect(() => {
+    dispatch(reportActions.fetchReports());
+    const reportData = sortList(reportList);
+    dispatch(articleActions.fetchArticles());
+    const articleData = sortList(articleList);
+    setWritingData(sortList(articleData.concat(reportData)));
+  }, [dispatch, reportList, articleList]);
+  return writingData;
+}
+
+//kucukten buyuge analysis sonra buyukten kucuge reports

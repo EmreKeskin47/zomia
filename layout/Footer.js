@@ -18,6 +18,22 @@ import * as articleActions from "../store/actions/article-actions";
 import * as reportActions from "../store/actions/report-actions";
 import { useArticleData, useReportData } from "../store/hooks/useData";
 
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "#000",
+  "&:hover": {
+    color: "white",
+    backgroundColor: "transparent",
+  },
+}));
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  color: "#000",
+  "&:hover": {
+    color: "white",
+    backgroundColor: "transparent",
+  },
+}));
+
 const Footer = (props) => {
   const [email, setEmail] = useState("");
   const router = useRouter();
@@ -107,22 +123,6 @@ const Footer = (props) => {
     }
     router.push(route);
   };
-
-  const StyledButton = styled(Button)(({ theme }) => ({
-    color: "#000",
-    "&:hover": {
-      color: "white",
-      backgroundColor: "transparent",
-    },
-  }));
-
-  const StyledTypography = styled(Typography)(({ theme }) => ({
-    color: "#000",
-    "&:hover": {
-      color: "white",
-      backgroundColor: "transparent",
-    },
-  }));
 
   const saveEmail = async () => {
     try {

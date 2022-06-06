@@ -34,8 +34,8 @@ const OnlyTabsBar = () => {
             loader={imageLoader}
             unoptimized
             alt="Logo"
-            width="100px"
-            height="80px"
+            width="120px"
+            height="100px"
           />
         </Link>
       </Box>

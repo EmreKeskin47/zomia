@@ -30,7 +30,6 @@ function App(props) {
 
   var data = [];
   const writings = [];
-  var featuredReport;
 
   useEffect(() => {
     const fetch = async () => {
@@ -51,11 +50,6 @@ function App(props) {
 
   if (reportList && reportList != []) {
     data.push(...reportList);
-    reportList.forEach((report) => {
-      if (report.featured) {
-        featuredReport = report;
-      }
-    });
   }
   if (articleList && articleList != []) {
     data.push(...articleList);
@@ -90,7 +84,7 @@ function App(props) {
           }}
         >
           <Grid item lg={8} md={8} sm={12} sx={{ padding: "1rem" }}>
-            <IntroArticle data={featuredReport} />
+            <IntroArticle data={writings && writings[writings.length - 1]} />
           </Grid>
           <Grid
             item

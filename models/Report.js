@@ -10,8 +10,7 @@ export class Report {
     category,
     text,
     pdfLink,
-    additionalImages,
-    featured
+    additionalImages
   ) {
     this.id = id;
     this.title = title;
@@ -22,6 +21,5 @@ export class Report {
     this.text = text;
     this.pdfLink = pdfLink;
     this.additionalImages = additionalImages;
-    this.featured = featured ? featured : false;
   }
 }

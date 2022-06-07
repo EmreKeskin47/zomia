@@ -128,7 +128,7 @@ const MobileBar = () => {
           </Link>
           <IconButton
             edge="start"
-            color={context.darkMode ? "whitesmoke" : "black"}
+            color="warning"
             aria-label="menu"
             sx={{ mr: 4 }}
             onClick={toggleDrawer()}

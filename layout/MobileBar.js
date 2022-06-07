@@ -116,7 +116,9 @@ const MobileBar = () => {
         >
           <Link href="/">
             <Image
-              src={context.darkMode ? "/static/o-logo.png" : "/static/logo.png"}
+              src={
+                context.darkMode ? "/static/white-logo.png" : "/static/logo.png"
+              }
               loader={imageLoader}
               unoptimized
               alt="Logo"
@@ -126,7 +128,7 @@ const MobileBar = () => {
           </Link>
           <IconButton
             edge="start"
-            color="inherit"
+            color={context.darkMode ? "whitesmoke" : "black"}
             aria-label="menu"
             sx={{ mr: 4 }}
             onClick={toggleDrawer()}

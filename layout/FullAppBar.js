@@ -48,53 +48,8 @@ const FullAppBar = () => {
         </Link>
       </Box>
 
-      <Box width={"70%"}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          height={54}
-          sx={{
-            cursor: "pointer",
-          }}
-        >
-          <Box
-            borderLeft={"1px solid #2c253c"}
-            borderRight={"1px solid #2c253c"}
-            display="flex"
-            width={"80%"}
-            justifyContent={"space-around"}
-          >
-            <Typography variant="h6">
-              <span
-                style={{
-                  color: context.darkMode ? "whitesmoke" : palette.black.main,
-                  cursor: "default",
-                }}
-              >
-                Follow us on social media
-              </span>
-            </Typography>
-          </Box>
-          <Box display="flex" width={"20%"} justifyContent={"space-around"}>
-            <TwitterIcon
-              sx={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-              }}
-            />
-            <EmailIcon
-              sx={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-              }}
-            />
-            <LinkedInIcon
-              sx={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-              }}
-            />
-          </Box>
-        </Box>
-        <Tabs border={true} />
+      <Box width={"70%"} sx={{ paddingTop: "2%" }}>
+        <Tabs />
       </Box>
     </Box>
   );

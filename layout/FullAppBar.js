@@ -1,11 +1,7 @@
 import React, { useContext } from "react";
-import { Typography } from "@material-ui/core";
 import Link from "next/link";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tabs from "./Tabs";
 import imageLoader from "../loader";
 import singleContext from "../SingleContext";

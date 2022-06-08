@@ -26,14 +26,14 @@ function renderProject(project, index) {
             src={`/static/projects/${project.image}.png`}
             loader={imageLoader}
             unoptimized
-            width={"1300"}
+            width={"1100"}
             height={"750"}
           />
         </Grid>
         <Grid
           item
           xs={12}
-          lg={10}
+          lg={12}
           justifyItems={"center"}
           justifyContent={"center"}
           alignItems={"center"}

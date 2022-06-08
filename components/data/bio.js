@@ -16,9 +16,13 @@ Jeremy Hodge - Senior Investigator  <br />
 
 Jeremy is an investigative journalist and researcher covering the rise of extremism in Syria and Iraq, the petroleum/defense sectors, and regional finance. His 2015 African Confidential investigative report "Opening the Black Box of Egypt's Slush Funds", exposed a $9.4bn network of corruption amongst the country's top generals. Jeremy’s articles have appeared in Foreign Affairs, The Nation, Le Monde Diplomatique, Al-Jazeera, The Daily Beast, Africa Confidential and other outlets. <br />
 
-Kristin MacDougall-Sullivan, esq - Afghanistan Humanitarian Programs Director  <br />
+Kristin MacDougall-Sullivan - Afghanistan Humanitarian Programs Director  <br />
 
 Kristin is a US-licensed lawyer who runs Zomia’s humanitarian programs in Afghanistan. Prior to joining Zomia, Kristin provided legal counseling and advocacy for asylum seekers in Lesvos, Greece, which at one time hosted the largest refugee camp in Europe. Kristin earned her J.D. from the University of Connecticut School of Law. She also holds a Masters of Arts in Law and Diplomacy from The Fletcher School of Tufts University, where she focused on public international law and human security.   <br />
+
+Joanna Naples-Mitchell, esq - Director, Redress Program <br />
+
+Joanna is a US-licensed lawyer who runs Zomia’s Program on Redress for Survivors of U.S. and Coalition Airstrikes. Prior to joining Zomia, Joanna worked at Physicians for Human Rights, Human Rights Watch, and the Human Rights and Special Prosecutions Section of the U.S. Department of Justice. She holds a law degree from New York University School of Law and a bachelor’s degree from Harvard University. She is admitted to practice law in the state of New York. <br />
 
 Hussein Nasser - Field Researcher  <br />
 

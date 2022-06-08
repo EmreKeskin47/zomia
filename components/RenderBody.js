@@ -13,9 +13,7 @@ const RenderBody = (props) => {
         },
       }}
     >
-      <Typography variant="h6" align={"center"}>
-        {text}
-      </Typography>
+      <Typography variant="h6">{text}</Typography>
     </Box>
   );
 };

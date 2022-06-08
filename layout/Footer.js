@@ -275,11 +275,11 @@ const Footer = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container justifyContent={"center"} flexDirection={"row"}>
+      <Grid container justifyContent={"flex-end"} flexDirection={"row"}>
         <Grid item>
           <Typography
             variant="subtitle2"
-            sx={!isMobile && { paddingRight: "6rem" }}
+            sx={!isMobile && { paddingRight: "3rem", paddingTop: "3rem" }}
           >
             <span style={{ color: "black !important" }}>Developed by</span>
             <StyledLink href="https://www.wowfreelance.com">

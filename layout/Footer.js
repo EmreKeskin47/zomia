@@ -279,7 +279,7 @@ const Footer = (props) => {
         <Grid item>
           <Typography
             variant="subtitle2"
-            sx={!isMobile && { paddingRight: "3rem", paddingTop: "3rem" }}
+            sx={!isMobile && { paddingRight: "3rem", paddingTop: "2rem" }}
           >
             <span style={{ color: "black !important" }}>Developed by</span>
             <StyledLink href="https://www.wowfreelance.com">

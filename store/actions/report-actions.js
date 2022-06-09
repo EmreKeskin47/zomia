@@ -29,6 +29,7 @@ export const saveReport = (item) => {
                     date: item.date,
                     image: item.image,
                     text: item.text,
+                    description: item.description,
                     links: item.link,
                     pdf: item.pdf,
                     featured: item.featured ? item.featured : false,
@@ -58,6 +59,7 @@ export const fetchReports = () => {
                         doc.data().report.author,
                         "cat",
                         doc.data().report.text,
+                        doc.data().report.description,
                         doc.data().report.pdf,
                         doc.data().report.link,
                         doc.data().report.featured
@@ -107,6 +109,7 @@ export const updateReport = (item) => {
                     date: item.date,
                     image: item.image,
                     text: item.text,
+                    description: item.description,
                     pdfLink: item.pdfLink,
                     featured: item.featured ? item.featured : false,
                 },

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Link } from "@mui/material";
-import { mockReports } from "../../MOCK_PDF";
 import NewsSummary from "./NewsSummary";
-import { useSelector } from "react-redux";
 import { useReportData } from "../../store/hooks/useData";
 
 const CardList = ({ type }) => {

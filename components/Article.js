@@ -41,8 +41,12 @@ const Article = (props) => {
                             container
                             flexDirection={"row"}
                             justifyContent={"flex-start"}
+                            alignItems={"center"}
+                            alignSelf={"center"}
+                            alignContent={"center"}
+                            paddingTop={"10px"}
                         >
-                            <Grid item paddingTop={"5px"}>
+                            <Grid item>
                                 <Image
                                     src="/static/o-logo.png"
                                     loader={imageLoader}

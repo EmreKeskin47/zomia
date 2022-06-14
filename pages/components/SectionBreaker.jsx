@@ -15,7 +15,7 @@ const SectionBreaker = (props) => {
         color={context.darkMode ? "whitesmoke" : palette.black.main}
         variant="h3"
       >
-        {props.text}
+        <b>{props.text}</b>
       </Link>
     </Divider>
   );

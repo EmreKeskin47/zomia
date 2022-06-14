@@ -45,7 +45,7 @@ const font = createTheme({
       fontFamily: "Oswald",
     },
     h3: {
-      fontFamily: "Oswald",
+      fontFamily: "GFS Didot",
     },
     h2: {
       fontFamily: "Raleway",

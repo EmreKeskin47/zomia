@@ -228,8 +228,8 @@ function renderProject1(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b> Syrian Bombing Survey –</b> Between 2014 and
-                            2019, the U.S. carried out one of the most intensive
+                            <b> Syrian Bombing Survey –</b>
+                            {`Between 2014 and 2019, the U.S. carried out one of the most intensive
                             aerial bombing campaigns in recent history,
                             targeting Islamic State strongholds in eastern Syria
                             and in Iraq. Cities like Raqqa and parts of Mosul
@@ -244,7 +244,7 @@ function renderProject1(project, index) {
                             including, where possible, a complete roster of
                             bombardment sites, we hope to illuminate the
                             consequences of modern air war and support survivors
-                            of these attacks.
+                            of these attacks.`}
                         </Typography>
                     </Box>
                     <Box
@@ -259,8 +259,8 @@ function renderProject1(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b> Coding Bootcamp for Afghan Refugees -</b>Last
-                            summer more than 65,000 Afghans escaped the Taliban
+                            <b> Coding Bootcamp for Afghan Refugees -</b>
+                            {`Last summer more than 65,000 Afghans escaped the Taliban
                             and resettled in the US. While they’re no longer in
                             harm’s way, the challenge of social and economic
                             integration into America may prove to be one of
@@ -275,7 +275,7 @@ function renderProject1(project, index) {
                             initiative will provide those starting with limited
                             to no technical skills with the knowledge and
                             training required to find well-paid jobs in the tech
-                            sector.
+                            sector.`}
                         </Typography>
                     </Box>
                 </Grid>

@@ -162,7 +162,7 @@ const Footer = (props) => {
               />
             </Grid>
             <Grid item>
-              <StyledTypography variant="subtitle1" component="div">
+              <StyledTypography variant="h6" component="div">
                 Send Email
               </StyledTypography>
             </Grid>
@@ -180,7 +180,7 @@ const Footer = (props) => {
               />
             </Grid>
             <Grid item>
-              <StyledTypography variant="subtitle1" component="div">
+              <StyledTypography variant="h6" component="div">
                 Follow us on Twitter
               </StyledTypography>
             </Grid>
@@ -198,7 +198,7 @@ const Footer = (props) => {
               />
             </Grid>
             <StyledTypography
-              variant="subtitle1"
+              variant="h6"
               component="div"
               item
               onClick={getLatestWriting}
@@ -214,7 +214,7 @@ const Footer = (props) => {
             orientation="vertical"
             variant="fullWidth"
             sx={{
-              minHeight: "20px",
+              minHeight: "15px",
               height: "100%",
               width: 10,
               background: palette.black.main,
@@ -230,7 +230,7 @@ const Footer = (props) => {
             <Grid container direction={"row"} justifyContent="space-evenly">
               <Grid item>
                 <Typography
-                  variant="h5"
+                  variant="h6"
                   color={palette.black.main}
                   sx={{ padding: "1rem" }}
                 >
@@ -242,6 +242,7 @@ const Footer = (props) => {
                   sx={{
                     display: "flex",
                     alignItems: "flex-end",
+                    marginBottom: "2rem",
                   }}
                 >
                   <LocalPostOfficeIcon
@@ -278,8 +279,8 @@ const Footer = (props) => {
       <Grid container justifyContent={"flex-end"} flexDirection={"row"}>
         <Grid item>
           <Typography
-            variant="subtitle2"
-            sx={!isMobile && { paddingRight: "3rem", paddingTop: "2rem" }}
+            variant="h6"
+            sx={!isMobile && { paddingRight: "3rem", paddingTop: "1rem" }}
           >
             <span style={{ color: "black !important" }}>Developed by</span>
             <StyledLink href="https://www.wowfreelance.com">

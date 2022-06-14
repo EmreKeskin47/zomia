@@ -17,20 +17,35 @@ const font = createTheme({
     //Contents
     //h6 is bigger and subtitle1 is smaller
     h6: {
-      fontFamily: "Monsterrat",
+      fontFamily: "Poppins",
     },
     subtitle1: {
-      fontFamily: "Monsterrat",
+      fontFamily: "Raleway",
+    },
+    subtitle2: {
+      fontFamily: "Oswald",
+    },
+    caption: {
+      fontFamily: "Oswald",
+    },
+    overline: {
+      fontFamily: "Oswald",
+    },
+    body1: {
+      fontFamily: "Raleway",
+    },
+    body2: {
+      fontFamily: "Raleway",
     },
     //Heading
     h5: {
-      fontFamily: "Raleway",
+      fontFamily: "Oswald",
     },
     h4: {
-      fontFamily: "Raleway",
+      fontFamily: "Oswald",
     },
     h3: {
-      fontFamily: "Raleway",
+      fontFamily: "Oswald",
     },
     h2: {
       fontFamily: "Raleway",

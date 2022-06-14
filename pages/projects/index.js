@@ -99,7 +99,7 @@ const Projects = () => {
           alignItems={"center"}
         >
           <Grid item xs={12}>
-            <Typography variant="subtitle1" paragraph={true}>
+            <Typography variant="body1" paragraph={true}>
               <span
                 style={{
                   color: context.darkMode ? "whitesmoke" : "black",

@@ -17,7 +17,14 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 </Link>
             </Grid>
             <Grid marginBottom={1}>
-                <div style={{ textAlign: "left", fontSize: "12px" }}>
+                <div
+                    style={{
+                        fontFamily: "ROBOTO",
+                        fontWeight: 400,
+                        textAlign: "left",
+                        fontSize: "0.8rem",
+                    }}
+                >
                     {description}
                 </div>
             </Grid>

@@ -96,6 +96,7 @@ function App(props) {
                             paddingLeft: "2rem",
                             height: "100%",
                             alignSelf: "center",
+                            paddingRight: { xs: "2rem", lg: "0" },
                         }}
                     >
                         <IntroContentSummaries />

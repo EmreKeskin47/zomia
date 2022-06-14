@@ -53,7 +53,6 @@ const Article = (props) => {
                                 alignItems={"center"}
                                 alignSelf={"center"}
                                 alignContent={"center"}
-                                paddingTop={"10px"}
                             >
                                 <Grid item>
                                     <Image

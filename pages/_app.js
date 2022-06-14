@@ -17,7 +17,7 @@ const font = createTheme({
     //Contents
     //h6 is bigger and subtitle1 is smaller
     h6: {
-      fontFamily: "Poppins",
+      fontFamily: "Montserrat",
     },
     subtitle1: {
       fontFamily: "Raleway",

@@ -58,9 +58,9 @@ const Article = (props) => {
               </Grid>
               <Grid item alignSelf={"center"}>
                 <Typography
-                  variant="subtitle2"
+                  variant="h6"
                   fontStyle={"italic"}
-                  fontFamily="Monsterrat !important"
+                  // fontFamily="Montserrat !important"
                   bgcolor={"black"}
                   fontSize={{
                     xs: "14px !important",

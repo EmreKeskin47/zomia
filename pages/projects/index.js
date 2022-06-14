@@ -176,7 +176,7 @@ function renderProject1(project, index) {
                             <b>
                                 Support for Survivors of Coalition Airstrikes –
                             </b>
-                            the U.S.-led air war against the Islamic State has
+                            {`the U.S.-led air war against the Islamic State has
                             potentially killed tens of thousands of civilians in
                             Iraq and Syria. Until now, most of these victims and
                             their loved ones have not received condolence
@@ -184,7 +184,7 @@ function renderProject1(project, index) {
                             nor have they received support for medical bills and
                             lifelong disabilities. At Zomia, we are working with
                             survivors and legal experts to redress civilian harm
-                            and to coordinate medical support.
+                            and to coordinate medical support.`}
                         </Typography>
                     </Box>
                     <Box
@@ -199,7 +199,8 @@ function renderProject1(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b> Birth Defects in Fallujah –</b> The Iraqi city
+                            <b> Birth Defects in Fallujah –</b>
+                            {` The Iraqi city
                             of Fallujah has suffered three major conflicts in
                             recent years, including the U.S.-led Operation
                             Phantom Fury in 2004. In the wake of this
@@ -213,7 +214,7 @@ function renderProject1(project, index) {
                             larger effort to identify public health consequences
                             of war, and in particular, the legacy of lead on
                             cognitive and physical development in post-conflict
-                            environments.
+                            environments.`}
                         </Typography>
                     </Box>
                     <Box
@@ -329,7 +330,8 @@ function renderProject2(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b> Vaccination Study –</b> Since 2001, the number
+                            <b> Vaccination Study –</b>
+                            {` Since 2001, the number
                             of civil wars across the globe has increased 30
                             percent, leading to a proliferation of ungoverned
                             and semi-governed spaces — territory under the
@@ -351,7 +353,7 @@ function renderProject2(project, index) {
                             the inherent weaknesses of relying on third-party
                             actors (such as international NGOs) to implement
                             public health programs. The current phase of the
-                            study focuses on vaccine delivery.
+                            study focuses on vaccine delivery.`}
                         </Typography>
                     </Box>
                     <Box
@@ -366,14 +368,15 @@ function renderProject2(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b>Covid-19 Support – </b> Working with local and
+                            <b>Covid-19 Support – </b>
+                            {` Working with local and
                             international partners, Zomia has supported Covid-19
                             preparedness in non-state regions in the Middle East
                             and South Asia; we have supported the design and
                             development of case management protocols, produced
                             and distributed masks, and worked with ground
                             authorities to increase awareness of vaccination and
-                            social distancing.
+                            social distancing.`}
                         </Typography>
                     </Box>
                     <Box
@@ -389,7 +392,8 @@ function renderProject2(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b>Leishmaniasis – </b> Leishmaniasis is a parasitic
+                            <b>Leishmaniasis – </b>{" "}
+                            {`Leishmaniasis is a parasitic
                             disease that can cause disfigurement through skin
                             lesions and, in some varieties, can prove fatal. The
                             disease is linked with malnutrition, a weak immune
@@ -399,7 +403,7 @@ function renderProject2(project, index) {
                             order to protect against the illness. Zomia also
                             helps train local authorities and local
                             organizations to design and implement spraying
-                            campaigns.
+                            campaigns.`}
                         </Typography>
                     </Box>
                 </Grid>

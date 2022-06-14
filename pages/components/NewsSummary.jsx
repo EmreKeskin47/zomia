@@ -35,7 +35,7 @@ const NewsSummary = (props) => {
                             height: 450,
                             justifyContent: "flex-start",
                             flexDirection: "column",
-                            alignItems: "center",
+                            alignItems: "baseline",
                             display: "flex",
                         }}
                     >
@@ -67,7 +67,7 @@ const NewsSummary = (props) => {
                             variant="body2"
                             sx={{
                                 paddingTop: 1,
-                                fontSize: "1.2rem !important",
+                                fontSize: "1.1rem !important",
                             }}
                         >
                             {props.description && props.description}

@@ -20,7 +20,7 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 <Typography
                     align="left"
                     variant="body2"
-                    sx={{ fontSize: "1.2rem !important" }}
+                    sx={{ fontSize: "1.1rem !important" }}
                 >
                     {description}
                 </Typography>

@@ -48,7 +48,7 @@ const font = createTheme({
       fontFamily: "Oswald",
     },
     h2: {
-      fontFamily: "Joan",
+      fontFamily: "Tiro Telugu",
     },
     h1: {
       fontFamily: "Raleway",

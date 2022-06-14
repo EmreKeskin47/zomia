@@ -79,7 +79,7 @@ const typography = {
         fontSize: pxToRem(16),
     },
     caption: {
-        lineHeight: 1.5,
+        lineHeight: 1,
         fontSize: pxToRem(12),
     },
     overline: {

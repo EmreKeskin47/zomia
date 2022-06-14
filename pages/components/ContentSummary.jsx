@@ -16,7 +16,7 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                     {heading}
                 </Link>
             </Grid>
-            <Grid>
+            <Grid item>
                 <Typography
                     align="left"
                     variant="body2"
@@ -25,17 +25,23 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                     {description}
                 </Typography>
             </Grid>
-            <Grid item>
-                <Typography align="left" variant="caption">
+
+            <Grid item sx={{ height: "18px !important" }}>
+                <Typography
+                    align="left"
+                    variant="caption"
+                    sx={{ lineHeight: "0rem !important" }}
+                >
                     {date}
                 </Typography>
             </Grid>
-            <Grid item>
+            <Grid item sx={{ height: "18px !important" }}>
                 <Typography align="left" variant="caption">
                     {"by " + author}
                 </Typography>
             </Grid>
-            <Grid sx={{ marginTop: 1.5, marginBottom: 1.5 }}>
+
+            <Grid sx={{ marginTop: 2.5, marginBottom: 1.5 }}>
                 <hr />
             </Grid>
         </Grid>

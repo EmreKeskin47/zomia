@@ -17,9 +17,9 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 </Link>
             </Grid>
             <Grid marginBottom={1}>
-                <Typography align="left" variant="caption">
+                <div style={{ textAlign: "left", fontSize: "12px" }}>
                     {description}
-                </Typography>
+                </div>
             </Grid>
             <Grid item>
                 <Typography align="left" variant="subtitle2">

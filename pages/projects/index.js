@@ -275,7 +275,7 @@ function renderProject1(project, index) {
                             initiative will provide those starting with limited
                             to no technical skills with the knowledge and
                             training required to find well-paid jobs in the tech
-                            sector.{" "}
+                            sector.
                         </Typography>
                     </Box>
                 </Grid>

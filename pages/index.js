@@ -140,7 +140,7 @@ function App(props) {
             {/* End Reports Section */}
             <SectionBreaker text="Latest" link="#" color="whitesmoke" />
             {/* Popular Reads Section */}
-            <Container sx={{ paddingBottom: 20 }}>
+            <Container sx={{ paddingBottom: 17 }}>
                 {writings &&
                     writings
                         .reverse()

@@ -20,7 +20,7 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 <Typography
                     align="left"
                     variant="body2"
-                    sx={{ fontSize: "1.1rem !important" }}
+                    sx={{ fontSize: "1rem !important" }}
                 >
                     {description}
                 </Typography>
@@ -30,13 +30,17 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 <Typography
                     align="left"
                     variant="caption"
-                    sx={{ lineHeight: "0rem !important" }}
+                    sx={{ fontSize: "1rem !important" }}
                 >
                     {date}
                 </Typography>
             </Grid>
             <Grid item sx={{ height: "18px !important" }}>
-                <Typography align="left" variant="caption">
+                <Typography
+                    align="left"
+                    variant="caption"
+                    sx={{ fontSize: "1rem !important" }}
+                >
                     {"by " + author}
                 </Typography>
             </Grid>

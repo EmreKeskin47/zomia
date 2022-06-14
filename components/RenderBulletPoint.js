@@ -19,7 +19,12 @@ const RenderBulletPoint = (props) => {
                     <SendIcon color="secondary" sx={{ marginRight: 1 }} />
                 </ListItemIcon>
 
-                <Typography variant="body1">{text}</Typography>
+                <Typography
+                    variant="body1"
+                    sx={{ fontSize: "1.2rem !important" }}
+                >
+                    {text}
+                </Typography>
             </Box>
         </Box>
     );

@@ -32,26 +32,30 @@ const NewsSummary = (props) => {
                             backgroundColor: context.darkMode
                                 ? palette.black.main
                                 : "whitesmoke",
-                            height: 350,
+                            height: 450,
                             justifyContent: "flex-start",
                             flexDirection: "column",
                             alignItems: "center",
                             display: "flex",
                         }}
                     >
-                        <Box sx={{ textAlign: "left", width: "100%" }}>
-                            <Typography gutterBottom variant="h5">
-                                {props.title && props.title.substring(0, 72)}
-                            </Typography>
+                        <Box sx={{ height: "100px" }}>
+                            <Box sx={{ textAlign: "left", width: "100%" }}>
+                                <Typography gutterBottom variant="h5">
+                                    {props.title &&
+                                        props.title.substring(0, 72)}
+                                </Typography>
+                            </Box>
+                            <Box sx={{ textAlign: "left", width: "100%" }}>
+                                <Typography align="left" variant="caption">
+                                    {props.date} /
+                                </Typography>
+                                <Typography align="left" variant="caption">
+                                    {props.author}
+                                </Typography>
+                            </Box>
                         </Box>
-                        <Box sx={{ textAlign: "left", width: "100%" }}>
-                            <Typography align="left" variant="caption">
-                                {props.date} /
-                            </Typography>
-                            <Typography align="left" variant="caption">
-                                {props.author}
-                            </Typography>
-                        </Box>
+
                         <hr
                             style={{
                                 width: "100%",
@@ -59,7 +63,10 @@ const NewsSummary = (props) => {
                                 marginBottom: "10px",
                             }}
                         />
-                        <Typography variant="body2" sx={{ paddingTop: 1 }}>
+                        <Typography
+                            variant="body2"
+                            sx={{ paddingTop: 1, fontSize: "1rem !important" }}
+                        >
                             {props.description && props.description}
                         </Typography>
                         {/* <Divider sx={{ marginTop: 2, marginBottom: 0 }}></Divider> */}

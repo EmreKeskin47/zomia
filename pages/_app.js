@@ -26,7 +26,7 @@ const font = createTheme({
       fontFamily: "Oswald",
     },
     caption: {
-      fontFamily: "Oswald",
+      fontFamily: "Poppins",
     },
     overline: {
       fontFamily: "Oswald",

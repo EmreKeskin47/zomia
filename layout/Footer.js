@@ -279,7 +279,7 @@ const Footer = (props) => {
       <Grid container justifyContent={"flex-end"} flexDirection={"row"}>
         <Grid item>
           <Typography
-            variant="h6"
+            variant="caption"
             sx={!isMobile && { paddingRight: "3rem", paddingTop: "1rem" }}
           >
             <span style={{ color: "black !important" }}>Developed by</span>

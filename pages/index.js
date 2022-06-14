@@ -134,18 +134,13 @@ function App(props) {
                 color="whitesmoke"
             />
             {/* Reports Section */}
-            <Grid
-                container
-                direction="row"
-                justifyContent="space-around"
-                sx={{ paddingTop: "1rem", paddingBottom: "1rem" }}
-            >
+            <Grid container direction="row" justifyContent="space-around">
                 <CardList type={"report"} />
             </Grid>
             {/* End Reports Section */}
             <SectionBreaker text="Latest" link="#" color="whitesmoke" />
             {/* Popular Reads Section */}
-            <Container>
+            <Container sx={{ paddingBottom: 20 }}>
                 {writings &&
                     writings
                         .reverse()
@@ -175,7 +170,6 @@ function App(props) {
                         sx={{
                             display: "flex",
                             justifyContent: "center",
-                            paddingBottom: 15,
                         }}
                     >
                         <Button

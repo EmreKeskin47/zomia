@@ -69,7 +69,7 @@ const Projects = () => {
                                     color: context.darkMode
                                         ? "whitesmoke"
                                         : "black",
-                                    fontSize: "1.2rem !important",
+                                    fontSize: "1.4rem !important",
                                 }}
                             >
                                 The Center is involved in over a dozen projects
@@ -170,7 +170,7 @@ function renderProject1(project, index) {
                         <Typography
                             variant="body1"
                             sx={{
-                                fontSize: "1.2rem !important",
+                                fontSize: "1.4rem !important",
                             }}
                         >
                             <b>
@@ -198,7 +198,7 @@ function renderProject1(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Birth Defects in Fallujah –</b> The Iraqi city
                             of Fallujah has suffered three major conflicts in
@@ -227,7 +227,7 @@ function renderProject1(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Syrian Bombing Survey –</b> Between 2014 and
                             2019, the U.S. carried out one of the most intensive
@@ -258,7 +258,7 @@ function renderProject1(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Coding Bootcamp for Afghan Refugees -</b>Last
                             summer more than 65,000 Afghans escaped the Taliban
@@ -328,7 +328,7 @@ function renderProject2(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Vaccination Study –</b> Since 2001, the number
                             of civil wars across the globe has increased 30
@@ -365,7 +365,7 @@ function renderProject2(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b>Covid-19 Support – </b> Working with local and
                             international partners, Zomia has supported Covid-19
@@ -388,7 +388,7 @@ function renderProject2(project, index) {
                     >
                         <Typography
                             variant="body1"
-                            sx={{ fontSize: "1.2rem !important" }}
+                            sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b>Leishmaniasis – </b> Leishmaniasis is a parasitic
                             disease that can cause disfigurement through skin

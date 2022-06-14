@@ -13,7 +13,7 @@ const RenderBody = (props) => {
                 },
             }}
         >
-            <Typography variant="body1" sx={{ fontSize: "1.2rem !important" }}>
+            <Typography variant="body1" sx={{ fontSize: "1.4rem !important" }}>
                 {text}
             </Typography>
         </Box>

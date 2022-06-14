@@ -40,8 +40,18 @@ const NewsSummary = (props) => {
                         }}
                     >
                         <Box sx={{ height: "100px" }}>
-                            <Box sx={{ textAlign: "left", width: "100%" }}>
-                                <Typography gutterBottom variant="h5">
+                            <Box
+                                sx={{
+                                    textAlign: "left",
+                                    width: "100%",
+                                    height: "64px",
+                                }}
+                            >
+                                <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    sx={{ fontSize: "1.6rem" }}
+                                >
                                     {props.title &&
                                         props.title.substring(0, 72)}
                                 </Typography>

@@ -260,7 +260,7 @@ function renderProject1(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b> Coding Bootcamp for Afghan Refugees -</b>
+                            <b> Coding Bootcamp for Afghan Refugees –</b>
                             {` Last summer more than 65,000 Afghans escaped the Taliban
                             and resettled in the US. While they’re no longer in
                             harm’s way, the challenge of social and economic

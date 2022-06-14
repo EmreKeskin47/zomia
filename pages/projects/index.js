@@ -63,22 +63,22 @@ const Projects = () => {
                     alignItems={"center"}
                 >
                     <Grid item xs={12}>
-                        <Typography variant="body1" paragraph={true}>
-                            <span
-                                style={{
-                                    color: context.darkMode
-                                        ? "whitesmoke"
-                                        : "black",
-                                    fontSize: "1.4rem !important",
-                                }}
-                            >
-                                The Center is involved in over a dozen projects
-                                in Syria, Iraq, Yemen, Afghanistan, and the
-                                United States. The projects fall under two broad
-                                programs, the Legacy of War and Public Health
-                                Partners, in which Zomia collaborates with local
-                                and international partners.
-                            </span>
+                        <Typography
+                            variant="body1"
+                            paragraph={true}
+                            sx={{
+                                color: context.darkMode
+                                    ? "whitesmoke !important"
+                                    : "black !important",
+                                fontSize: "1.4rem !important",
+                            }}
+                        >
+                            The Center is involved in over a dozen projects in
+                            Syria, Iraq, Yemen, Afghanistan, and the United
+                            States. The projects fall under two broad programs,
+                            the Legacy of War and Public Health Partners, in
+                            which Zomia collaborates with local and
+                            international partners.
                         </Typography>
                     </Grid>
 
@@ -176,7 +176,7 @@ function renderProject1(project, index) {
                             <b>
                                 Support for Survivors of Coalition Airstrikes –
                             </b>
-                            {`the U.S.-led air war against the Islamic State has
+                            {` the U.S.-led air war against the Islamic State has
                             potentially killed tens of thousands of civilians in
                             Iraq and Syria. Until now, most of these victims and
                             their loved ones have not received condolence
@@ -230,7 +230,7 @@ function renderProject1(project, index) {
                             sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Syrian Bombing Survey –</b>
-                            {`Between 2014 and 2019, the U.S. carried out one of the most intensive
+                            {` Between 2014 and 2019, the U.S. carried out one of the most intensive
                             aerial bombing campaigns in recent history,
                             targeting Islamic State strongholds in eastern Syria
                             and in Iraq. Cities like Raqqa and parts of Mosul
@@ -261,7 +261,7 @@ function renderProject1(project, index) {
                             sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Coding Bootcamp for Afghan Refugees -</b>
-                            {`Last summer more than 65,000 Afghans escaped the Taliban
+                            {` Last summer more than 65,000 Afghans escaped the Taliban
                             and resettled in the US. While they’re no longer in
                             harm’s way, the challenge of social and economic
                             integration into America may prove to be one of
@@ -392,8 +392,8 @@ function renderProject2(project, index) {
                             variant="body1"
                             sx={{ fontSize: "1.4rem !important" }}
                         >
-                            <b>Leishmaniasis – </b>{" "}
-                            {`Leishmaniasis is a parasitic
+                            <b>Leishmaniasis – </b>
+                            {` Leishmaniasis is a parasitic
                             disease that can cause disfigurement through skin
                             lesions and, in some varieties, can prove fatal. The
                             disease is linked with malnutrition, a weak immune

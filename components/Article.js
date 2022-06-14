@@ -60,7 +60,7 @@ const Article = (props) => {
                 <Typography
                   variant="subtitle2"
                   fontStyle={"italic"}
-                  // fontFamily="Raleway !important"
+                  fontFamily="Monsterrat !important"
                   bgcolor={"black"}
                   fontSize={{
                     xs: "14px !important",

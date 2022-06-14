@@ -65,7 +65,10 @@ const NewsSummary = (props) => {
                         />
                         <Typography
                             variant="body2"
-                            sx={{ paddingTop: 1, fontSize: "1rem !important" }}
+                            sx={{
+                                paddingTop: 1,
+                                fontSize: "1.2rem !important",
+                            }}
                         >
                             {props.description && props.description}
                         </Typography>

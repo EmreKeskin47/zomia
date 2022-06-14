@@ -174,9 +174,8 @@ function renderProject1(project, index) {
                             }}
                         >
                             <b>
-                                {" "}
                                 Support for Survivors of Coalition Airstrikes –
-                            </b>{" "}
+                            </b>
                             the U.S.-led air war against the Islamic State has
                             potentially killed tens of thousands of civilians in
                             Iraq and Syria. Until now, most of these victims and

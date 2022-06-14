@@ -41,6 +41,7 @@ const Investigations = (props) => {
                                     date={report.date}
                                     author={report.author}
                                     image={report.image}
+                                    description={report.description}
                                 />
                             </Link>
                         );

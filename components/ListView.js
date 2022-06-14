@@ -32,29 +32,27 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
                     container
                     direction="column"
                     justifyContent="space-evenly"
+                    alignSelf={"center"}
+                    sx={{ height: "100%" }}
                 >
                     <Typography
                         variant="h4"
                         sx={{
-                            paddingTop: "2rem",
                             ":hover": { color: palette.orange.main },
                         }}
                     >
                         {heading}
                     </Typography>
-                    <Typography
-                        variant={"subtitle1"}
-                        sx={{ paddingTop: "2rem" }}
-                    >
+                    <Typography variant={"subtitle1"}>
                         {description && description.substring(0, 400)}
                     </Typography>
-                    <Typography
-                        variant={"subtitle1"}
-                        sx={{ paddingTop: "2rem" }}
-                    >
-                        {"by " + author}
-                    </Typography>
-                    <Typography variant="subtitle2">{date}</Typography>
+
+                    <div>
+                        <Typography variant={"subtitle1"}>
+                            {"by " + author}
+                        </Typography>
+                        <Typography variant="subtitle2">{date}</Typography>
+                    </div>
                 </Grid>
             </Grid>
         </Grid>

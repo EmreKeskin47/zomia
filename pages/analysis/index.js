@@ -39,6 +39,7 @@ const Analysis = (props) => {
                                     date={article.date}
                                     author={article.author}
                                     image={article.image}
+                                    description={article.description}
                                 />
                             </Link>
                         );

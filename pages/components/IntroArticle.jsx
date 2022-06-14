@@ -13,10 +13,7 @@ export default function IntroArticle(props) {
     const context = useContext(singleContext);
     const router = useRouter();
     const { data } = props;
-    var description = "No description provided";
-    if (data && data.text) {
-        description = adjustNewLines(data.text);
-    }
+
     return (
         <Grid
             sx={{
@@ -66,7 +63,9 @@ export default function IntroArticle(props) {
                             }}
                         />
                         <Typography variant="body1" fontSize={"1.2rem"}>
-                            {description && description.substring(0, 250)}
+                            {data &&
+                                data.description &&
+                                data.description.substring(0, 400)}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

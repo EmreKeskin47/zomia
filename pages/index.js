@@ -68,7 +68,7 @@ function App(props) {
                     backgroundColor: palette.orange.main,
                     boxShadow:
                         " 3px 2px 4px -1px rgb(145 158 171 / 20%), 0px 4px 5px 0px rgb(145 180 171 / 34%), 0px 1px 10px 0px rgb(145 158 171 / 62%)",
-                    padding: "0.15rem",
+                    padding: "0.075rem",
                 }}
             ></Grid>
             <Container>
@@ -82,19 +82,17 @@ function App(props) {
                         paddingBottom: "3rem",
                     }}
                 >
-                    <Grid item lg={8} md={8} sm={12} sx={{ padding: "1rem" }}>
+                    <Grid item md={6} sm={12} sx={{ padding: "1rem" }}>
                         <IntroArticle
                             data={writings && writings[writings.length - 1]}
                         />
                     </Grid>
                     <Grid
                         item
-                        lg={4}
-                        md={4}
+                        lg={6}
                         sm={12}
                         sx={{
                             paddingTop: "0rem",
-                            paddingRight: "2rem",
                             paddingLeft: "2rem",
                             height: "100%",
                             alignSelf: "center",

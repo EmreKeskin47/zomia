@@ -14,7 +14,10 @@ const CardList = ({ type }) => {
                             <Grid
                                 item
                                 key={item.id}
-                                sx={{ paddingLeft: 3, paddingRight: 3 }}
+                                sx={{
+                                    paddingLeft: 3,
+                                    paddingRight: 3,
+                                }}
                             >
                                 <Link
                                     href={`/investigations/${item.id}`}
@@ -27,10 +30,7 @@ const CardList = ({ type }) => {
                                         date={item.date}
                                         description={
                                             item.description
-                                                ? item.description.slice(
-                                                      0,
-                                                      400
-                                                  ) + "..."
+                                                ? item.description.slice(0, 400)
                                                 : "No Description"
                                         }
                                         author={item.author}

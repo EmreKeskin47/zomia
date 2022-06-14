@@ -45,7 +45,7 @@ const Mission = () => {
                             alignItems={"center"}
                             justifySelf={"center"}
                         >
-                            {mission.split("<br />").map((paragraph, index) => {
+                            {mission.split("<br/>").map((paragraph, index) => {
                                 return (
                                     <RenderBody key={index} text={paragraph} />
                                 );
@@ -91,7 +91,7 @@ const Mission = () => {
 
                         <RenderBody
                             text={
-                                "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. Our federal ID number is 30-1201889. Contributions may be submitted online, or by wire transfer. For information about wire transfers, please contact us via the form above."
+                                "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. Our federal ID number is 30-1201889. Contributions may be submitted online, or by wire transfer."
                             }
                         />
 

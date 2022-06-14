@@ -10,7 +10,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
             container
             direction="row"
             justifyContent="center"
-            sx={{ paddingBottom: "5rem" }}
+            sx={{ paddingBottom: "2rem" }}
         >
             <Grid item xs={11} md={6} alignSelf={"center"} marginTop={"1rem"}>
                 {image && (

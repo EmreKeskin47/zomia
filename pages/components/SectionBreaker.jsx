@@ -5,20 +5,20 @@ import singleContext from "../../SingleContext";
 import palette from "../../theme/palette";
 
 const SectionBreaker = (props) => {
-  const context = useContext(singleContext);
+    const context = useContext(singleContext);
 
-  return (
-    <Divider flexItem sx={{ paddingBottom: "2rem", paddingTop: "3rem" }}>
-      <Link
-        href={props.link ? props.link : "#"}
-        underline="none"
-        color={context.darkMode ? "whitesmoke" : palette.black.main}
-        variant="h2"
-      >
-        {props.text}
-      </Link>
-    </Divider>
-  );
+    return (
+        <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "4rem" }}>
+            <Link
+                href={props.link ? props.link : "#"}
+                underline="none"
+                color={context.darkMode ? "whitesmoke" : palette.black.main}
+                variant="h2"
+            >
+                {props.text}
+            </Link>
+        </Divider>
+    );
 };
 
 export default SectionBreaker;

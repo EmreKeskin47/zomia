@@ -79,7 +79,6 @@ function App(props) {
                     justifyContent="space-between"
                     sx={{
                         paddingTop: "3rem",
-                        paddingBottom: "3rem",
                     }}
                 >
                     <Grid item lg={7} sm={12} sx={{ padding: "1rem" }}>

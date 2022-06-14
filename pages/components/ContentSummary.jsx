@@ -16,11 +16,11 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                     {heading}
                 </Link>
             </Grid>
-            <Grid marginBottom={1}>
+            <Grid>
                 <Typography
                     align="left"
                     variant="body2"
-                    sx={{ fontSize: "1rem !important" }}
+                    sx={{ fontSize: "1.2rem !important" }}
                 >
                     {description}
                 </Typography>

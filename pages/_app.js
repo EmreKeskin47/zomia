@@ -45,10 +45,10 @@ const font = createTheme({
       fontFamily: "Oswald",
     },
     h3: {
-      fontFamily: "GFS Didot",
+      fontFamily: "Oswald",
     },
     h2: {
-      fontFamily: "Raleway",
+      fontFamily: "Joan",
     },
     h1: {
       fontFamily: "Raleway",

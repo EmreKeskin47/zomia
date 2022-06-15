@@ -71,7 +71,7 @@ function App(props) {
                     padding: "0.075rem",
                 }}
             ></Grid>
-            <Container sx={{ maxWidth: "1350px !important" }}>
+            <Container sx={{ maxWidth: "1275px !important" }}>
                 {/* Intro */}
                 <Grid
                     container

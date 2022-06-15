@@ -8,7 +8,6 @@ import RenderSubtitle from "../../components/RenderSubtitle";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import imageLoader from "../../loader";
-import { Divider } from "@mui/material";
 
 const Bio = () => {
     const teamData = MakeArticleParagraph2(team);
@@ -37,16 +36,10 @@ const Bio = () => {
                     >
                         Team
                     </Typography>
-
-                    <Grid sx={{ marginTop: 3.5, marginBottom: 3.5 }}>
-                        <hr style={{ borderTop: "3px solid #bbb" }} />
-                    </Grid>
                 </Box>
             </Box>
         );
     };
-
-    const renderBoardTitle = () => {};
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
@@ -56,6 +49,7 @@ const Bio = () => {
                 justifySelf={"center"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                paddingBottom="125px"
             >
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>

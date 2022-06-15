@@ -4,7 +4,7 @@ import React from "react";
 const ContentSummary = ({ id, description, heading, date, author }) => {
     return (
         <Grid container direction="column" justifyContent="center">
-            <Grid item sx={{ paddingBottom: "0.5rem" }}>
+            <Grid item sx={{ paddingBottom: "1.5rem" }}>
                 <Link
                     href={`/analysis/${id}`}
                     underline="none"
@@ -26,7 +26,7 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 </Typography>
             </Grid>
 
-            <Grid item sx={{ height: "18px !important" }}>
+            {/* <Grid item sx={{ height: "18px !important" }}>
                 <Typography
                     align="left"
                     variant="caption"
@@ -43,9 +43,9 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                 >
                     {"by " + author}
                 </Typography>
-            </Grid>
+            </Grid> */}
 
-            <Grid sx={{ marginTop: 2.5, marginBottom: 1.5 }}>
+            <Grid sx={{ marginTop: 3.5, marginBottom: 3.5 }}>
                 <hr />
             </Grid>
         </Grid>

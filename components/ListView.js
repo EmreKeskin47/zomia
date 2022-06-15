@@ -51,12 +51,34 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
                     </Typography>
 
                     <div>
+                        <Grid item sx={{ height: "1.5rem !important" }}>
+                            <Typography
+                                align="left"
+                                variant="caption"
+                                sx={{ fontSize: "1rem !important" }}
+                            >
+                                {"by " + author}
+                            </Typography>
+                        </Grid>
+
+                        <Grid item sx={{ height: "1.5rem !important" }}>
+                            <Typography
+                                align="left"
+                                variant="caption"
+                                sx={{ fontSize: "1rem !important" }}
+                            >
+                                {date}
+                            </Typography>
+                        </Grid>
+                    </div>
+
+                    {/* <div>
                         <Typography variant={"overline"}>
                             {"by " + author}
                         </Typography>
                         <br />
                         <Typography variant="overline">{date}</Typography>
-                    </div>
+                    </div> */}
                 </Grid>
             </Grid>
         </Grid>

@@ -31,7 +31,7 @@ const NewsSummary = (props) => {
                             backgroundColor: context.darkMode
                                 ? palette.black.main
                                 : "whitesmoke",
-                            height: 400,
+                            height: 430,
                             justifyContent: "flex-start",
                             flexDirection: "column",
                             alignItems: "baseline",

@@ -171,6 +171,7 @@ function App(props) {
                         sx={{
                             display: "flex",
                             justifyContent: "center",
+                            marginTop: "90px",
                         }}
                     >
                         <Button
@@ -185,7 +186,7 @@ function App(props) {
                                     cursor: "pointer",
                                     borderStyle: "solid",
                                     borderWidth: "2.5px",
-                                    padding: "12px",
+                                    padding: "1.5rem",
                                 }}
                             >
                                 Load more

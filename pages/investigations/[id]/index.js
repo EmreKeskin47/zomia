@@ -41,53 +41,37 @@ const Investigations = (props) => {
             {report && <Article article={report} isReport={true} />}
             {report && (
                 <Link href={report.pdfLink} replace>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "center",
-                            paddingBottom: 15,
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            textDecoration: "none",
                         }}
                     >
-                        <Button>
-                            <Typography
-                                variant="h5"
-                                textAlign={"center"}
-                                sx={{
-                                    cursor: "pointer",
-                                    borderStyle: "solid",
-                                    borderWidth: "2.5px",
-                                    padding: "12px",
-                                }}
-                            >
-                                Click to view the full report
-                            </Typography>
-                        </Button>
-                    </Box>
-
-                    {/* <Box
-                        sx={{
-                            paddingBottom: 10,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <StyledTypography
-                            variant="h5"
-                            textAlign={"center"}
+                        <Box
                             sx={{
-                                textDecoration: "none",
-                                color: "whitesmoke",
-                                fontSize: 20,
-                                cursor: "pointer",
-                                borderStyle: "solid",
-                                borderWidth: "2.5px",
-                                width: "40%",
-                                padding: "2px",
+                                display: "flex",
+                                justifyContent: "center",
+                                paddingBottom: "125px",
+                                paddingTop: "80px",
                             }}
                         >
-                            Click to view the full report
-                        </StyledTypography>
-                    </Box> */}
+                            <Button>
+                                <Typography
+                                    variant="h5"
+                                    textAlign={"center"}
+                                    sx={{
+                                        cursor: "pointer",
+                                        borderStyle: "solid",
+                                        borderWidth: "2.5px",
+                                        padding: "12px",
+                                    }}
+                                >
+                                    Click to view the full report
+                                </Typography>
+                            </Button>
+                        </Box>
+                    </a>
                 </Link>
             )}
         </Paper>

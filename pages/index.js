@@ -104,13 +104,13 @@ function App(props) {
                 </Grid>
                 {/* End Intro */}
             </Container>
-            <SectionBreaker
+            {/* <SectionBreaker
                 text="Analysis"
                 link="/analysis"
                 color="whitesmoke"
-            />
+            /> */}
             {/* Articles Section */}
-            <Container>
+            {/* <Container>
                 {articleList &&
                     articleList.slice(0, 3).map((article, index) => {
                         return (
@@ -126,7 +126,7 @@ function App(props) {
                             </Link>
                         );
                     })}{" "}
-            </Container>
+            </Container> */}
 
             {/* End Articles Section */}
             <SectionBreaker

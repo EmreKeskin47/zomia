@@ -209,7 +209,7 @@ const EditReport = (props) => {
                                 return (
                                     <div
                                         style={{
-                                            color: "white",
+                                            color: "#F9A21B",
                                             padding: 5,
                                             paddingLeft: 20,
                                         }}

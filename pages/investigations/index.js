@@ -23,7 +23,7 @@ const Investigations = (props) => {
         <Paper sx={{ paddingTop: 5 }}>
             <Container>
                 <Typography
-                    variant="h4"
+                    variant="h2"
                     marginY={15}
                     textAlign="center"
                     paddingBottom={10}

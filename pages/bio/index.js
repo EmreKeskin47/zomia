@@ -6,10 +6,47 @@ import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
 import RenderSubtitle from "../../components/RenderSubtitle";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
+import imageLoader from "../../loader";
+import { Divider } from "@mui/material";
 
 const Bio = () => {
     const teamData = MakeArticleParagraph2(team);
     const directorsData = MakeArticleParagraph2(directors);
+
+    const renderTeamTitle = () => {
+        return (
+            <Box display="flex" alignItems="center" marginY={5}>
+                <Box sx={{ marginRight: { xs: 2 } }}>
+                    <Image
+                        src="/static/o-logo.png"
+                        loader={imageLoader}
+                        unoptimized
+                        alt="Logo"
+                        width="100px"
+                        height="120px"
+                    />
+                </Box>
+                <Box display="flex">
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontSize: " 3.75rem !important",
+                            fontFamily: "Tiro Telugu !important",
+                        }}
+                    >
+                        Team
+                    </Typography>
+
+                    <Grid sx={{ marginTop: 3.5, marginBottom: 3.5 }}>
+                        <hr style={{ borderTop: "3px solid #bbb" }} />
+                    </Grid>
+                </Box>
+            </Box>
+        );
+    };
+
+    const renderBoardTitle = () => {};
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
@@ -23,11 +60,7 @@ const Bio = () => {
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
                     <Box marginY={5}>
                         <Box sx={{ marginLeft: { md: 2.5 } }}>
-                            <RenderTitle
-                                text="Team"
-                                height="100px"
-                                onlyLogo={true}
-                            />
+                            {renderTeamTitle()}
                         </Box>
                         <Grid
                             item

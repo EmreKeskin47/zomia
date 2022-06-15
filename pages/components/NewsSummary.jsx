@@ -38,7 +38,7 @@ const NewsSummary = (props) => {
                             display: "flex",
                         }}
                     >
-                        <Box sx={{ height: "102px" }}>
+                        <Box sx={{ height: "105px" }}>
                             <Box
                                 sx={{
                                     textAlign: "left",

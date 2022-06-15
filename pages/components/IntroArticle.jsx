@@ -72,7 +72,7 @@ export default function IntroArticle(props) {
                         />
                         <Typography
                             variant="body1"
-                            fontSize={"1.1rem !important"}
+                            fontSize={"1.2rem !important"}
                         >
                             {data &&
                                 data.description &&

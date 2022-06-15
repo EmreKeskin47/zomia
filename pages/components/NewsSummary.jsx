@@ -31,14 +31,14 @@ const NewsSummary = (props) => {
                             backgroundColor: context.darkMode
                                 ? palette.black.main
                                 : "whitesmoke",
-                            height: 450,
+                            height: 400,
                             justifyContent: "flex-start",
                             flexDirection: "column",
                             alignItems: "baseline",
                             display: "flex",
                         }}
                     >
-                        <Box sx={{ height: "100px" }}>
+                        <Box sx={{ height: "102px" }}>
                             <Box
                                 sx={{
                                     textAlign: "left",
@@ -82,14 +82,13 @@ const NewsSummary = (props) => {
                         <hr
                             style={{
                                 width: "100%",
-                                marginTop: "10px",
-                                marginBottom: "10px",
+                                marginTop: "18px",
+                                marginBottom: "18px",
                             }}
                         />
                         <Typography
                             variant="body2"
                             sx={{
-                                paddingTop: 1,
                                 fontSize: "1.1rem !important",
                             }}
                         >

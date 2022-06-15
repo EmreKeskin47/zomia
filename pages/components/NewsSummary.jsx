@@ -49,17 +49,31 @@ const NewsSummary = (props) => {
                                 <Typography
                                     gutterBottom
                                     variant="h5"
-                                    sx={{ fontSize: "1.6rem" }}
+                                    sx={{ fontSize: "1.8rem !important" }}
                                 >
                                     {props.title &&
                                         props.title.substring(0, 72)}
                                 </Typography>
                             </Box>
-                            <Box sx={{ textAlign: "left", width: "100%" }}>
-                                <Typography align="left" variant="caption">
+                            <Box
+                                sx={{
+                                    textAlign: "left",
+                                    width: "100%",
+                                    marginTop: "1rem",
+                                }}
+                            >
+                                <Typography
+                                    align="left"
+                                    variant="caption"
+                                    sx={{ fontSize: "1rem !important" }}
+                                >
                                     {props.date} /
                                 </Typography>
-                                <Typography align="left" variant="caption">
+                                <Typography
+                                    align="left"
+                                    variant="caption"
+                                    sx={{ fontSize: "1rem !important" }}
+                                >
                                     {props.author}
                                 </Typography>
                             </Box>

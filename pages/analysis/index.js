@@ -5,6 +5,8 @@ import { Container } from "@mui/material";
 import { connect } from "react-redux";
 import { useArticleData } from "../../store/hooks/useData";
 import * as articleActions from "../../store/actions/article-actions";
+import { Divider } from "@mui/material";
+
 const Analysis = (props) => {
     //   const context = useContext(singleContext);
     const articleList = useArticleData();
@@ -20,30 +22,51 @@ const Analysis = (props) => {
     }, [props.articles, connectArticle]);
 
     return (
-        <Paper sx={{ paddingTop: 5 }}>
+        <Paper>
             <Container>
                 <Typography
-                    variant="h4"
+                    variant="h2"
                     marginY={15}
                     textAlign="center"
                     paddingBottom={10}
+                    paddingTop={10}
+                    sx={{
+                        fontSize: " 3.75rem !important",
+                        fontFamily: "Tiro Telugu !important",
+                    }}
                 >
                     Analysis
                 </Typography>
-                {articleList &&
-                    articleList.map((article, index) => {
-                        return (
-                            <Link key={index} href={`/analysis/${article.id}`}>
-                                <ListView
-                                    heading={article.title}
-                                    date={article.date}
-                                    author={article.author}
-                                    image={article.image}
-                                    description={article.description}
-                                />
-                            </Link>
-                        );
-                    })}
+                <div style={{ paddingBottom: "125px" }}>
+                    {articleList &&
+                        articleList.map((article, index) => {
+                            return (
+                                <>
+                                    <Link
+                                        key={index}
+                                        href={`/analysis/${article.id}`}
+                                    >
+                                        <ListView
+                                            heading={article.title}
+                                            date={article.date}
+                                            author={article.author}
+                                            image={article.image}
+                                            description={article.description}
+                                        />
+                                    </Link>
+                                    {index < articleList.length - 1 && (
+                                        <Divider
+                                            flexItem
+                                            sx={{
+                                                marginBottom: "3rem",
+                                                marginTop: "1rem",
+                                            }}
+                                        ></Divider>
+                                    )}
+                                </>
+                            );
+                        })}
+                </div>
             </Container>
         </Paper>
     );

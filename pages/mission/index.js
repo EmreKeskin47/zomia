@@ -27,7 +27,7 @@ const Mission = () => {
                 alignItems={"center"}
             >
                 <Grid item xs={10} lg={9} alignSelf={"center"}>
-                    <Box marginY={5}>
+                    <Box marginY={5} sx={{ paddingBottom: "125px" }}>
                         <Box sx={{ marginLeft: { md: 2.5 } }}>
                             <RenderTitle
                                 text="About"
@@ -95,10 +95,10 @@ const Mission = () => {
                             }
                         />
 
-                        <Box sx={{ marginLeft: { md: 2.5 } }}>
+                        {/* <Box sx={{ marginLeft: { md: 2.5 } }}>
                             <RenderTitle text="Partners" height="100px" />
                         </Box>
-                        <Partners />
+                        <Partners /> */}
                     </Box>
                 </Grid>
             </Grid>

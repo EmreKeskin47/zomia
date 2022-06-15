@@ -5,6 +5,8 @@ import { Container } from "@mui/material";
 import { connect } from "react-redux";
 import * as reportActions from "../../store/actions/report-actions";
 import { useReportData } from "../../store/hooks/useData";
+import { Divider } from "@mui/material";
+
 const Investigations = (props) => {
     const [connectReport, setConnectReport] = useState([]);
 
@@ -25,27 +27,44 @@ const Investigations = (props) => {
                     marginY={15}
                     textAlign="center"
                     paddingBottom={10}
-                    fontFamily={"Montserrat"}
+                    paddingTop={5}
+                    sx={{
+                        fontSize: " 3.75rem !important",
+                        fontFamily: "Tiro Telugu !important",
+                    }}
                 >
                     Investigations
                 </Typography>
-                {reports &&
-                    reports.map((report, index) => {
-                        return (
-                            <Link
-                                key={index}
-                                href={`/investigations/${report.id}`}
-                            >
-                                <ListView
-                                    heading={report.title}
-                                    date={report.date}
-                                    author={report.author}
-                                    image={report.image}
-                                    description={report.description}
-                                />
-                            </Link>
-                        );
-                    })}
+                <div style={{ paddingBottom: "125px" }}>
+                    {reports &&
+                        reports.map((report, index) => {
+                            return (
+                                <>
+                                    <Link
+                                        key={index}
+                                        href={`/investigations/${report.id}`}
+                                    >
+                                        <ListView
+                                            heading={report.title}
+                                            date={report.date}
+                                            author={report.author}
+                                            image={report.image}
+                                            description={report.description}
+                                        />
+                                    </Link>
+                                    {index < reports.length - 1 && (
+                                        <Divider
+                                            flexItem
+                                            sx={{
+                                                marginBottom: "3rem",
+                                                marginTop: "1rem",
+                                            }}
+                                        ></Divider>
+                                    )}
+                                </>
+                            );
+                        })}
+                </div>
             </Container>
         </Paper>
     );

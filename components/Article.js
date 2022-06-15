@@ -74,7 +74,6 @@ const Article = (props) => {
                                             xs: "14px !important",
                                             md: "20px !important",
                                         }}
-                                        sx={{ fontWeight: "bold !important" }}
                                     >
                                         {article.title}
                                     </Typography>
@@ -106,6 +105,7 @@ const Article = (props) => {
                                             sx={{
                                                 marginY: 3,
                                                 fontSize: "3.5rem !important",
+                                                marginBottom: "6px !important",
                                             }}
                                         >
                                             {article.title}

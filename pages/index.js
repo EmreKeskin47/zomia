@@ -71,7 +71,7 @@ function App(props) {
                     padding: "0.075rem",
                 }}
             ></Grid>
-            <Container>
+            <Container sx={{ maxWidth: "1350px !important" }}>
                 {/* Intro */}
                 <Grid
                     container
@@ -82,14 +82,14 @@ function App(props) {
                         paddingBottom: "1rem",
                     }}
                 >
-                    <Grid item lg={8} sm={12}>
+                    <Grid item lg={7} sm={12}>
                         <IntroArticle
                             data={writings && writings[writings.length - 1]}
                         />
                     </Grid>
                     <Grid
                         item
-                        lg={4}
+                        lg={5}
                         sm={12}
                         sx={{
                             paddingTop: "0rem",

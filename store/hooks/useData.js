@@ -18,37 +18,73 @@ const monthList = {
   december: "12",
 };
 
+const getBiggest = (items) => {
+  let biggest = 0;
+  items.map((item) => {
+    if (item > biggest) {
+      biggest = item;
+    }
+  });
+  return biggest;
+};
+
+const getIndexes = (items, item) => {
+  let indexes = [];
+  for (let i = 0; i < items.length; i++) {
+    if (item === items[i]) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
+};
+
 const getLatestWriting = (writingList) => {
   let years = [];
   let months = [];
   let days = [];
   let index = 0;
+  let theYear = 0;
+  let theMonth = 0;
+  let theDay = 0;
   writingList.map((writing) => {
     let sepArr = writing.date.split(" ");
     years.push(Number(sepArr[2]));
-    months.push(sepArr[0].toLowerCase());
+    months.push(monthList[sepArr[0].toLowerCase()]);
     days.push(Number(sepArr[1]));
   });
-  years.push(9999);
-  for (let i = 0; i < years.length - 1; i++) {
-    if (years[i] > years[i + 1]) {
-      if (years[i] > years[index]) {
-        index = i;
-      }
-    } else if (years[i] === years[i + 1]) {
-      if (
-        monthList[months[i].toLowerCase()] >
-        monthList[months[i + 1].toLowerCase()]
-      ) {
-        index = i;
-      } else if (
-        monthList[months[i].toLowerCase()] ===
-        monthList[months[i + 1].toLowerCase()]
-      ) {
-        if (days[i] > days[i + 1]) {
-          index = i;
-        }
-      }
+  //get the biggest year
+  const biggestYear = getBiggest(years);
+  //get the indexes with the biggest year
+  const yearIndexes = getIndexes(years, biggestYear);
+  //if there is just one year than return
+  if (yearIndexes.length === 1) {
+    return writingList[yearIndexes[0]];
+  }
+  theYear = biggestYear;
+  //if there is more than a yeaer then it means we have the necessary indexes to compare months
+  let localMonths = [];
+  for (let i = 0; i < months.length; i++) {
+    if (yearIndexes.includes(i)) {
+      localMonths.push(months[i]);
+    }
+  }
+  const biggestMonth = getBiggest(localMonths);
+  const monthIndexes = getIndexes(localMonths, biggestMonth);
+  theMonth = biggestMonth;
+  //if there is more than a month then it means we have the necessary indexes to compare days
+  let localDays = [];
+  for (let i = 0; i < days.length; i++) {
+    if (yearIndexes.includes(i)) {
+      localDays.push(days[i]);
+    }
+  }
+  const biggestDay = getBiggest(localDays);
+  const dayIndexes = getIndexes(localDays, biggestDay)[0];
+  theDay = biggestDay;
+  //find the necessary index
+  for (let i = 0; i < writingList.length; i++) {
+    if (years[i] === theYear && months[i] === theMonth && days[i] === theDay) {
+      index = i;
     }
   }
   return writingList[index];
@@ -66,11 +102,12 @@ export function useReportData() {
 }
 
 const sortList = (reports) => {
+  let localReports = reports;
   let sortedList = [];
-  while (reports.length > 0) {
-    let latest = getLatestWriting(reports);
+  while (localReports.length > 0) {
+    let latest = getLatestWriting(localReports);
     sortedList.push(latest);
-    reports = reports.filter((report) => report.id !== latest.id);
+    localReports = localReports.filter((report) => report.id !== latest.id);
   }
   return sortedList.reverse();
 };
@@ -101,6 +138,7 @@ export function useWritingData() {
     const articleData = sortList(articleList);
     setWritingData(sortList(articleData.concat(reportData)));
   }, [dispatch, reportList, articleList]);
+  console.log("writing data is: ", writingData);
   return writingData;
 }
 

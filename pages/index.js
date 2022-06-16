@@ -71,7 +71,7 @@ function App(props) {
                     padding: "0.075rem",
                 }}
             ></Grid>
-            <Container sx={{ maxWidth: "1275px !important" }}>
+            <Container sx={{ maxWidth: "1350px !important" }}>
                 {/* Intro */}
                 <Grid
                     container
@@ -80,6 +80,7 @@ function App(props) {
                     sx={{
                         paddingTop: "3rem",
                         paddingBottom: "1rem",
+                        marginLeft: { lg: "2rem" },
                     }}
                 >
                     <Grid item lg={7} sm={12}>
@@ -96,7 +97,7 @@ function App(props) {
                             paddingLeft: "2rem",
                             height: "100%",
                             alignSelf: "center",
-                            paddingRight: { xs: "2rem", lg: "0" },
+                            paddingRight: { xs: "2rem", lg: "6rem" },
                         }}
                     >
                         <IntroContentSummaries />

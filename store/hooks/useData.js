@@ -28,24 +28,11 @@ const getBiggest = (items) => {
   return biggest;
 };
 
-const getIndexes = (items, item) => {
-  let indexes = [];
-  for (let i = 0; i < items.length; i++) {
-    if (item === items[i]) {
-      indexes.push(i);
-    }
-  }
-  return indexes;
-};
-
 const getLatestWriting = (writingList) => {
   let years = [];
   let months = [];
   let days = [];
   let index = 0;
-  let theYear = 0;
-  let theMonth = 0;
-  let theDay = 0;
   writingList.map((writing) => {
     let sepArr = writing.date.split(" ");
     years.push(Number(sepArr[2]));

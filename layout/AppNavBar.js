@@ -69,45 +69,44 @@ const AppNavBar = (props) => {
                     disableGutters={true}
                     sx={{ paddingLeft: 0, paddingRight: 0 }}
                 />
-                <div>
-                    <Box
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                        }}
-                    >
-                        <ElevationScroll {...props}>
-                            <AppBar position="fixed" sx={{ zIndex: 1 }}>
-                                <Toolbar
-                                    disableGutters={true}
-                                    sx={{
-                                        padding: 0,
-                                        minHeight: "48px !important",
-                                    }}
-                                >
-                                    <OnlyTabsBar />
-                                </Toolbar>
-                            </AppBar>
-                        </ElevationScroll>
-                        <HideOnScroll {...props}>
-                            <AppBar position="fixed" sx={{ zIndex: 3 }}>
-                                <Toolbar
-                                    disableGutters={true}
-                                    sx={{ paddingRight: 10 }}
-                                >
-                                    <FullAppBar />
-                                </Toolbar>
-                            </AppBar>
-                        </HideOnScroll>
-                    </Box>
-                    <Box
-                        sx={{
-                            display: { xs: "flex", md: "none" },
-                            justifyContent: "end",
-                        }}
-                    >
-                        <MobileBar />
-                    </Box>
-                </div>
+
+                <Box
+                    sx={{
+                        display: { xs: "none ", md: "flex" },
+                    }}
+                >
+                    <ElevationScroll {...props}>
+                        <AppBar position="fixed" sx={{ zIndex: 1 }}>
+                            <Toolbar
+                                disableGutters={true}
+                                sx={{
+                                    padding: 0,
+                                    minHeight: "48px !important",
+                                }}
+                            >
+                                <OnlyTabsBar />
+                            </Toolbar>
+                        </AppBar>
+                    </ElevationScroll>
+                    <HideOnScroll {...props}>
+                        <AppBar position="fixed" sx={{ zIndex: 3 }}>
+                            <Toolbar
+                                disableGutters={true}
+                                sx={{ paddingRight: 10 }}
+                            >
+                                <FullAppBar />
+                            </Toolbar>
+                        </AppBar>
+                    </HideOnScroll>
+                </Box>
+                <Box
+                    sx={{
+                        display: { xs: "flex", md: "none" },
+                        justifyContent: "end",
+                    }}
+                >
+                    <MobileBar />
+                </Box>
             </React.Fragment>
             <main role="main">
                 {props.preContainer && props.preContainer}

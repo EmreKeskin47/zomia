@@ -33,7 +33,7 @@ const Article = (props) => {
                     sx={{
                         zIndex: 2,
                         height: {
-                            xs: "90px !important",
+                            xs: "65px !important",
                             md: "100px !important",
                         },
                     }}
@@ -54,7 +54,7 @@ const Article = (props) => {
                                 alignSelf={"center"}
                                 alignContent={"center"}
                             >
-                                <Grid item>
+                                <Grid item paddingTop={1}>
                                     <Image
                                         src="/static/o-logo.png"
                                         loader={imageLoader}

@@ -68,11 +68,11 @@ const Article = (props) => {
                                     <Typography
                                         variant="h6"
                                         fontStyle={"italic"}
-                                        fontFamily="Raleway !important"
                                         bgcolor={"black"}
                                         fontSize={{
                                             xs: "14px !important",
                                             md: "20px !important",
+                                            fontFamily: "Joan !important",
                                         }}
                                     >
                                         {article.title}
@@ -106,6 +106,8 @@ const Article = (props) => {
                                                 marginY: 3,
                                                 fontSize: "3.5rem !important",
                                                 marginBottom: "6px !important",
+                                                fontFamily:
+                                                    "Tiro Telugu !important",
                                             }}
                                         >
                                             {article.title}

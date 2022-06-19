@@ -8,7 +8,12 @@ const RenderSubtitle = (props) => {
         <>
             {team ? (
                 <Box marginY={4}>
-                    <Typography variant="h3">{text}</Typography>
+                    <Typography
+                        variant="h3"
+                        sx={{ fontFamily: "Joan !important" }}
+                    >
+                        {text}
+                    </Typography>
                 </Box>
             ) : (
                 <Box
@@ -19,7 +24,12 @@ const RenderSubtitle = (props) => {
                         },
                     }}
                 >
-                    <Typography variant="h3">{text}</Typography>
+                    <Typography
+                        variant="h3"
+                        sx={{ fontFamily: "Tiro Telugu !important" }}
+                    >
+                        {text}
+                    </Typography>
                 </Box>
             )}
         </>

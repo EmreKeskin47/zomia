@@ -11,7 +11,10 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                     color="whitesmoke"
                     align="left"
                     variant="h5"
-                    sx={{ fontWeight: "bold" }}
+                    sx={{
+                        fontFamily: "Joan !important",
+                        fontWeight: "600 !important",
+                    }}
                 >
                     {heading}
                 </Link>

@@ -39,6 +39,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
                         variant="h4"
                         sx={{
                             ":hover": { color: palette.orange.main },
+                            fontFamily: "Merriweather !important",
                         }}
                     >
                         {heading}

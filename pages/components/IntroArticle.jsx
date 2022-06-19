@@ -44,7 +44,12 @@ export default function IntroArticle(props) {
                                 : "white",
                         }}
                     >
-                        <Typography gutterBottom variant="h4" component="div">
+                        <Typography
+                            gutterBottom
+                            variant="h4"
+                            component="div"
+                            sx={{ fontFamily: "Merriweather !important" }}
+                        >
                             {data && data.title.substring(0, 72)}
                         </Typography>
                         <Box sx={{ textAlign: "left", width: "100%" }}>

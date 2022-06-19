@@ -49,7 +49,11 @@ const NewsSummary = (props) => {
                                 <Typography
                                     gutterBottom
                                     variant="h5"
-                                    sx={{ fontSize: "1.8rem !important" }}
+                                    sx={{
+                                        fontFamily: "Joan !important",
+                                        fontWeight: "600 !important",
+                                        fontSize: "1.8rem !important",
+                                    }}
                                 >
                                     {props.title &&
                                         props.title.substring(0, 72)}

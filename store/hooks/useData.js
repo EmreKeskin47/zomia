@@ -77,6 +77,17 @@ export function useReportData() {
   return data;
 }
 
+export function useReverseReportData() {
+  const dispatch = useDispatch();
+  const [data, setData] = useState(null);
+  const reportList = useSelector((state) => state.reportStore.reports);
+  useEffect(() => {
+    dispatch(reportActions.fetchReports());
+    setData(sortList(reportList).reverse());
+  }, [dispatch, reportList]);
+  return data;
+}
+
 const sortList = (reports) => {
   console.log("aaaaaa");
   let localReports = reports;

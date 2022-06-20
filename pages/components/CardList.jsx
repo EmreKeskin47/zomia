@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Link } from "@mui/material";
 import NewsSummary from "./NewsSummary";
-import { useReportData } from "../../store/hooks/useData";
+import { useReverseReportData } from "../../store/hooks/useData";
 
 const CardList = ({ type }) => {
-  const reportList = useReportData();
+  const reportList = useReverseReportData();
   const generateList = () => {
     if (type === "report") {
       return (

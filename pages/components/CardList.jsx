@@ -7,9 +7,15 @@ import {
 } from "../../store/hooks/useData";
 
 const CardList = ({ type }) => {
+  let reportList = null;
+  let articleList = null;
+  if (type === "report") {
+    reportList = useReverseReportData();
+  } else {
+    articleList = useArticleData();
+  }
   const generateList = () => {
     if (type === "report") {
-      const reportList = useReverseReportData();
       return (
         <Grid container direction={"row"} justifyContent={"center"}>
           {reportList &&
@@ -44,7 +50,6 @@ const CardList = ({ type }) => {
         </Grid>
       );
     } else {
-      const articleList = useArticleData();
       return (
         <Grid container direction={"row"} justifyContent={"center"}>
           {articleList &&

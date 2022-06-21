@@ -7,13 +7,8 @@ import {
 } from "../../store/hooks/useData";
 
 const CardList = ({ type }) => {
-  let reportList = null;
-  let articleList = null;
-  if (type === "report") {
-    reportList = useReverseReportData();
-  } else {
-    articleList = useArticleData();
-  }
+  const reportList = useReverseReportData();
+  const articleList = useArticleData();
   const generateList = () => {
     if (type === "report") {
       return (

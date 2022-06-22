@@ -35,6 +35,11 @@ Mohammad has been working with Zomia since 2017. He directs Zomia projects in Sy
 Hussien Mohammad Samawi - Field Researcher & Medical Coordinator <br />
 
 Hussein is a field researcher and journalist who has done extensive work in Manbij and its countryside, as well as other locations in eastern Syria. He also helps supervise Zomia public health projects, including Leishmanaisis and COVID-19 efforts.  <br />
+
+Sol Laudon, Refugee Coding Bootcamp Program Director <br />
+
+Sol is a software engineer with five years of industry experience. A hacker at heart, Sol learned to code at a software bootcamp. Prior to entering tech, Sol worked in corporate finance doing mergers and acquisitions. Sol holds a BBA in finance from Baruch College. Sol spent three years living in and traveling around the Middle East, and has collaborated with historians and anthropologists to conduct research on Jewish life in Morocco. <br />
+
 `;
 
 export const directors = `
@@ -53,8 +58,4 @@ Tom has worked with Zomia since its inception. He oversees all humanitarian proj
 Daniel Rothenberg <br />
 
 Daniel Rothenberg is Professor of Practice, School of Politics and Global Studies at Ariona State University and a Senior Fellow at New America. Rothenberg has designed and managed rule of law and human rights projects in Afghanistan, Iraq, Central Africa and throughout Latin America, including programs to train human rights NGOs, aid indigenous peoples in using international legal remedies, support gender justice, and collect and analyze thousands of first-person narratives from victims of atrocities. His books include With These Hands (University of California Press), Memory of Silence: The Guatemalan Truth Commission Report (Palgrave), Drone Wars: Transforming Conflict, Law, and Policy (Cambridge University Press). <br />
-
-Anita Sreedhar <br />
-
-Anita Sreedhar MD MPH is a public health specialist and physician resident at the Montefiore Medical Center in the Bronx, NY. She has focused on the neoliberalization of global public health, such as the rise of contract research organizations (CROs) in Latin America, and cultural and political barriers to vaccination coverage in Afghanistan. She has over a decade of experience as a journalist with NBC News and the Hindustan Times, and received her MPH from Columbia University. <br />
 `;

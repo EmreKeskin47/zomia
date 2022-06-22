@@ -51,7 +51,6 @@ const NewsSummary = (props) => {
                                     variant="h5"
                                     sx={{
                                         fontFamily: "Joan !important",
-                                        fontWeight: "600 !important",
                                         fontSize: "1.8rem !important",
                                     }}
                                 >

@@ -33,6 +33,7 @@ const Mission = () => {
                                 text="About"
                                 height="100px"
                                 onlyLogo={true}
+                                oswald={true}
                             />
                         </Box>
 
@@ -51,7 +52,10 @@ const Mission = () => {
                                 );
                             })}
                         </Grid>
-                        <RenderSubtitle text="Current Initiatives" />
+                        <RenderSubtitle
+                            text="Current Initiatives"
+                            oswald={true}
+                        />
 
                         <Box marginBottom={10}>
                             {bullet1.split("<br/>").map((paragraph, index) => {
@@ -68,7 +72,7 @@ const Mission = () => {
                                 "The Center is unique in linking these endeavors to cutting-edge, granular research in non-state spaces. The Center produces deeply researched reports for the public on issues ranging from the Syrian war to vaccination deserts in the United States. "
                             }
                         />
-                        <RenderSubtitle text="Current Themes" />
+                        <RenderSubtitle text="Current Themes" oswald={true} />
                         <Box marginBottom={10}>
                             {bullet2.split("<br/>").map((paragraph, index) => {
                                 return (
@@ -86,7 +90,11 @@ const Mission = () => {
                         />
 
                         <Box sx={{ marginLeft: { md: 2.5 } }}>
-                            <RenderTitle text="Support Zomia" height="100px" />
+                            <RenderTitle
+                                text="Support Zomia"
+                                height="100px"
+                                oswald={true}
+                            />
                         </Box>
 
                         <RenderBody

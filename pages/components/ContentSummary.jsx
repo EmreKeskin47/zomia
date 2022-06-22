@@ -13,7 +13,6 @@ const ContentSummary = ({ id, description, heading, date, author }) => {
                     variant="h5"
                     sx={{
                         fontFamily: "Joan !important",
-                        fontWeight: "600 !important",
                     }}
                 >
                     {heading}

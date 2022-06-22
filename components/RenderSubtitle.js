@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
 const RenderSubtitle = (props) => {
-    const { text, team } = props;
+    const { text, team, oswald } = props;
     return (
         <>
             {team ? (
@@ -26,7 +26,11 @@ const RenderSubtitle = (props) => {
                 >
                     <Typography
                         variant="h3"
-                        sx={{ fontFamily: "Tiro Telugu !important" }}
+                        sx={{
+                            fontFamily: oswald
+                                ? "Oswald !important"
+                                : "Tiro Telugu !important",
+                        }}
                     >
                         {text}
                     </Typography>

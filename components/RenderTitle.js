@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import VerticalDivider from "./VerticalDivider";
 
 const RenderTitle = (props) => {
-    const { text, height, onlyLogo } = props;
+    const { text, height, onlyLogo, oswald } = props;
     return (
         <Box display="flex" alignItems="center" marginY={5}>
             <VerticalDivider height={height} onlyLogo={onlyLogo} />
@@ -12,7 +12,11 @@ const RenderTitle = (props) => {
             <Box>
                 <Typography
                     variant="h3"
-                    sx={{ fontFamily: "Tiro Telugu !important" }}
+                    sx={{
+                        fontFamily: oswald
+                            ? "Oswald !important"
+                            : "Tiro Telugu !important",
+                    }}
                 >
                     {text}
                 </Typography>

@@ -135,6 +135,7 @@ function renderProject1(project, index) {
                         text={project.name}
                         height={"150px"}
                         onlyLogo={true}
+                        oswald={true}
                     />
                 </Grid>
 
@@ -294,6 +295,7 @@ function renderProject2(project, index) {
                         text={project.name}
                         height={"150px"}
                         onlyLogo={true}
+                        oswald={true}
                     />
                 </Grid>
 

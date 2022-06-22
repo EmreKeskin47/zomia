@@ -89,16 +89,13 @@ export function useReverseReportData() {
 }
 
 const sortList = (reports) => {
-  console.log("aaaaaa");
   let localReports = reports;
   let sortedList = [];
   while (localReports.length > 0) {
     let latest = getLatestWriting(localReports);
     sortedList.push(latest);
     localReports = localReports.filter((report) => report.id !== latest.id);
-    console.log(latest);
   }
-  console.log("bbbbbb");
   return sortedList.reverse();
 };
 
@@ -128,6 +125,5 @@ export function useWritingData() {
     const articleData = sortList(articleList);
     setWritingData(sortList(articleData.concat(reportData)));
   }, [dispatch, reportList, articleList]);
-  console.log("writing data is: ", writingData);
   return writingData;
 }

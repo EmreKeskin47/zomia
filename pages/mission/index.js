@@ -99,7 +99,7 @@ const Mission = () => {
 
                         <RenderBody
                             text={
-                                "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. Our federal ID number is 30-1201889. Contributions may be submitted online, or by wire transfer."
+                                "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. If you would like to donate, please contact us. We thank you in advance for your support."
                             }
                         />
 

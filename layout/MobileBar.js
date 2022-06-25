@@ -57,12 +57,6 @@ const MobileBar = () => {
                         <ListItemText primary="Home" margin={10} />
                     </Link>
                 </ListItem>
-
-                <ListItem button>
-                    <Link href="/admin">
-                        <ListItemText primary="Admin" />
-                    </Link>
-                </ListItem>
                 <ListItem button sx={{ marginY: 2 }}>
                     <Link href="/analysis">
                         <ListItemText primary="Analysis" />

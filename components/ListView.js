@@ -11,7 +11,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
       container
       direction="row"
       justifyContent="center"
-      sx={{ paddingBottom: "2rem", marginBottom: isMobile && "8rem" }}
+      sx={{ paddingBottom: "1rem", marginBottom: isMobile && "3rem" }}
     >
       <Grid
         item
@@ -48,7 +48,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
             sx={{
               ":hover": { color: palette.orange.main },
               fontFamily: "Merriweather !important",
-              paddingTop: isMobile && "2rem",
+              paddingTop: isMobile && "1rem",
             }}
           >
             {heading}
@@ -57,7 +57,7 @@ const ListView = ({ heading, date, author, image, latest, description }) => {
             variant={"subtitle1"}
             sx={{
               fontSize: "1.2rem !important",
-              paddingTop: isMobile && "2rem",
+              paddingTop: isMobile && "1rem",
             }}
           >
             {description && description.substring(0, 400)}

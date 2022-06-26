@@ -21,7 +21,7 @@ export default function IntroArticle(props) {
         borderRadius: 0,
         borderColor: palette.orange.main,
         border: "10px",
-        marginBottom: isMobile && "10rem",
+        marginBottom: isMobile && "3rem",
       }}
     >
       <Card

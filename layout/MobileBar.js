@@ -16,126 +16,164 @@ import Checkbox from "@mui/material/Checkbox";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { withStyles } from "@material-ui/core/styles";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import palette from "../theme/palette";
 
 const checkBoxStyles = (theme) => ({
-    root: {
-        // "&$checked": {
-        //   color: "#3D70B2",
-        // },
-        color: "#F9A21B ",
-    },
-    // checked: {},
+  root: {
+    // "&$checked": {
+    //   color: "#3D70B2",
+    // },
+    color: "#F9A21B ",
+  },
+  // checked: {},
 });
 
 const CustomCheckbox = withStyles(checkBoxStyles)(Checkbox);
 
 const MobileBar = () => {
-    const context = useContext(singleContext);
-    const [drawer, setDrawer] = useState(false);
-    const toggleDrawer = () => (event) => {
-        if (
-            event.type === "keydown" &&
-            (event.key === "Tab" || event.key === "Shift")
-        ) {
-            return;
-        }
+  const context = useContext(singleContext);
+  const [drawer, setDrawer] = useState(false);
+  const toggleDrawer = () => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
 
-        setDrawer(!drawer);
-    };
+    setDrawer(!drawer);
+  };
 
-    const drawerItemList = () => (
+  const drawerItemList = () => (
+    <Box
+      role="presentation"
+      onClick={toggleDrawer()}
+      onKeyDown={toggleDrawer()}
+      width={250}
+    >
+      <List>
+        <Divider sx={{ paddingBottom: 5, marginTop: 10 }} />
+        <ListItem button sx={{ marginY: 2 }}>
+          <Link href="/">
+            <ListItemText primary="Home" margin={10} />
+          </Link>
+        </ListItem>
+        <ListItem button sx={{ marginY: 2 }}>
+          <Link href="/analysis">
+            <ListItemText primary="Analysis" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link href="/projects">
+            <ListItemText primary="Projects" />
+          </Link>
+        </ListItem>
+        <ListItem button sx={{ marginY: 2 }}>
+          <Link href="/investigations">
+            <ListItemText primary="Investigations" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link href="/mission">
+            <ListItemText primary="Mission" />
+          </Link>
+        </ListItem>
+        <ListItem button sx={{ marginY: 2 }}>
+          <Link href="/bio">
+            <ListItemText primary="Bio" />
+          </Link>
+        </ListItem>
+        <ListItem button sx={{ marginY: 2 }}>
+          <CustomCheckbox
+            icon={<NightsStayIcon color={"#F9A21B"} />}
+            checkedIcon={<WbSunnyIcon />}
+            onClick={() => {
+              context.toggleDarkMode();
+            }}
+          />
+        </ListItem>
+        <ListItem>
+          <Link href="https://mobile.twitter.com/centerzomia" passhref="true">
+            <a target="_blank" rel="noopener noreferrer">
+              <TwitterIcon
+                sx={{
+                  color: context.darkMode ? "#fff" : palette.black.main,
+                }}
+              />
+            </a>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="mailto: info@zomiacenter.com" passhref="true">
+            <a target="_blank" rel="noopener noreferrer">
+              <EmailIcon
+                sx={{
+                  color: context.darkMode ? "#fff" : palette.black.main,
+                }}
+              />
+            </a>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://www.linkedin.com/company/the-zomia-center/about/?viewAsMember=true"
+            passhref="true"
+          >
+            <a target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon
+                sx={{
+                  color: context.darkMode ? "#fff" : palette.black.main,
+                }}
+              />
+            </a>
+          </Link>
+        </ListItem>
+      </List>
+      <Divider />
+    </Box>
+  );
+  return (
+    <>
+      <Drawer anchor={"left"} open={drawer} onClose={toggleDrawer()}>
+        {drawerItemList()}
+      </Drawer>
+      <AppBar>
         <Box
-            role="presentation"
-            onClick={toggleDrawer()}
-            onKeyDown={toggleDrawer()}
-            width={250}
+          width={"95%"}
+          display={"flex"}
+          justifyContent={"space-between"}
+          sx={{ cursor: "pointer" }}
+          marginLeft={"2.5%"}
         >
-            <List>
-                <Divider sx={{ paddingBottom: 5, marginTop: 10 }} />
-                <ListItem button sx={{ marginY: 2 }}>
-                    <Link href="/">
-                        <ListItemText primary="Home" margin={10} />
-                    </Link>
-                </ListItem>
-                <ListItem button sx={{ marginY: 2 }}>
-                    <Link href="/analysis">
-                        <ListItemText primary="Analysis" />
-                    </Link>
-                </ListItem>
-                <ListItem button>
-                    <Link href="/projects">
-                        <ListItemText primary="Projects" />
-                    </Link>
-                </ListItem>
-                <ListItem button sx={{ marginY: 2 }}>
-                    <Link href="/investigations">
-                        <ListItemText primary="Investigations" />
-                    </Link>
-                </ListItem>
-                <ListItem button>
-                    <Link href="/mission">
-                        <ListItemText primary="Mission" />
-                    </Link>
-                </ListItem>
-                <ListItem button sx={{ marginY: 2 }}>
-                    <Link href="/bio">
-                        <ListItemText primary="Bio" />
-                    </Link>
-                </ListItem>
-                <ListItem button sx={{ marginY: 2 }}>
-                    <CustomCheckbox
-                        icon={<NightsStayIcon color={"#F9A21B"} />}
-                        checkedIcon={<WbSunnyIcon />}
-                        onClick={() => {
-                            context.toggleDarkMode();
-                        }}
-                    />
-                </ListItem>
-            </List>
-            <Divider />
+          <Link href="/">
+            <Image
+              src={
+                context.darkMode ? "/static/white-logo.png" : "/static/logo.png"
+              }
+              loader={imageLoader}
+              unoptimized
+              alt="Logo"
+              width="64px"
+              height="64px"
+            />
+          </Link>
+          <IconButton
+            edge="start"
+            aria-label="menu"
+            sx={{
+              mr: 4,
+            }}
+            onClick={toggleDrawer()}
+          >
+            <MenuIcon sx={{ color: "#F9A21B" }} />
+          </IconButton>
         </Box>
-    );
-    return (
-        <>
-            <Drawer anchor={"left"} open={drawer} onClose={toggleDrawer()}>
-                {drawerItemList()}
-            </Drawer>
-            <AppBar>
-                <Box
-                    width={"95%"}
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    sx={{ cursor: "pointer" }}
-                    marginLeft={"2.5%"}
-                >
-                    <Link href="/">
-                        <Image
-                            src={
-                                context.darkMode
-                                    ? "/static/white-logo.png"
-                                    : "/static/logo.png"
-                            }
-                            loader={imageLoader}
-                            unoptimized
-                            alt="Logo"
-                            width="64px"
-                            height="64px"
-                        />
-                    </Link>
-                    <IconButton
-                        edge="start"
-                        aria-label="menu"
-                        sx={{
-                            mr: 4,
-                        }}
-                        onClick={toggleDrawer()}
-                    >
-                        <MenuIcon sx={{ color: "#F9A21B" }} />
-                    </IconButton>
-                </Box>
-            </AppBar>
-        </>
-    );
+      </AppBar>
+    </>
+  );
 };
 
 export default MobileBar;

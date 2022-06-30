@@ -41,11 +41,8 @@ const Analysis = (props) => {
                     {articleList &&
                         articleList.map((article, index) => {
                             return (
-                                <>
-                                    <Link
-                                        key={index}
-                                        href={`/analysis/${article.id}`}
-                                    >
+                                <div key={index}>
+                                    <Link href={`/analysis/${article.id}`}>
                                         <ListView
                                             heading={article.title}
                                             date={article.date}
@@ -63,7 +60,7 @@ const Analysis = (props) => {
                                             }}
                                         ></Divider>
                                     )}
-                                </>
+                                </div>
                             );
                         })}
                 </div>

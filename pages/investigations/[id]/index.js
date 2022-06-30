@@ -16,6 +16,7 @@ const Investigations = (props) => {
     const [connectReport, setConnectReport] = useState([]);
 
     useEffect(() => {
+        if (report) return;
         const fetch = async () => {
             await props.fetchReports();
             setConnectReport(props.reports);

@@ -1,9 +1,10 @@
 import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import Article from "../../../components/Article";
 import { useArticleData } from "../../../store/hooks/useData";
 import * as articleActions from "../../../store/actions/article-actions";
+import { useCallback } from "react";
 
 const ArticlePage = (props) => {
     const { id } = props;
@@ -14,15 +15,21 @@ const ArticlePage = (props) => {
     const [connectArticle, setConnectArticle] = useState([]);
 
     useEffect(() => {
-        const fetch = async () => {
-            await props.fetchArticles();
-            setConnectArticle(props.articles);
-        };
-        fetch();
-        if (articleList) {
-            setData(articleList.find((item) => item.id === id));
+        if (data) {
+            return;
+        } else {
+            const fetch = async () => {
+                await props.fetchArticles();
+                setConnectArticle(props.articles);
+            };
+            fetch();
+            if (articleList) {
+                setData(articleList.find((item) => item.id === id));
+            } else {
+                setData(connectArticle.find((item) => item.id === id));
+            }
         }
-    }, [props.articles, connectArticle, id, articleList]);
+    }, [props.articles, id, articleList]);
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}

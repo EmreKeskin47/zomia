@@ -13,25 +13,14 @@ import Drawer from "@mui/material/Drawer";
 import imageLoader from "../loader";
 import singleContext from "../SingleContext";
 import Checkbox from "@mui/material/Checkbox";
-import NightsStayIcon from "@mui/icons-material/NightsStay";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { withStyles } from "@material-ui/core/styles";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import palette from "../theme/palette";
-
-const checkBoxStyles = (theme) => ({
-  root: {
-    // "&$checked": {
-    //   color: "#3D70B2",
-    // },
-    color: "#F9A21B ",
-  },
-  // checked: {},
-});
-
-const CustomCheckbox = withStyles(checkBoxStyles)(Checkbox);
+//Icons
+import { FaMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const MobileBar = () => {
   const context = useContext(singleContext);
@@ -56,12 +45,12 @@ const MobileBar = () => {
     >
       <List>
         <Divider sx={{ paddingBottom: 5, marginTop: 10 }} />
-        <ListItem button sx={{ marginY: 2 }}>
+        <ListItem button>
           <Link href="/">
-            <ListItemText primary="Home" margin={10} />
+            <ListItemText primary="Home" />
           </Link>
         </ListItem>
-        <ListItem button sx={{ marginY: 2 }}>
+        <ListItem button>
           <Link href="/analysis">
             <ListItemText primary="Analysis" />
           </Link>
@@ -71,7 +60,7 @@ const MobileBar = () => {
             <ListItemText primary="Projects" />
           </Link>
         </ListItem>
-        <ListItem button sx={{ marginY: 2 }}>
+        <ListItem button>
           <Link href="/investigations">
             <ListItemText primary="Investigations" />
           </Link>
@@ -81,15 +70,30 @@ const MobileBar = () => {
             <ListItemText primary="Mission" />
           </Link>
         </ListItem>
-        <ListItem button sx={{ marginY: 2 }}>
+        <ListItem button>
           <Link href="/bio">
             <ListItemText primary="Bio" />
           </Link>
         </ListItem>
-        <ListItem button sx={{ marginY: 2 }}>
-          <CustomCheckbox
-            icon={<NightsStayIcon color={"#F9A21B"} />}
-            checkedIcon={<WbSunnyIcon />}
+        <ListItem button>
+          <FaMoon
+            style={{
+              color: context.darkMode ? "#fff" : palette.black.main,
+              display: context.darkMode && "none",
+              fontSize: "1rem",
+            }}
+            onClick={() => {
+              context.toggleDarkMode();
+            }}
+          />
+          <FaSun
+            style={{
+              color: context.darkMode
+                ? palette.orange.main
+                : palette.black.main,
+              display: !context.darkMode && "none",
+              fontSize: "1rem",
+            }}
             onClick={() => {
               context.toggleDarkMode();
             }}
@@ -98,9 +102,10 @@ const MobileBar = () => {
         <ListItem>
           <Link href="https://mobile.twitter.com/centerzomia" passhref="true">
             <a target="_blank" rel="noopener noreferrer">
-              <TwitterIcon
-                sx={{
+              <FaTwitter
+                style={{
                   color: context.darkMode ? "#fff" : palette.black.main,
+                  fontSize: "1rem",
                 }}
               />
             </a>
@@ -109,9 +114,10 @@ const MobileBar = () => {
         <ListItem>
           <Link href="mailto: info@zomiacenter.com" passhref="true">
             <a target="_blank" rel="noopener noreferrer">
-              <EmailIcon
-                sx={{
+              <FaEnvelope
+                style={{
                   color: context.darkMode ? "#fff" : palette.black.main,
+                  fontSize: "1rem",
                 }}
               />
             </a>
@@ -123,9 +129,10 @@ const MobileBar = () => {
             passhref="true"
           >
             <a target="_blank" rel="noopener noreferrer">
-              <LinkedInIcon
-                sx={{
+              <FaLinkedin
+                style={{
                   color: context.darkMode ? "#fff" : palette.black.main,
+                  fontSize: "1rem",
                 }}
               />
             </a>

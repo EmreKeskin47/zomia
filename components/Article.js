@@ -165,6 +165,17 @@ const Article = (props) => {
                                         .split("<br/>" || "<br>")
                                         .map((paragraph, index) => {
                                             if (
+                                                paragraph.includes(
+                                                    "sub-heading"
+                                                )
+                                            ) {
+                                                return (
+                                                    <RenderSubtitle
+                                                        key={index}
+                                                        text={paragraph}
+                                                    />
+                                                );
+                                            } else if (
                                                 paragraph.includes(".") ||
                                                 paragraph.includes("@")
                                             ) {

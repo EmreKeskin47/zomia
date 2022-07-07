@@ -23,164 +23,177 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 const MobileBar = () => {
-  const context = useContext(singleContext);
-  const [drawer, setDrawer] = useState(false);
-  const toggleDrawer = () => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
+    const context = useContext(singleContext);
+    const [drawer, setDrawer] = useState(false);
+    const toggleDrawer = () => (event) => {
+        if (
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
+            return;
+        }
 
-    setDrawer(!drawer);
-  };
+        setDrawer(!drawer);
+    };
 
-  const drawerItemList = () => (
-    <Box
-      role="presentation"
-      onClick={toggleDrawer()}
-      onKeyDown={toggleDrawer()}
-      width={250}
-    >
-      <List>
-        <Divider sx={{ paddingBottom: 5, marginTop: 10 }} />
-        <ListItem button>
-          <Link href="/">
-            <ListItemText primary="Home" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link href="/analysis">
-            <ListItemText primary="Analysis" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link href="/projects">
-            <ListItemText primary="Projects" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link href="/investigations">
-            <ListItemText primary="Investigations" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link href="/mission">
-            <ListItemText primary="Mission" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link href="/bio">
-            <ListItemText primary="Bio" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <FaMoon
-            style={{
-              color: context.darkMode ? "#fff" : palette.black.main,
-              display: context.darkMode && "none",
-              fontSize: "1rem",
-            }}
-            onClick={() => {
-              context.toggleDarkMode();
-            }}
-          />
-          <FaSun
-            style={{
-              color: context.darkMode
-                ? palette.orange.main
-                : palette.black.main,
-              display: !context.darkMode && "none",
-              fontSize: "1rem",
-            }}
-            onClick={() => {
-              context.toggleDarkMode();
-            }}
-          />
-        </ListItem>
-        <ListItem>
-          <Link href="https://mobile.twitter.com/centerzomia" passhref="true">
-            <a target="_blank" rel="noopener noreferrer">
-              <FaTwitter
-                style={{
-                  color: context.darkMode ? "#fff" : palette.black.main,
-                  fontSize: "1rem",
-                }}
-              />
-            </a>
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="mailto: info@zomiacenter.com" passhref="true">
-            <a target="_blank" rel="noopener noreferrer">
-              <FaEnvelope
-                style={{
-                  color: context.darkMode ? "#fff" : palette.black.main,
-                  fontSize: "1rem",
-                }}
-              />
-            </a>
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            href="https://www.linkedin.com/company/the-zomia-center/about/?viewAsMember=true"
-            passhref="true"
-          >
-            <a target="_blank" rel="noopener noreferrer">
-              <FaLinkedin
-                style={{
-                  color: context.darkMode ? "#fff" : palette.black.main,
-                  fontSize: "1rem",
-                }}
-              />
-            </a>
-          </Link>
-        </ListItem>
-      </List>
-      <Divider />
-    </Box>
-  );
-  return (
-    <>
-      <Drawer anchor={"left"} open={drawer} onClose={toggleDrawer()}>
-        {drawerItemList()}
-      </Drawer>
-      <AppBar>
+    const drawerItemList = () => (
         <Box
-          width={"95%"}
-          display={"flex"}
-          justifyContent={"space-between"}
-          sx={{ cursor: "pointer" }}
-          marginLeft={"2.5%"}
-        >
-          <Link href="/">
-            <Image
-              src={
-                context.darkMode ? "/static/white-logo.png" : "/static/logo.png"
-              }
-              loader={imageLoader}
-              unoptimized
-              alt="Logo"
-              width="64px"
-              height="64px"
-            />
-          </Link>
-          <IconButton
-            edge="start"
-            aria-label="menu"
-            sx={{
-              mr: 4,
-            }}
+            role="presentation"
             onClick={toggleDrawer()}
-          >
-            <MenuIcon sx={{ color: "#F9A21B" }} />
-          </IconButton>
+            onKeyDown={toggleDrawer()}
+            width={250}
+        >
+            <List sx={{ textAlignLast: "center" }}>
+                <Divider sx={{ paddingBottom: 5, marginTop: 10 }} />
+                <ListItem button>
+                    <Link href="/">
+                        <ListItemText primary="Home" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <Link href="/analysis">
+                        <ListItemText primary="Analysis" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <Link href="/projects">
+                        <ListItemText primary="Projects" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <Link href="/investigations">
+                        <ListItemText primary="Investigations" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <Link href="/mission">
+                        <ListItemText primary="Mission" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <Link href="/bio">
+                        <ListItemText primary="Bio" />
+                    </Link>
+                </ListItem>
+                <ListItem button>
+                    <FaMoon
+                        style={{
+                            color: context.darkMode
+                                ? "#fff"
+                                : palette.black.main,
+                            display: context.darkMode && "none",
+                            fontSize: "1rem",
+                        }}
+                        onClick={() => {
+                            context.toggleDarkMode();
+                        }}
+                    />
+                    <FaSun
+                        style={{
+                            color: context.darkMode
+                                ? palette.orange.main
+                                : palette.black.main,
+                            display: !context.darkMode && "none",
+                            fontSize: "1rem",
+                        }}
+                        onClick={() => {
+                            context.toggleDarkMode();
+                        }}
+                    />
+                </ListItem>
+                <ListItem sx={{ justifyContent: "center !important" }}>
+                    <Link
+                        href="https://mobile.twitter.com/centerzomia"
+                        passhref="true"
+                    >
+                        <a target="_blank" rel="noopener noreferrer">
+                            <FaTwitter
+                                style={{
+                                    color: context.darkMode
+                                        ? "#fff"
+                                        : palette.black.main,
+                                    fontSize: "1rem",
+                                }}
+                            />
+                        </a>
+                    </Link>
+                </ListItem>
+                <ListItem sx={{ justifyContent: "center !important" }}>
+                    <Link href="mailto: info@zomiacenter.com" passhref="true">
+                        <a target="_blank" rel="noopener noreferrer">
+                            <FaEnvelope
+                                style={{
+                                    color: context.darkMode
+                                        ? "#fff"
+                                        : palette.black.main,
+                                    fontSize: "1rem",
+                                }}
+                            />
+                        </a>
+                    </Link>
+                </ListItem>
+                <ListItem sx={{ justifyContent: "center !important" }}>
+                    <Link
+                        href="https://www.linkedin.com/company/the-zomia-center/about/?viewAsMember=true"
+                        passhref="true"
+                    >
+                        <a target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin
+                                style={{
+                                    color: context.darkMode
+                                        ? "#fff"
+                                        : palette.black.main,
+                                    fontSize: "1rem",
+                                }}
+                            />
+                        </a>
+                    </Link>
+                </ListItem>
+            </List>
+            <Divider />
         </Box>
-      </AppBar>
-    </>
-  );
+    );
+    return (
+        <>
+            <Drawer anchor={"left"} open={drawer} onClose={toggleDrawer()}>
+                {drawerItemList()}
+            </Drawer>
+            <AppBar>
+                <Box
+                    width={"95%"}
+                    display={"flex"}
+                    justifyContent={"space-between"}
+                    sx={{ cursor: "pointer" }}
+                    marginLeft={"2.5%"}
+                >
+                    <Link href="/">
+                        <Image
+                            src={
+                                context.darkMode
+                                    ? "/static/white-logo.png"
+                                    : "/static/logo.png"
+                            }
+                            loader={imageLoader}
+                            unoptimized
+                            alt="Logo"
+                            width="64px"
+                            height="64px"
+                        />
+                    </Link>
+                    <IconButton
+                        edge="start"
+                        aria-label="menu"
+                        sx={{
+                            mr: 4,
+                        }}
+                        onClick={toggleDrawer()}
+                    >
+                        <MenuIcon sx={{ color: "#F9A21B" }} />
+                    </IconButton>
+                </Box>
+            </AppBar>
+        </>
+    );
 };
 
 export default MobileBar;

@@ -8,6 +8,8 @@ import singleContext from "../SingleContext";
 import palette from "../theme/palette";
 import { withStyles } from "@material-ui/core/styles";
 import Divider from "@mui/material/Divider";
+import AboutDropdown from "../components/AboutDropdown";
+import styled from "@emotion/styled";
 //Icons
 import { FaTwitter } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -96,82 +98,9 @@ const Tabs = (props) => {
         </Typography>
       </Link>
 
-      <Box sx={{ flexGrow: 0 }}>
-        {/* <Box onClick={handleOpenUserMenu}>
-                    <Typography variant="h6" passhref="true">
-                        <span
-                            style={{
-                                color: context.darkMode
-                                    ? "#fff"
-                                    : palette.black.main,
-                            }}
-                        >
-                            About
-                        </span>
-                    </Typography>
-                </Box> */}
-        <Button
-          id="basic-button"
-          aria-controls={open ? "basic-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
-          style={{
-            textTransform: "capitalize !important ",
-          }}
-        >
-          <Typography variant="h6" passhref="true">
-            <span
-              style={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-              }}
-            >
-              About
-            </span>
-          </Typography>
-        </Button>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-                height: "20%",
-              }}
-            >
-              <Link href="/mission" passhref="true">
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: context.darkMode ? "#fff" : palette.black.main,
-                  }}
-                >
-                  Mission
-                </Typography>
-              </Link>
-            </Box>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-                height: "20%",
-              }}
-            >
-              <Link href="/bio" passhref="true">
-                <Typography variant="h6">Bio</Typography>
-              </Link>
-            </Box>
-          </MenuItem>
-        </Menu>
-      </Box>
+      <Grid sx={{ flexGrow: 0 }}>
+        <AboutDropdown style={{backgroundColor: 'transparent'}} />
+      </Grid>
       <CustomCheckbox
         icon={
           <FaMoon

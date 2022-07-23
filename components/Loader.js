@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Grid } from "@mui/material";
 import Image from "next/image";
@@ -13,7 +13,7 @@ const Loader = ({ type }) => {
         justifyContent={"center"}
         alignItems="center"
         flexDirection={"column"}
-        sx={{ height: "1000px" }}
+        sx={{paddingTop: "25%", paddingBottom: "25%"}}
       >
         {type === 0 ? (
           <Image

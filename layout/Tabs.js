@@ -204,13 +204,13 @@ const Tabs = (props) => {
         <Grid container flexDirection={"row"} justifyContent={"space-around"}>
           <Grid item>
             <Link href="https://mobile.twitter.com/centerzomia" passhref="true">
-             <a target="_blank" rel="noopener noreferrer">
-              <FaTwitter
-                style={{
-                  color: context.darkMode ? "#fff" : palette.black.main,
-                  marginRight: "5px",
-                }}
-              />
+              <a target="_blank" rel="noopener noreferrer">
+                <FaTwitter
+                  style={{
+                    color: context.darkMode ? "#fff" : palette.black.main,
+                    marginRight: "5px",
+                  }}
+                />
               </a>
             </Link>
           </Grid>

@@ -11,11 +11,11 @@ import { Provider } from "react-redux";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../store/firebase";
 import SingleProvider from "../SingleProvider";
+import Loader from "../components/Loader";
+import React, { useState } from "react";
 
 const font = createTheme({
   typography: {
-    //Contents
-    //h6 is bigger and subtitle1 is smaller
     h6: {
       fontFamily: "Montserrat",
     },
@@ -37,7 +37,6 @@ const font = createTheme({
     body2: {
       fontFamily: "Raleway",
     },
-    //Heading
     h5: {
       fontFamily: "Oswald",
     },
@@ -53,20 +52,18 @@ const font = createTheme({
     h1: {
       fontFamily: "Raleway",
     },
-    // fontFamily: [
-    //   "Raleway",
-    //   "Montserrat",
-    //   "Nunito",
-    //   "Roboto",
-    //   "Helvetica Neue",
-    //   "Arial",
-    //   "sans-serif",
-    // ].join(","),
   },
 });
 
 function MyApp({ Component, pageProps }) {
+  const [isLoading, setIsLoading] = useState(true);
   initializeApp(firebaseConfig);
+  const load = () => {
+    return <Loader />;
+  };
+  setTimeout(() => {
+    setIsLoading(false);
+  }, "2500");
   return (
     <Provider store={store}>
       <SingleProvider>
@@ -74,22 +71,26 @@ function MyApp({ Component, pageProps }) {
           <ThemeProvider theme={font}>
             <GlobalStyles />
             <AppBar></AppBar>
-            <Paper
-              sx={
-                isMobile
-                  ? {
-                      paddingTop: { xs: 0, md: 5 },
-                      backgroundColor: palette.black.main,
-                      width: isMobile && "120%",
-                    }
-                  : {
-                      paddingTop: { xs: 0, md: 5 },
-                      backgroundColor: palette.black.main,
-                    }
-              }
-            >
-              <Component {...pageProps} />
-            </Paper>
+            {isLoading ? (
+              load()
+            ) : (
+              <Paper
+                sx={
+                  isMobile
+                    ? {
+                        paddingTop: { xs: 0, md: 5 },
+                        backgroundColor: palette.black.main,
+                        width: isMobile && "120%",
+                      }
+                    : {
+                        paddingTop: { xs: 0, md: 5 },
+                        backgroundColor: palette.black.main,
+                      }
+                }
+              >
+                <Component {...pageProps} />
+              </Paper>
+            )}
             <Grid
               sx={
                 isMobile && {

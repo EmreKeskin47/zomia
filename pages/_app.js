@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps }) {
   }, "1000");
   setTimeout(() => {
     setIsLoading(false);
-  }, "3000");
+  }, "1500");
   return (
     <Provider store={store}>
       <SingleProvider>

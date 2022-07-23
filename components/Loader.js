@@ -1,9 +1,10 @@
 import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Grid } from "@mui/material";
-Grid;
+import Image from "next/image";
+import imageLoader from "../loader";
 
-const Loader = () => {
+const Loader = ({ type }) => {
   return (
     <Grid container justifyContent={"center"} alignItems={"center"}>
       <Grid
@@ -14,7 +15,18 @@ const Loader = () => {
         flexDirection={"column"}
         sx={{ height: "1000px" }}
       >
-        <CircularProgress />
+        {type === 0 ? (
+          <Image
+            src="/static/logo.png"
+            loader={imageLoader}
+            unoptimized
+            width={"250"}
+            height={"250px"}
+            alt="zomia"
+          />
+        ) : (
+          <CircularProgress />
+        )}
       </Grid>
     </Grid>
   );

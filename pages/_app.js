@@ -57,51 +57,59 @@ const font = createTheme({
 
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isStart, setIsStart] = useState(true);
   initializeApp(firebaseConfig);
-  const load = () => {
-    return <Loader />;
+  const load = (type) => {
+    return <Loader type={type} />;
   };
   setTimeout(() => {
+    setIsStart(false);
+  }, "1000");
+  setTimeout(() => {
     setIsLoading(false);
-  }, "2500");
+  }, "3000");
   return (
     <Provider store={store}>
       <SingleProvider>
-        <ThemeConfig>
-          <ThemeProvider theme={font}>
-            <GlobalStyles />
-            <AppBar></AppBar>
-            {isLoading ? (
-              load()
-            ) : (
-              <Paper
+        {isStart ? (
+          load(0)
+        ) : (
+          <ThemeConfig>
+            <ThemeProvider theme={font}>
+              <GlobalStyles />
+              <AppBar></AppBar>
+              {isLoading ? (
+                load(1)
+              ) : (
+                <Paper
+                  sx={
+                    isMobile
+                      ? {
+                          paddingTop: { xs: 0, md: 5 },
+                          backgroundColor: palette.black.main,
+                          width: isMobile && "120%",
+                        }
+                      : {
+                          paddingTop: { xs: 0, md: 5 },
+                          backgroundColor: palette.black.main,
+                        }
+                  }
+                >
+                  <Component {...pageProps} />
+                </Paper>
+              )}
+              <Grid
                 sx={
-                  isMobile
-                    ? {
-                        paddingTop: { xs: 0, md: 5 },
-                        backgroundColor: palette.black.main,
-                        width: isMobile && "120%",
-                      }
-                    : {
-                        paddingTop: { xs: 0, md: 5 },
-                        backgroundColor: palette.black.main,
-                      }
+                  isMobile && {
+                    marginRight: -10,
+                  }
                 }
               >
-                <Component {...pageProps} />
-              </Paper>
-            )}
-            <Grid
-              sx={
-                isMobile && {
-                  marginRight: -10,
-                }
-              }
-            >
-              <Footer />
-            </Grid>
-          </ThemeProvider>
-        </ThemeConfig>
+                <Footer />
+              </Grid>
+            </ThemeProvider>
+          </ThemeConfig>
+        )}
       </SingleProvider>
     </Provider>
   );

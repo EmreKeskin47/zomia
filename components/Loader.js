@@ -13,7 +13,7 @@ const Loader = ({ type }) => {
         justifyContent={"center"}
         alignItems="center"
         flexDirection={"column"}
-        sx={{paddingTop: "25%", paddingBottom: "25%"}}
+        sx={{paddingTop: "20%", paddingBottom: "25%"}}
       >
         {type === 0 ? (
           <Image

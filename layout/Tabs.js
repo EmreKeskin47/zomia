@@ -24,6 +24,15 @@ const checkBoxStyles = (theme) => ({
   },
 });
 
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  padding: "5px",
+  paddingLeft: "7px",
+  paddingRight: "7px",
+  "&:hover": {
+    backgroundColor: "white",
+  },
+}));
+
 const CustomCheckbox = withStyles(checkBoxStyles)(Checkbox);
 
 const Tabs = (props) => {
@@ -51,17 +60,19 @@ const Tabs = (props) => {
         padding: 0,
       }}
     >
-      <Link href="/" passhref="true">
-        <Typography variant="h6">
-          <span
-            style={{
-              color: context.darkMode ? "#fff" : palette.black.main,
-            }}
-          >
-            Home
-          </span>
-        </Typography>
-      </Link>
+      <StyledGrid>
+        <Link href="/" passhref="true">
+          <Typography variant="h6">
+            <span
+              style={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            >
+              Home
+            </span>
+          </Typography>
+        </Link>
+      </StyledGrid>
       <Link href="/analysis" passhref="true">
         <Typography variant="h6">
           <span
@@ -98,9 +109,7 @@ const Tabs = (props) => {
         </Typography>
       </Link>
 
-      <Grid sx={{ flexGrow: 0 }}>
-        <AboutDropdown style={{backgroundColor: 'transparent'}} />
-      </Grid>
+      <AboutDropdown/>
       <CustomCheckbox
         icon={
           <FaMoon

@@ -52,8 +52,9 @@ export default function AboutDropdown() {
   }, [open]);
 
   return (
-    <Stack direction="row" spacing={2} sx={{backgroundColor: "black"}}>
-        <Button
+    <div style={{ backgroundColor: "transparent !important" }}>
+      <Stack direction="row" spacing={2} sx={{ backgroundColor: "black" }}>
+        <div
           ref={anchorRef}
           id="composition-button"
           aria-controls={open ? "composition-menu" : undefined}
@@ -61,7 +62,7 @@ export default function AboutDropdown() {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <MenuItem onClick={handleClose} sx={{backgroundColor: "black"}}>
+          <MenuItem onClick={handleClose} sx={{ backgroundColor: "black" }}>
             <Typography variant="h6">
               <span
                 style={{
@@ -72,7 +73,7 @@ export default function AboutDropdown() {
               </span>
             </Typography>
           </MenuItem>
-        </Button>
+        </div>
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -135,6 +136,7 @@ export default function AboutDropdown() {
             </Grow>
           )}
         </Popper>
-    </Stack>
+      </Stack>
+    </div>
   );
 }

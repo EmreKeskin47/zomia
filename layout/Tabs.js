@@ -109,7 +109,31 @@ const Tabs = (props) => {
         </Typography>
       </Link>
 
-      <AboutDropdown/>
+      <Link href="/mission" passhref="true">
+        <Typography variant="h6">
+          <span
+            style={{
+              color: context.darkMode ? "#fff" : palette.black.main,
+            }}
+          >
+            Mission
+          </span>
+        </Typography>
+      </Link>
+
+      <Link href="/bio" passhref="true">
+        <Typography variant="h6">
+          <span
+            style={{
+              color: context.darkMode ? "#fff" : palette.black.main,
+            }}
+          >
+            Bio
+          </span>
+        </Typography>
+      </Link>
+
+      {/* <AboutDropdown /> */}
       <CustomCheckbox
         icon={
           <FaMoon

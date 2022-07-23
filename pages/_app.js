@@ -62,18 +62,18 @@ function MyApp({ Component, pageProps }) {
   const load = (type) => {
     return <Loader type={type} />;
   };
-  setTimeout(() => {
-    setIsStart(false);
-  }, "1000");
+  // setTimeout(() => {
+  //   setIsStart(false);
+  // }, "1000");
   setTimeout(() => {
     setIsLoading(false);
-  }, "1500");
+  }, "2000");
   return (
     <Provider store={store}>
       <SingleProvider>
-        {isStart ? (
+        {/* {isStart ? (
           load(0)
-        ) : (
+        ) : ( */}
           <ThemeConfig>
             <ThemeProvider theme={font}>
               <GlobalStyles />
@@ -109,7 +109,7 @@ function MyApp({ Component, pageProps }) {
               </Grid>
             </ThemeProvider>
           </ThemeConfig>
-        )}
+        {/* )} */}
       </SingleProvider>
     </Provider>
   );

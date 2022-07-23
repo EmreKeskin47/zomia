@@ -59,28 +59,27 @@ function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isStart, setIsStart] = useState(true);
   initializeApp(firebaseConfig);
-  const load = (type) => {
-    return <Loader type={type} />;
-  };
-  // setTimeout(() => {
-  //   setIsStart(false);
-  // }, "1000");
+  const load = () => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, "2000");
+  }
   setTimeout(() => {
-    setIsLoading(false);
-  }, "2000");
+    setIsStart(false);
+    load();
+  }, "1000");
   return (
-    <Provider store={store}>
-      <SingleProvider>
-        {/* {isStart ? (
-          load(0)
-        ) : ( */}
-          <ThemeConfig>
-            <ThemeProvider theme={font}>
-              <GlobalStyles />
-              <AppBar></AppBar>
-              {isLoading ? (
-                load(1)
-              ) : (
+    <div>
+      {isStart ? (
+        <Loader type={0} />
+      ) : (
+        <Provider store={store}>
+          <SingleProvider>
+            <ThemeConfig>
+              <ThemeProvider theme={font}>
+                <GlobalStyles />
+                <AppBar></AppBar>
+                {isLoading ? <Loader type={1} /> : 
                 <Paper
                   sx={
                     isMobile
@@ -97,21 +96,22 @@ function MyApp({ Component, pageProps }) {
                 >
                   <Component {...pageProps} />
                 </Paper>
-              )}
-              <Grid
-                sx={
-                  isMobile && {
-                    marginRight: -10,
+}
+                <Grid
+                  sx={
+                    isMobile && {
+                      marginRight: -10,
+                    }
                   }
-                }
-              >
-                <Footer />
-              </Grid>
-            </ThemeProvider>
-          </ThemeConfig>
-        {/* )} */}
-      </SingleProvider>
-    </Provider>
+                >
+                  <Footer />
+                </Grid>
+              </ThemeProvider>
+            </ThemeConfig>
+          </SingleProvider>
+        </Provider>
+      )}
+    </div>
   );
 }
 

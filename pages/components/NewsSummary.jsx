@@ -22,7 +22,6 @@ const NewsSummary = (props) => {
           <CardMedia
             component="img"
             height="350"
-            // image="/static/deneme2.png"
             image={props.image}
             alt="green iguana"
           />
@@ -80,23 +79,23 @@ const NewsSummary = (props) => {
                 </Typography>
               </Box>
             </Box>
-
-            <hr
-              style={{
-                width: "100%",
-                marginTop: "36px",
-                marginBottom: "18px",
-              }}
-            />
             <Typography
               variant="body2"
               sx={{
                 fontSize: "1.1rem !important",
               }}
             >
+              <br />
+              <hr
+                // style={{
+                //   width: "100%",
+                //   marginTop: "36px",
+                //   marginBottom: "18px",
+                // }}
+              />
+              <br />
               {props.description && props.description}
             </Typography>
-            {/* <Divider sx={{ marginTop: 2, marginBottom: 0 }}></Divider> */}
           </CardContent>
         </CardActionArea>
       </Card>

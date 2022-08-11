@@ -60,7 +60,7 @@ const Tabs = (props) => {
         padding: 0,
       }}
     >
-      <StyledGrid>
+      <Grid>
         <Link href="/" passhref="true">
           <Typography variant="h6">
             <span
@@ -72,7 +72,7 @@ const Tabs = (props) => {
             </span>
           </Typography>
         </Link>
-      </StyledGrid>
+      </Grid>
       <Link href="/analysis" passhref="true">
         <Typography variant="h6">
           <span

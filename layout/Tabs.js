@@ -128,7 +128,7 @@ const Tabs = (props) => {
               color: context.darkMode ? "#fff" : palette.black.main,
             }}
           >
-            Bio
+            People
           </span>
         </Typography>
       </Link>

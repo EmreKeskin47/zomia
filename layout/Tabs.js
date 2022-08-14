@@ -116,7 +116,7 @@ const Tabs = (props) => {
               color: context.darkMode ? "#fff" : palette.black.main,
             }}
           >
-            Mission
+            About
           </span>
         </Typography>
       </Link>

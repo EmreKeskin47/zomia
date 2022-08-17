@@ -147,6 +147,7 @@ const Article = (props) => {
                                             unoptimized
                                             width={"1300px"}
                                             height={"750px"}
+                                            objectFit={"contain"}
                                             alt="zomia article"
                                         />
                                     </Box>

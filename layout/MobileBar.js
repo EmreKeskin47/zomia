@@ -75,7 +75,7 @@ const MobileBar = () => {
                         <ListItemText primary="Bio" />
                     </Link>
                 </ListItem>
-                <ListItem button>
+                <ListItem button sx={{ justifyContent: "center !important" }}>
                     <FaMoon
                         style={{
                             color: context.darkMode

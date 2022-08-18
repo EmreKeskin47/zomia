@@ -67,12 +67,12 @@ const MobileBar = () => {
                 </ListItem>
                 <ListItem button>
                     <Link href="/mission">
-                        <ListItemText primary="Mission" />
+                        <ListItemText primary="About" />
                     </Link>
                 </ListItem>
                 <ListItem button>
                     <Link href="/bio">
-                        <ListItemText primary="Bio" />
+                        <ListItemText primary="People" />
                     </Link>
                 </ListItem>
                 <ListItem button sx={{ justifyContent: "center !important" }}>

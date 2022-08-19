@@ -19,7 +19,7 @@ const IntroContentSummaries = () => {
                                 heading={contentSummary.title}
                                 date={contentSummary.date}
                                 author={contentSummary.author}
-                                style={{ paddingBottom: "4rem" }}
+                                last={index == 2}
                             />
                         </Grid>
                     );

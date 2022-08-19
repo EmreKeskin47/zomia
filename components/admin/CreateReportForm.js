@@ -159,18 +159,20 @@ const CreateReportForm = (props) => {
     };
 
     const saveReport = () => {
-        dispatch(
-            reportActions.saveReport({
-                title: title,
-                author: author,
-                date: date,
-                text: preserveLineBreak(text),
-                description: preserveLineBreak(description),
-                links: link,
-                pdf: pdf,
-                image: image,
-            })
-        );
+        if (title !== "") {
+            dispatch(
+                reportActions.saveReport({
+                    title: title,
+                    author: author,
+                    date: date,
+                    text: preserveLineBreak(text),
+                    description: preserveLineBreak(description),
+                    links: link,
+                    pdf: pdf,
+                    image: image,
+                })
+            );
+        }
     };
 
     return (

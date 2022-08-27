@@ -152,7 +152,7 @@ const Footer = (props) => {
       bgcolor={palette.orange.main}
       sx={{ padding: "1rem" }}
     >
-      <Grid item sx={{ padding: "1rem" }}>
+      {/* <Grid item sx={{ padding: "1rem" }}>
         <StyledButton>
           <Grid container direction={"row"} sx={{ paddingLeft: isMobile && 5 }}>
             <Grid
@@ -178,7 +178,7 @@ const Footer = (props) => {
             </StyledTypography>
           </Grid>
         </StyledButton>
-      </Grid>
+      </Grid> */}
       {/* Third Column */}
       <Grid item>
         <Grid container direction="column" justifyContent={"space-around"}>

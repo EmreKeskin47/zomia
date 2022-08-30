@@ -29,7 +29,7 @@ export default function IntroArticle(props) {
                 }}
             >
                 <CardActionArea
-                    onClick={() => router.push(`analysis/${data.id}`)}
+                    onClick={() => router.push(`investigations/${data.id}`)}
                 >
                     {data && data.image && (
                         <CardMedia

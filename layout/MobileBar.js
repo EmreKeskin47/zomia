@@ -71,7 +71,7 @@ const MobileBar = () => {
                     </Link>
                 </ListItem>
                 <ListItem button>
-                    <Link href="/bio">
+                    <Link href="/people">
                         <ListItemText primary="People" />
                     </Link>
                 </ListItem>

@@ -102,4 +102,4 @@ const People = () => {
   );
 };
 
-export default Bio;
+export default People;

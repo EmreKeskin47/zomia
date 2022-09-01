@@ -16,7 +16,7 @@ Jeremy Hodge - Senior Investigator  <br />
 
 Jeremy is an investigative journalist and researcher covering the rise of extremism in Syria and Iraq, the petroleum/defense sectors, and regional finance. His 2015 African Confidential investigative report "Opening the Black Box of Egypt's Slush Funds", exposed a $9.4bn network of corruption amongst the country's top generals. Jeremy’s articles have appeared in Foreign Affairs, The Nation, Le Monde Diplomatique, Al-Jazeera, The Daily Beast, Africa Confidential and other outlets. <br />
 
-Sol Laudon - Refugee Coding Bootcamp Program Director <br />
+Sol Laudon - Refugee Coding Boot Camp Program Director <br />
 
 Sol is a software engineer with five years of industry experience. A hacker at heart, Sol learned to code at a software bootcamp. Prior to entering tech, Sol worked in corporate finance doing mergers and acquisitions. Sol holds a BBA in finance from Baruch College. Sol spent three years living in and traveling around the Middle East, and has collaborated with historians and anthropologists to conduct research on Jewish life in Morocco. <br />
 

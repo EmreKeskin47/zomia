@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Paper } from "@mui/material";
-import { team, directors } from "../../components/data/bio";
+import { team, directors } from "../../components/data/people";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import imageLoader from "../../loader";
 
-const Bio = () => {
+const People = () => {
   const teamData = MakeArticleParagraph2(team);
   const directorsData = MakeArticleParagraph2(directors);
 

@@ -177,7 +177,7 @@ function renderProject1(project, index) {
                             <b>
                                 Redress for Survivors of U.S. and Coalition Airstrikes –
                             </b>
-                            {` the U.S.-led air war against the Islamic State has
+                            {` The U.S.-led air war against the Islamic State has
                             potentially killed tens of thousands of civilians in
                             Iraq and Syria. Until now, most of these victims and
                             their loved ones have not received condolence

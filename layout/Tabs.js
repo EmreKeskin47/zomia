@@ -121,7 +121,7 @@ const Tabs = (props) => {
         </Typography>
       </Link>
 
-      <Link href="/bio" passhref="true">
+      <Link href="/people" passhref="true">
         <Typography variant="h6">
           <span
             style={{

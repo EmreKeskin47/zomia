@@ -46,7 +46,7 @@ const About = () => {
                             alignItems={"center"}
                             justifySelf={"center"}
                         >
-                            {mission.split("<br/>").map((paragraph, index) => {
+                            {about.split("<br/>").map((paragraph, index) => {
                                 return (
                                     <RenderBody key={index} text={paragraph} />
                                 );

@@ -75,7 +75,7 @@ const Projects = () => {
                         >
                             The Center is involved in over a dozen projects in
                             Syria, Iraq, Yemen, Afghanistan, and the United
-                            States. The projects fall under two broad programs,
+                            States. The projects fall under two broad themes,
                             the Legacy of War and Public Health Partners, in
                             which Zomia collaborates with local and
                             international partners.

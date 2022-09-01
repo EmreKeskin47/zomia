@@ -175,7 +175,7 @@ function renderProject1(project, index) {
                             }}
                         >
                             <b>
-                                Support for Survivors of Coalition Airstrikes –
+                                Redress for Survivors of U.S. and Coalition Airstrikes –
                             </b>
                             {` the U.S.-led air war against the Islamic State has
                             potentially killed tens of thousands of civilians in

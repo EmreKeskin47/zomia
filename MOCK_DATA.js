@@ -202,7 +202,7 @@ export const mockProjects = [
         name: "The Legacy of War",
         image: "Legacy",
         secondaryImage: "Legacy2",
-        body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. Our Legacy of War programs seek to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. The programs also study the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seek to advocate on behalf of those affected by dictatorship and extremism. `,
+        body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. Through our Legacy of War work, Zomia seeks to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. Zomia also studies the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seeks to advocate on behalf of those affected by dictatorship and extremism. `,
     },
     {
         name: "Public Health Partners",

@@ -3,8 +3,8 @@ import { Box, Grid, Paper } from "@mui/material";
 import {
     bulletList1,
     bulletList2,
-    MISSION,
-} from "../../components/data/mission";
+    ABOUT,
+} from "../../components/data/about";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
@@ -12,8 +12,8 @@ import RenderBulletPoint from "../../components/RenderBulletPoint";
 import RenderSubtitle from "../../components/RenderSubtitle";
 import Partners from "../../components/Partners";
 
-const Mission = () => {
-    const mission = MakeArticleParagraph2(MISSION);
+const About = () => {
+    const about = MakeArticleParagraph2(ABOUT);
     const bullet1 = MakeArticleParagraph2(bulletList1);
     const bullet2 = MakeArticleParagraph2(bulletList2);
 

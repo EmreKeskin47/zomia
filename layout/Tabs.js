@@ -109,7 +109,7 @@ const Tabs = (props) => {
         </Typography>
       </Link>
 
-      <Link href="/mission" passhref="true">
+      <Link href="/about" passhref="true">
         <Typography variant="h6">
           <span
             style={{

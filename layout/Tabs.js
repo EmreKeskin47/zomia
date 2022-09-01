@@ -178,7 +178,7 @@ const Tabs = (props) => {
           </Grid>
 
           <Grid item>
-            <Link href="mailto: info@zomiacenter.com" passhref="true">
+            <Link href="mailto: info@zomiacenter.org" passhref="true">
               <a target="_blank" rel="noopener noreferrer">
                 <FaEnvelope
                   style={{

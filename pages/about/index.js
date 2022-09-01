@@ -114,4 +114,4 @@ const About = () => {
     );
 };
 
-export default Mission;
+export default About;

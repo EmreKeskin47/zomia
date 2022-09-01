@@ -199,13 +199,13 @@ In my recent two weeks of research in Mogadishu, I could not find a single Somal
 
 export const mockProjects = [
     {
-        name: "Legacy of War Programs",
+        name: "Legacy of War",
         image: "Legacy",
         secondaryImage: "Legacy2",
-        body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. The Legacy of War Program seeks to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. The Program also studies the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seeks to advocate on behalf of those affected by dictatorship and extremism. `,
+        body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. Our Legacy of War programs seek to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. The programs also study the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seek to advocate on behalf of those affected by dictatorship and extremism. `,
     },
     {
-        name: "Public Health Partners Programs",
+        name: "Public Health Partners",
         image: ["Health1"],
         body: `Public health is a population-centric approach to the medical needs of individuals and communities. While third-party NGOs can administer broad-based public health programs, such as vaccination and awareness campaigns, effective long-term public health planning requires democratic accountability and population-level management—which governments, not private entities, are most well-suited to deliver. Zomia assists non-state actors and community groups in taking on the responsibilities of public health delivery, especially in conflict settings or in regions where population-centric healthcare faces challenges.
         `,

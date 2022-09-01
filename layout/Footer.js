@@ -283,7 +283,7 @@ const Footer = (props) => {
                 }
               }
             >
-              <span style={{ color: "black !important" }}>The Zomia Center is a 501(c)(3) nonprofit registered in the U.S.</span>
+              <span style={{ color: "black !important" }}>Zomia is a 501(c)(3) nonprofit</span>
             </Typography>
           </Grid>
           <Grid container justifyContent={"flex-end"} flexDirection={"row"}>

@@ -273,19 +273,6 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent={"flex-start"} flexDirection={"row"}>
-            <Typography
-              variant="caption"
-              sx={
-                !isMobile && {
-                  paddingRight: "3rem",
-                  paddingTop: "1rem",
-                }
-              }
-            >
-              <span style={{ color: "black !important" }}>Zomia is a 501(c)(3) nonprofit</span>
-            </Typography>
-          </Grid>
           <Grid container justifyContent={"flex-end"} flexDirection={"row"}>
             <Typography
               variant="caption"

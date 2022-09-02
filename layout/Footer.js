@@ -273,7 +273,7 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
- <Grid container justifyContent={"flex-start"} flexDirection={"row"}>
+          <Grid container justifyContent={"flex-start"} flexDirection={"row"}>
             <Typography
               variant="caption"
               sx={

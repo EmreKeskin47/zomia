@@ -99,7 +99,7 @@ const About = () => {
 
                         <RenderBody
                             text={
-                                "Zomia is a 501(c)(3) nonprofit organization and all donations are tax deductible. If you would like to donate, please contact us at Link href="mailto: info@zomiacenter.org" passhref="true">info@zomiacenter.org<a target="_blank" rel="noopener noreferrer">/></a></Link>. We thank you in advance for your support."
+                                "Zomia is a 501(c)(3) nonprofit organization and all donations are tax deductible. If you would like to donate, please contact us at <Link href="mailto: info@zomiacenter.org" passhref="true">info@zomiacenter.org<a target="_blank" rel="noopener noreferrer">/></a></Link>. We thank you in advance for your support."
                             }
                         />
 

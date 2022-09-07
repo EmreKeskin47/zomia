@@ -29,6 +29,7 @@ export const saveReport = (item) => {
                     date: item.date,
                     image: item.image,
                     text: item.text,
+                    photoAttribution: item.photoAttribution,
                     description: item.description,
                     links: item.link,
                     pdf: item.pdf,
@@ -60,6 +61,7 @@ export const fetchReports = () => {
                         "cat",
                         doc.data().report.text,
                         doc.data().report.description,
+                        doc.data().report.photoAttribution,
                         doc.data().report.pdf,
                         doc.data().report.link,
                         doc.data().report.featured
@@ -109,6 +111,7 @@ export const updateReport = (item) => {
                     date: item.date,
                     image: item.image,
                     text: item.text,
+                    photoAttribution: item.photoAttribution,
                     description: item.description,
                     pdfLink: item.pdfLink,
                     featured: item.featured ? item.featured : false,

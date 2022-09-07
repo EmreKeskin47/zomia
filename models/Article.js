@@ -12,6 +12,7 @@ export class Article {
         description,
         link,
         text,
+        photoAttribution,
         additionalImages
     ) {
         this.id = id;
@@ -23,6 +24,7 @@ export class Article {
         this.description = description;
         this.link = link;
         this.text = text;
+        this.photoAttribution = photoAttribution;
         this.additionalImages = additionalImages;
     }
 }

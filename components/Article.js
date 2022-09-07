@@ -156,6 +156,24 @@ const Article = (props) => {
                                         />
                                     </Box>
                                 )}
+                                
+                                {article.photoAttribution && (
+                                    <Box
+                                        sx={{
+                                            "margin-left": "85px"
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="caption text"
+                                            sx={{
+                                                fontFamily:
+                                                    "Heebo !important",
+                                            }}
+                                        >
+                                            {article.photoAttribution}
+                                        </Typography>
+                                    </Box>
+                                )}
 
                                 <Grid
                                     item

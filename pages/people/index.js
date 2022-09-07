@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Box, Grid, Paper } from "@mui/material";
 import { team, directors } from "../../components/data/people";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
@@ -43,6 +44,9 @@ const People = () => {
 
   return (
     <Paper sx={{ paddingTop: 5 }}>
+        <Helmet>
+          <title>Zomia Center People</title>
+      </Helmet>
       <Grid
         container
         justifyItems={"center"}

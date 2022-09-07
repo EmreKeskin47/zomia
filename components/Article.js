@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { AppBar, Box, Grid, Paper } from "@mui/material";

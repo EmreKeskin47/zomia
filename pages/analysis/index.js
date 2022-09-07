@@ -1,5 +1,6 @@
 import { Link, Paper, Typography, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import ListView from "../../components/ListView";
 import { Container } from "@mui/material";
 import { connect } from "react-redux";
@@ -23,6 +24,9 @@ const Analysis = (props) => {
 
     return (
         <Paper>
+            <Helmet>
+                <title>Zomia Center Analysis</title>
+            </Helmet>
             <Container>
                 <Typography
                     variant="h2"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Box, Grid, Paper } from "@mui/material";
 import {
     bulletList1,
@@ -19,6 +20,9 @@ const About = () => {
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
+            <Helmet>
+                <title>Zomia Center About</title>
+            </Helmet>
             <Grid
                 container
                 justifyItems={"center"}

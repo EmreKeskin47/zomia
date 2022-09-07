@@ -86,14 +86,14 @@ const NewsSummary = (props) => {
                                 fontSize: "1.1rem !important",
                             }}
                         >
-                            <hr
+                            {/* <hr
                                 style={{
                                     width: "100%",
                                     marginTop: "18px",
                                     marginBottom: "18px",
                                     border: "1px solid black",
                                 }}
-                            />
+                            /> */}
 
                             {props.description && props.description}
                         </Typography>

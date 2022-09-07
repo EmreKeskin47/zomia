@@ -97,7 +97,7 @@ const Admin = () => {
             sx={{ marginLeft: 5, color: "whitesmoke !important" }}
             onClick={signIn}
           >
-            SignIn
+            Sign In
           </Button>
         </Grid>
       )}

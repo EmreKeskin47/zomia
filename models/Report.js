@@ -10,6 +10,7 @@ export class Report {
         category,
         text,
         description,
+        photoAttribution,
         pdfLink,
         additionalImages
     ) {
@@ -21,6 +22,7 @@ export class Report {
         this.category = category;
         this.text = text;
         this.description = description;
+        this.photoAttribution = photoAttribution;
         this.pdfLink = pdfLink;
         this.additionalImages = additionalImages;
     }

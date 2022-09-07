@@ -44,6 +44,7 @@ const CreateArticleForm = (props) => {
     const [image, setImage] = useState("");
     const [date, setDate] = useState("");
     const [author, setAuthor] = useState("");
+    const [photoAttribution, setPhotoAttribution] = useState("");
     const [description, setDescription] = useState("");
     const [link, setLink] = useState("");
     const [text, setText] = useState("");
@@ -67,6 +68,7 @@ const CreateArticleForm = (props) => {
                     date: date,
                     description: preserveLineBreak(description),
                     text: preserveLineBreak(text),
+                    photoAttribution: photoAttribution,
                     links: link,
                     image: image,
                 })
@@ -194,6 +196,15 @@ const CreateArticleForm = (props) => {
                     variant="outlined"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
+                />
+                <TextField
+                    id="outlined-multiline-static"
+                    label="Photo Attribution"
+                    fullWidth
+                    variant="outlined"
+                    sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+                    value={photoAttribution}
+                    onChange={(e) => setPhotoAttribution(e.target.value)}
                 />
             </Grid>
 

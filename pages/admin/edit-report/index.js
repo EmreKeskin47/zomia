@@ -58,6 +58,7 @@ const EditReport = (props) => {
     const [date, setDate] = useState(report.date ?? "");
     const [author, setAuthor] = useState(report.author ?? "");
     const [text, setText] = useState(report.text ?? "");
+    const [photoAttribution, setPhotoAttribution] = useState(report.photoAttribution ?? "");
     const [description, setDescription] = useState(report.description ?? "");
     const [pdf, setPdf] = useState(report.pdfLink ?? "");
     const [uploading, setUploading] = useState(false);
@@ -174,6 +175,7 @@ const EditReport = (props) => {
                 date: date,
                 text: preserveLineBreak(text),
                 description: preserveLineBreak(description),
+                photoAttribution: photoAttribution,
                 pdf: pdf,
                 image: image,
             })
@@ -225,6 +227,7 @@ const EditReport = (props) => {
                                                 setAuthor(item.author);
                                                 setDate(item.date);
                                                 setText(item.text);
+                                                setPhotoAttribution(item.photoAttribution);
                                                 setDescription(
                                                     item.description
                                                 );
@@ -295,6 +298,15 @@ const EditReport = (props) => {
                             variant="outlined"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
+                        />
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="Photo attribution"
+                            fullWidth
+                            variant="outlined"
+                            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+                            value={photoAttribution}
+                            onChange={(e) => setPhotoAttribution(e.target.value)}
                         />
                     </Grid>
                     {uploading &&

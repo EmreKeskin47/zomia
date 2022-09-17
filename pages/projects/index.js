@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { mockProjects } from "../../MOCK_DATA";
@@ -55,9 +54,6 @@ const Projects = () => {
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
-                  <Helmet>
-                    <title>Zomia Center Projects</title>
-                </Helmet>
             <Container>
                 <Grid
                     container

@@ -66,12 +66,12 @@ const MobileBar = () => {
                     </Link>
                 </ListItem>
                 <ListItem button>
-                    <Link href="/about">
+                    <Link href="/mission">
                         <ListItemText primary="About" />
                     </Link>
                 </ListItem>
                 <ListItem button>
-                    <Link href="/people">
+                    <Link href="/bio">
                         <ListItemText primary="People" />
                     </Link>
                 </ListItem>
@@ -119,7 +119,7 @@ const MobileBar = () => {
                     </Link>
                 </ListItem>
                 <ListItem sx={{ justifyContent: "center !important" }}>
-                    <Link href="mailto: info@zomiacenter.org" passhref="true">
+                    <Link href="mailto: info@zomiacenter.com" passhref="true">
                         <a target="_blank" rel="noopener noreferrer">
                             <FaEnvelope
                                 style={{

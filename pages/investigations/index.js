@@ -1,6 +1,5 @@
 import { Link, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 import ListView from "../../components/ListView";
 import { Container } from "@mui/material";
 import { connect } from "react-redux";
@@ -22,9 +21,6 @@ const Investigations = (props) => {
     const reports = useReportData();
     return (
         <Paper sx={{ paddingTop: 5 }}>
-            <Helmet>
-                <title>Zomia Center Investigations</title>
-            </Helmet>
             <Container>
                 <Typography
                     variant="h2"

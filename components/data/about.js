@@ -1,4 +1,4 @@
-export const MISSION = `
+export const ABOUT = `
 
 The Zomia Center is dedicated to addressing the needs of non-state populations worldwide.
 

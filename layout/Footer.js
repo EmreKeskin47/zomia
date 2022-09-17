@@ -278,7 +278,7 @@ const Footer = (props) => {
               variant="caption"
               sx={
                 !isMobile && {
-                  paddingRight: "3rem",
+                  paddingLeft: "3rem",
                   paddingTop: "1rem",
                 }
               }

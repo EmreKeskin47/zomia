@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Grid, Typography, Button, Link, Paper } from "@mui/material";
 import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
@@ -59,6 +60,9 @@ function App(props) {
 
   return (
     <Paper>
+      <Helmet>
+          <title>Zomia Center Home</title>
+      </Helmet>
       <Grid
         container
         justifyContent="center"

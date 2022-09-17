@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Box, Grid, Paper } from "@mui/material";
 import {
     bulletList1,
     bulletList2,
-    MISSION,
-} from "../../components/data/mission";
+    ABOUT,
+} from "../../components/data/about";
 import { MakeArticleParagraph2 } from "../../utils/ArticleParagraph";
 import RenderTitle from "../../components/RenderTitle";
 import RenderBody from "../../components/RenderBody";
@@ -12,13 +13,16 @@ import RenderBulletPoint from "../../components/RenderBulletPoint";
 import RenderSubtitle from "../../components/RenderSubtitle";
 import Partners from "../../components/Partners";
 
-const Mission = () => {
-    const mission = MakeArticleParagraph2(MISSION);
+const About = () => {
+    const about = MakeArticleParagraph2(ABOUT);
     const bullet1 = MakeArticleParagraph2(bulletList1);
     const bullet2 = MakeArticleParagraph2(bulletList2);
 
     return (
         <Paper sx={{ paddingTop: 5 }}>
+            <Helmet>
+                <title>Zomia Center About</title>
+            </Helmet>
             <Grid
                 container
                 justifyItems={"center"}
@@ -46,7 +50,7 @@ const Mission = () => {
                             alignItems={"center"}
                             justifySelf={"center"}
                         >
-                            {mission.split("<br/>").map((paragraph, index) => {
+                            {about.split("<br/>").map((paragraph, index) => {
                                 return (
                                     <RenderBody key={index} text={paragraph} />
                                 );
@@ -99,7 +103,7 @@ const Mission = () => {
 
                         <RenderBody
                             text={
-                                "Zomia is a 501(c)(3) non-profit organization and all donations are tax deductible. If you would like to donate, please contact us at info@zomiacenter.org. We thank you in advance for your support."
+                                "Zomia is a 501(c)(3) nonprofit organization registered in the United States, and all donations are tax deductible. If you would like to donate, please contact us at info@zomiacenter.org. We thank you in advance for your support."
                             }
                         />
 
@@ -114,4 +118,4 @@ const Mission = () => {
     );
 };
 
-export default Mission;
+export default About;

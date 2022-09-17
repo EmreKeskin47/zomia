@@ -152,6 +152,7 @@ const Article = (props) => {
                                             width={"1300px"}
                                             height={"750px"}
                                             objectFit={"contain"}
+                                            objectPosition={"left"}
                                             alt="zomia article"
                                         />
                                     </Box>
@@ -159,9 +160,6 @@ const Article = (props) => {
                                 
                                 {article.photoAttribution && (
                                     <Box
-                                        sx={{
-                                            "margin-left": "85px"
-                                        }}
                                     >
                                         <Typography
                                             variant="caption text"

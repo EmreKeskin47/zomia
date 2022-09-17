@@ -30,6 +30,7 @@ export const saveArticle = (item) => {
           date: item.date,
           image: item.image,
           text: item.text,
+          photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
         },
@@ -60,6 +61,7 @@ export const fetchArticles = () => {
             doc.data().article.description ?? "",
             doc.data().article.link ?? "",
             doc.data().article.text ?? "",
+            doc.data().article.photoAttribution ?? "",
             doc.data().article.additionalImages ?? ""
           )
         );
@@ -105,6 +107,7 @@ export const updateArticle = (item) => {
           date: item.date,
           image: item.image,
           text: item.text,
+          photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
         },

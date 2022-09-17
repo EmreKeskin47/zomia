@@ -43,6 +43,7 @@ const CreateReportForm = (props) => {
     const [date, setDate] = useState("");
     const [author, setAuthor] = useState("");
     const [link, setLink] = useState("");
+    const [photoAttribution, setPhotoAttribution] = useState("");
     const [text, setText] = useState("");
     const [description, setDescription] = useState("");
     const [pdf, setPdf] = useState("");
@@ -167,6 +168,7 @@ const CreateReportForm = (props) => {
                     date: date,
                     text: preserveLineBreak(text),
                     description: preserveLineBreak(description),
+                    photoAttribution: photoAttribution,
                     links: link,
                     pdf: pdf,
                     image: image,
@@ -239,6 +241,15 @@ const CreateReportForm = (props) => {
                     variant="outlined"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                />
+                <TextField
+                    id="outlined-multiline-static"
+                    label="Photo attribution"
+                    fullWidth
+                    variant="outlined"
+                    sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+                    value={photoAttribution}
+                    onChange={(e) => setPhotoAttribution(e.target.value)}
                 />
             </Grid>
             {uploading &&

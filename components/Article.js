@@ -152,8 +152,24 @@ const Article = (props) => {
                                             width={"1300px"}
                                             height={"750px"}
                                             objectFit={"contain"}
+                                            objectPosition={"left"}
                                             alt="zomia article"
                                         />
+                                    </Box>
+                                )}
+                                
+                                {article.photoAttribution && (
+                                    <Box
+                                    >
+                                        <Typography
+                                            variant="caption text"
+                                            sx={{
+                                                fontFamily:
+                                                    "Heebo !important",
+                                            }}
+                                        >
+                                            {article.photoAttribution}
+                                        </Typography>
                                     </Box>
                                 )}
 

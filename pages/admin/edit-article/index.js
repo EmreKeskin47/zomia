@@ -57,6 +57,7 @@ const EditArticle = (props) => {
     const [title, setTitle] = useState(article ? article.title : "");
     const [image, setImage] = useState(article ? article.image : "");
     const [date, setDate] = useState(article ? article.date : "");
+    const [photoAttribution, setPhotoAttribution] = useState(photoAttribution ? article.photoAttribution : "");
     const [author, setAuthor] = useState(article ? article.author : "");
     const [description, setDescription] = useState(
         article ? article.description : ""
@@ -134,6 +135,7 @@ const EditArticle = (props) => {
                 date: date,
                 description: preserveLineBreak(description),
                 text: preserveLineBreak(text),
+                photoAttribution: photoAttribution,
                 links: link,
                 image: image,
             })
@@ -197,6 +199,7 @@ const EditArticle = (props) => {
                                                     setTitle(item.title);
                                                     setImage(item.image);
                                                     setDate(item.date);
+                                                    setPhotoAttribution(item.photoAttribution);
                                                     setAuthor(item.author);
                                                     setDescription(
                                                         item.description
@@ -298,6 +301,18 @@ const EditArticle = (props) => {
                                 variant="outlined"
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
+                            />
+                            <TextField
+                                id="outlined-multiline-static"
+                                label="Photo Attribution"
+                                fullWidth
+                                variant="outlined"
+                                sx={{
+                                    backgroundColor: "#fafafa",
+                                    marginBottom: 4,
+                                }}
+                                value={photoAttribution}
+                                onChange={(e) => setPhotoAttribution(e.target.value)}
                             />
                         </Grid>
                         {uploading &&

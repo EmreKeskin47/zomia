@@ -273,29 +273,51 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent={"flex-end"} flexDirection={"row"}>
-            <Typography
-              variant="caption"
-              sx={
-                !isMobile && {
-                  paddingLeft: "3rem",
-                  paddingTop: "1rem",
-                }
-              }
-            >
-              <span style={{ color: "black !important" }}>Developed by</span>
-              <Link href="https://www.wowfreelance.com" passhref="true">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none" }}
+          
+          <Grid container direction="row">
+            <Grid item>
+              <Grid container direction="column">
+                <Typography
+                  variant="caption"
+                  sx={
+                    !isMobile && {
+                      paddingLeft: "3rem",
+                      paddingTop: "1rem",
+                    }
+                  }
                 >
-                  {" wowfreelance.com"}
-                </a>
-              </Link>
-            </Typography>
+                <span style={{ color: "black !important", "margin-left": "-30px" }}>The Zomia Center is a 501(c)(3) nonprofit registered in the United States under EIN: 30-1201889</span>
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Grid container direction="column">
+                <Typography
+                  variant="caption"
+                  sx={
+                    !isMobile && {
+                      marginLeft: "25px",
+                      paddingLeft: "3rem",
+                      paddingTop: "1rem",
+                    }
+                  }
+                  >
+                  <span style={{ color: "black !important" }}>Developed by</span>
+                  <Link href="https://www.wowfreelance.com" passhref="true">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                      >
+                      {" wowfreelance.com"}
+                    </a>
+                  </Link>
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
+
+        </Grid> 
       </Grid>
       {/* <Grid container justifyContent={"flex-end"} flexDirection={"row"}></Grid> */}
     </Grid>

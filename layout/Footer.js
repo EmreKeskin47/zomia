@@ -296,13 +296,12 @@ const Footer = (props) => {
                   variant="caption"
                   sx={
                     !isMobile && {
-                      marginLeft: "25px",
                       paddingLeft: "3rem",
                       paddingTop: "1rem",
                     }
                   }
                   >
-                  <span style={{ color: "black !important" }}>Developed by</span>
+                  <span style={{ color: "black !important", "margin-left": "30px" }}>Developed by</span>
                   <Link href="https://www.wowfreelance.com" passhref="true">
                     <a
                       target="_blank"

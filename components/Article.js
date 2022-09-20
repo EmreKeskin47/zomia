@@ -152,7 +152,7 @@ const Article = (props) => {
                                             width={"1300px"}
                                             height={"750px"}
                                             objectFit={"contain"}
-                                            objectPosition={"left"}
+                                            objectPosition={"left bottom"}
                                             alt="zomia article"
                                         />
                                     </Box>

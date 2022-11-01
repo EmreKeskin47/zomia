@@ -37,7 +37,7 @@ const Investigations = (props) => {
                         fontFamily: "Tiro Telugu !important",
                     }}
                 >
-                    Investigations
+                    Reports
                 </Typography>
                 <div style={{ paddingBottom: "125px" }}>
                     {reports &&

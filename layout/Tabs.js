@@ -93,7 +93,7 @@ const Tabs = (props) => {
               color: context.darkMode ? "#fff" : palette.black.main,
             }}
           >
-            Analysis
+          Articles
           </span>
         </Typography>
       </Link>
@@ -105,7 +105,7 @@ const Tabs = (props) => {
               color: context.darkMode ? "#fff" : palette.black.main,
             }}
           >
-            Investigations
+            Reports
           </span>
         </Typography>
       </Link>

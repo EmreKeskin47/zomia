@@ -73,17 +73,6 @@ const Tabs = (props) => {
           </Typography>
         </Link>
       </Grid>
-      <Link href="/analysis" passhref="true">
-        <Typography variant="h6">
-          <span
-            style={{
-              color: context.darkMode ? "#fff" : palette.black.main,
-            }}
-          >
-            Analysis
-          </span>
-        </Typography>
-      </Link>
 
       <Link href="/projects" passhref="true">
         <Typography variant="h6">
@@ -93,6 +82,18 @@ const Tabs = (props) => {
             }}
           >
             Projects
+          </span>
+        </Typography>
+      </Link>
+      
+      <Link href="/analysis" passhref="true">
+        <Typography variant="h6">
+          <span
+            style={{
+              color: context.darkMode ? "#fff" : palette.black.main,
+            }}
+          >
+            Analysis
           </span>
         </Typography>
       </Link>

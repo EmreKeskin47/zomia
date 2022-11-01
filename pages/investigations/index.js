@@ -23,7 +23,7 @@ const Investigations = (props) => {
     return (
         <Paper sx={{ paddingTop: 5 }}>
             <Helmet>
-                <title>Zomia Center Investigations</title>
+                <title>Zomia Center Reports</title>
             </Helmet>
             <Container>
                 <Typography

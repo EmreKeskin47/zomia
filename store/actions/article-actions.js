@@ -68,10 +68,8 @@ export const fetchArticles = () => {
         );
       });
       
-      
-      // USE THIS TO CONNECT TO HARDCODED DATA
+      // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
       articles = mockArticles;
-      
       
       dispatch({
         type: FETCH_ARTICLES,

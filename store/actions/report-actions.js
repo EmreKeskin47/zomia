@@ -13,6 +13,7 @@ import {
 import { db } from "../store";
 import { Report } from "../../models/Report";
 import { toast } from "react-toastify";
+import { mockReports } from "../../MOCK_PDF";
 
 export const saveReport = (item) => {
     return async (dispatch) => {
@@ -68,6 +69,10 @@ export const fetchReports = () => {
                     )
                 );
             });
+
+            // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
+            reports = mockReports;
+
             dispatch({
                 type: FETCH_REPORTS,
                 payload: reports,

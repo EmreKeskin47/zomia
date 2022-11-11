@@ -100,7 +100,6 @@ const sortList = (reports) => {
 };
 
 export function useArticleData() {
-  console.log('in use ArticleList');
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
   const articleList = useSelector((state) => state.articleStore.articles);

@@ -21,9 +21,9 @@ import {
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
 
-  // const articleList = useArticleData();
-  // const reportList = useReportData();
-  // const writingList = useWritingData();
+  const articleList = useArticleData();
+  const reportList = useReportData();
+  const writingList = useWritingData();
 
   const [connectArticle, setConnectArticle] = useState([]);
   const [connectReport, setConnectReport] = useState([]);
@@ -45,19 +45,19 @@ function App(props) {
     props.reports,
     connectArticle,
     connectReport,
-    // articleList,
-    // reportList,
+    articleList,
+    reportList,
   ]);
 
-  // if (reportList && reportList != []) {
-  //   data.push(...reportList);
-  // }
-  // if (articleList && articleList != []) {
-  //   data.push(...articleList);
-  // }
-  // if (reportList && reportList != [] && articleList && articleList != []) {
-  //   writings.push(...writingList);
-  // }
+  if (reportList && reportList != []) {
+    data.push(...reportList);
+  }
+  if (articleList && articleList != []) {
+    data.push(...articleList);
+  }
+  if (reportList && reportList != [] && articleList && articleList != []) {
+    writings.push(...writingList);
+  }
 
   return (
     <Paper>

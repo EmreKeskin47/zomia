@@ -109,6 +109,7 @@ export function useArticleData() {
     setData(sortList(articleList).reverse());
   // }, [dispatch, articleList, data]);
   }, []);
+  console.log('usearticledata', data);
   return data;
 }
 

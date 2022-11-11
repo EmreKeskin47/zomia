@@ -20,16 +20,18 @@ const ArticlePage = (props) => {
         } else {
             const fetch = async () => {
                 await props.fetchArticles();
-                setConnectArticle(props.articles);
+                return props.articles;
             };
-            fetch();
-            if (articleList) {
-                setData(articleList.find((item) => item.id === id));
-            } else {
-                setData(connectArticle.find((item) => item.id === id));
-            }
+            fetch().then((response) => {
+                if (articleList) {
+                    setData(articleList.find((item) => item.id.toString() === id.toString()));
+                } else {
+                    setData(response.find((item) => item.id.toString() === id.toString()));
+                }
+            });
         }
     }, [props.articles, id]);
+
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}
@@ -45,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchArticles: () => {console.log('analysis id');dispatch(articleActions.fetchArticles())},
+        fetchArticles: () => dispatch(articleActions.fetchArticles()),
     };
 };
 

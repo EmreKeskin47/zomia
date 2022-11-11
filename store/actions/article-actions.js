@@ -13,6 +13,7 @@ import {
 import { db } from "../store";
 import { Article } from "../../models/Article";
 import { toast } from "react-toastify";
+import { mockArticles } from "../../MOCK_DATA";
 
 export const saveArticle = (item) => {
   return async (dispatch) => {
@@ -45,32 +46,34 @@ export const saveArticle = (item) => {
 export const fetchArticles = () => {
   return async (dispatch) => {
     try {
-      let articles = [];
-
-      const querySnapshot = await getDocs(collection(db, "articles"));
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        articles.push(
-          new Article(
-            doc.id,
-            doc.data().article.title ?? "",
-            doc.data().article.image ?? "",
-            doc.data().article.date ?? "",
-            doc.data().article.author ?? "",
-            doc.data().article.category ?? "",
-            doc.data().article.description ?? "",
-            doc.data().article.link ?? "",
-            doc.data().article.text ?? "",
-            doc.data().article.photoAttribution ?? "",
-            doc.data().article.additionalImages ?? ""
-          )
-        );
-      });
+      let articles = mockArticles;
+      // let articles = [];
+      
+      //const querySnapshot = await getDocs(collection(db, "articles"));
+      // querySnapshot.forEach((doc) => {
+        //   // doc.data() is never undefined for query doc snapshots
+        //   articles.push(
+      //     new Article(
+      //       doc.id,
+      //       doc.data().article.title ?? "",
+      //       doc.data().article.image ?? "",
+      //       doc.data().article.date ?? "",
+      //       doc.data().article.author ?? "",
+      //       doc.data().article.category ?? "",
+      //       doc.data().article.description ?? "",
+      //       doc.data().article.link ?? "",
+      //       doc.data().article.text ?? "",
+      //       doc.data().article.photoAttribution ?? "",
+      //       doc.data().article.additionalImages ?? ""
+      //     )
+      //   );
+      // });
       dispatch({
         type: FETCH_ARTICLES,
         payload: articles,
       });
     } catch (err) {
+      console.log('failed -- toast');
       toast("fetch article error" + err);
     }
   };

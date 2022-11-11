@@ -29,7 +29,7 @@ const ArticlePage = (props) => {
                 setData(connectArticle.find((item) => item.id === id));
             }
         }
-    }, [props.articles, id, articleList]);
+    }, [props.articles, id]);
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {data && <Article article={data} />}
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+        fetchArticles: () => {console.log('analysis id');dispatch(articleActions.fetchArticles())},
     };
 };
 

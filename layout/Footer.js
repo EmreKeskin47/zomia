@@ -46,8 +46,8 @@ const StyledLink = styled(Link)(({ theme }) => ({
 const Footer = (props) => {
   const [email, setEmail] = useState("");
   const router = useRouter();
-  const articleList = useArticleData();
-  const reportList = useReportData();
+  // const articleList = useArticleData();
+  // const reportList = useReportData();
 
   const [connectArticle, setConnectArticle] = useState([]);
   const [connectReport, setConnectReport] = useState([]);
@@ -65,16 +65,16 @@ const Footer = (props) => {
     props.reports,
     connectArticle,
     connectReport,
-    articleList,
-    reportList,
+    // articleList,
+    // reportList,
   ]);
 
-  if (reportList && reportList != []) {
-    writingList.push(...reportList);
-  }
-  if (articleList && articleList != []) {
-    writingList.push(...articleList);
-  }
+    // if (reportList && reportList != []) {
+    //   writingList.push(...reportList);
+    // }
+    // if (articleList && articleList != []) {
+    //   writingList.push(...articleList);
+    // }
 
   const monthList = {
     january: "1",
@@ -332,8 +332,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchArticles: () => dispatch(articleActions.fetchArticles()),
-    fetchReports: () => dispatch(reportActions.fetchReports()),
+    fetchArticles: () => { console.log('footer article'); dispatch(articleActions.fetchArticles())},
+    fetchReports: () => {console.log('footer report'); dispatch(reportActions.fetchReports())},
   };
 };
 

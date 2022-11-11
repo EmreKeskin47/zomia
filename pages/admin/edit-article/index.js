@@ -370,7 +370,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+        // fetchArticles: () => dispatch(articleActions.fetchArticles()),
     };
 };
 

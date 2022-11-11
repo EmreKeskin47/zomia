@@ -81,7 +81,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchArticles: () => dispatch(articleActions.fetchArticles()),
+        //fetchArticles: () => {console.log('analysis'); dispatch(articleActions.fetchArticles())},
     };
 };
 

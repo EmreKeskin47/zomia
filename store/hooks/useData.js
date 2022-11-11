@@ -100,6 +100,7 @@ const sortList = (reports) => {
 };
 
 export function useArticleData() {
+  console.log('in use ArticleList');
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
   const articleList = useSelector((state) => state.articleStore.articles);
@@ -107,7 +108,8 @@ export function useArticleData() {
   useEffect(() => {
     dispatch(articleActions.fetchArticles());
     setData(sortList(articleList).reverse());
-  }, [dispatch, articleList, data]);
+  // }, [dispatch, articleList, data]);
+  }, []);
   return data;
 }
 

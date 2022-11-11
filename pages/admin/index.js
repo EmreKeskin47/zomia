@@ -15,7 +15,7 @@ const Admin = () => {
   const [password, setPassword] = useState("");
   const [adminAuth, setAdminAuth] = useState(false);
   useEffect(() => {
-    dispatch(articleActions.fetchArticles());
+    // dispatch(articleActions.fetchArticles());
     dispatch(articleActions.deleteArticle(2));
     console.log(context.auth);
   }, []);

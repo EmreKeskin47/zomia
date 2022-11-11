@@ -13,9 +13,7 @@ export default function IntroArticle(props) {
     const context = useContext(singleContext);
     const router = useRouter();
     const { data } = props;
-    console.log('intro article');
-    console.log(data);
-    console.log(props);
+
     return (
         <Grid
             sx={{

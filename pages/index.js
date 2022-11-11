@@ -38,7 +38,7 @@ function App(props) {
       setConnectArticle(props.articles);
       setConnectReport(props.reports);
     };
-    console.log('in useEffect pages/indejx');
+
     fetch();
   }, [
     props.articles,
@@ -215,7 +215,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchArticles: () => {console.log('page index'); dispatch(articleActions.fetchArticles())},
+    fetchArticles: () => dispatch(articleActions.fetchArticles()),
     fetchReports: () => dispatch(reportActions.fetchReports()),
   };
 };

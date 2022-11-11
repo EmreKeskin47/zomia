@@ -332,8 +332,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchArticles: () => { console.log('footer article'); dispatch(articleActions.fetchArticles())},
-    fetchReports: () => {console.log('footer report'); dispatch(reportActions.fetchReports())},
+    fetchArticles: () => dispatch(articleActions.fetchArticles()),
+    fetchReports: () => dispatch(reportActions.fetchReports()),
   };
 };
 

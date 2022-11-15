@@ -13,7 +13,8 @@ const RenderBody = (props) => {
                 },
             }}
         >
-            <Typography variant="body1" sx={{ fontSize: "1.4rem !important" }}>
+            {/* style={whitespace: 'preline'} allows typography to read newline chars in hardcoded text */}
+            <Typography variant="body1" sx={{ fontSize: "1.4rem !important"}} style={{whiteSpace: 'pre-line'}}> 
                 {text}
             </Typography>
         </Box>

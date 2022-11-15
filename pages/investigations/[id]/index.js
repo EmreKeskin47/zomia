@@ -37,6 +37,10 @@ const Investigations = (props) => {
         },
     }));
 
+    if (!!report && !!report.pdfLink) {
+        console.log(report.pdfLink);
+    }
+
     return (
         <Paper sx={{ paddingTop: 5 }}>
             {report && <Article article={report} isReport={true} />}

@@ -38,6 +38,7 @@ function App(props) {
       setConnectArticle(props.articles);
       setConnectReport(props.reports);
     };
+
     fetch();
   }, [
     props.articles,

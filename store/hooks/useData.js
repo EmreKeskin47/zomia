@@ -107,7 +107,8 @@ export function useArticleData() {
   useEffect(() => {
     dispatch(articleActions.fetchArticles());
     setData(sortList(articleList).reverse());
-  }, [dispatch, articleList, data]);
+  // }, [dispatch, articleList, data]);
+  }, []);
   return data;
 }
 

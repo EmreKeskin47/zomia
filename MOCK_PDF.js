@@ -5,31 +5,19 @@ This report, by Anand Gopal and Jeremy Hodge, in partnership with New America, e
 const desc3 = `Very little is known about Mullah Omar, the notorious supreme leader of the Taliban. Only a handful of photographs are believed to exist, and his biographical details have long been contested. Upon the fall of the Taliban government in 2001, he effectively vanished, becoming, after Osama bin Laden, one of the most wanted men in the world. The U.S. placed a ten million-dollar bounty on his head, but was unable to find him. In this exclusive, Bette Dam exposes the secret history of a Mullah Omar from that disappearance until his death — covered up by the Taliban — in 2013. For five years, with remarkable courage and tenacity, Dam traveled to insurgent-controlled Afghanistan, meeting with Omar's close associates, friends and relatives and interviewing dozens of Taliban leaders. 
 She also interviewed dozens of Afghan and U.S. officials — who began to tell a very different story in private than they had in public. And, in December 2018, Dam gained unprecedented access to Mullah Omar's bodyguard — who, for twelve years, lived with the Taliban leader, and was one of his only conduits to the outside world. Dam is the first journalist to interview him. The story that emerges is astonishing,  contradicting over a decade of analysis by the U.S. intelligence community, and almost everyone else. After 2001, Mullah Omar did indeed vanish — but he vanished to a safe house just two miles from a major U.S. Forward Operating Base, housing thousands of soldiers. Dam's seminal work not only sets the history straight — it suggests a staggering U.S. intelligence failure.`;
 
-        // id,
-        // title,
-        // image,
-        // date,
-        // author,
-        // category,
-        // text,
-        // description,
-        // photoAttribution,
-        // pdfLink,
-        // additionalImages
-
 
 import { Report } from "./models/Report";
 export const mockReports = [
     new Report(
         "1",
-        "Proxy War in the Northern Corridor, How Inequality Shaped the Syrian War: The Case of Mare’a",
+        "Proxy War in the Northern Corridor: The Case of Mare’a",
         "/reports/1.png",
         "May 2022",
         "Jeremy Hodge & Hussein Nasser",
         "category",
         desc1,
         '',
-        "photo attribution: TBA",
+        "Hussein Nasser",
         "/1.pdf",
         ["/reports/1-2.png", "/reports/1-3.png"],
     ),
@@ -42,20 +30,20 @@ export const mockReports = [
         "category",
         desc2,
         '',
-        "photo attribution: TBA",
+        "Tomas Davidov/Shutterstock.com",
         "/2.pdf",
         []
     ),
     new Report(
         "3",
         "The Secret Life of Mullah Omar",
-        "/reports/3.png",
+        "/reports/5.png",
         "March 10 2019",
-        "BETTE DAM",
+        "Bette Dam",
         "category",
         desc3,
         '',
-        "photo attribution: TBA",
+        "Amber Clay/Pixabay.com",
         "/3.pdf",
         ["/reports/3-1.png", "/reports/3-2.png", "/reports/3-3.png"]
     ),

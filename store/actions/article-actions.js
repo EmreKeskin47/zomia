@@ -18,7 +18,6 @@ import { mockArticles } from "../../MOCK_DATA";
 export const saveArticle = (item) => {
   return async (dispatch) => {
     try {
-      console.log(item);
       const docRef = await addDoc(collection(db, "articles"), {
         article: item,
       });
@@ -70,7 +69,7 @@ export const fetchArticles = () => {
       
       // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
       articles = mockArticles;
-      
+
       dispatch({
         type: FETCH_ARTICLES,
         payload: articles,
@@ -100,7 +99,6 @@ export const deleteArticle = (id) => {
 export const updateArticle = (item) => {
   return async (dispatch) => {
     try {
-      console.log(item);
       await setDoc(doc(db, "articles", item.id), {
         article: item,
       });

@@ -128,8 +128,6 @@ When MRC-ISIS tensions came to a head in January 2014, the Islamic State was abl
 const ArticleText4 = `
 Robert Kluijver (Cyprus, 1968) is an international relations specialist based in Addis Ababa. He is currently writing a PhD at Sciences Po in Paris on ‘International Intervention and State-Building in Somalia’. www.robertk.space
 
-
-
 In late June 2018 the Somali insurgent movement Al-Shabaab announced a ban on plastic bags, citing environmental concerns and impact on livestock. The few international media outlets that reported on this development, as well as most social media commentary, immediately ridiculed the decision. Rukmini Callimachi of the New York Times, for example, cited mocking tweets calling al-Shabaab the world’s “first eco-friendly terrorist group.”
  
 Such coverage assumes that all al-Shabaab media statements are mere propaganda efforts. However, many al-Shabaab announcements, especially those made on somalimemo.net and Radio Andalus in the Somali language, are meant primarily for those living under their control, and well as those in their own movement. For example, in my travels through Somalia, I’ve noticed extensive plastic bag pollution. The leading cause of death for camels in the United Arab Emirates is plastic bags (see an article in The National or the short analysis here), and undoubtedly they cause many deaths in Somalia too. Camel raising is a main source of wealth in Somalia. So a ban on plastic bags, whoever declares it, should be greeted with relief — and likely is, by al-Shabaab’s constituents.
@@ -233,23 +231,23 @@ export const mockProjects = [
 export const mockArticles = [
     new Article(
         1,
-        "The Rise of the New Sunni Elite in Iraq: The Case of Fallujah",
+        "The Rise of the New Sunni Elite in Iraq: Fallujah",
         "/static/articles/1.png",
         "November 2020",
         "Jeremy Hodge and Anand Gopal",
         "CATEGORY?",
-        "PROVIDE DESCRIPTION ",
-        "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
+        "Following ISIS’ defeat, new Sunni political parties in Iraq have forged cross-confessional alliances with powerful Shi’a groups in a bid to secure lucrative reconstruction contracts. The Muslim Brotherhood, long the most influential Sunni force in the country, finds itself pushed to the margins.",
+        "US State Department/Flickr",
         ArticleText1
     ),
     new Article(
         2,
-        "American Withdrawal and the Creeping Syrian Regime: The View from Manbij",
+        "American Withdrawal: The View from Manbij",
         "/static/articles/2.png",
         "October 23 2019",
         "Zomia team-member based in Manbij, Syria",
         "CATEGORY?",
-        "DESCRIPTION?",
+        "The United States has withdrawn troops from parts of northern Syria in the leadup to a Turkish assault on the Kurdish dominated Syrian Democratic Forces (SDF). Desperate for reinforcements, the SDF has allowed Syrian regime troops to take the US’ place. Zomia staff analyze the new distribution of power in the key city of Manbij.",
         "",
         ArticleText2
     ),
@@ -260,8 +258,8 @@ export const mockArticles = [
         "10 July 2019",
         "Jeremy Hodge",
         "CATEGORY",
-        "DESCRIPTION",
-        "",
+        " In 2013, ISIS competed for power within Syria’s opposition by unifying and leading rural and tribal cohorts previously at odds with one another and traditionally excluded by urban led-groups like the Muslim Brotherhood. This report analyzes how ISIS cobbled together coalitions and seized power in the large city of Manbij.",
+        "Hussein Nasser",
         ArticleText3
     ),
     new Article(
@@ -271,19 +269,19 @@ export const mockArticles = [
         "10 July 2019",
         "Robert Kluijver with thanks to Leela Jacinto and Hussein Sheikh Ali ",
         "CATEGORY",
-        "DESCRIPTION",
-        " www.robertk.space",
+        "Data shows that Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. Nevertheless, the group’s brutality has made it less popular than central and regional authorities. This report shows how Al-Shabab has lost support despite growing more adept at governance.",
+        "Robert Kluijver",
         ArticleText4
     ),
     new Article(
         5,
         "One Year Later: Reflections from Afghan Women After Life Under Taliban Rule",
         "/static/articles/4.png",
-        "10 July 2019",
+        "August 2022",
         "Kristin MacDougall-Sullivan ",
         "CATEGORY",
-        "DESCRIPTION",
-        " UPDATE",
+        " Since the fall of Kabul in August 2021, women in Afghanistan have experienced a world-shift unlike anything seen in recent times. However not all have been impacted the same. One year after the Taliban’s return to power, Zomia looks at how female loss of agency has manifested differently across the country.",
+        "timimages.uk",
         ArticleText5
     ),
 ];

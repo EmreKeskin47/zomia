@@ -49,9 +49,9 @@ export const mockReports = [
     new Report(
         "3",
         "The Secret Life of Mullah Omar",
-        "/reports/3.png",
+        "/reports/5.png",
         "March 10 2019",
-        "BETTE DAM",
+        "Bette Dam",
         "category",
         desc3,
         '',

@@ -237,8 +237,9 @@ export const mockArticles = [
         "Jeremy Hodge and Anand Gopal",
         "CATEGORY?",
         "Following ISIS’ defeat, new Sunni political parties in Iraq have forged cross-confessional alliances with powerful Shi’a groups in a bid to secure lucrative reconstruction contracts. The Muslim Brotherhood, long the most influential Sunni force in the country, finds itself pushed to the margins.",
-        "US State Department/Flickr",
-        ArticleText1
+        "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
+        ArticleText1,
+        "US State Department/Flickr"
     ),
     new Article(
         2,
@@ -259,8 +260,9 @@ export const mockArticles = [
         "Jeremy Hodge",
         "CATEGORY",
         " In 2013, ISIS competed for power within Syria’s opposition by unifying and leading rural and tribal cohorts previously at odds with one another and traditionally excluded by urban led-groups like the Muslim Brotherhood. This report analyzes how ISIS cobbled together coalitions and seized power in the large city of Manbij.",
-        "Hussein Nasser",
-        ArticleText3
+        "",
+        ArticleText3,
+        "Hussein Nasser"
     ),
     new Article(
         4,
@@ -270,8 +272,9 @@ export const mockArticles = [
         "Robert Kluijver with thanks to Leela Jacinto and Hussein Sheikh Ali ",
         "CATEGORY",
         "Data shows that Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. Nevertheless, the group’s brutality has made it less popular than central and regional authorities. This report shows how Al-Shabab has lost support despite growing more adept at governance.",
-        "Robert Kluijver",
-        ArticleText4
+        "www.robertk.space",
+        ArticleText4,
+        "Robert Kluijver"
     ),
     new Article(
         5,
@@ -281,7 +284,8 @@ export const mockArticles = [
         "Kristin MacDougall-Sullivan ",
         "CATEGORY",
         " Since the fall of Kabul in August 2021, women in Afghanistan have experienced a world-shift unlike anything seen in recent times. However not all have been impacted the same. One year after the Taliban’s return to power, Zomia looks at how female loss of agency has manifested differently across the country.",
-        "timimages.uk",
-        ArticleText5
+        "",
+        ArticleText5,
+        "timimages.uk"
     ),
 ];

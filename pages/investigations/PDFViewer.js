@@ -72,7 +72,7 @@ export default function PDFViewer(props) {
                                             >
                                                 <Typography variant="body1">
                                                     PROXY WAR IN THE NORTHERN
-                                                    CORRIDO
+                                                    CORRIDOR
                                                 </Typography>
                                                 <Typography variant="subtitle1">
                                                     {index +

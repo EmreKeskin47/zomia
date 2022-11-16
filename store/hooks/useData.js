@@ -39,6 +39,7 @@ const getLatestWriting = (writingList) => {
     months.push(Number(monthList[sepArr[0].toLowerCase()]));
     days.push(Number(sepArr[1]));
   });
+
   const biggestYear = getBiggest(years);
   let localMonths = [];
   for (let i = 0; i < years.length; i++) {
@@ -72,7 +73,7 @@ export function useReportData() {
   const reportList = useSelector((state) => state.reportStore.reports);
   useEffect(() => {
     dispatch(reportActions.fetchReports());
-    setData(sortList(reportList));
+    setData(sortList(reportList).reverse());
   }, [dispatch, reportList]);
   return data;
 }
@@ -96,6 +97,7 @@ const sortList = (reports) => {
     sortedList.push(latest);
     localReports = localReports.filter((report) => report.id !== latest.id);
   }
+
   return sortedList.reverse();
 };
 

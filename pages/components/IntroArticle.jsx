@@ -13,7 +13,6 @@ export default function IntroArticle(props) {
     const context = useContext(singleContext);
     const router = useRouter();
     const { data } = props;
-
     return (
         <Grid
             sx={{
@@ -29,7 +28,9 @@ export default function IntroArticle(props) {
                 }}
             >
                 <CardActionArea
-                    onClick={() => router.push(`investigations/${data.id}`)}
+                    onClick={() => router.push(
+                        `${data.pdfLink ? 'investigations' : 'analysis'}/${data.id}`
+                    )}
                 >
                     {data && data.image && (
                         <CardMedia

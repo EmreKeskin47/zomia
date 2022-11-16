@@ -21,7 +21,7 @@ export const saveArticle = (item) => {
       const docRef = await addDoc(collection(db, "articles"), {
         article: item,
       });
-      console.log(docRef.id);
+
       dispatch({
         type: CREATE_ARTICLE,
         payload: {
@@ -75,7 +75,6 @@ export const fetchArticles = () => {
         payload: articles,
       });
     } catch (err) {
-      console.log('failed -- toast');
       toast("fetch article error" + err);
     }
   };

@@ -195,23 +195,42 @@ In my recent two weeks of research in Mogadishu, I could not find a single Somal
 
 `;
 
-const ArticleText5 = 'It’s been twelve months since Taliban fighters marched into the Afghan capital of Kabul, marking the end of a takeover that gripped the nation for several months. As foreign troops left, a new regime took power, forever changing the trajectory of not only Afghanistan, but the lives of millions of women living there. \n\n'+
-'Most reporting in this period painted Afghan women with a wide brush, projecting to the world that they are victims with limited agency, and that they all share the same fears about the Taliban government. This however is far from the truth. Today, many women are of course worried that the Taliban will continue to limit their political and social rights; but they are also concerned about the economy and deteriorating living conditions. \n\n' +
-'The individual voices of Afghan women are vital when developing strategies to address such a complicated humanitarian context like Afghanistan. I spoke with two Afghan women to share what life has been like for them under the new regime. Both women described fear and uncertainty–albeit from very different perspectives. \n\n' +
-'August 15, 2021, was an immensely painful day for both women, however the changes since then have impacted each differently. I was surprised to learn, for example, that a May 2022 decree issued by the Taliban requiring women to wear a burqa did not have a huge impact on either woman’s life, as they already wore a burqa under the previous regime. \n\n' +
-'Initially, Taliban leaders promised a government that would not seek to inhibit the rights of Afghan women, even releasing a decree that declared: “[a] woman is not a property, but a noble and free human being; no one can give her to anyone in exchange for peace...or to end animosity.” \n\n'+
-'However, almost immediately after taking power, the Taliban closed domestic abuse shelters, leaving survivors of violence with no options for care. Female activists began to disappear, some taken from their homes, some turning up dead and others never heard from again. In March, Afghan girls turned up to schools to find the doors locked and guarded by armed men. Since then, girls above their sixth year of education have not been able to return to school (except those who attend private universities). \n\n'+
-'The Taliban’s May 2022 decree also urged women to refrain from leaving their homes, while those that did leave were required to be accompanied by a male relative or guardian (mahram). When adult male relatives are unavailable, mothers are reliant on young sons to escort them while walking outside. This practice of female seclusion is common in many parts of the country, but the Taliban’s decrees have turned cultural attitudes into law.\n\n' +
-'I spoke with Parisa,* a young university-educated woman from rural Nangarhar, who described her family as religious Pashtuns, the largest ethnic group in Afghanistan. Parisa saw the Taliban takeover as an opportunity to end the financial and moral corruption of the previous government. However, she also viewed the group as harsh and intrusive. Like many Afghans I’ve spoken to, Parisa refers to the new regime as the “de facto government,” or simply the “Taliban.” (I have yet to encounter anyone who refers to their government using the Taliban’s preferred moniker: The Islamic Emirate of Afghanistan.)\n\n' +
-'Parisa’s sisters have been harassed several times while traveling to work, primary school, and university without a mahram. Her father, an educated man who worked with international organizations for decades, is now jobless. However the biggest change for Parisa has been the transformation of Kabul from a place where she could once live with some freedom to one where she constantly worries about the consequences of not abiding by government rules\n\n' +
-'Since August 2021 Parisa has been subjected to numerous house searches at her home in Kabul because she lives alone as a single woman. During these searches she was threatened and refused the chance to cover up in front of men, in accordance with her religious principles.\n\n' +
-'Twelve months after the Taliban’s takeover, Parisa feels Afghanistan’s small educated population is being held in a cage, denied work and job opportunities, and targeted for their work history.\n\n' +
-'I also spoke with a young woman in Kabul named Fatima. Fatima requested that I use her real name, and seemed unfazed by security concerns. Fatima is a single woman like Parisa and comes from a Tajik family from the central-east province of Kapisa, but has lived in Kabul most of her life. Fatima was terrified of the Taliban as they approached Kabul. When she heard that the Taliban were arriving in the city, she began destroying documents that might be considered problematic, especially those that contain evidence of contacts or conversations with foreigners.\n\n' +
-'As the Taliban arrived in Kabul, Fatima went with her family to the city’s airport three or four times to try to find a way out of the country: she was sure that the new regime meant certain death. However, after their takeover, Fatima was surprised to find the Taliban engaging in what she described as “good behavior” and treating locals better than she expected.\n\n' +
-'Like Parisa and most other Afghan women, Fatima had been dressing according to Taliban standards for most of their lives, so she too was unaffected by the burqa mandate. What was new was the constant fear of doing something wrong, and the consequences this would bring to her family, who could be beaten, flogged or worse.\n\n' +
-'When asked about the biggest change in her life over the past year, Fatima answered quickly: the economy. She sees Afghan people around her losing their jobs and being unable to feed their families. She noted how the new government has failed to find any solutions and that the situation is deteriorating quickly. Looking ahead, Fatima feels that the future is unpredictable. The Taliban government has announced new initiatives to stimulate the economy, and Fatima hopes these will come to fruition. But she also fears they are empty promises.\n\n' +
-'Regardless of their different backgrounds, both Fatima and Parisa expressed concern and worry for what lies ahead. Parisa described her fellow Afghan women as brilliant and talented, but locked in a cage. When asked how she thought life would be a year from now, she was quick to answer: “things will not get better. They will be worse.” Fatima still clings to hope that the government will deliver a sustainable solution to the country’s economic turmoil, but she admits that the coming years are too uncertain to predict. However, both women agree that the government has so far failed to alleviate Afghan peoples’ fears for the future of their country.\n\n' +
-'*Name has been changed to protect the safety and security of the women we spoke with who requested anonymity.';
+
+const ArticleText5 = `
+It’s been twelve months since Taliban fighters marched into the Afghan capital of Kabul, marking the end of a takeover that gripped the nation for several months. As foreign troops left, a new regime took power, forever changing the trajectory of not only Afghanistan, but the lives of millions of women living there.
+
+Most reporting in this period painted Afghan women with a wide brush, projecting to the world that they are victims with limited agency, and that they all share the same fears about the Taliban government. This however is far from the truth. Today, many women are of course worried that the Taliban will continue to limit their political and social rights; but they are also concerned about the economy and deteriorating living conditions.
+
+The individual voices of Afghan women are vital when developing strategies to address such a complicated humanitarian context like Afghanistan. I spoke with two Afghan women to share what life has been like for them under the new regime. Both women described fear and uncertainty–albeit from very different perspectives.
+
+August 15, 2021, was an immensely painful day for both women, however the changes since then have impacted each differently. I was surprised to learn, for example, that a May 2022 decree issued by the Taliban requiring women to wear a burqa did not have a huge impact on either woman’s life, as they already wore a burqa under the previous regime.
+
+Initially, Taliban leaders promised a government that would not seek to inhibit the rights of Afghan women, even releasing a decree that declared: “[a] woman is not a property, but a noble and free human being; no one can give her to anyone in exchange for peace...or to end animosity.
+
+However, almost immediately after taking power, the Taliban closed domestic abuse shelters, leaving survivors of violence with no options for care. Female activists began to disappear, some taken from their homes, some turning up dead and others never heard from again. In March, Afghan girls turned up to schools to find the doors locked and guarded by armed men. Since then, girls above their sixth year of education have not been able to return to school (except those who attend private universities).
+
+The Taliban’s May 2022 decree also urged women to refrain from leaving their homes, while those that did leave were required to be accompanied by a male relative or guardian (mahram). When adult male relatives are unavailable, mothers are reliant on young sons to escort them while walking outside. This practice of female seclusion is common in many parts of the country, but the Taliban’s decrees have turned cultural attitudes into law.
+
+I spoke with Parisa,* a young university-educated woman from rural Nangarhar, who described her family as religious Pashtuns, the largest ethnic group in Afghanistan. Parisa saw the Taliban takeover as an opportunity to end the financial and moral corruption of the previous government. However, she also viewed the group as harsh and intrusive. Like many Afghans I’ve spoken to, Parisa refers to the new regime as the “de facto government,” or simply the “Taliban.” (I have yet to encounter anyone who refers to their government using the Taliban’s preferred moniker: The Islamic Emirate of Afghanistan.)
+
+Parisa’s sisters have been harassed several times while traveling to work, primary school, and university without a mahram. Her father, an educated man who worked with international organizations for decades, is now jobless. However the biggest change for Parisa has been the transformation of Kabul from a place where she could once live with some freedom to one where she constantly worries about the consequences of not abiding by government rules.
+
+Since August 2021 Parisa has been subjected to numerous house searches at her home in Kabul because she lives alone as a single woman. During these searches she was threatened and refused the chance to cover up in front of men, in accordance with her religious principles.
+
+Twelve months after the Taliban’s takeover, Parisa feels Afghanistan’s small educated population is being held in a cage, denied work and job opportunities, and targeted for their work history.
+
+I also spoke with a young woman in Kabul named Fatima. Fatima requested that I use her real name, and seemed unfazed by security concerns. Fatima is a single woman like Parisa and comes from a Tajik family from the central-east province of Kapisa, but has lived in Kabul most of her life. Fatima was terrified of the Taliban as they approached Kabul. When she heard that the Taliban were arriving in the city, she began destroying documents that might be considered problematic, especially those that contain evidence of contacts or conversations with foreigners.
+
+As the Taliban arrived in Kabul, Fatima went with her family to the city’s airport three or four times to try to find a way out of the country: she was sure that the new regime meant certain death. However, after their takeover, Fatima was surprised to find the Taliban engaging in what she described as “good behavior” and treating locals better than she expected.
+
+Like Parisa and most other Afghan women, Fatima had been dressing according to Taliban standards for most of their lives, so she too was unaffected by the burqa mandate. What was new was the constant fear of doing something wrong, and the consequences this would bring to her family, who could be beaten, flogged or worse.
+
+When asked about the biggest change in her life over the past year, Fatima answered quickly: the economy. She sees Afghan people around her losing their jobs and being unable to feed their families. She noted how the new government has failed to find any solutions and that the situation is deteriorating quickly. Looking ahead, Fatima feels that the future is unpredictable. The Taliban government has announced new initiatives to stimulate the economy, and Fatima hopes these will come to fruition. But she also fears they are empty promises.
+
+Regardless of their different backgrounds, both Fatima and Parisa expressed concern and worry for what lies ahead. Parisa described her fellow Afghan women as brilliant and talented, but locked in a cage. When asked how she thought life would be a year from now, she was quick to answer: “things will not get better. They will be worse.” Fatima still clings to hope that the government will deliver a sustainable solution to the country’s economic turmoil, but she admits that the coming years are too uncertain to predict. However, both women agree that the government has so far failed to alleviate Afghan peoples’ fears for the future of their country.
+
+*Name has been changed to protect the safety and security of the women we spoke with who requested anonymity."
+`;
 
 
 export const mockProjects = [
@@ -234,9 +253,9 @@ export const mockArticles = [
         "The Rise of the New Sunni Elite in Iraq: Fallujah",
         "/static/articles/1.png",
         "November 1 2020",
-        "Jeremy Hodge and Anand Gopal",
+        "Jeremy Hodge, Anand Gopal",
         "CATEGORY?",
-        "Following ISIS’ defeat, new Sunni political parties in Iraq have forged cross-confessional alliances with powerful Shi’a groups in a bid to secure lucrative reconstruction contracts. The Muslim Brotherhood, long the most influential Sunni force in the country, finds itself pushed to the margins.",
+        "After ISIS’ defeat, new Sunni political parties have forged cross-confessional bonds with powerful Shi’a groups to shore up their power. The Muslim Brotherhood, long the most influential Sunni force in Iraq, finds itself pushed to the margins.",
         "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
         ArticleText1,
         "US State Department/Flickr"
@@ -246,11 +265,12 @@ export const mockArticles = [
         "American Withdrawal: The View from Manbij",
         "/static/articles/2.png",
         "October 23 2019",
-        "Zomia team-member based in Manbij, Syria",
+        "Zomia staff in Manbij",
         "CATEGORY?",
-        "The United States has withdrawn troops from parts of northern Syria in the leadup to a Turkish assault on the Kurdish dominated Syrian Democratic Forces (SDF). Desperate for reinforcements, the SDF has allowed Syrian regime troops to take the US’ place. Zomia staff analyze the new distribution of power in the key city of Manbij.",
+        "The United States has withdrawn troops from parts of northern Syria prior to a Turkish assault on the Syrian Democratic Forces (SDF), who have invited Syrian regime troops to take their place. Zomia analyzes the new distribution of power in the key city of Manbij.",
         "",
-        ArticleText2
+        ArticleText2,
+        "Hussein Nasser"
     ),
     new Article(
         3,
@@ -259,7 +279,7 @@ export const mockArticles = [
         "July 10 2019",
         "Jeremy Hodge",
         "CATEGORY",
-        " In 2013, ISIS competed for power within Syria’s opposition by unifying and leading rural and tribal cohorts previously at odds with one another and traditionally excluded by urban led-groups like the Muslim Brotherhood. This report analyzes how ISIS cobbled together coalitions and seized power in the large city of Manbij.",
+        "In 2013, ISIS competed for power within Syria’s opposition by unifying rural and tribal cohorts both at odds with one another and traditionally excluded from power by urban elites. This report analyzes how ISIS managed coalitions and took power in the large city of Manbij.",
         "",
         ArticleText3,
         "Hussein Nasser"
@@ -269,9 +289,9 @@ export const mockArticles = [
         "Al-Shabab Governance",
         "/static/articles/4.png",
         "July 10 2019",
-        "Robert Kluijver with thanks to Leela Jacinto and Hussein Sheikh Ali ",
+        "Robert Kluijver",
         "CATEGORY",
-        "Data shows that Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. Nevertheless, the group’s brutality has made it less popular than central and regional authorities. This report shows how Al-Shabab has lost support despite growing more adept at governance.",
+        "Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. However, the group’s brutality makes it less popular than central authorities. This report shows how Al-Shabab has lost support despite being adept at governance.",
         "www.robertk.space",
         ArticleText4,
         "Robert Kluijver"
@@ -283,7 +303,7 @@ export const mockArticles = [
         "August 1 2022",
         "Kristin MacDougall-Sullivan ",
         "CATEGORY",
-        " Since the fall of Kabul in August 2021, women in Afghanistan have experienced a world-shift unlike anything seen in recent times. However not all have been impacted the same. One year after the Taliban’s return to power, Zomia looks at how female loss of agency has manifested differently across the country.",
+        "Since August 2021, women in Afghanistan have experienced a transformational world-shift, however not all have been impacted alike. One year after the Taliban’s takeover, Zomia looks at how female loss of agency has manifested differently across the country.",
         "",
         ArticleText5,
         "timimages.uk"

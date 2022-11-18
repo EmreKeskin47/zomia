@@ -52,7 +52,7 @@ export default function IntroArticle(props) {
                             component="div"
                             sx={{ fontFamily: "Merriweather !important" }}
                         >
-                            {data && data.title.substring(0, 72)}
+                            {data && data.title.substring(0, 75)}
                         </Typography>
                         <Box sx={{ textAlign: "left", width: "100%" }}>
                             <Typography

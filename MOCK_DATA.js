@@ -253,9 +253,9 @@ export const mockArticles = [
         "The Rise of the New Sunni Elite in Iraq: Fallujah",
         "/static/articles/1.png",
         "November 1 2020",
-        "Jeremy Hodge and Anand Gopal",
+        "Jeremy Hodge, Anand Gopal",
         "CATEGORY?",
-        "Following ISIS’ defeat, new Sunni political parties in Iraq have forged cross-confessional alliances with powerful Shi’a groups in a bid to secure lucrative reconstruction contracts. The Muslim Brotherhood, long the most influential Sunni force in the country, finds itself pushed to the margins.",
+        "After ISIS’ defeat, new Sunni political parties have forged cross-confessional bonds with powerful Shi’a groups to shore up their power. The Muslim Brotherhood, long the most influential Sunni force in Iraq, finds itself pushed to the margins.",
         "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
         ArticleText1,
         "US State Department/Flickr"
@@ -265,11 +265,12 @@ export const mockArticles = [
         "American Withdrawal: The View from Manbij",
         "/static/articles/2.png",
         "October 23 2019",
-        "Zomia team-member based in Manbij, Syria",
+        "Zomia staff in Manbij",
         "CATEGORY?",
-        "The United States has withdrawn troops from parts of northern Syria in the leadup to a Turkish assault on the Kurdish dominated Syrian Democratic Forces (SDF). Desperate for reinforcements, the SDF has allowed Syrian regime troops to take the US’ place. Zomia staff analyze the new distribution of power in the key city of Manbij.",
+        "The United States has withdrawn troops from parts of northern Syria prior to a Turkish assault on the Syrian Democratic Forces (SDF), who have invited Syrian regime troops to take their place. Zomia analyzes the new distribution of power in the key city of Manbij.",
         "",
-        ArticleText2
+        ArticleText2,
+        "Hussein Nasser"
     ),
     new Article(
         3,
@@ -278,7 +279,7 @@ export const mockArticles = [
         "July 10 2019",
         "Jeremy Hodge",
         "CATEGORY",
-        " In 2013, ISIS competed for power within Syria’s opposition by unifying and leading rural and tribal cohorts previously at odds with one another and traditionally excluded by urban led-groups like the Muslim Brotherhood. This report analyzes how ISIS cobbled together coalitions and seized power in the large city of Manbij.",
+        "In 2013, ISIS competed for power within Syria’s opposition by unifying rural and tribal cohorts both at odds with one another and traditionally excluded from power by urban elites. This report analyzes how ISIS managed coalitions and took power in the large city of Manbij.",
         "",
         ArticleText3,
         "Hussein Nasser"
@@ -288,9 +289,9 @@ export const mockArticles = [
         "Al-Shabab Governance",
         "/static/articles/4.png",
         "July 10 2019",
-        "Robert Kluijver with thanks to Leela Jacinto and Hussein Sheikh Ali ",
+        "Robert Kluijver",
         "CATEGORY",
-        "Data shows that Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. Nevertheless, the group’s brutality has made it less popular than central and regional authorities. This report shows how Al-Shabab has lost support despite growing more adept at governance.",
+        "Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. However, the group’s brutality makes it less popular than central authorities. This report shows how Al-Shabab has lost support despite being adept at governance.",
         "www.robertk.space",
         ArticleText4,
         "Robert Kluijver"
@@ -302,7 +303,7 @@ export const mockArticles = [
         "August 1 2022",
         "Kristin MacDougall-Sullivan ",
         "CATEGORY",
-        " Since the fall of Kabul in August 2021, women in Afghanistan have experienced a world-shift unlike anything seen in recent times. However not all have been impacted the same. One year after the Taliban’s return to power, Zomia looks at how female loss of agency has manifested differently across the country.",
+        "Since August 2021, women in Afghanistan have experienced a transformational world-shift, however not all have been impacted alike. One year after the Taliban’s takeover, Zomia looks at how female loss of agency has manifested differently across the country.",
         "",
         ArticleText5,
         "timimages.uk"

@@ -1,4 +1,4 @@
-const desc1 = `DThe tiny town of Mare’a was one of the first Syrian cities to declare itself liberated in 2011. Within months, it became one of the nerve centers coordinating rebels across the country. This report details the history of Mare’a and those factors that fueled its rise to prominence.`;
+const desc1 = `The tiny town of Mare’a was one of the first Syrian cities to declare itself liberated in 2011. Within months, it became one of the nerve centers coordinating rebels across the country. This report details the history of Mare’a and those factors that fueled its rise to prominence.`;
 const desc2 = `Since 2012, Syria’s rebel movement has been split between Saudi and Qatari backed groups. Much of patron-client relations was driven by class, as both countries targeted aid to specific socio-economic cohorts with whom they possessed historical ties.`;
 const desc3 = `After 2001, the Taliban’s supreme leader Mullah Omar vanished, evading capture until his death in 2013 by living in a safe house two miles from a US Forward Operating base. Bette Dam exposes this major intelligence failure during America’s longest running war.`;
 

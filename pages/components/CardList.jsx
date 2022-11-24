@@ -64,7 +64,7 @@ const CardList = ({ type }) => {
                                 >
                                     <NewsSummary
                                         image={item.image}
-                                        title={item.title}
+                                        title={item.title.length > 52 ? `${item.title.slice(0, 49)}...` : item.title}
                                         date={item.date}
                                         description={
                                             item.description

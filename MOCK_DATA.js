@@ -298,7 +298,7 @@ export const mockArticles = [
     ),
     new Article(
         5,
-        "One Year Later: Reflections from Afghan Women After Life Under Taliban Rule",
+        "One Year Later: Reflections from Afghan Women",
         "/static/articles/6.png",
         "August 1 2022",
         "Kristin MacDougall-Sullivan ",

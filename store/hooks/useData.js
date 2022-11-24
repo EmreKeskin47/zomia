@@ -126,8 +126,6 @@ export function useWritingData() {
     const reportData = sortList(reportList);
     dispatch(articleActions.fetchArticles());
     const articleData = sortList(articleList);
-    console.log(articleData);
-    console.log(reportData);
     setWritingData(sortList(articleData.concat(reportData)));
   }, [dispatch, reportList, articleList]);
 

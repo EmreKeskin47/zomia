@@ -203,11 +203,11 @@ Most reporting in this period painted Afghan women with a wide brush, projecting
 
 The individual voices of Afghan women are vital when developing strategies to address such a complicated humanitarian context like Afghanistan. I spoke with two Afghan women to share what life has been like for them under the new regime. Both women described fear and uncertainty–albeit from very different perspectives.
 
-August 15, 2021, was an immensely painful day for both women, however the changes since then have impacted each differently. I was surprised to learn, for example, that a May 2022 decree issued by the Taliban requiring women to wear a burqa did not have a huge impact on either woman’s life, as they already wore a burqa under the previous regime.
+August 15, 2021, was an immensely painful day for both women, however the changes since then have impacted each differently. I was surprised to learn, for example, that a May 2022 decree issued by the Taliban requiring women to wear a burqa (1) did not have a huge impact on either woman’s life, as they already wore a burqa under the previous regime.
 
-Initially, Taliban leaders promised a government that would not seek to inhibit the rights of Afghan women, even releasing a decree that declared: “[a] woman is not a property, but a noble and free human being; no one can give her to anyone in exchange for peace...or to end animosity.
+Initially, Taliban leaders promised a government that would not seek to inhibit the rights of Afghan women, even releasing a decree that declared: “[a] woman is not a property, but a noble and free human being; no one can give her to anyone in exchange for peace...or to end animosity. (2)
 
-However, almost immediately after taking power, the Taliban closed domestic abuse shelters, leaving survivors of violence with no options for care. Female activists began to disappear, some taken from their homes, some turning up dead and others never heard from again. In March, Afghan girls turned up to schools to find the doors locked and guarded by armed men. Since then, girls above their sixth year of education have not been able to return to school (except those who attend private universities).
+However, almost immediately after taking power, the Taliban closed domestic abuse shelters, leaving survivors of violence with no options for care. (3) Female activists began to disappear, some taken from their homes, some turning up dead and others never heard from again. (4) In March, Afghan girls turned up to schools to find the doors locked and guarded by armed men. (5) Since then, girls above their sixth year of education have not been able to return to school (except those who attend private universities).
 
 The Taliban’s May 2022 decree also urged women to refrain from leaving their homes, while those that did leave were required to be accompanied by a male relative or guardian (mahram). When adult male relatives are unavailable, mothers are reliant on young sons to escort them while walking outside. This practice of female seclusion is common in many parts of the country, but the Taliban’s decrees have turned cultural attitudes into law.
 
@@ -230,6 +230,16 @@ When asked about the biggest change in her life over the past year, Fatima answe
 Regardless of their different backgrounds, both Fatima and Parisa expressed concern and worry for what lies ahead. Parisa described her fellow Afghan women as brilliant and talented, but locked in a cage. When asked how she thought life would be a year from now, she was quick to answer: “things will not get better. They will be worse.” Fatima still clings to hope that the government will deliver a sustainable solution to the country’s economic turmoil, but she admits that the coming years are too uncertain to predict. However, both women agree that the government has so far failed to alleviate Afghan peoples’ fears for the future of their country.
 
 *Name has been changed to protect the safety and security of the women we spoke with who requested anonymity."
+
+(1) Taliban order all Afghan women to cover their faces in public, Emma Graham-Harrison, The Guardian, 7 May 2022, available at: https://www.theguardian.com/world/2022/may/07/taliban-order-all-afghan-women-to-wear-burqa
+
+(2) Taliban decree on women’s rights, which make no mention of school or work, dismissed by Afghan women and experts, Eliza Mackintosh, CNN, 4 December 2022, available at: https://edition.cnn.com/2021/12/03/asia/afghanistan-taliban-decree-womens-rights-intl/index.html
+
+(3) Protections for women facing violence have vanished under the Taliban, Sara Perria, The New Humanitarian, available at: https://www.thenewhumanitarian.org/news-feature/2022/04/20/afghanistans-empty-womens-shelters
+
+(4) Afghan Women Activists Abducted by the Taliban While Journalists Arrested and Beaten, Civicus Monitor, 11 February 2022, available at: https://monitor.civicus.org/updates/2022/02/11/afghan-women-activists-abducted-taliban-while-journalists-arrested-and-beaten/
+
+(5) Taliban Ban on Girls’ Education in Afghanistan, Belquis Ahmadi; Asma Ebadi, United States Institute of Peace, 1 April 2022, available at: https://www.usip.org/publications/2022/04/talibans-ban-girls-education-afghanistan
 `;
 
 

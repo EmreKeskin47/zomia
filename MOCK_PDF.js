@@ -28,7 +28,7 @@ export const mockReports = [
         "1",
         "Proxy War in the Northern Corridor: The Case of Mare’a",
         "/reports/1.png",
-        "May 1 2022",
+        "December 9 2022",
         "Jeremy Hodge & Hussein Nasser",
         "category",
         text1,

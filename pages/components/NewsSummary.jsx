@@ -7,6 +7,13 @@ import { Box, CardActionArea, Grid } from "@mui/material";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
 
+const getShortenedString = (string) => {
+    if (string.length >= 45) {
+        string = string.substring(0, 42) + '...';
+    }
+    return string;
+}
+
 const NewsSummary = (props) => {
     const context = useContext(singleContext);
     return (
@@ -69,14 +76,7 @@ const NewsSummary = (props) => {
                                     variant="caption"
                                     sx={{ fontSize: "1rem !important" }}
                                 >
-                                    {props.date} /
-                                </Typography>
-                                <Typography
-                                    align="left"
-                                    variant="caption"
-                                    sx={{ fontSize: "1rem !important" }}
-                                >
-                                    {props.author}
+                                    {getShortenedString(`${props.date} / ${props.author}`)}
                                 </Typography>
                             </Box>
                         </Box>

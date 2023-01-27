@@ -1,43 +1,23 @@
 export const team = `
-
 Mosaab Alatassi - Logistics Director <br />
-
 Mosaab is a humanitarian development specialist, researcher, and interpreter. He focuses on healthcare issues, especially polio and vaccination coverage in Syria, Yemen and Iraq. He has worked with journalists and academic researchers investigating the Syrian war and Middle East politics. Mosaab is a consultant for the Centre for Humanitarian Dialogue. <br />
-
 Sari Alatassi - Graphic Designer and Interpreter  <br />
-
 Sari is a marketing specialist, graphic designer and interpreter. His works focus on the Syrian war, he helps design Zomia publications, and oversees Zomia’s translation team.  <br />
-
 Ahmad Al-Faraj - Field Researcher  <br />
-
 Ahmad is an independent Syrian researcher and journalist. He has worked extensively with internally displaced persons. He holds a bachelor's degree in Arabic literature from the University of Aleppo.  <br />
-
 Jeremy Hodge - Senior Investigator  <br />
-
 Jeremy is an investigative journalist and researcher covering the rise of extremism in Syria and Iraq, the petroleum/defense sectors, and regional finance. His 2015 African Confidential investigative report "Opening the Black Box of Egypt's Slush Funds", exposed a $9.4bn network of corruption amongst the country's top generals. Jeremy’s articles have appeared in Foreign Affairs, The Nation, Le Monde Diplomatique, Al-Jazeera, The Daily Beast, Africa Confidential and other outlets. <br />
-
-Sol Laudon - Refugee Coding Bootcamp Program Director <br />
-
-Sol is a software engineer with five years of industry experience. A hacker at heart, Sol learned to code at a software bootcamp. Prior to entering tech, Sol worked in corporate finance doing mergers and acquisitions. Sol holds a BBA in finance from Baruch College. Sol spent three years living in and traveling around the Middle East, and has collaborated with historians and anthropologists to conduct research on Jewish life in Morocco. <br />
-
+Sol Laudon - Director, Refugee Technical Training Programs <br />
+Sol is a software engineer with six years of industry experience. Prior to entering tech, Sol worked in corporate finance doing mergers and acquisitions. Sol holds a BBA in finance from Baruch College. Sol spent three years living in and traveling around the Middle East, and has collaborated with historians and anthropologists to conduct research on Jewish life in Morocco. <br />
 Kristin MacDougall-Sullivan - Afghanistan Humanitarian Programs Director  <br />
-
 Kristin is a US-licensed lawyer who runs Zomia’s humanitarian programs in Afghanistan. Prior to joining Zomia, Kristin provided legal counseling and advocacy for asylum seekers in Lesvos, Greece, which at one time hosted the largest refugee camp in Europe. Kristin earned her J.D. from the University of Connecticut School of Law. She also holds a Masters of Arts in Law and Diplomacy from The Fletcher School of Tufts University, where she focused on public international law and human security.   <br />
-
 Joanna Naples-Mitchell - Director, Redress Program <br />
-
 Joanna is a US-licensed lawyer who runs Zomia’s Program on Redress for Survivors of U.S. and Coalition Airstrikes. Prior to joining Zomia, Joanna worked at Physicians for Human Rights, Human Rights Watch, and the Human Rights and Special Prosecutions Section of the U.S. Department of Justice. She holds a law degree from New York University School of Law and a bachelor’s degree from Harvard University. She is admitted to practice law in the state of New York. <br />
-
 Hussein Nasser - Field Researcher  <br />
-
 Hussein Nasser is a fellow at the Zomia Center, where he specializes in analyzing the ideologies and formation of terrorist organizations and jihadist groups in Syria. Hussein is the former founder and general manager for the Syrian Counter Extremism Center (SCEC) which led rehabilitation efforts of former jihadists in northern Syria. He received his B.A. in International Relations from Artuklu University in Mardin, Turkey. <br />
-
 Mohamad Yusuf Othman - Country Director - Syria  <br />
-
 Mohammad has been working with Zomia since 2017. He directs Zomia projects in Syria, and also supports the Centre for Humanitarian Dialogue. Othman previously worked for Adam Smith International. He holds a bachelor's degree in business management. <br />
-
 Hussien Mohammad Samawi - Field Researcher & Medical Coordinator <br />
-
 Hussein is a field researcher and journalist who has done extensive work in Manbij and its countryside, as well as other locations in eastern Syria. He also helps supervise Zomia public health projects, including Leishmanaisis and COVID-19 efforts.  <br />
 `;
 

@@ -242,6 +242,41 @@ Regardless of their different backgrounds, both Fatima and Parisa expressed conc
 (5) Taliban Ban on Girls’ Education in Afghanistan, Belquis Ahmadi; Asma Ebadi, United States Institute of Peace, 1 April 2022, available at: https://www.usip.org/publications/2022/04/talibans-ban-girls-education-afghanistan
 `;
 
+const ArticleText6 = `
+On January 16, news broke of the murder of Mursal Nabizada, a former female parliamentarian in Afghanistan. Gunmen stormed into her house the previous morning, killing Ms. Nabizada and her bodyguard. (1) The local police chief confirmed that Ms. Nabizada’s brother and another security guard were injured in the attack. (2) 
+
+No one has claimed responsibility for Ms. Nabizada’s death, and government officials have described the attackers only as unknown gunmen. (3) BBC has reported that Khalid Zadran, a spokesman for Kabul police, promises a serious investigation into the incident. (4)
+
+While we don’t know who is responsible for Ms. Nabizada’s murder, her killing occurred in a context in which the Taliban has enforced increasing restrictions on women by the issuance of two recent decisions that significantly narrowed the freedom of women in Afghanistan. The first, issued on December 22, 2022, banned women from university education indefinitely. (5) Then, on December 24, 2022, another letter was issued banning women from working for NGOs in Afghanistan. (6) The announcement, confirmed by spokesperson Abdulrahman Habib, alleged that the ban was the result of female staff not adhering to the Taliban’s interpretation of an Islamic dress code.
+
+Ms. Nabizada had been receiving threats since the August 2021 takeover of Kabul by the Taliban. She was one of few remaining female parliamentarians and was living in fear of her safety every day. She is described by her colleagues as “a strong, outspoken women who stood up for what she believed in,” (7) and a “fearless champion of Afghanistan.” (8) Though shocking, it’s difficult to be surprised that ultimately Ms. Nabizada was attacked and killed when authorities had offered no protection to her despite clearly being at-risk. Given the recent activity of the Taliban to relegate women to second class citizens in Afghanistan, the lack of protection for Ms. Nabizada is also unsurprising. Ironically, the Taliban initially promised that it would restore security in Kabul, and yet targeted killings like this have not ceased.
+
+I had the pleasure of meeting Ms. Nabizada during a trip to Kabul in the summer of 2022.  A colleague of mine arranged a get-together in which we drank tea and ate lunch over several hours one afternoon. I can’t reveal many details about the other meeting participants, as their lives remain in danger, but I can share that the atmosphere of the meeting was surprisingly upbeat. 
+
+Despite each woman detailing how their dreams were dashed after August 2021, and how they remained in hiding, there were also moments of joy.  Most of those joyful moments stemmed from Ms. Nabizada and her colleagues finally being able to catch up after months apart. 
+
+At the beginning of the meeting, I listened to each participants’ account of the work they had done before the August 2021 takeover of Afghanistan. I remember how Ms. Nabizada proudly told me that she was the youngest female member of parliament, achieving her position at 29 years old. At almost ten years my junior, Ms. Nabizada’s work with her own country’s government to support the rights of her countrymen was incredible to hear.
+
+We took many pictures together during the meeting, some with our arms raised in the air flexed, an ode to showing we were “strong” women. After returning to Greece, I continued to stay in touch with some of the women through text messaging, in a chat where we would send tidings on important holidays like Eid al-Fitr and other events. 
+
+The last message Ms. Nabizada wrote there was to express that she would not leave her family alone in Kabul, despite increasing threats to her life. Ultimately, Ms. Nabizada’s fear for her life was proven justified this past weekend as she was shot on the first floor of her house; it was a devastating loss for the fearless community in Afghanistan of women parliamentarians.
+
+(1) Former Afghan MP Mursal Nabizada shot dead in Kabul, Associated Press in Kabul, The Guardian, available at: https://www.theguardian.com/world/2023/jan/15/former-afghan-mp-mursal-nabizada-shot-dead-in-kabul.
+
+(2) Former Afghan MP Mursal Nabizada shot dead in Kabul, Associated Press in Kabul, The Guardian, available at: https://www.theguardian.com/world/2023/jan/15/former-afghan-mp-mursal-nabizada-shot-dead-in-kabul.
+
+(3) Levine: Mursal Nabizada’s slaying must spur Canada to help female Afghan MPs, Corey Levine, Ottawa Citizen, available at: https://ottawacitizen.com/opinion/levine-mursal-nabizadas-slaying-must-spur-canada-to-help-female-afghan-mps.
+
+(4) Mursal Nabizada: Gunmen kill former Afghan MP at home in Kabul, BBC, available at: https://www.bbc.co.uk/news/world-asia-64285789.
+
+(5) Taliban ban Afghan women from university education, Hikmat Noori, The Guardian, available at: https://www.theguardian.com/world/2022/dec/20/taliban-ban-afghan-women-university-education.
+
+(6) Taliban bans female NGO staff, jeopardizing aid efforts, Reuters, available at: https://www.reuters.com/world/asia-pacific/taliban-orders-ngos-ban-female-employees-coming-work-2022-12-24/.
+
+(7) Mariam Solaimankhil, Twitter, https://twitter.com/Mariamistan/status/1614532422439440386?s=20&t=7g4tuboVwEBo6uorCEcW1w.
+
+(8) Mursal Nabizada: Gunmen kill former Afghan MP at home in Kabul, BBC, available at: https://www.bbc.co.uk/news/world-asia-64285789.
+`
 
 export const mockProjects = [
     {
@@ -311,11 +346,23 @@ export const mockArticles = [
         "One Year Later: Reflections from Afghan Women",
         "/static/articles/6.png",
         "August 1 2022",
-        "Kristin MacDougall-Sullivan ",
+        "Kristin MacDougall-Sullivan",
         "CATEGORY",
         "Since August 2021, women in Afghanistan have experienced a transformational world-shift, however not all have been impacted alike. One year after the Taliban’s takeover, Zomia looks at how female loss of agency has manifested differently across the country.",
         "",
         ArticleText5,
+        "timimages.uk"
+    ),
+    new Article(
+        6,
+        "Reflection on the Murder of Former Female Parliamentarian Mursal Nabizada",
+        "/static/articles/6.png",
+        "January 27 2023",
+        "Kristin MacDougall-Sullivan",
+        "CATEGORY",
+        "On January 16th, the world learned about the tragic killing of former Afghan parliamentarian Mursal Nabizada. Zomia looks at what failures may have led to her death, and reflects on the lasting impact of Ms. Nabizada's legacy.",
+        "",
+        ArticleText6,
         "timimages.uk"
     ),
 ];

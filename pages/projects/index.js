@@ -266,22 +266,8 @@ function renderProject1(project, index) {
                             sx={{ fontSize: "1.4rem !important" }}
                         >
                             <b> Coding Bootcamp for Afghan Refugees –</b>
-                            {` Last summer more than 65,000 Afghans escaped the Taliban
-                            and resettled in the US. While they’re no longer in
-                            harm’s way, the challenge of social and economic
-                            integration into America may prove to be one of
-                            their greatest challenges yet. Most new arrivals
-                            lack transferable skills and their work experience
-                            doesn’t translate to the American job market.
-                            Without training and support, these new arrivals
-                            will most likely be forced into low-income jobs with
-                            little chance of advancement. A new Zomia Center
-                            program aims to better incorporate Afghans into the
-                            US economy by creating a coding bootcamp. The
-                            initiative will provide those starting with limited
-                            to no technical skills with the knowledge and
-                            training required to find well-paid jobs in the tech
-                            sector.`}
+                            {` Since the summer of 2021, nearly 100,000 Afghans have escaped the Taliban and resettled in the US. The Zomia Coding Project teaches software development to Afghan refugees and helps them get jobs in tech. To date, over 50 Afghan refugees have participated in Zomia's pilot coding programs, learning Javascript and algorithms, and engaging in the career development workshop. In Q2 of 2023, Zomia will launch a free immersive coding bootcamp for Afghan refugees. Eight scholarship recipients will study full-stack web development full time for 6 months. The course curriculum includes Javascript, HTML, CSS, Node, Express, mySQL, API's, git, testing etc.  For inquiries please email sol@zomiacenter.org.
+                            `}
                         </Typography>
                     </Box>
                 </Grid>

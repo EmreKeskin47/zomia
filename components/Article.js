@@ -185,7 +185,6 @@ const Article = (props) => {
                                     {article.text
                                         .split("<br/>" || "<br>")
                                         .map((paragraph, index) => {
-                                            console.log(paragraph);
                                             if (
                                                 paragraph.includes(
                                                     "sub-heading"

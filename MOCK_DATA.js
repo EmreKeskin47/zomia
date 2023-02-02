@@ -356,7 +356,7 @@ export const mockArticles = [
     new Article(
         6,
         "Reflection on the Murder of Former Female Parliamentarian Mursal Nabizada",
-        "/static/articles/6.png",
+        "/static/articles/7.png",
         "January 27 2023",
         "Kristin MacDougall-Sullivan",
         "CATEGORY",

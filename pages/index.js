@@ -134,7 +134,7 @@ function App(props) {
 
       {/* End Articles Section */}
       <SectionBreaker
-        text="Investigations"
+        text="Reports"
         link="/investigations"
         color="whitesmoke"
       />

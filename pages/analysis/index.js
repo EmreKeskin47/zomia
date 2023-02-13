@@ -25,7 +25,7 @@ const Analysis = (props) => {
     return (
         <Paper>
             <Helmet>
-                <title>Zomia Center Analysis</title>
+                <title>Zomia Center Articles</title>
             </Helmet>
             <Container>
                 <Typography
@@ -39,7 +39,7 @@ const Analysis = (props) => {
                         fontFamily: "Tiro Telugu !important",
                     }}
                 >
-                    Analysis
+                    Articles
                 </Typography>
                 <div style={{ paddingBottom: "125px" }}>
                     {articleList &&

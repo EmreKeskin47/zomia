@@ -17,7 +17,7 @@ const Admin = () => {
   const [adminAuth, setAdminAuth] = useState(false);
   useEffect(() => {
     // dispatch(articleActions.fetchArticles());
-    dispatch(articleActions.deleteArticle(2));
+    // dispatch(articleActions.deleteArticle(2));
     console.log(context.auth);
   }, []);
 

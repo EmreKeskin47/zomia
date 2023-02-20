@@ -48,27 +48,28 @@ export const fetchArticles = () => {
       let articles = [];
 
       const querySnapshot = await getDocs(collection(db, "articles"));
-      // console.log("<<<<<<<", querySnapshot);
+
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-
-        // console.log("<<<<<<<", doc.data().text);
+        // console.log("<<<<<<<doc", doc.data());
         articles.push(
           new Article(
             doc.id,
-            doc.data().title ?? "",
-            doc.data().image ?? "",
-            doc.data().date ?? "",
-            doc.data().author ?? "",
-            doc.data().category ?? "",
-            doc.data().description ?? "",
-            doc.data().link ?? "",
-            doc.data().text ?? "",
-            doc.data().photoAttribution ?? "",
-            doc.data().additionalImages ?? ""
+            doc.data().article.title ?? "",
+            doc.data().article.image ?? "",
+            doc.data().article.date ?? "",
+            doc.data().article.author ?? "",
+            doc.data().article.category ?? "",
+            doc.data().article.description ?? "",
+            doc.data().article.link ?? "",
+            doc.data().article.text ?? "",
+            doc.data().article.photoAttribution ?? "",
+            doc.data().article.additionalImages ?? ""
           )
         );
       });
+
+      // console.log("<<<<articles", articles);
 
       // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
       // articles = mockArticles;

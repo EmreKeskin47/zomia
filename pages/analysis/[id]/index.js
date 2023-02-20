@@ -7,69 +7,71 @@ import * as articleActions from "../../../store/actions/article-actions";
 import { useCallback } from "react";
 
 const ArticlePage = (props) => {
-    const { id } = props;
+  const { id } = props;
+  const [data, setData] = useState(null);
+  const articleList = useArticleData();
 
-    const [data, setData] = useState(null);
-    const articleList = useArticleData();
+  const [connectArticle, setConnectArticle] = useState([]);
 
-    const [connectArticle, setConnectArticle] = useState([]);
+  useEffect(() => {
+    console.log("props", props);
+    if (data) {
+      return;
+    } else {
+      const fetch = async () => {
+        await props.fetchArticles();
+        return props.articles;
+      };
+      fetch().then((response) => {
+        console.log("<<<<<", response);
 
-    useEffect(() => {
-        if (data) {
-            return;
+        if (articleList) {
+          setData(
+            articleList.find((item) => item.id.toString() === id.toString())
+          );
         } else {
-            const fetch = async () => {
-                await props.fetchArticles();
-                return props.articles;
-            };
-            fetch().then((response) => {
-                if (articleList) {
-                    setData(articleList.find((item) => item.id.toString() === id.toString()));
-                } else {
-                    setData(response.find((item) => item.id.toString() === id.toString()));
-                }
-            });
+          setData(response.find((item) => item.id === id));
         }
-    }, [props.articles, id]);
+      });
+    }
+  }, [props.articles, id]);
 
-    return (
-        <Paper sx={{ paddingTop: 5 }}>
-            {data && <Article article={data} />}
-        </Paper>
-    );
+  return (
+    <Paper sx={{ paddingTop: 5 }}>{data && <Article article={data} />}</Paper>
+  );
 };
 
 const mapStateToProps = (state) => {
-    return {
-        articles: state.articleStore.articles,
-    };
+  return {
+    articles: state.articleStore.articles,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchArticles: () => dispatch(articleActions.fetchArticles()),
-    };
+  return {
+    fetchArticles: () => dispatch(articleActions.fetchArticles()),
+  };
 };
 
 export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { id: "1" } },
-            { params: { id: "2" } },
-            { params: { id: "3" } },
-            { params: { id: "4" } },
-        ],
-        fallback: true,
-    };
+  return {
+    paths: [
+      { params: { id: "1" } },
+      { params: { id: "2" } },
+      { params: { id: "3" } },
+      { params: { id: "4" } },
+    ],
+    fallback: true,
+  };
 }
 
 export async function getStaticProps({ params }) {
-    const id = await params.id;
-    return {
-        props: {
-            id,
-        },
-    };
+  const id = await params.id;
+  return {
+    props: {
+      id,
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);

@@ -4,12 +4,10 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { createWrapper } from "next-redux-wrapper";
 import articleReducer from "./reducers/article-reducer";
 import reportReducer from "./reducers/report-reducer";
-// import { firebaseConfig } from "./firebase";
-// import { initializeApp } from "firebase/app";
-// import { getFirestore } from "firebase/firestore";
+import app from "../firebase";
+import { getFirestore } from "firebase/firestore";
 
-// initializeApp(firebaseConfig);
-// export const db = getFirestore();
+export const db = getFirestore(app);
 
 // initial states here
 const initalState = {};

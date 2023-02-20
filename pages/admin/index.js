@@ -6,7 +6,8 @@ import AdminAppBar from "../../components/admin/AdminAppBar";
 import { useDispatch } from "react-redux";
 import * as articleActions from "../../store/actions/article-actions";
 import singleContext from "../../SingleContext";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Admin = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Admin = () => {
   };
 
   //Firebase sign in
-  const auth = getAuth();
+  // const auth = getAuth();
   const signIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

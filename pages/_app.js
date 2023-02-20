@@ -8,8 +8,8 @@ import { isMobile } from "react-device-detect";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { wrapper, store } from "../store/store";
 import { Provider } from "react-redux";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../store/firebase";
+// import { initializeApp } from "firebase/app";
+// import { firebaseConfig } from "../store/firebase";
 import SingleProvider from "../SingleProvider";
 import Loader from "../components/Loader";
 import React, { useState } from "react";
@@ -58,12 +58,12 @@ const font = createTheme({
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isStart, setIsStart] = useState(true);
-  initializeApp(firebaseConfig);
+  // initializeApp(firebaseConfig);
   const load = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, "2000");
-  }
+  };
   setTimeout(() => {
     setIsStart(false);
     load();
@@ -79,24 +79,26 @@ function MyApp({ Component, pageProps }) {
               <ThemeProvider theme={font}>
                 <GlobalStyles />
                 <AppBar></AppBar>
-                {isLoading ? <Loader type={1} /> : 
-                <Paper
-                  sx={
-                    isMobile
-                      ? {
-                          paddingTop: { xs: 0, md: 5 },
-                          backgroundColor: palette.black.main,
-                          width: isMobile && "120%",
-                        }
-                      : {
-                          paddingTop: { xs: 0, md: 5 },
-                          backgroundColor: palette.black.main,
-                        }
-                  }
-                >
-                  <Component {...pageProps} />
-                </Paper>
-}
+                {isLoading ? (
+                  <Loader type={1} />
+                ) : (
+                  <Paper
+                    sx={
+                      isMobile
+                        ? {
+                            paddingTop: { xs: 0, md: 5 },
+                            backgroundColor: palette.black.main,
+                            width: isMobile && "120%",
+                          }
+                        : {
+                            paddingTop: { xs: 0, md: 5 },
+                            backgroundColor: palette.black.main,
+                          }
+                    }
+                  >
+                    <Component {...pageProps} />
+                  </Paper>
+                )}
                 <Grid
                   sx={
                     isMobile && {

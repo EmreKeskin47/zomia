@@ -20,7 +20,7 @@
         "assert": "^2.0.0",
         "browserify-zlib": "^0.2.0",
         "buffer": "^6.0.3",
-        "firebase": "^9.6.11",
+        "firebase": "^9.17.1",
         "font-awesome": "^4.7.0",
         "lodash": "^4.17.21",
         "next": "12.1.4",

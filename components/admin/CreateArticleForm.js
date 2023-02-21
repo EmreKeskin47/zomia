@@ -59,7 +59,14 @@ const CreateArticleForm = (props) => {
     return text;
   };
 
-  const saveArticle = () => {
+  //   AN IDEA TO CLEAR ALL FORM FIELDS
+  //   function clearFields(event) {
+  //     Array.from(event.target).forEach((e) => (e.value = ""));
+  //   }
+
+  const saveArticle = (event) => {
+    event.preventDefault();
+
     if (title !== "") {
       dispatch(
         articleActions.saveArticle({
@@ -73,6 +80,15 @@ const CreateArticleForm = (props) => {
           image: image,
         })
       );
+      //   clearFields(event);
+      setText("");
+      setLink("");
+      setDescription("");
+      setPhotoAttribution("");
+      setAuthor("");
+      setDate("");
+      setImage("");
+      setTitle("");
     }
   };
 
@@ -210,7 +226,9 @@ const CreateArticleForm = (props) => {
           />
         </Grid>
 
-        {uploading && percent > 0 && toast("Upload is " + percent + "% done")}
+        {uploading &&
+          percent === 100 &&
+          toast("Upload is " + percent + "% done")}
 
         <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
           <label htmlFor="contained-button-file">

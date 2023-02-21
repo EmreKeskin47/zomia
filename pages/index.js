@@ -25,8 +25,8 @@ function App(props) {
   const reportList = useReportData();
   const writingList = useWritingData();
 
-  const [connectArticle, setConnectArticle] = useState([]);
-  const [connectReport, setConnectReport] = useState([]);
+  // const [connectArticle, setConnectArticle] = useState([]);
+  // const [connectReport, setConnectReport] = useState([]);
 
   var data = [];
   const writings = [];
@@ -35,16 +35,16 @@ function App(props) {
     const fetch = async () => {
       await props.fetchArticles();
       await props.fetchReports();
-      setConnectArticle(props.articles);
-      setConnectReport(props.reports);
+      // setConnectArticle(props.articles);
+      // setConnectReport(props.reports);
     };
 
     fetch();
   }, [
     props.articles,
     props.reports,
-    connectArticle,
-    connectReport,
+    // connectArticle,
+    // connectReport,
     articleList,
     reportList,
   ]);
@@ -62,7 +62,7 @@ function App(props) {
   return (
     <Paper>
       <Helmet>
-          <title>Zomia Center Home</title>
+        <title>Zomia Center Home</title>
       </Helmet>
       <Grid
         container

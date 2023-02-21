@@ -115,6 +115,7 @@ const CreateArticleForm = (props) => {
       },
       (error) => {
         // Handle unsuccessful uploads
+        console.log(error);
       },
       () => {
         // Handle successful uploads on complete
@@ -129,110 +130,113 @@ const CreateArticleForm = (props) => {
 
   return (
     <>
-      <Grid container marginTop={5}>
-        <Typography variant="h4" sx={{ color: "whitesmoke" }}>
-          {pageTitle}
-        </Typography>
+      <form onSubmit={saveArticle}>
+        <Grid container marginTop={5}>
+          <Typography variant="h4" sx={{ color: "whitesmoke" }}>
+            {pageTitle}
+          </Typography>
 
-        <TextField
-          id="outlined-multiline-static"
-          label="Title"
-          fullWidth
-          variant="outlined"
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-
-        <TextField
-          id="outlined-multiline-static"
-          label="Author(s)"
-          fullWidth
-          variant="outlined"
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Date"
-          fullWidth
-          variant="outlined"
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Link(s)"
-          fullWidth
-          variant="outlined"
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          value={link}
-          onChange={(e) => setLink(e.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Description"
-          multiline
-          fullWidth
-          minRows={5}
-          sx={{
-            backgroundColor: "#fafafa",
-            marginBottom: 4,
-            whiteSpace: "pre-wrap",
-          }}
-          variant="outlined"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Text"
-          multiline
-          fullWidth
-          minRows={15}
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          variant="outlined"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Photo Attribution"
-          fullWidth
-          variant="outlined"
-          sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-          value={photoAttribution}
-          onChange={(e) => setPhotoAttribution(e.target.value)}
-        />
-      </Grid>
-
-      {uploading && percent > 0 && toast("Upload is " + percent + "% done")}
-
-      <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
-        <label htmlFor="contained-button-file">
-          <Input
-            accept="image/*"
-            id="contained-button-file"
-            multiple
-            type="file"
-            onChange={handleImageUpload}
+          <TextField
+            id="outlined-multiline-static"
+            label="Title"
+            fullWidth
+            variant="outlined"
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
-          <Button variant="contained" component="span">
-            Upload Image
-          </Button>
-        </label>
 
-        <Button
-          onClick={saveArticle}
-          variant="contained"
-          endIcon={<SendIcon />}
-        >
-          Save
-        </Button>
-        <ToastContainer />
-      </Stack>
+          <TextField
+            id="outlined-multiline-static"
+            label="Author(s)"
+            fullWidth
+            variant="outlined"
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Date"
+            fullWidth
+            variant="outlined"
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Link(s)"
+            fullWidth
+            variant="outlined"
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Description"
+            multiline
+            fullWidth
+            minRows={5}
+            sx={{
+              backgroundColor: "#fafafa",
+              marginBottom: 4,
+              whiteSpace: "pre-wrap",
+            }}
+            variant="outlined"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Text"
+            multiline
+            fullWidth
+            minRows={15}
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            variant="outlined"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Photo Attribution"
+            fullWidth
+            variant="outlined"
+            sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+            value={photoAttribution}
+            onChange={(e) => setPhotoAttribution(e.target.value)}
+          />
+        </Grid>
+
+        {uploading && percent > 0 && toast("Upload is " + percent + "% done")}
+
+        <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
+          <label htmlFor="contained-button-file">
+            <Input
+              accept="image/*"
+              id="contained-button-file"
+              multiple
+              type="file"
+              onChange={handleImageUpload}
+            />
+            <Button variant="contained" component="span">
+              Upload Image
+            </Button>
+          </label>
+
+          <Button
+            type="submit"
+            // onClick={saveArticle}
+            variant="contained"
+            endIcon={<SendIcon />}
+          >
+            Save
+          </Button>
+          <ToastContainer />
+        </Stack>
+      </form>
     </>
   );
 };

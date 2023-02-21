@@ -195,7 +195,6 @@ In my recent two weeks of research in Mogadishu, I could not find a single Somal
 
 `;
 
-
 const ArticleText5 = `
 It’s been twelve months since Taliban fighters marched into the Afghan capital of Kabul, marking the end of a takeover that gripped the nation for several months. As foreign troops left, a new regime took power, forever changing the trajectory of not only Afghanistan, but the lives of millions of women living there.
 
@@ -276,93 +275,93 @@ The last message Ms. Nabizada wrote there was to express that she would not leav
 (7) Mariam Solaimankhil, Twitter, https://twitter.com/Mariamistan/status/1614532422439440386?s=20&t=7g4tuboVwEBo6uorCEcW1w.
 
 (8) Mursal Nabizada: Gunmen kill former Afghan MP at home in Kabul, BBC, available at: https://www.bbc.co.uk/news/world-asia-64285789.
-`
+`;
 
 export const mockProjects = [
-    {
-        name: "The Legacy of War",
-        image: "Legacy",
-        secondaryImage: "Legacy2",
-        body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. Through our Legacy of War work, Zomia seeks to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. Zomia also studies the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seeks to advocate on behalf of those affected by dictatorship and extremism. `,
-    },
-    {
-        name: "Public Health Partners",
-        image: ["Health1"],
-        body: `Public health is a population-centric approach to the medical needs of individuals and communities. While third-party NGOs can administer broad-based public health programs, such as vaccination and awareness campaigns, effective long-term public health planning requires democratic accountability and population-level management—which governments, not private entities, are most well-suited to deliver. Zomia assists non-state actors and community groups in taking on the responsibilities of public health delivery, especially in conflict settings or in regions where population-centric healthcare faces challenges.
+  {
+    name: "The Legacy of War",
+    image: "Legacy",
+    secondaryImage: "Legacy2",
+    body: `The United States has been at war for over two decades. While this has hardly registered at home, it has fundamentally altered societies across the Middle East and South Asia. Through our Legacy of War work, Zomia seeks to carry out in-depth, granular research on the consequences of U.S. militarism, as well as to provide humanitarian support for victims of war and advocate on their behalf. Zomia also studies the legacies of war of other actors, including regional governments and non-state actors like the Islamic State, and seeks to advocate on behalf of those affected by dictatorship and extremism. `,
+  },
+  {
+    name: "Public Health Partners",
+    image: ["Health1"],
+    body: `Public health is a population-centric approach to the medical needs of individuals and communities. While third-party NGOs can administer broad-based public health programs, such as vaccination and awareness campaigns, effective long-term public health planning requires democratic accountability and population-level management—which governments, not private entities, are most well-suited to deliver. Zomia assists non-state actors and community groups in taking on the responsibilities of public health delivery, especially in conflict settings or in regions where population-centric healthcare faces challenges.
         `,
-    },
+  },
 ];
 export const mockArticles = [
-    new Article(
-        1,
-        "The Rise of the New Sunni Elite in Iraq: Fallujah",
-        "/static/articles/1.png",
-        "November 1 2020",
-        "Jeremy Hodge, Anand Gopal",
-        "CATEGORY?",
-        "After ISIS’ defeat, new Sunni political parties have forged cross-confessional bonds with powerful Shi’a groups to shore up their power. The Muslim Brotherhood, long the most influential Sunni force in Iraq, finds itself pushed to the margins.",
-        "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
-        ArticleText1,
-        "US State Department/Flickr"
-    ),
-    new Article(
-        2,
-        "American Withdrawal: The View from Manbij",
-        "/static/articles/2.png",
-        "October 23 2019",
-        "Zomia staff in Manbij",
-        "CATEGORY?",
-        "The United States has withdrawn troops from parts of northern Syria prior to a Turkish assault on the Syrian Democratic Forces (SDF), who have invited Syrian regime troops to take their place. Zomia analyzes the new distribution of power in the key city of Manbij.",
-        "",
-        ArticleText2,
-        "Hussein Nasser"
-    ),
-    new Article(
-        3,
-        "ISIS and Syria’s Urban—Rural Divide",
-        "/static/articles/3.png",
-        "July 10 2019",
-        "Jeremy Hodge",
-        "CATEGORY",
-        "In 2013, ISIS competed for power within Syria’s opposition by unifying rural and tribal cohorts both at odds with one another and traditionally excluded from power by urban elites. This report analyzes how ISIS managed coalitions and took power in the large city of Manbij.",
-        "",
-        ArticleText3,
-        "Hussein Nasser"
-    ),
-    new Article(
-        4,
-        "Al-Shabab Governance",
-        "/static/articles/4.png",
-        "July 10 2019",
-        "Robert Kluijver",
-        "CATEGORY",
-        "Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. However, the group’s brutality makes it less popular than central authorities. This report shows how Al-Shabab has lost support despite being adept at governance.",
-        "www.robertk.space",
-        ArticleText4,
-        "Robert Kluijver"
-    ),
-    new Article(
-        5,
-        "One Year Later: Reflections from Afghan Women",
-        "/static/articles/6.png",
-        "August 1 2022",
-        "Kristin MacDougall-Sullivan",
-        "CATEGORY",
-        "Since August 2021, women in Afghanistan have experienced a transformational world-shift, however not all have been impacted alike. One year after the Taliban’s takeover, Zomia looks at how female loss of agency has manifested differently across the country.",
-        "",
-        ArticleText5,
-        "timimages.uk"
-    ),
-    new Article(
-        6,
-        "Reflection on the Murder of Former Female Parliamentarian Mursal Nabizada",
-        "/static/articles/7.png",
-        "January 27 2023",
-        "Kristin MacDougall-Sullivan",
-        "CATEGORY",
-        "On January 16th, the world learned about the tragic killing of former Afghan parliamentarian Mursal Nabizada. Zomia looks at what failures may have led to her death, and reflects on the lasting impact of Ms. Nabizada's legacy.",
-        "",
-        ArticleText6,
-        "timimages.uk"
-    ),
+  new Article(
+    1,
+    "The Rise of the New Sunni Elite in Iraq: Fallujah",
+    "/static/articles/1.png",
+    "November 1 2020",
+    "Jeremy Hodge, Anand Gopal",
+    "CATEGORY?",
+    "After ISIS’ defeat, new Sunni political parties have forged cross-confessional bonds with powerful Shi’a groups to shore up their power. The Muslim Brotherhood, long the most influential Sunni force in Iraq, finds itself pushed to the margins.",
+    "https://blogs.lse.ac.uk/mec/2020/11/16/the-rise-of-the-new-sunni-elite-in-iraq-the-case-of-fallujah",
+    ArticleText1,
+    "US State Department/Flickr"
+  ),
+  new Article(
+    2,
+    "American Withdrawal: The View from Manbij",
+    "/static/articles/2.png",
+    "October 23 2019",
+    "Zomia staff in Manbij",
+    "CATEGORY?",
+    "The United States has withdrawn troops from parts of northern Syria prior to a Turkish assault on the Syrian Democratic Forces (SDF), who have invited Syrian regime troops to take their place. Zomia analyzes the new distribution of power in the key city of Manbij.",
+    "",
+    ArticleText2,
+    "Hussein Nasser"
+  ),
+  new Article(
+    3,
+    "ISIS and Syria’s Urban—Rural Divide",
+    "/static/articles/3.png",
+    "July 10 2019",
+    "Jeremy Hodge",
+    "CATEGORY",
+    "In 2013, ISIS competed for power within Syria’s opposition by unifying rural and tribal cohorts both at odds with one another and traditionally excluded from power by urban elites. This report analyzes how ISIS managed coalitions and took power in the large city of Manbij.",
+    "",
+    ArticleText3,
+    "Hussein Nasser"
+  ),
+  new Article(
+    4,
+    "Al-Shabab Governance",
+    "/static/articles/4.png",
+    "July 10 2019",
+    "Robert Kluijver",
+    "CATEGORY",
+    "Al-Shabab’s tax levies and service and justice provision are more lucrative and efficient than those of the Somali government. However, the group’s brutality makes it less popular than central authorities. This report shows how Al-Shabab has lost support despite being adept at governance.",
+    "www.robertk.space",
+    ArticleText4,
+    "Robert Kluijver"
+  ),
+  new Article(
+    5,
+    "One Year Later: Reflections from Afghan Women",
+    "/static/articles/6.png",
+    "August 1 2022",
+    "Kristin MacDougall-Sullivan",
+    "CATEGORY",
+    "Since August 2021, women in Afghanistan have experienced a transformational world-shift, however not all have been impacted alike. One year after the Taliban’s takeover, Zomia looks at how female loss of agency has manifested differently across the country.",
+    "",
+    ArticleText5,
+    "timimages.uk"
+  ),
+  new Article(
+    6,
+    "Reflection on the Murder of Former Female Parliamentarian Mursal Nabizada",
+    "/static/articles/7.png",
+    "January 27 2023",
+    "Kristin MacDougall-Sullivan",
+    "CATEGORY",
+    "On January 16th, the world learned about the tragic killing of former Afghan parliamentarian Mursal Nabizada. Zomia looks at what failures may have led to her death, and reflects on the lasting impact of Ms. Nabizada's legacy.",
+    "",
+    ArticleText6,
+    "timimages.uk"
+  ),
 ];

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Grid, Typography, Button, Link, Paper } from "@mui/material";
+import { Grid, Typography, Button, Paper } from "@mui/material";
 import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
 import { Container } from "@mui/material";
@@ -17,6 +17,7 @@ import {
   useReportData,
   useWritingData,
 } from "../store/hooks/useData";
+import ActiveLink from "./components/ActiveLink";
 
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
@@ -152,7 +153,7 @@ function App(props) {
             .slice(0, latestCount)
             .map((article, index) => {
               return (
-                <Link
+                <ActiveLink
                   key={index}
                   href={
                     article.pdfLink
@@ -167,7 +168,7 @@ function App(props) {
                     description={article.description}
                     image={article.image}
                   />
-                </Link>
+                </ActiveLink>
               );
             })}
         {data && data.length > latestCount && (

@@ -11,30 +11,46 @@ const ArticlePage = (props) => {
   const [data, setData] = useState(null);
   const articleList = useArticleData();
 
-  const [connectArticle, setConnectArticle] = useState([]);
+  //   const [connectArticle, setConnectArticle] = useState([]);
 
   useEffect(() => {
-    console.log("props", props);
-    if (data) {
-      return;
-    } else {
-      const fetch = async () => {
-        await props.fetchArticles();
-        return props.articles;
-      };
-      fetch().then((response) => {
-        console.log("<<<<<", response);
+    // console.log("articleList", articleList);
+    // console.log("props", props);
+    // console.log("data", data);
 
-        if (articleList) {
-          setData(
-            articleList.find((item) => item.id.toString() === id.toString())
-          );
-        } else {
-          setData(response.find((item) => item.id === id));
-        }
-      });
+    if (articleList) {
+      setData(articleList.find((item) => item.id === id));
     }
-  }, [props.articles, id]);
+    //  else {
+    //   const fetch = async () => {
+    //     await props.fetchArticles();
+    //     return props.articles;
+    //   };
+    //   fetch()
+    //     .then((response) => setData(response.find((item) => item.id === id)))
+    //     .catch((e) => console.log(e));
+    // }
+
+    //   if (data) {
+    //     return;
+    //   } else {
+    //     const fetch = async () => {
+    //       await props.fetchArticles();
+    //       return props.articles;
+    //     };
+    //     fetch().then((response) => {
+    //       console.log("<<<<<", response);
+
+    //       if (articleList) {
+    //         setData(
+    //           articleList.find((item) => item.id.toString() === id.toString())
+    //         );
+    //       } else {
+    //         setData(response.find((item) => item.id === id));
+    //       }
+    //     });
+    //   }
+  }, [articleList]);
 
   return (
     <Paper sx={{ paddingTop: 5 }}>{data && <Article article={data} />}</Paper>

@@ -1,10 +1,14 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function ActiveLink({ children, href }) {
   const router = useRouter();
   const style = {
-    marginRight: 10,
-    color: router.asPath === href ? "red" : "black",
+    textDecoration: "none",
+    color: "black",
+    // "&:hover": {
+    //   color: "#F9A21B",
+    // },
   };
 
   const handleClick = (e) => {

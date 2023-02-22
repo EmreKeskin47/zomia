@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import palette from "../../theme/palette";
 import ActiveLink from "./ActiveLink";
 
 import React from "react";
@@ -7,18 +8,27 @@ const ContentSummary = ({ id, description, heading, date, author, last }) => {
   return (
     <Grid container direction="column" justifyContent="center">
       <Grid item sx={{ paddingBottom: "1.5rem" }}>
-        <ActiveLink
-          href={`/analysis/${id}`}
-          // underline="none"
-          // color="whitesmoke"
-          // align="left"
-          // variant="h5"
-          // sx={{
-          //   fontFamily: "Joan !important",
-          // }}
+        <Typography
+          align="left"
+          variant="h5"
+          sx={{
+            // ":hover": `${{ color: palette.orange.main }}!important`,
+            fontFamily: "Joan !important",
+          }}
         >
-          {heading}
-        </ActiveLink>
+          <ActiveLink
+            href={`/analysis/${id}`}
+            // underline="none"
+            // color="whitesmoke"
+            // align="left"
+            // variant="h5"
+            // sx={{
+            //   fontFamily: "Joan !important",
+            // }}
+          >
+            {heading}
+          </ActiveLink>
+        </Typography>
       </Grid>
       <Grid item>
         <Typography

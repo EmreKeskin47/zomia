@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Link } from "@mui/material";
 import ActiveLink from "./ActiveLink";
 import NewsSummary from "./NewsSummary";
 import {
@@ -62,10 +62,10 @@ const CardList = ({ type }) => {
                   paddingRight: 3,
                 }}
               >
-                <ActiveLink
+                <Link
                   href={`/analysis/${item.id}`}
-                  //   sx={{ paddingLeft: 3, paddingRight: 3 }}
-                  //   replace="true"
+                  sx={{ paddingLeft: 3, paddingRight: 3 }}
+                  replace="true"
                 >
                   <NewsSummary
                     image={item.image}
@@ -82,7 +82,7 @@ const CardList = ({ type }) => {
                     }
                     author={item.author}
                   />
-                </ActiveLink>
+                </Link>
               </Grid>
             ))}
         </Grid>

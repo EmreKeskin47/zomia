@@ -50,7 +50,7 @@ const ArticlePage = (props) => {
     //       }
     //     });
     //   }
-  }, [articleList]);
+  }, [articleList, id]);
 
   return (
     <Paper sx={{ paddingTop: 5 }}>{data && <Article article={data} />}</Paper>

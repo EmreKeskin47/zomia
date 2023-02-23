@@ -61,7 +61,7 @@ const CardList = ({ type }) => {
                   paddingRight: 3,
                 }}
               >
-                <Link
+                <ActiveLink
                   href={`/analysis/${item.id}`}
                   sx={{ paddingLeft: 3, paddingRight: 3 }}
                   replace="true"
@@ -81,7 +81,7 @@ const CardList = ({ type }) => {
                     }
                     author={item.author}
                   />
-                </Link>
+                </ActiveLink>
               </Grid>
             ))}
         </Grid>

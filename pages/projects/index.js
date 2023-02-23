@@ -50,7 +50,7 @@ const Projects = () => {
   //hardcoded data- need to fetch from db
   const data = MakeArticleParagraph(mockProjects);
   const [value, setValue] = React.useState(0);
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
   };
 

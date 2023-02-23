@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Article from "../../../components/Article";
 import { useArticleData } from "../../../store/hooks/useData";
 import * as articleActions from "../../../store/actions/article-actions";
-import { useCallback } from "react";
+// import { useCallback } from "react";
 
 const ArticlePage = (props) => {
   const { id } = props;

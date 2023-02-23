@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Grid, Link } from "@mui/material";
 import ActiveLink from "./ActiveLink";
 import NewsSummary from "./NewsSummary";

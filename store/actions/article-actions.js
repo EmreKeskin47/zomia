@@ -18,7 +18,7 @@ import { mockArticles } from "../../MOCK_DATA";
 export const saveArticle = (item) => {
   return async (dispatch) => {
     try {
-      const docRef = await addDoc(collection(db, "articles"), {
+      await addDoc(collection(db, "articles"), {
         article: item,
       });
 

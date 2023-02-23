@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import palette from "../../theme/palette";
+// import palette from "../../theme/palette";
 import ActiveLink from "./ActiveLink";
 
 import React from "react";

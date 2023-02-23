@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import * as articleActions from "../../../store/actions/article-actions";
 import Typography from "@mui/material/Typography";
 import { Grid, TextField } from "@mui/material";
@@ -16,7 +16,7 @@ import { Button } from "@material-ui/core";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useArticleData } from "../../../store/hooks/useData";
-import { Article } from "../../../models/Article";
+// import { Article } from "../../../models/Article";
 import {
   getStorage,
   ref,

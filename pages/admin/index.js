@@ -4,9 +4,10 @@ import Box from "@mui/material/Box";
 import CreateReportForm from "../../components/admin/CreateReportForm";
 import AdminAppBar from "../../components/admin/AdminAppBar";
 import { useDispatch } from "react-redux";
-import * as articleActions from "../../store/actions/article-actions";
+// import * as articleActions from "../../store/actions/article-actions";
 import singleContext from "../../SingleContext";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Admin = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Admin = () => {
   const [adminAuth, setAdminAuth] = useState(false);
   useEffect(() => {
     // dispatch(articleActions.fetchArticles());
-    dispatch(articleActions.deleteArticle(2));
+    // dispatch(articleActions.deleteArticle(2));
     console.log(context.auth);
   }, []);
 
@@ -29,7 +30,7 @@ const Admin = () => {
   };
 
   //Firebase sign in
-  const auth = getAuth();
+  // const auth = getAuth();
   const signIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

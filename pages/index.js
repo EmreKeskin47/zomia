@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Grid, Typography, Button, Link, Paper } from "@mui/material";
+import { Grid, Typography, Button, Paper } from "@mui/material";
 import IntroContentSummaries from "./components/IntroContentSummaries";
 import IntroArticle from "./components/IntroArticle";
 import { Container } from "@mui/material";
@@ -17,6 +17,7 @@ import {
   useReportData,
   useWritingData,
 } from "../store/hooks/useData";
+import ActiveLink from "./components/ActiveLink";
 
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
@@ -25,8 +26,8 @@ function App(props) {
   const reportList = useReportData();
   const writingList = useWritingData();
 
-  const [connectArticle, setConnectArticle] = useState([]);
-  const [connectReport, setConnectReport] = useState([]);
+  // const [connectArticle, setConnectArticle] = useState([]);
+  // const [connectReport, setConnectReport] = useState([]);
 
   var data = [];
   const writings = [];
@@ -35,16 +36,16 @@ function App(props) {
     const fetch = async () => {
       await props.fetchArticles();
       await props.fetchReports();
-      setConnectArticle(props.articles);
-      setConnectReport(props.reports);
+      // setConnectArticle(props.articles);
+      // setConnectReport(props.reports);
     };
 
     fetch();
   }, [
     props.articles,
     props.reports,
-    connectArticle,
-    connectReport,
+    // connectArticle,
+    // connectReport,
     articleList,
     reportList,
   ]);
@@ -62,7 +63,7 @@ function App(props) {
   return (
     <Paper>
       <Helmet>
-          <title>Zomia Center Home</title>
+        <title>Zomia Center Home</title>
       </Helmet>
       <Grid
         container
@@ -152,7 +153,7 @@ function App(props) {
             .slice(0, latestCount)
             .map((article, index) => {
               return (
-                <Link
+                <ActiveLink
                   key={index}
                   href={
                     article.pdfLink
@@ -167,7 +168,7 @@ function App(props) {
                     description={article.description}
                     image={article.image}
                   />
-                </Link>
+                </ActiveLink>
               );
             })}
         {data && data.length > latestCount && (

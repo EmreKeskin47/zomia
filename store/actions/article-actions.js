@@ -18,7 +18,7 @@ import { mockArticles } from "../../MOCK_DATA";
 export const saveArticle = (item) => {
   return async (dispatch) => {
     try {
-      const docRef = await addDoc(collection(db, "articles"), {
+      await addDoc(collection(db, "articles"), {
         article: item,
       });
 
@@ -46,11 +46,13 @@ export const fetchArticles = () => {
   return async (dispatch) => {
     try {
       let articles = [];
-      
+
       const querySnapshot = await getDocs(collection(db, "articles"));
+
       querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          articles.push(
+        // doc.data() is never undefined for query doc snapshots
+        // console.log("<<<<<<<doc", doc.data());
+        articles.push(
           new Article(
             doc.id,
             doc.data().article.title ?? "",
@@ -66,9 +68,11 @@ export const fetchArticles = () => {
           )
         );
       });
-      
+
+      // console.log("<<<<articles", articles);
+
       // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
-      articles = mockArticles;
+      // articles = mockArticles;
 
       dispatch({
         type: FETCH_ARTICLES,

@@ -4,12 +4,10 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { createWrapper } from "next-redux-wrapper";
 import articleReducer from "./reducers/article-reducer";
 import reportReducer from "./reducers/report-reducer";
-import { firebaseConfig } from "./firebase";
-import { initializeApp } from "firebase/app";
+import app from "../firebase";
 import { getFirestore } from "firebase/firestore";
 
-initializeApp(firebaseConfig);
-export const db = getFirestore();
+export const db = getFirestore(app);
 
 // initial states here
 const initalState = {};
@@ -18,15 +16,15 @@ const initalState = {};
 const middleware = [thunk];
 
 const rootReducer = combineReducers({
-    articleStore: articleReducer,
-    reportStore: reportReducer,
+  articleStore: articleReducer,
+  reportStore: reportReducer,
 });
 
 // creating store
 export const store = createStore(
-    rootReducer,
-    initalState,
-    composeWithDevTools(applyMiddleware(...middleware))
+  rootReducer,
+  initalState,
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 
 // assigning store to next wrapper

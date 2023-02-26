@@ -11,7 +11,6 @@ import RenderBody from "./RenderBody";
 import CardList from "../pages/components/CardList";
 import SectionBreaker from "../pages/components/SectionBreaker";
 import imageLoader from "../loader";
-import LazyLoad from "react-lazyload";
 
 const Article = (props) => {
   const { article, isReport } = props;
@@ -140,18 +139,16 @@ const Article = (props) => {
 
                 {article.image && (
                   <Box>
-                    <LazyLoad>
-                      <Image
-                        src={article.image}
-                        loader={imageLoader}
-                        unoptimized
-                        width={"1300px"}
-                        height={"750px"}
-                        objectFit={"contain"}
-                        objectPosition={"left bottom"}
-                        alt="zomia article"
-                      />
-                    </LazyLoad>
+                    <Image
+                      src={article.image}
+                      loader={imageLoader}
+                      unoptimized
+                      width={"1300px"}
+                      height={"750px"}
+                      objectFit={"contain"}
+                      objectPosition={"left bottom"}
+                      alt="zomia article"
+                    />
                   </Box>
                 )}
 

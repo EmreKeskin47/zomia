@@ -2,50 +2,44 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
+import { About, Publications, OurWork } from "../models/TabEnum";
+import ActiveLink from "../pages/components/ActiveLink";
 
-export default function MenuDropdown() {
+const NavModel = {
+  OurWork: [
+    OurWork.refugeesInTech,
+    OurWork.programs,
+    OurWork.publicHealth,
+    OurWork.legacyOfWar,
+  ],
+  Publications: [
+    Publications.reports,
+    Publications.articles,
+    Publications.ourMethodology,
+  ],
+  About: [About.ourHistory, About.team, About.supportUs],
+};
+
+export default function MenuDropdown(props) {
+  const { tabOptions } = props;
+
+  const listToDisplay = NavModel[tabOptions];
+  const list = listToDisplay.map((item) => {
+    console.log(item);
+    return (
+      <ListItem disablePadding>
+        <ActiveLink href={`/new/${item}`}>
+          <ListItemText primary={item} />
+        </ActiveLink>
+      </ListItem>
+    );
+  });
+
   return (
     <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
+        <List>{list}</List>
       </nav>
     </Box>
   );

@@ -8,6 +8,7 @@ import palette from "../theme/palette";
 import { withStyles } from "@material-ui/core/styles";
 import Divider from "@mui/material/Divider";
 import MenuDropdown from "../components/MenuDropdown";
+import { Tabs } from "../models/TabEnum";
 //Icons
 import { FaTwitter } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -64,7 +65,7 @@ const NewTabs = (props) => {
           </span>
         </Typography>
         <div className="our-work-dropdown">
-          <MenuDropdown />
+          <MenuDropdown tabOptions={Tabs.OurWork} />
         </div>
       </div>
 
@@ -81,7 +82,7 @@ const NewTabs = (props) => {
           </Typography>
         </Link>
         <div className="publications-dropdown">
-          <MenuDropdown />
+          <MenuDropdown tabOptions={Tabs.Publications} />
         </div>
       </div>
       <div className="about-tab">
@@ -97,26 +98,10 @@ const NewTabs = (props) => {
           </Typography>
         </Link>
         <div className="about-dropdown">
-          <MenuDropdown />
+          <MenuDropdown tabOptions={Tabs.About} />
         </div>
       </div>
-      <div className="people-tab">
-        <Link href="/people" passhref="true">
-          <Typography variant="h6">
-            <span
-              style={{
-                color: context.darkMode ? "#fff" : palette.black.main,
-              }}
-            >
-              People
-            </span>
-          </Typography>
-        </Link>
-        <div className="people-dropdown">
-          <MenuDropdown />
-        </div>
-      </div>
-      {/* <AboutDropdown /> */}
+
       <CustomCheckbox
         icon={
           <FaMoon

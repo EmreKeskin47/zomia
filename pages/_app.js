@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 import SingleProvider from "../SingleProvider";
 import Loader from "../components/Loader";
 import React, { useState } from "react";
-
+import "../styles/globals.css";
 const font = createTheme({
   typography: {
     h6: {

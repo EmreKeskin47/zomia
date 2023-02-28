@@ -1,24 +1,23 @@
 import React, { useContext } from "react";
-import { Link } from "@mui/material";
-import { Divider } from "@mui/material";
+import ActiveLink from "./ActiveLink";
+import { Divider, Typography } from "@mui/material";
 import singleContext from "../../SingleContext";
 import palette from "../../theme/palette";
 
 const SectionBreaker = (props) => {
-    const context = useContext(singleContext);
+  const context = useContext(singleContext);
 
-    return (
-        <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "4rem" }}>
-            <Link
-                href={props.link ? props.link : "#"}
-                underline="none"
-                color={context.darkMode ? "whitesmoke" : palette.black.main}
-                variant="h2"
-            >
-                {props.text}
-            </Link>
-        </Divider>
-    );
+  return (
+    <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "4rem" }}>
+      <ActiveLink
+        href={props.link ? props.link : "#"}
+        textDecoration="none"
+        color={context.darkMode ? "whitesmoke" : palette.black.main}
+      >
+        <Typography variant="h2">{props.text} </Typography>
+      </ActiveLink>
+    </Divider>
+  );
 };
 
 export default SectionBreaker;

@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 
-function ActiveLink({ children, href }) {
+function ActiveLink({ children, href, color, textDecoration }) {
   const router = useRouter();
   const style = {
-    textDecoration: "none",
-    color: "black",
+    textDecoration: { textDecoration },
+    color: { color },
     // "&:hover": {
     //   color: "#F9A21B",
     // },

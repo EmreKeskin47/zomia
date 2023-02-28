@@ -8,8 +8,6 @@ import OnlyTabsBar from "../layout/OnlyTabsBar";
 import VerticalDivider from "./VerticalDivider";
 import RenderSubtitle from "./RenderSubtitle";
 import RenderBody from "./RenderBody";
-import CardList from "../pages/components/CardList";
-import SectionBreaker from "../pages/components/SectionBreaker";
 import imageLoader from "../loader";
 
 const Article = (props) => {
@@ -192,14 +190,6 @@ const Article = (props) => {
               </Box>
             </Grid>
           </Grid>
-          {!isReport && (
-            <>
-              <SectionBreaker text="Related Articles" link="/analysis" />
-              <Grid container direction="row" justifyContent="space-around">
-                <CardList type="article" />
-              </Grid>
-            </>
-          )}
         </Paper>
       </>
     );

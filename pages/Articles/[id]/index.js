@@ -1,59 +1,33 @@
-import { Paper } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Article from "../../../components/Article";
 import { useArticleData } from "../../../store/hooks/useData";
 import * as articleActions from "../../../store/actions/article-actions";
-// import { useCallback } from "react";
+import CardList from "../../components/CardList";
+import SectionBreaker from "../../components/SectionBreaker";
 
 const ArticlePage = (props) => {
   const { id } = props;
   const [data, setData] = useState(null);
   const articleList = useArticleData();
 
-  //   const [connectArticle, setConnectArticle] = useState([]);
-
   useEffect(() => {
-    // console.log("articleList", articleList);
-    // console.log("props", props);
-    // console.log("data", data);
-
     if (articleList) {
       setData(articleList.find((item) => item.id === id));
     }
-    //  else {
-    //   const fetch = async () => {
-    //     await props.fetchArticles();
-    //     return props.articles;
-    //   };
-    //   fetch()
-    //     .then((response) => setData(response.find((item) => item.id === id)))
-    //     .catch((e) => console.log(e));
-    // }
-
-    //   if (data) {
-    //     return;
-    //   } else {
-    //     const fetch = async () => {
-    //       await props.fetchArticles();
-    //       return props.articles;
-    //     };
-    //     fetch().then((response) => {
-    //       console.log("<<<<<", response);
-
-    //       if (articleList) {
-    //         setData(
-    //           articleList.find((item) => item.id.toString() === id.toString())
-    //         );
-    //       } else {
-    //         setData(response.find((item) => item.id === id));
-    //       }
-    //     });
-    //   }
   }, [articleList, id]);
 
   return (
-    <Paper sx={{ paddingTop: 5 }}>{data && <Article article={data} />}</Paper>
+    <Paper sx={{ paddingTop: 5 }}>
+      {data && <Article article={data} />}
+      <>
+        <SectionBreaker text="Related Articles" link="/Articles" />
+        <Grid container direction="row" justifyContent="space-around">
+          <CardList type="article" />
+        </Grid>
+      </>
+    </Paper>
   );
 };
 

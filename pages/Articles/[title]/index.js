@@ -8,13 +8,13 @@ import CardList from "../../components/CardList";
 import SectionBreaker from "../../components/SectionBreaker";
 
 const ArticlePage = (props) => {
-  const { id } = props;
+  const { id, title } = props;
   const [data, setData] = useState(null);
   const articleList = useArticleData();
 
   useEffect(() => {
     if (articleList) {
-      setData(articleList.find((item) => item.id === id));
+      setData(articleList.find((item) => item.title === title));
     }
   }, [articleList, id]);
 
@@ -45,21 +45,18 @@ const mapDispatchToProps = (dispatch) => {
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-      { params: { id: "4" } },
-    ],
+    paths: [{ params: { title: "1" } }],
     fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const id = await params.id;
+  // const id = await params.id;
+  const title = await params.title;
   return {
     props: {
-      id,
+      // id,
+      title,
     },
   };
 }

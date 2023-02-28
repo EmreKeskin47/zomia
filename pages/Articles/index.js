@@ -47,7 +47,7 @@ const Articles = (props) => {
             articleList.map((article, index) => {
               return (
                 <div key={article.id}>
-                  <ActiveLink href={`/Articles/${article.id}`}>
+                  <ActiveLink href={`/Articles/${article.title}`}>
                     <ListView
                       heading={article.title}
                       date={article.date}

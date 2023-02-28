@@ -16,8 +16,8 @@ const NavModel = {
     OurWork.legacyOfWar,
   ],
   Publications: [
-    Publications.reports,
     Publications.articles,
+    Publications.reports,
     Publications.ourMethodology,
   ],
   About: [About.ourHistory, About.team, About.supportUs],
@@ -32,7 +32,7 @@ export default function MenuDropdown(props) {
     console.log(item);
     return (
       <ListItem>
-        <ActiveLink href={`/new/${item}`}>
+        <ActiveLink href={`/${item}`}>
           <ListItemText primary={item} />
         </ActiveLink>
       </ListItem>

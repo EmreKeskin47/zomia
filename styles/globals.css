@@ -14,3 +14,39 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.our-work-tab:hover > .our-work-dropdown {
+  display: flex;
+  position: absolute;
+}
+
+.our-work-dropdown {
+  display: none;
+}
+
+.publications-tab:hover > .publications-dropdown {
+  display: flex;
+  position: absolute;
+}
+
+.publications-dropdown {
+  display: none;
+}
+
+.about-tab:hover > .about-dropdown {
+  display: flex;
+  position: absolute;
+}
+
+.about-dropdown {
+  display: none;
+}
+
+.people-tab:hover > .people-dropdown {
+  display: flex;
+  position: absolute;
+}
+
+.people-dropdown {
+  display: none;
+}

@@ -24,7 +24,7 @@ const CardList = ({ type }) => {
                 }}
               >
                 <ActiveLink
-                  href={`/investigations/${item.id}`}
+                  href={`/Reports/${item.id}`}
                   // sx={{ paddingLeft: 3, paddingRight: 3 }}
                   // replace="true"
                 >
@@ -62,7 +62,7 @@ const CardList = ({ type }) => {
                 }}
               >
                 <ActiveLink
-                  href={`/analysis/${item.id}`}
+                  href={`/Articles/${item.id}`}
                   sx={{ paddingLeft: 3, paddingRight: 3 }}
                   replace="true"
                 >

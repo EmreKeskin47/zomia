@@ -16,6 +16,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+import { CustomForm } from "./Form";
 
 const Input = styled("input")({
   display: "none",
@@ -179,11 +180,13 @@ const CreateReportForm = (props) => {
 
   return (
     <>
-      <Grid container marginTop={5}>
-        <Typography variant="h4" sx={{ color: "whitesmoke" }}>
-          {pageTitle}
-        </Typography>
-        <TextField
+      {/* <Grid container marginTop={5}> */}
+      <Typography variant="h4" sx={{ color: "whitesmoke" }}>
+        {pageTitle}
+      </Typography>
+      <CustomForm isReport />
+
+      {/* <TextField
           id="outlined-multiline-static"
           label="Title"
           fullWidth
@@ -250,11 +253,11 @@ const CreateReportForm = (props) => {
           sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
           value={photoAttribution}
           onChange={(e) => setPhotoAttribution(e.target.value)}
-        />
-      </Grid>
-      {uploading && percent === 100 && toast("Upload is " + percent + "% done")}
+        /> */}
+      {/* </Grid>
+      {uploading && percent === 100 && toast("Upload is " + percent + "% done")} */}
 
-      <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
+      {/* <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
         <label htmlFor="contained-button-file">
           <Input
             accept=".pdf"
@@ -285,7 +288,7 @@ const CreateReportForm = (props) => {
           Save
         </Button>
         <ToastContainer />
-      </Stack>
+      </Stack> */}
     </>
   );
 };

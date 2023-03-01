@@ -42,6 +42,7 @@ const CreateArticleForm = (props) => {
   const { pageTitle } = props;
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
+  const [additionalImage, setAdditionalImage] = useState([]);
   const [date, setDate] = useState("");
   const [author, setAuthor] = useState("");
   const [photoAttribution, setPhotoAttribution] = useState("");
@@ -78,6 +79,7 @@ const CreateArticleForm = (props) => {
           photoAttribution: photoAttribution,
           links: link,
           image: image,
+          additionalImage: additionalImage,
         })
       );
       //   clearFields(event);
@@ -88,6 +90,7 @@ const CreateArticleForm = (props) => {
       setAuthor("");
       setDate("");
       setImage("");
+      setAdditionalImage([]);
       setTitle("");
     }
   };
@@ -105,16 +108,9 @@ const CreateArticleForm = (props) => {
       event.target.files[0],
       metadata
     );
-
-    // Register three observers:
-    // 1. 'state_changed' observer, called any time the state changes
-    // 2. Error observer, called on failure
-    // 3. Completion observer, called on successful completion
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        // Observe state change events such as progress, pause, and resume
-        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
         setUploading(true);
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -138,10 +134,55 @@ const CreateArticleForm = (props) => {
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setUploading(false);
-          setImage(downloadURL);
+          setImage((prev) => downloadURL);
         });
       }
     );
+  };
+
+  const handleAdditionalImageUpload = async (event) => {
+    console.log(event.target.files);
+    const files = event.target.files;
+    Object.values(files).forEach((file) => {
+      const metadata = {
+        contentType: "image/jpeg",
+      };
+
+      const storage = getStorage();
+      const storageRef = ref(storage, `article/${title}.pdf`);
+
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          setUploading(true);
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setPercent(progress);
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {
+          // Handle unsuccessful uploads
+          console.log(error);
+        },
+        () => {
+          // Handle successful uploads on complete
+          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setUploading(false);
+            setAdditionalImage((prev) => [...prev, downloadURL]);
+          });
+        }
+      );
+    });
   };
 
   return (
@@ -235,12 +276,25 @@ const CreateArticleForm = (props) => {
             <Input
               accept="image/*"
               id="contained-button-file"
-              multiple
+              // multiple
               type="file"
               onChange={handleImageUpload}
             />
             <Button variant="contained" component="span">
               Upload Image
+            </Button>
+          </label>
+
+          <label htmlFor="contained-button">
+            <Input
+              accept="image/*"
+              id="contained-button"
+              multiple
+              type="file"
+              onChange={handleAdditionalImageUpload}
+            />
+            <Button variant="contained" component="span">
+              Upload Additional Images
             </Button>
           </label>
 

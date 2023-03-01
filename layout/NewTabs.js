@@ -31,9 +31,10 @@ const NewTabs = (props) => {
 
   return (
     <Box
+      className="tabs"
       justifyContent="space-between"
       display="flex"
-      height={"48px"}
+      height={"100%"}
       alignItems={"center"}
       sx={{
         cursor: "pointer",

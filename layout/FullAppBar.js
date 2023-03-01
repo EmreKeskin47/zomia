@@ -15,7 +15,7 @@ const FullAppBar = () => {
       justifyContent="space-evenly"
       display="flex"
       width={"100%"}
-      height={"105px"}
+      height={"70px"}
       bgcolor={context.darkMode ? palette.black.main : "whitesmoke"}
     >
       <Box
@@ -32,13 +32,13 @@ const FullAppBar = () => {
             loader={imageLoader}
             unoptimized
             alt="Logo"
-            width="200px"
-            height="200px"
+            width="120px"
+            height="120px"
           />
         </Link>
       </Box>
 
-      <Box width={"70%"} sx={{ paddingTop: "2%" }}>
+      <Box width={"70%"}>
         <NewTabs />
       </Box>
     </Box>

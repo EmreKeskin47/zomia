@@ -91,7 +91,7 @@ function MyApp({ Component, pageProps }) {
                             width: isMobile && "120%",
                           }
                         : {
-                            paddingTop: { xs: 0, md: 5 },
+                            paddingTop: { xs: 0, md: 0 },
                             backgroundColor: palette.black.main,
                           }
                     }

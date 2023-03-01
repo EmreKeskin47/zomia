@@ -18,6 +18,8 @@ a {
 .our-work-tab:hover > .our-work-dropdown {
   display: flex;
   position: absolute;
+  padding-top: 10px;
+  margin-left: -1rem;
 }
 
 .our-work-dropdown {
@@ -27,6 +29,7 @@ a {
 .publications-tab:hover > .publications-dropdown {
   display: flex;
   position: absolute;
+  padding-top: 10px;
 }
 
 .publications-dropdown {
@@ -36,17 +39,10 @@ a {
 .about-tab:hover > .about-dropdown {
   display: flex;
   position: absolute;
+  padding-top: 10px;
+  margin-left: -1rem;
 }
 
 .about-dropdown {
-  display: none;
-}
-
-.people-tab:hover > .people-dropdown {
-  display: flex;
-  position: absolute;
-}
-
-.people-dropdown {
   display: none;
 }

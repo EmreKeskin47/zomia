@@ -55,22 +55,24 @@ const NewTabs = (props) => {
         </Link>
       </Grid>
       <div className="our-work-tab">
-        <Typography variant="h6">
-          <span
-            style={{
-              color: context.darkMode ? "#fff" : palette.black.main,
-            }}
-          >
-            Our Work
-          </span>
-        </Typography>
+        <Link href="/Public%20Health" passhref="true">
+          <Typography variant="h6">
+            <span
+              style={{
+                color: context.darkMode ? "#fff" : palette.black.main,
+              }}
+            >
+              Our Work
+            </span>
+          </Typography>
+        </Link>
         <div className="our-work-dropdown">
           <MenuDropdown tabOptions={Tabs.OurWork} />
         </div>
       </div>
 
       <div className="publications-tab">
-        <Link href="/projects" passhref="true">
+        <Link href="/Articles" passhref="true">
           <Typography variant="h6">
             <span
               style={{
@@ -86,7 +88,7 @@ const NewTabs = (props) => {
         </div>
       </div>
       <div className="about-tab">
-        <Link href="/about" passhref="true">
+        <Link href="/Our%20history" passhref="true">
           <Typography variant="h6">
             <span
               style={{

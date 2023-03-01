@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
 import { About, Publications, OurWork } from "../models/TabEnum";
 import ActiveLink from "../pages/components/ActiveLink";
 import singleContext from "../SingleContext";
@@ -31,10 +32,12 @@ export default function MenuDropdown(props) {
   const list = listToDisplay.map((item) => {
     console.log(item);
     return (
-      <ListItem>
-        <ActiveLink href={`/${item}`}>
-          <ListItemText primary={item} />
-        </ActiveLink>
+      <ListItem disablePadding>
+        <ListItemButton>
+          <ActiveLink href={`/${item}`}>
+            <ListItemText primary={item} />
+          </ActiveLink>
+        </ListItemButton>
       </ListItem>
     );
   });

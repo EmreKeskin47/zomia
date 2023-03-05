@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { CustomForm } from "./Form";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, TextField } from "@mui/material";
@@ -187,13 +188,14 @@ const CreateArticleForm = (props) => {
 
   return (
     <>
-      <form onSubmit={saveArticle}>
-        <Grid container marginTop={5}>
-          <Typography variant="h4" sx={{ color: "whitesmoke" }}>
-            {pageTitle}
-          </Typography>
+      <Grid container marginTop={5}>
+        <Typography variant="h4" sx={{ color: "whitesmoke" }}>
+          {pageTitle}
+        </Typography>
 
-          <TextField
+        <CustomForm isArticle />
+
+        {/* <TextField
             id="outlined-multiline-static"
             label="Title"
             fullWidth
@@ -264,15 +266,13 @@ const CreateArticleForm = (props) => {
             sx={{ backgroundColor: "#fafafa", marginBottom: 4 }}
             value={photoAttribution}
             onChange={(e) => setPhotoAttribution(e.target.value)}
-          />
-        </Grid>
+          /> */}
+      </Grid>
 
-        {uploading &&
-          percent === 100 &&
-          toast("Upload is " + percent + "% done")}
+      {uploading && percent === 100 && toast("Upload is " + percent + "% done")}
 
-        <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}>
-          <label htmlFor="contained-button-file">
+      {/* <Stack direction="row" alignItems="end" spacing={2} marginBottom={10}> */}
+      {/* <label htmlFor="contained-button-file">
             <Input
               accept="image/*"
               id="contained-button-file"
@@ -305,10 +305,9 @@ const CreateArticleForm = (props) => {
             endIcon={<SendIcon />}
           >
             Save
-          </Button>
-          <ToastContainer />
-        </Stack>
-      </form>
+          </Button> */}
+      <ToastContainer />
+      {/* </Stack> */}
     </>
   );
 };

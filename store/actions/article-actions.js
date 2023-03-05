@@ -33,6 +33,7 @@ export const saveArticle = (item) => {
           photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
+          additionalImg: item.additionalImg,
         },
       });
       toast("Article has been successfully created");

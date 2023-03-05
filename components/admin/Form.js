@@ -4,6 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import Input from "@material-ui/core/Input";
 import TextField from "@material-ui/core/TextField";
 import * as reportActions from "../../store/actions/report-actions";
+import * as articleActions from "../../store/actions/article-actions";
+
 import {
   getStorage,
   ref,
@@ -17,6 +19,7 @@ export const CustomForm = (props) => {
   const {
     watch,
     setValue,
+    getValues,
     reset,
     control,
     handleSubmit,
@@ -31,14 +34,17 @@ export const CustomForm = (props) => {
       description: "",
       photoAttribution: "",
       links: "",
-      image: null,
-      pdf: null,
+      image: "",
+      additionalImg: [],
+      pdf: "",
     },
   });
   const dispatch = useDispatch();
   const [uploading, setUploading] = useState(false);
   const [percent, setPercent] = useState(0);
   const watchTitle = watch("title");
+  // const watchAdditionalImg = watch("additionalImg");
+  const singleValue = getValues("additionalImg");
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
@@ -51,6 +57,52 @@ export const CustomForm = (props) => {
       text = text.replace("\n", "\\n");
     }
     return text;
+  };
+
+  const handleAdditionalImageUpload = async (event) => {
+    console.log(event.target.files);
+    const files = event.target.files;
+    let value = [];
+    Object.values(files).forEach((file) => {
+      const metadata = {
+        contentType: "image/jpeg",
+      };
+
+      const storage = getStorage();
+      const storageRef = ref(storage, `article/${watchTitle}.pdf`);
+
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          setUploading(true);
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setPercent(progress);
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setUploading(false);
+
+            value.push(downloadURL);
+            console.log(value);
+            setValue("additionalImg", value);
+          });
+        }
+      );
+    });
   };
 
   const handleUpload = async (event, isPdf) => {
@@ -96,8 +148,8 @@ export const CustomForm = (props) => {
   const onSubmit = (data) => {
     console.log(data);
     if (data.title !== "") {
-      dispatch(
-        isReport &&
+      isReport &&
+        dispatch(
           reportActions.saveReport({
             title: data.title,
             author: data.author,
@@ -108,20 +160,24 @@ export const CustomForm = (props) => {
             links: data.links,
             pdf: data.pdf,
             image: data.image,
+            additionalImg: data.additionalImg,
           })
-        // isArticle &&
-        //   reportActions.saveArticle({
-        //     title: data.title,
-        //     author: data.author,
-        //     date: data.date,
-        //     text: preserveLineBreak(data.text),
-        //     description: preserveLineBreak(data.description),
-        //     photoAttribution: data.photoAttribution,
-        //     links: data.links,
-        //     pdf: "",
-        //     image: data.image,
-        //   })
-      );
+        );
+      isArticle &&
+        dispatch(
+          articleActions.saveArticle({
+            title: data.title,
+            author: data.author,
+            date: data.date,
+            text: preserveLineBreak(data.text),
+            description: preserveLineBreak(data.description),
+            photoAttribution: data.photoAttribution,
+            links: data.links,
+            pdf: "",
+            image: data.image,
+            additionalImg: data.additionalImg,
+          })
+        );
     }
   };
 
@@ -169,20 +225,22 @@ export const CustomForm = (props) => {
           />
         )}
       />
-      <Controller
-        name="links"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Link(s)"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
+      {isArticle && (
+        <Controller
+          name="links"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Link(s)"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
+        />
+      )}
       <Controller
         name="text"
         control={control}
@@ -229,9 +287,20 @@ export const CustomForm = (props) => {
         <input
           accept=".jpg,.jpeg,.png"
           id="contained-image-file"
+          // multiple
+          type="file"
+          class="custom-file-input img"
+          onChange={(e) => handleUpload(e, false)}
+        />
+      </label>
+      <label htmlFor="contained-images">
+        <input
+          accept=".jpg,.jpeg,.png"
+          id="contained-images"
           multiple
           type="file"
-          onChange={(e) => handleUpload(e, false)}
+          class="custom-file-input additional-img"
+          onChange={handleAdditionalImageUpload}
         />
       </label>
       {isReport && (
@@ -241,7 +310,7 @@ export const CustomForm = (props) => {
             id="contained-button-file"
             multiple
             type="file"
-            class="custom-file-input"
+            class="custom-file-input pdf"
             onChange={(e) => handleUpload(e, true)}
           />
         </label>

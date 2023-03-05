@@ -121,6 +121,7 @@ export const updateReport = (item) => {
           description: item.description,
           pdfLink: item.pdfLink,
           featured: item.featured ? item.featured : false,
+          additionalImg: item.additionalImg,
         },
         id: item.id,
       });

@@ -108,8 +108,9 @@ export const CustomForm = (props) => {
     );
   };
 
-  const deleteArticle = () => {
-    dispatch(articleActions.deleteArticle(values.id));
+  const deleteDocument = () => {
+    isArticle && dispatch(articleActions.deleteArticle(values.id));
+    isReport && dispatch(reportActions.deleteReport(values.id));
     setDeleted(!deleted);
   };
 
@@ -128,6 +129,23 @@ export const CustomForm = (props) => {
             description: preserveLineBreak(data.description),
             photoAttribution: data.photoAttribution,
             links: data.links,
+            image: data.image,
+            additionalImg: data.additionalImg,
+          })
+        );
+
+      isReport &&
+        isEditable &&
+        dispatch(
+          reportActions.updateReport({
+            id: data.id,
+            title: data.title,
+            author: data.author,
+            date: data.date,
+            text: preserveLineBreak(data.text),
+            description: preserveLineBreak(data.description),
+            photoAttribution: data.photoAttribution,
+            pdf: data.pdf,
             image: data.image,
             additionalImg: data.additionalImg,
           })
@@ -167,7 +185,7 @@ export const CustomForm = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(deleted ? deleteArticle : onSubmit)}>
+      <form onSubmit={handleSubmit(deleted ? deleteDocument : onSubmit)}>
         <Controller
           name="title"
           control={control}

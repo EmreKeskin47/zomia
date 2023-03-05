@@ -203,57 +203,15 @@ export const CustomForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        name="title"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Title"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        name="author"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Author(s)"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        name="date"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Date"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      {isArticle && (
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="links"
+          name="title"
           control={control}
           render={({ field }) => (
             <TextField
               id="outlined-multiline-static"
-              label="Link(s)"
+              label="Title"
               fullWidth
               variant="outlined"
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
@@ -261,81 +219,127 @@ export const CustomForm = (props) => {
             />
           )}
         />
-      )}
-      <Controller
-        name="text"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Text"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        name="description"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Description"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        name="photoAttribution"
-        control={control}
-        render={({ field }) => (
-          <TextField
-            id="outlined-multiline-static"
-            label="Photo attribution"
-            fullWidth
-            variant="outlined"
-            style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
-            {...field}
-          />
-        )}
-      />
-      <label htmlFor="contained-image-file">
-        <input
-          accept=".jpg,.jpeg,.png"
-          id="contained-image-file"
-          // multiple
-          type="file"
-          class="custom-file-input img"
-          onChange={(e) => handleUpload(e, false)}
+        <Controller
+          name="author"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Author(s)"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
         />
-      </label>
-      <label htmlFor="contained-images">
-        <input
-          accept=".jpg,.jpeg,.png"
-          id="contained-images"
-          multiple
-          type="file"
-          class="custom-file-input additional-img"
-          onChange={handleAdditionalImageUpload}
+        <Controller
+          name="date"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Date"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
         />
-      </label>
-      {isReport && (
+        {isArticle && (
+          <Controller
+            name="links"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                id="outlined-multiline-static"
+                label="Link(s)"
+                fullWidth
+                variant="outlined"
+                style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+                {...field}
+              />
+            )}
+          />
+        )}
+        <Controller
+          name="text"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Text"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          name="description"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Description"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          name="photoAttribution"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              id="outlined-multiline-static"
+              label="Photo attribution"
+              fullWidth
+              variant="outlined"
+              style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
+              {...field}
+            />
+          )}
+        />
         <label htmlFor="contained-image-file">
           <input
-            accept=".pdf"
-            id="contained-button-file"
-            multiple
+            accept=".jpg,.jpeg,.png"
+            id="contained-image-file"
+            // multiple
             type="file"
-            class="custom-file-input pdf"
-            onChange={(e) => handleUpload(e, true)}
+            class="custom-file-input img"
+            onChange={(e) => handleUpload(e, false)}
           />
         </label>
-      )}
+        <label htmlFor="contained-images">
+          <input
+            accept=".jpg,.jpeg,.png"
+            id="contained-images"
+            multiple
+            type="file"
+            class="custom-file-input additional-img"
+            onChange={handleAdditionalImageUpload}
+          />
+        </label>
+        {isReport && (
+          <label htmlFor="contained-image-file">
+            <input
+              accept=".pdf"
+              id="contained-button-file"
+              multiple
+              type="file"
+              class="custom-file-input pdf"
+              onChange={(e) => handleUpload(e, true)}
+            />
+          </label>
+        )}
+
+        <input type="submit" />
+      </form>
       {isEditable && (
         <label htmlFor="contained-image-file">
           <button
@@ -345,7 +349,6 @@ export const CustomForm = (props) => {
           />
         </label>
       )}
-      <input type="submit" />
-    </form>
+    </>
   );
 };

@@ -16,7 +16,8 @@ import { Button } from "@material-ui/core";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useArticleData } from "../../../store/hooks/useData";
-// import { Article } from "../../../models/Article";
+import { CustomForm } from "../../../components/admin/Form";
+import { Article } from "../../../models/Article";
 import {
   getStorage,
   ref,
@@ -31,7 +32,7 @@ const EditArticle = (props) => {
   const dispatch = useDispatch();
   const articleList = useArticleData();
 
-  //   const [connectArticle, setConnectArticle] = useState([]);
+  const [selectedVal, setSelectedVal] = useState({});
 
   //   useEffect(() => {
   // const fetch = async () => {
@@ -42,9 +43,9 @@ const EditArticle = (props) => {
   //   }, [props.articles]);
 
   const [article, setArticle] = useState();
-  const handleChange = (event) => {
-    console.log(event);
-  };
+  // const handleChange = (event) => {
+  //   console.log(event);
+  // };
 
   const preserveLineBreak = (text) => {
     while (text.includes("\n")) {
@@ -53,94 +54,94 @@ const EditArticle = (props) => {
     return text;
   };
 
-  const [id, setId] = useState(article ? article.id : "");
-  const [title, setTitle] = useState(article ? article.title : "");
-  const [image, setImage] = useState(article ? article.image : "");
-  const [date, setDate] = useState(article ? article.date : "");
-  const [photoAttribution, setPhotoAttribution] = useState(
-    photoAttribution ? article.photoAttribution : ""
-  );
-  const [author, setAuthor] = useState(article ? article.author : "");
-  const [description, setDescription] = useState(
-    article ? article.description : ""
-  );
-  const [link, setLink] = useState(article ? article.link : "");
-  const [text, setText] = useState(article ? article.text : "");
+  // const [id, setId] = useState(article ? article.id : "");
+  // const [title, setTitle] = useState(article ? article.title : "");
+  // const [image, setImage] = useState(article ? article.image : "");
+  // const [date, setDate] = useState(article ? article.date : "");
+  // const [photoAttribution, setPhotoAttribution] = useState(
+  //   photoAttribution ? article.photoAttribution : ""
+  // );
+  // const [author, setAuthor] = useState(article ? article.author : "");
+  // const [description, setDescription] = useState(
+  //   article ? article.description : ""
+  // );
+  // const [link, setLink] = useState(article ? article.link : "");
+  // const [text, setText] = useState(article ? article.text : "");
   const [uploading, setUploading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const handleImageUpload = async (event) => {
-    console.log(event.target.files[0]);
-    const metadata = {
-      contentType: "image/jpeg",
-    };
+  // const handleImageUpload = async (event) => {
+  //   console.log(event.target.files[0]);
+  //   const metadata = {
+  //     contentType: "image/jpeg",
+  //   };
 
-    const storage = getStorage();
-    const storageRef = ref(storage, `article/${title}.pdf`);
+  //   const storage = getStorage();
+  //   const storageRef = ref(storage, `article/${title}.pdf`);
 
-    const uploadTask = uploadBytesResumable(
-      storageRef,
-      event.target.files[0],
-      metadata
-    );
-    if (uploadTask) {
-      // Register three observers:
-      // 1. 'state_changed' observer, called any time the state changes
-      // 2. Error observer, called on failure
-      // 3. Completion observer, called on successful completion
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          // Observe state change events such as progress, pause, and resume
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          setUploading(true);
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setPercent(progress);
-          console.log("Upload is " + progress + "% done");
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-          }
-        },
-        (error) => {
-          // Handle unsuccessful uploads
-        },
-        () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setUploading(false);
-            setImage(downloadURL);
-          });
-        }
-      );
-    }
-  };
+  //   const uploadTask = uploadBytesResumable(
+  //     storageRef,
+  //     event.target.files[0],
+  //     metadata
+  //   );
+  //   if (uploadTask) {
+  //     // Register three observers:
+  //     // 1. 'state_changed' observer, called any time the state changes
+  //     // 2. Error observer, called on failure
+  //     // 3. Completion observer, called on successful completion
+  //     uploadTask.on(
+  //       "state_changed",
+  //       (snapshot) => {
+  //         // Observe state change events such as progress, pause, and resume
+  //         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  //         setUploading(true);
+  //         const progress =
+  //           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //         setPercent(progress);
+  //         console.log("Upload is " + progress + "% done");
+  //         switch (snapshot.state) {
+  //           case "paused":
+  //             console.log("Upload is paused");
+  //             break;
+  //           case "running":
+  //             console.log("Upload is running");
+  //             break;
+  //         }
+  //       },
+  //       (error) => {
+  //         // Handle unsuccessful uploads
+  //       },
+  //       () => {
+  //         // Handle successful uploads on complete
+  //         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  //         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+  //           setUploading(false);
+  //           setImage(downloadURL);
+  //         });
+  //       }
+  //     );
+  //   }
+  // };
 
   const deleteArticle = () => {
     dispatch(articleActions.deleteArticle(id));
   };
 
-  const saveArticle = () => {
-    dispatch(
-      articleActions.updateArticle({
-        id: id,
-        title: title,
-        author: author,
-        date: date,
-        description: preserveLineBreak(description),
-        text: preserveLineBreak(text),
-        photoAttribution: photoAttribution,
-        links: link,
-        image: image,
-      })
-    );
-  };
+  // const saveArticle = () => {
+  //   dispatch(
+  //     articleActions.updateArticle({
+  //       id: id,
+  //       title: title,
+  //       author: author,
+  //       date: date,
+  //       description: preserveLineBreak(description),
+  //       text: preserveLineBreak(text),
+  //       photoAttribution: photoAttribution,
+  //       links: link,
+  //       image: image,
+  //     })
+  //   );
+  // };
 
   return (
     <>
@@ -162,7 +163,7 @@ const EditArticle = (props) => {
             <Select
               labelId="demo-simple-select-autowidth-label"
               id="demo-simple-select-autowidth"
-              onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               sx={{
                 background: "whitesmoke",
                 width: " 100%",
@@ -173,6 +174,7 @@ const EditArticle = (props) => {
               {articleList &&
                 articleList !== [] &&
                 articleList.map((item) => {
+                  console.log("items:", item);
                   return (
                     <div
                       style={{
@@ -187,19 +189,31 @@ const EditArticle = (props) => {
                         value={item.title}
                         defaultValue=""
                         onClick={() => {
+                          setSelectedVal({
+                            id: item.id,
+                            title: item.title,
+                            image: item.image,
+                            date: item.date,
+                            photoAttribution: item.photoAttribution,
+                            author: item.author,
+                            description: item.description,
+                            link: item.link,
+                            text: item.text,
+                          });
+                          console.log(selectedVal);
                           // SUGESTION: SET ALL VALUES IN ARTICLE STATE AS ONE OBJECT TO AVOID EXTRA RERENDERS
                           //   console.log(item.id);
-                          setId(item.id);
-                          //   console.log(id);
-                          setArticle(item);
-                          setTitle(item.title);
-                          setImage(item.image);
-                          setDate(item.date);
-                          setPhotoAttribution(item.photoAttribution);
-                          setAuthor(item.author);
-                          setDescription(item.description);
-                          setLink(item.link);
-                          setText(item.text);
+                          // setId(item.id);
+                          // //   console.log(id);
+                          // setArticle(item);
+                          // setTitle(item.title);
+                          // setImage(item.image);
+                          // setDate(item.date);
+                          // setPhotoAttribution(item.photoAttribution);
+                          // setAuthor(item.author);
+                          // setDescription(item.description);
+                          // setLink(item.link);
+                          // setText(item.text);
                         }}
                       >
                         <em>{item.title}</em>
@@ -216,7 +230,8 @@ const EditArticle = (props) => {
                 {"Edit Article"}
               </Typography>
 
-              <TextField
+              <CustomForm isArticle isEditable values={selectedVal} />
+              {/* <TextField
                 id="outlined-multiline-static"
                 label="Title"
                 fullWidth
@@ -304,7 +319,7 @@ const EditArticle = (props) => {
                 }}
                 value={photoAttribution}
                 onChange={(e) => setPhotoAttribution(e.target.value)}
-              />
+              /> */}
             </Grid>
             {uploading &&
               percent > 0 &&
@@ -313,7 +328,7 @@ const EditArticle = (props) => {
                 newestOnTop: false,
               })}
 
-            <Stack
+            {/* <Stack
               direction="row"
               alignItems="end"
               spacing={2}
@@ -342,10 +357,10 @@ const EditArticle = (props) => {
 
               <Button onClick={deleteArticle} variant="contained">
                 Delete Article
-              </Button>
+              </Button> */}
 
-              <ToastContainer />
-            </Stack>
+            <ToastContainer />
+            {/* </Stack> */}
           </>
         </Grid>
       </Box>

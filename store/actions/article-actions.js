@@ -88,7 +88,7 @@ export const fetchArticles = () => {
 export const deleteArticle = (id) => {
   return async (dispatch) => {
     try {
-      await deleteDoc(doc(db, "articles", id.toString()));
+      await deleteDoc(doc(db, "articles", id));
       dispatch({
         type: DELETE_ARTICLE,
         payload: id,
@@ -118,6 +118,7 @@ export const updateArticle = (item) => {
           photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
+          additionalImages: item.additionalImages,
         },
         id: item.id,
       });

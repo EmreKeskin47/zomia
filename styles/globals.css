@@ -82,3 +82,7 @@ a {
 .additional-img.custom-file-input::before {
   content: "Upload Additional Images";
 }
+
+.delete.custom-file-input::before {
+  content: "Delete";
+}

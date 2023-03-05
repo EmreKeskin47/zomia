@@ -15,7 +15,7 @@ import {
 import { useDispatch } from "react-redux";
 
 export const CustomForm = (props) => {
-  const { isReport, isArticle } = props;
+  const { isReport, isArticle, isEditable, values } = props;
   const {
     watch,
     setValue,
@@ -38,6 +38,7 @@ export const CustomForm = (props) => {
       additionalImg: [],
       pdf: "",
     },
+    values,
   });
   const dispatch = useDispatch();
   const [uploading, setUploading] = useState(false);
@@ -145,9 +146,29 @@ export const CustomForm = (props) => {
     );
   };
 
+  const deleteArticle = () => {
+    dispatch(articleActions.deleteArticle(values.id));
+  };
+
   const onSubmit = (data) => {
     console.log(data);
     if (data.title !== "") {
+      isArticle &&
+        isEditable &&
+        dispatch(
+          articleActions.updateArticle({
+            id: data.id,
+            title: data.title,
+            author: data.author,
+            date: data.date,
+            text: preserveLineBreak(data.text),
+            description: preserveLineBreak(data.description),
+            photoAttribution: data.photoAttribution,
+            links: data.links,
+            image: data.image,
+            additionalImg: data.additionalImg,
+          })
+        );
       isReport &&
         dispatch(
           reportActions.saveReport({
@@ -312,6 +333,15 @@ export const CustomForm = (props) => {
             type="file"
             class="custom-file-input pdf"
             onChange={(e) => handleUpload(e, true)}
+          />
+        </label>
+      )}
+      {isEditable && (
+        <label htmlFor="contained-image-file">
+          <button
+            id="contained-button-file"
+            class="custom-file-input delete"
+            onClick={deleteArticle}
           />
         </label>
       )}

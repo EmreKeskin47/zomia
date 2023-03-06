@@ -34,7 +34,7 @@ export const CustomForm = (props) => {
       photoAttribution: "",
       links: "",
       image: "",
-      additionalImg: [],
+      additionalImg: "",
       pdf: "",
     },
     values,
@@ -50,7 +50,7 @@ export const CustomForm = (props) => {
   }, [formState, reset]);
 
   const handleAdditionalImageUpload = async (event) => {
-    console.log(event.target.files);
+    // console.log(event.target.files);
     const files = event.target.files;
     let value = [];
     Object.values(files).forEach((file) => {
@@ -115,72 +115,76 @@ export const CustomForm = (props) => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
-    if (data.title !== "") {
-      isArticle &&
-        isEditable &&
-        dispatch(
-          articleActions.updateArticle({
-            id: data.id,
-            title: data.title,
-            author: data.author,
-            date: data.date,
-            text: preserveLineBreak(data.text),
-            description: preserveLineBreak(data.description),
-            photoAttribution: data.photoAttribution,
-            links: data.links,
-            image: data.image,
-            additionalImg: data.additionalImg,
-          })
-        );
+    // console.log(data);
+    // data.title !== "" && {
+    if (isArticle && isEditable) {
+      console.log("updateArticle");
 
-      isReport &&
-        isEditable &&
-        dispatch(
-          reportActions.updateReport({
-            id: data.id,
-            title: data.title,
-            author: data.author,
-            date: data.date,
-            text: preserveLineBreak(data.text),
-            description: preserveLineBreak(data.description),
-            photoAttribution: data.photoAttribution,
-            pdf: data.pdf,
-            image: data.image,
-            additionalImg: data.additionalImg,
-          })
-        );
-      isReport &&
-        dispatch(
-          reportActions.saveReport({
-            title: data.title,
-            author: data.author,
-            date: data.date,
-            text: preserveLineBreak(data.text),
-            description: preserveLineBreak(data.description),
-            photoAttribution: data.photoAttribution,
-            links: data.links,
-            pdf: data.pdf,
-            image: data.image,
-            additionalImg: data.additionalImg,
-          })
-        );
-      isArticle &&
-        dispatch(
-          articleActions.saveArticle({
-            title: data.title,
-            author: data.author,
-            date: data.date,
-            text: preserveLineBreak(data.text),
-            description: preserveLineBreak(data.description),
-            photoAttribution: data.photoAttribution,
-            links: data.links,
-            pdf: "",
-            image: data.image,
-            additionalImg: data.additionalImg,
-          })
-        );
+      dispatch(
+        articleActions.updateArticle({
+          id: data.id,
+          title: data.title,
+          author: data.author,
+          date: data.date,
+          text: preserveLineBreak(data.text),
+          description: preserveLineBreak(data.description),
+          photoAttribution: data.photoAttribution,
+          links: data.links,
+          image: data.image,
+          additionalImg: data.additionalImg,
+        })
+      );
+    } else if (isReport && isEditable) {
+      console.log("update report");
+      dispatch(
+        reportActions.updateReport({
+          id: data.id,
+          title: data.title,
+          author: data.author,
+          date: data.date,
+          text: preserveLineBreak(data.text),
+          description: preserveLineBreak(data.description),
+          photoAttribution: data.photoAttribution,
+          pdf: data.pdf,
+          image: data.image,
+          additionalImg: data.additionalImg,
+        })
+      );
+    } else if (isReport) {
+      console.log("create report");
+      dispatch(
+        reportActions.saveReport({
+          title: data.title,
+          author: data.author,
+          date: data.date,
+          text: preserveLineBreak(data.text),
+          description: preserveLineBreak(data.description),
+          photoAttribution: data.photoAttribution,
+          links: data.links,
+          pdf: data.pdf,
+          image: data.image,
+          additionalImg: data.additionalImg,
+        })
+      );
+    } else if (isArticle) {
+      dispatch(
+        articleActions.saveArticle({
+          title: data.title,
+          author: data.author,
+          date: data.date,
+          text: preserveLineBreak(data.text),
+          description: preserveLineBreak(data.description),
+          photoAttribution: data.photoAttribution,
+          links: data.links,
+          pdf: "",
+          image: data.image,
+          additionalImg: data.additionalImg,
+        })
+      );
+      console.log("create Article");
     }
+
+    // }
   };
 
   return (

@@ -1,0 +1,123 @@
+[debug] [2023-03-06T17:26:16.698Z] ----------------------------------------------------------------------
+[debug] [2023-03-06T17:26:16.699Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-03-06T17:26:16.699Z] CLI Version:   11.24.0
+[debug] [2023-03-06T17:26:16.699Z] Platform:      win32
+[debug] [2023-03-06T17:26:16.699Z] Node Version:  v16.4.0
+[debug] [2023-03-06T17:26:16.700Z] Time:          Mon Mar 06 2023 19:26:16 GMT+0200 (Israel Standard Time)
+[debug] [2023-03-06T17:26:16.700Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-06T17:26:16.757Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-06T17:26:16.757Z] > authorizing via signed-in user (hadas21weiss@gmail.com)
+[debug] [2023-03-06T17:26:16.757Z] [iam] checking project zomia-dev for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-03-06T17:26:16.759Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions [none]
+[debug] [2023-03-06T17:26:16.759Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions x-goog-quota-user=projects/zomia-dev
+[debug] [2023-03-06T17:26:16.759Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:26:17.854Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions 200
+[debug] [2023-03-06T17:26:17.854Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:26:17.855Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:26:18.184Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:26:18.184Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:26:18.184Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:26:18.549Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:26:18.549Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:26:21.728Z] defaultcredentials: writing to file C:\Users\HadasAxelbaum\AppData\Roaming\firebase\hadas21weiss_gmail_com_application_default_credentials.json
+[debug] [2023-03-06T17:26:21.730Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites pageToken=&pageSize=10
+[debug] [2023-03-06T17:26:23.044Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites 200
+[debug] [2023-03-06T17:26:23.044Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites {"sites":[{"name":"projects/zomia-dev/sites/zomia-dev","defaultUrl":"https://zomia-dev.web.app","appId":"1:1060559309732:web:538600295a354b0076cf31","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-06T17:26:23.044Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config [none]
+[debug] [2023-03-06T17:26:24.013Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config 200
+[debug] [2023-03-06T17:26:24.013Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config {"projectId":"zomia-dev","appId":"1:1060559309732:web:538600295a354b0076cf31","databaseURL":"https://zomia-dev-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west","apiKey":"AIzaSyCJMAzNM4hr5fsd1lwjmPdHnEc7oye5Xsc","authDomain":"zomia-dev.firebaseapp.com","messagingSenderId":"1060559309732"}
+[debug] [2023-03-06T17:27:09.360Z] Error: Command failed: npm.cmd i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:826:11)
+    at execSync (node:child_process:900:15)
+    at prepareFrameworks (C:\Users\HadasAxelbaum\AppData\Roaming\nvm\v16.4.0\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\HadasAxelbaum\AppData\Roaming\nvm\v16.4.0\node_modules\firebase-tools\lib\deploy\index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-03-06T17:40:00.092Z] ----------------------------------------------------------------------
+[debug] [2023-03-06T17:40:00.095Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-03-06T17:40:00.095Z] CLI Version:   11.24.0
+[debug] [2023-03-06T17:40:00.095Z] Platform:      win32
+[debug] [2023-03-06T17:40:00.095Z] Node Version:  v16.4.0
+[debug] [2023-03-06T17:40:00.097Z] Time:          Mon Mar 06 2023 19:40:00 GMT+0200 (Israel Standard Time)
+[debug] [2023-03-06T17:40:00.097Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-06T17:40:00.163Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-06T17:40:00.163Z] > authorizing via signed-in user (hadas21weiss@gmail.com)
+[debug] [2023-03-06T17:40:00.163Z] [iam] checking project zomia-dev for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-03-06T17:40:00.164Z] > refreshing access token with scopes: []
+[debug] [2023-03-06T17:40:00.165Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-06T17:40:00.165Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-06T17:40:00.441Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-03-06T17:40:00.441Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-06T17:40:00.475Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions [none]
+[debug] [2023-03-06T17:40:00.475Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions x-goog-quota-user=projects/zomia-dev
+[debug] [2023-03-06T17:40:00.475Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:40:01.542Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions 200
+[debug] [2023-03-06T17:40:01.544Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:40:01.545Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:40:01.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:40:01.996Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:40:01.997Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:40:02.400Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:40:02.400Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:40:07.381Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites pageToken=&pageSize=10
+[debug] [2023-03-06T17:40:08.683Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites 200
+[debug] [2023-03-06T17:40:08.683Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites {"sites":[{"name":"projects/zomia-dev/sites/zomia-dev","defaultUrl":"https://zomia-dev.web.app","appId":"1:1060559309732:web:538600295a354b0076cf31","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-06T17:40:08.684Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config [none]
+[debug] [2023-03-06T17:40:09.695Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config 200
+[debug] [2023-03-06T17:40:09.696Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config {"projectId":"zomia-dev","appId":"1:1060559309732:web:538600295a354b0076cf31","databaseURL":"https://zomia-dev-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west","apiKey":"AIzaSyCJMAzNM4hr5fsd1lwjmPdHnEc7oye5Xsc","authDomain":"zomia-dev.firebaseapp.com","messagingSenderId":"1060559309732"}
+[debug] [2023-03-06T17:41:01.290Z] TypeError: t.at is not a function
+    at addState (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:751958)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:752013)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:141455)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:124762)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:73152)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:50866)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-03-06T17:45:50.971Z] ----------------------------------------------------------------------
+[debug] [2023-03-06T17:45:50.973Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-03-06T17:45:50.973Z] CLI Version:   11.24.0
+[debug] [2023-03-06T17:45:50.973Z] Platform:      win32
+[debug] [2023-03-06T17:45:50.973Z] Node Version:  v16.4.0
+[debug] [2023-03-06T17:45:50.974Z] Time:          Mon Mar 06 2023 19:45:50 GMT+0200 (Israel Standard Time)
+[debug] [2023-03-06T17:45:50.974Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-06T17:45:51.029Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-06T17:45:51.030Z] > authorizing via signed-in user (hadas21weiss@gmail.com)
+[debug] [2023-03-06T17:45:51.030Z] [iam] checking project zomia-dev for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-03-06T17:45:51.031Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions [none]
+[debug] [2023-03-06T17:45:51.032Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions x-goog-quota-user=projects/zomia-dev
+[debug] [2023-03-06T17:45:51.032Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:45:52.113Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions 200
+[debug] [2023-03-06T17:45:52.114Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zomia-dev:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-03-06T17:45:52.114Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:45:52.500Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:45:52.500Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:45:52.500Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev [none]
+[debug] [2023-03-06T17:45:52.856Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev 200
+[debug] [2023-03-06T17:45:52.856Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zomia-dev {"projectId":"zomia-dev","projectNumber":"1060559309732","displayName":"zomia-dev","name":"projects/zomia-dev","resources":{"hostingSite":"zomia-dev","realtimeDatabaseInstance":"zomia-dev-default-rtdb","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_05151cb2-6156-4bb3-a7a0-94b84bd32dcf"}
+[debug] [2023-03-06T17:45:56.024Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites pageToken=&pageSize=10
+[debug] [2023-03-06T17:45:57.288Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites 200
+[debug] [2023-03-06T17:45:57.288Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/zomia-dev/sites {"sites":[{"name":"projects/zomia-dev/sites/zomia-dev","defaultUrl":"https://zomia-dev.web.app","appId":"1:1060559309732:web:538600295a354b0076cf31","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-06T17:45:57.289Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config [none]
+[debug] [2023-03-06T17:45:58.453Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config 200
+[debug] [2023-03-06T17:45:58.453Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1060559309732:web:538600295a354b0076cf31/config {"projectId":"zomia-dev","appId":"1:1060559309732:web:538600295a354b0076cf31","databaseURL":"https://zomia-dev-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"zomia-dev.appspot.com","locationId":"europe-west","apiKey":"AIzaSyCJMAzNM4hr5fsd1lwjmPdHnEc7oye5Xsc","authDomain":"zomia-dev.firebaseapp.com","messagingSenderId":"1060559309732"}
+[debug] [2023-03-06T17:46:35.809Z] TypeError: t.at is not a function
+    at addState (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:751958)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:752013)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:141455)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:124762)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:73152)
+    at __w_pdfjs_require__ (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:1059478)
+    at Array.Object.defineProperty.value (C:\Users\HadasAxelbaum\zomia\zomia\node_modules\pdfjs-dist\build\pdf.worker.min.js:22:50866)
+[error] 
+[error] Error: An unexpected error has occurred.

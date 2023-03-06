@@ -30,7 +30,7 @@ export default function MenuDropdown(props) {
 
   const listToDisplay = NavModel[tabOptions];
   const list = listToDisplay.map((item) => {
-    console.log(item);
+    // console.log(item);
     return (
       <ListItem disablePadding>
         <ListItemButton>

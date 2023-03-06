@@ -33,6 +33,7 @@ export const saveArticle = (item) => {
           photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
+          additionalImg: item.additionalImg,
         },
       });
       toast("Article has been successfully created");
@@ -87,7 +88,7 @@ export const fetchArticles = () => {
 export const deleteArticle = (id) => {
   return async (dispatch) => {
     try {
-      await deleteDoc(doc(db, "articles", id.toString()));
+      await deleteDoc(doc(db, "articles", id));
       dispatch({
         type: DELETE_ARTICLE,
         payload: id,
@@ -117,6 +118,7 @@ export const updateArticle = (item) => {
           photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
+          additionalImages: item.additionalImages,
         },
         id: item.id,
       });

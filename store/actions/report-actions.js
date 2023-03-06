@@ -35,6 +35,7 @@ export const saveReport = (item) => {
           links: item.link,
           pdf: item.pdf,
           featured: item.featured ? item.featured : false,
+          additionalImg: item.additionalImg,
         },
       });
       toast("Report has been successfully created");
@@ -120,6 +121,7 @@ export const updateReport = (item) => {
           description: item.description,
           pdfLink: item.pdfLink,
           featured: item.featured ? item.featured : false,
+          additionalImg: item.additionalImg,
         },
         id: item.id,
       });

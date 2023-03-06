@@ -50,7 +50,7 @@ const EditArticle = (props) => {
               {articleList &&
                 articleList !== [] &&
                 articleList.map((item) => {
-                  console.log("items:", item);
+                  // console.log("items:", item);
                   return (
                     <div
                       style={{

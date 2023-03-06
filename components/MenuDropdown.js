@@ -32,7 +32,7 @@ export default function MenuDropdown(props) {
   const list = listToDisplay.map((item) => {
     // console.log(item);
     return (
-      <ListItem disablePadding>
+      <ListItem key={item} disablePadding>
         <ListItemButton>
           <ActiveLink href={`/${item}`}>
             <ListItemText primary={item} />

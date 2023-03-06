@@ -58,7 +58,7 @@ const LegacyOfWar = () => {
                 justifySelf={"center"}
               >
                 {program.body.split("<br />").map((paragraph, index) => {
-                  return <RenderBody text={paragraph} />;
+                  return <RenderBody key={index} text={paragraph} />;
                 })}
                 <Box
                   marginY={3}

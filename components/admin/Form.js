@@ -295,7 +295,7 @@ export const CustomForm = (props) => {
             accept=".jpg,.jpeg,.png"
             id="contained-image-file"
             type="file"
-            class="custom-file-input img"
+            className="custom-file-input img"
             onChange={(e) => handleUpload(e, false)}
           />
         </label>
@@ -305,7 +305,7 @@ export const CustomForm = (props) => {
             id="contained-images"
             multiple
             type="file"
-            class="custom-file-input additional-img"
+            className="custom-file-input additional-img"
             onChange={handleAdditionalImageUpload}
           />
         </label>
@@ -316,7 +316,7 @@ export const CustomForm = (props) => {
               id="contained-button-file"
               multiple
               type="file"
-              class="custom-file-input pdf"
+              className="custom-file-input pdf"
               onChange={(e) => handleUpload(e, true)}
             />
           </label>
@@ -325,7 +325,7 @@ export const CustomForm = (props) => {
           <label htmlFor="contained-image-file">
             <button
               id="contained-button-file"
-              class="custom-file-input delete"
+              className="custom-file-input delete"
               onClick={() => setDeleted(true)}
             />
           </label>

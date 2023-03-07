@@ -70,12 +70,6 @@ function MyApp({ Component, pageProps }) {
   }, "1000");
   return (
     <div>
-      <head>
-        <meta
-          name="google-site-verification"
-          content="cuDQRQhxPo64IWgmg4D3_T8DMlFcXr7CX6bpoIjFrYo"
-        />
-      </head>
       {isStart ? (
         <Loader type={0} />
       ) : (

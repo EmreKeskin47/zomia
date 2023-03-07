@@ -11,7 +11,7 @@ import palette from "../theme/palette";
 
 const NavModel = {
   OurWork: [
-    OurWork.refugeesInTech,
+    // OurWork.refugeesInTech,
     OurWork.programs,
     OurWork.publicHealth,
     OurWork.legacyOfWar,
@@ -19,9 +19,13 @@ const NavModel = {
   Publications: [
     Publications.articles,
     Publications.reports,
-    Publications.ourMethodology,
+    // Publications.ourMethodology,
   ],
-  About: [About.ourHistory, About.team, About.supportUs],
+  About: [
+    About.ourHistory,
+    About.team,
+    // About.supportUs
+  ],
 };
 
 export default function MenuDropdown(props) {

@@ -28,7 +28,7 @@
     "next": "12.1.4",
     "next-redux-wrapper": "^7.0.5",
     "pdfjs": "^2.4.7",
-    "pdfjs-dist": "^2.13.216",
+    "pdfjs-dist": "2.13.216",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
     "react": "18.0.0",

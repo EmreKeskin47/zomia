@@ -86,3 +86,7 @@ a {
 .delete.custom-file-input::before {
   content: "Delete";
 }
+
+#back-to-top-anchor {
+  display: none;
+}

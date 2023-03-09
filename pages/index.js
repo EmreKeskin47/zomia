@@ -18,6 +18,7 @@ import {
   useWritingData,
 } from "../store/hooks/useData";
 import ActiveLink from "./components/ActiveLink";
+import { MainCarousel } from "../components/MainCarousel";
 
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
@@ -65,7 +66,7 @@ function App(props) {
       <Helmet>
         <title>Zomia Center Home</title>
       </Helmet>
-      <Grid
+      {/* <Grid
         container
         justifyContent="center"
         alignItems="center"
@@ -76,22 +77,36 @@ function App(props) {
             " 3px 2px 4px -1px rgb(145 158 171 / 20%), 0px 4px 5px 0px rgb(145 180 171 / 34%), 0px 1px 10px 0px rgb(145 158 171 / 62%)",
           padding: "0.075rem",
         }}
-      ></Grid>
-      <Container sx={{ maxWidth: "1350px !important" }}>
+      ></Grid> */}
+      <Container>
         {/* Intro */}
-        <Grid
+        {/* <Grid
           container
-          direction="row"
-          justifyContent="space-between"
+          // direction="row"
+          // justifyContent="space-between"
           sx={{
             paddingTop: "3rem",
             paddingBottom: "1rem",
-            marginLeft: { lg: "2rem" },
+            height: "100%",
+            alignSelf: "center",
+
+            // marginLeft: { lg: "2rem" },
+          }}
+        > */}
+        <Grid
+          item
+          sx={{
+            // paddingTop: "0rem",
+            // paddingLeft: "2rem",
+            paddingTop: "3rem",
+            paddingBottom: "1rem",
+            height: "100%",
+            alignSelf: "center",
+            paddingRight: { xs: "2rem", lg: "6rem" },
           }}
         >
-          <Grid item lg={7} sm={12}>
-            <IntroArticle data={writings && writings[writings.length - 1]} />
-          </Grid>
+          {/* <IntroArticle data={writings && writings[writings.length - 1]} /> */}
+          {/* </Grid>
           <Grid
             item
             lg={5}
@@ -103,10 +118,12 @@ function App(props) {
               alignSelf: "center",
               paddingRight: { xs: "2rem", lg: "6rem" },
             }}
-          >
-            <IntroContentSummaries />
-          </Grid>
+          > */}
+          {/* <IntroContentSummaries /> */}
+
+          <MainCarousel />
         </Grid>
+        {/* </Grid> */}
         {/* End Intro */}
       </Container>
       {/* <SectionBreaker

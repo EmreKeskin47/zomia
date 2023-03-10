@@ -65,7 +65,7 @@ export const fetchArticles = () => {
             doc.data().article.link ?? "",
             doc.data().article.text ?? "",
             doc.data().article.photoAttribution ?? "",
-            doc.data().article.additionalImages ?? ""
+            doc.data().article.additionalImg ?? ""
           )
         );
       });
@@ -118,7 +118,7 @@ export const updateArticle = (item) => {
           photoAttribution: item.photoAttribution,
           description: item.description,
           links: item.link,
-          additionalImages: item.additionalImages,
+          additionalImg: item.additionalImg,
         },
         id: item.id,
       });

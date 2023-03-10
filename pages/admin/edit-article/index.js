@@ -75,6 +75,7 @@ const EditArticle = (props) => {
                             description: item.description,
                             link: item.link,
                             text: item.text,
+                            additionalImg: item.additionalImg,
                           });
                           console.log(selectedVal);
                         }}

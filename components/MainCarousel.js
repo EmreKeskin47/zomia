@@ -5,6 +5,7 @@ import { useArticleData } from "../store/hooks/useData";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import ActiveLink from "../pages/components/ActiveLink";
+import imageLoader from "../loader";
 
 export function MainCarousel(props) {
   const articleList = useArticleData();
@@ -29,8 +30,7 @@ function Item(props) {
       <ActiveLink href={`Articles/${props.item.id}`}>
         <Image
           src={props.item.image}
-          // loader={imageLoader}
-          unoptimized
+          loader={imageLoader}
           alt="Zomia Amblem"
           width="1500rem"
           height="600rem"
@@ -41,8 +41,6 @@ function Item(props) {
           <p>{props.item.description}</p>
         </Typography>
       </ActiveLink>
-
-      <Button className="CheckButton">Check it out!</Button>
     </Paper>
   );
 }

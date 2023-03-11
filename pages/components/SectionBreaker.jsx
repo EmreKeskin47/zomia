@@ -10,7 +10,7 @@ const SectionBreaker = (props) => {
   return (
     <Divider flexItem sx={{ paddingBottom: "5rem", paddingTop: "4rem" }}>
       <ActiveLink
-        href={props.link ? props.link : "#"}
+        href={props.link ? props.link : ""}
         textDecoration="none"
         color={context.darkMode ? "whitesmoke" : palette.black.main}
       >

@@ -299,7 +299,8 @@ export const CustomForm = (props) => {
             onChange={(e) => handleUpload(e, false)}
           />
         </label>
-        <label htmlFor="contained-images">
+        {/* DISABLED UNTIL BUG IS FIXED- THE LAST IMG UPLOADED IS THE PRIMERY IMG */}
+        {/* <label htmlFor="contained-images">
           <input
             accept=".jpg,.jpeg,.png"
             id="contained-images"
@@ -308,7 +309,7 @@ export const CustomForm = (props) => {
             className="custom-file-input additional-img"
             onChange={handleAdditionalImageUpload}
           />
-        </label>
+        </label> */}
         {isReport && (
           <label htmlFor="contained-image-file">
             <input

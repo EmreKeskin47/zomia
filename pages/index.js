@@ -69,17 +69,13 @@ function App(props) {
         {/* End Intro */}
       </Container>
 
-      <SectionBreaker
-        text="Investigations"
-        link="/investigations"
-        color="whitesmoke"
-      />
+      <SectionBreaker text="Reports" link="/Reports" color="whitesmoke" />
       {/* Reports Section */}
       <Grid container direction="row" justifyContent="space-around">
         <CardList type={"report"} />
       </Grid>
       {/* End Reports Section */}
-      <SectionBreaker text="Latest" link="#" color="whitesmoke" />
+      <SectionBreaker text="Latest" color="whitesmoke" />
       {/* Popular Reads Section */}
       <Container sx={{ paddingBottom: "125px" }}>
         {writings &&
@@ -92,8 +88,8 @@ function App(props) {
                   key={index}
                   href={
                     article.pdfLink
-                      ? `/investigations/${article.id}`
-                      : `/analysis/${article.id}`
+                      ? `/Reports/${article.id}`
+                      : `/Articles/${article.id}`
                   }
                 >
                   <ListView

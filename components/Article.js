@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { AppBar, Box, Grid, Paper } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import { MakeArticleParagraph2 } from "../utils/ArticleParagraph";
-import OnlyTabsBar from "../layout/OnlyTabsBar";
 import VerticalDivider from "./VerticalDivider";
 import RenderSubtitle from "./RenderSubtitle";
 import RenderBody from "./RenderBody";
 import imageLoader from "../loader";
 
 const Article = (props) => {
-  const { article, isReport } = props;
+  const { article } = props;
   console.log(article);
-
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setOffset(window.pageYOffset);
-    // clean up code
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   if (article) {
     article.text = MakeArticleParagraph2(article.text);
@@ -31,7 +21,7 @@ const Article = (props) => {
         <Helmet>
           <title>{article.title}</title>
         </Helmet>
-        <AppBar
+        {/* <AppBar
           position="fixed"
           sx={{
             zIndex: 2,
@@ -84,7 +74,7 @@ const Article = (props) => {
               </Grid>
             </AppBar>
           )}
-        </AppBar>
+        </AppBar> */}
 
         <Paper>
           <Grid

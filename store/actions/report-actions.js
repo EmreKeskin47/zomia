@@ -53,6 +53,7 @@ export const fetchReports = () => {
       const querySnapshot = await getDocs(collection(db, "reports"));
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
+
         reports.push(
           new Report(
             doc.id,
@@ -65,8 +66,7 @@ export const fetchReports = () => {
             doc.data().report.description,
             doc.data().report.photoAttribution,
             doc.data().report.pdf,
-            doc.data().report.link,
-            doc.data().report.featured
+            doc.data().report.additionalImg
           )
         );
       });
@@ -104,6 +104,8 @@ export const deleteReport = (id) => {
 
 export const updateReport = (item) => {
   return async (dispatch) => {
+    console.log("##########################", item);
+
     try {
       await setDoc(doc(db, "reports", item.id), {
         report: item,
@@ -121,7 +123,7 @@ export const updateReport = (item) => {
           description: item.description,
           pdfLink: item.pdfLink,
           featured: item.featured ? item.featured : false,
-          additionalImg: item.additionalImg,
+          additionalImg: item.additionalImg ? item.additionalImg : "",
         },
         id: item.id,
       });

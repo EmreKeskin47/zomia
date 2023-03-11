@@ -25,18 +25,6 @@ const Input = styled("input")({
   display: "none",
 });
 const EditReport = (props) => {
-  const dispatch = useDispatch();
-  const [report, setReport] = useState("");
-  const [connectReport, setConnectReport] = useState([]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      await props.fetchReports();
-      setConnectReport(props.reports);
-    };
-    fetch();
-  }, [props.fetchReports, props.report]);
-
   const reports = useReportData();
 
   const handleChange = (event) => {
@@ -45,26 +33,6 @@ const EditReport = (props) => {
   const [selectedVal, setSelectedVal] = useState({});
   const [uploading, setUploading] = useState(false);
   const [percent, setPercent] = useState(0);
-
-  //   const updateReport = () => {
-  //     dispatch(
-  //       reportActions.updateReport({
-  //         id: id,
-  //         title: title,
-  //         author: author,
-  //         date: date,
-  //         text: preserveLineBreak(text),
-  //         description: preserveLineBreak(description),
-  //         photoAttribution: photoAttribution,
-  //         pdf: pdf,
-  //         image: image,
-  //       })
-  //     );
-  //   };
-
-  //   const deleteReport = () => {
-  //     dispatch(reportActions.deleteReport(id));
-  //   };
 
   return (
     <Box sx={{ width: "80%", marginTop: 8, marginX: "10%" }}>
@@ -112,6 +80,7 @@ const EditReport = (props) => {
                           link: item.link,
                           text: item.text,
                           pdf: item.pdfLink,
+                          additionalImg: item.additionalImg,
                         });
                         console.log(selectedVal);
                       }}

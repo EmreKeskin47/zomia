@@ -65,7 +65,7 @@ export const fetchArticles = () => {
             doc.data().article.link ?? "",
             doc.data().article.text ?? "",
             doc.data().article.photoAttribution ?? "",
-            doc.data().article.additionalImages ?? ""
+            doc.data().article.additionalImg ?? ""
           )
         );
       });
@@ -111,14 +111,14 @@ export const updateArticle = (item) => {
         type: UPDATE_ARTICLE,
         payload: {
           title: item.title,
-          author: item.author,
-          date: item.date,
           image: item.image,
-          text: item.text,
-          photoAttribution: item.photoAttribution,
+          date: item.date,
+          author: item.author,
           description: item.description,
           links: item.link,
-          additionalImages: item.additionalImages,
+          text: item.text,
+          photoAttribution: item.photoAttribution,
+          additionalImg: item.additionalImg,
         },
         id: item.id,
       });

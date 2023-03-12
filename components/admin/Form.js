@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import * as reportActions from "../../store/actions/report-actions";
 import * as articleActions from "../../store/actions/article-actions";
+import * as carouselActions from "../../store/actions/carousel-actions";
 import { handleSnapshot, preserveLineBreak } from "../../utils/uploads";
 
 import {
@@ -14,7 +15,7 @@ import {
 import { useDispatch } from "react-redux";
 
 export const CustomForm = (props) => {
-  const { isReport, isArticle, isEditable, values } = props;
+  const { isReport, isArticle, isEditable, isCarousel, values } = props;
   const {
     watch,
     setValue,
@@ -182,6 +183,15 @@ export const CustomForm = (props) => {
         })
       );
       console.log("create Article");
+    } else if (isCarousel) {
+      dispatch(
+        carouselActions.addToCarousel({
+          title: data.title,
+          description: preserveLineBreak(data.description),
+          links: data.links,
+          image: data.image,
+        })
+      );
     }
 
     // }
@@ -213,6 +223,7 @@ export const CustomForm = (props) => {
               label="Author(s)"
               fullWidth
               variant="outlined"
+              className={isCarousel ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
@@ -227,19 +238,20 @@ export const CustomForm = (props) => {
               label="Date"
               fullWidth
               variant="outlined"
+              className={isCarousel ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
           )}
         />
-        {isArticle && (
+        {(isArticle || isCarousel) && (
           <Controller
             name="links"
             control={control}
             render={({ field }) => (
               <TextField
                 id="outlined-multiline-static"
-                label="Link(s)"
+                label={isCarousel ? "Link to original page" : "Link(s)"}
                 fullWidth
                 variant="outlined"
                 style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
@@ -257,6 +269,7 @@ export const CustomForm = (props) => {
               label="Text"
               fullWidth
               variant="outlined"
+              className={isCarousel ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
@@ -285,6 +298,7 @@ export const CustomForm = (props) => {
               label="Photo attribution"
               fullWidth
               variant="outlined"
+              className={isCarousel ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
@@ -331,7 +345,8 @@ export const CustomForm = (props) => {
             />
           </label>
         )}
-        <input type="submit" />
+        {(isArticle || isReport) && <input type="submit" />}
+        {isCarousel && <button type="submit">Add to Carousel</button>}
       </form>
     </>
   );

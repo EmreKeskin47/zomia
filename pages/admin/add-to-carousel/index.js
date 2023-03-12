@@ -36,7 +36,9 @@ const EditArticle = (props) => {
         <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
           <FormControl sx={{ minWidth: 100 }}>
             <InputLabel id="demo-simple-select-autowidth-label">
-              Select article to add to carousel
+              {selectedVal
+                ? selectedVal.title
+                : "Select article to add to carousel"}
             </InputLabel>
             <Select
               labelId="demo-simple-select-autowidth-label"
@@ -46,7 +48,6 @@ const EditArticle = (props) => {
                 width: " 100%",
               }}
               label="Article"
-              defaultValue=""
             >
               {articleList &&
                 articleList !== [] &&
@@ -70,13 +71,8 @@ const EditArticle = (props) => {
                             id: item.id,
                             title: item.title,
                             image: item.image,
-                            date: item.date,
-                            photoAttribution: item.photoAttribution,
-                            author: item.author,
                             description: item.description,
-                            link: item.link,
-                            text: item.text,
-                            additionalImg: item.additionalImg,
+                            links: `Articles/${item.id}`,
                           });
                           console.log(selectedVal);
                           setArticleSelected(true);
@@ -99,7 +95,7 @@ const EditArticle = (props) => {
                 {"Add New Content"}
               </Typography>
 
-              <CustomForm />
+              <CustomForm isCarousel values={selectedVal} />
             </Grid>
             {uploading &&
               percent > 0 &&

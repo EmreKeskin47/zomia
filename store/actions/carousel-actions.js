@@ -13,7 +13,6 @@ import {
 import { db } from "../store";
 import { Article } from "../../models/Article";
 import { toast } from "react-toastify";
-import { mockArticles } from "../../MOCK_DATA";
 
 export const addToCarousel = (item) => {
   return async (dispatch) => {

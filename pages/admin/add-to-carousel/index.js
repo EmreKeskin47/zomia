@@ -5,20 +5,20 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import Typography from "@mui/material/Typography";
-import { Button, Grid } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Grid } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useArticleData } from "../../../store/hooks/useData";
+import { useArticleData, useReportData } from "../../../store/hooks/useData";
 import { CustomForm } from "../../../components/admin/Form";
 
 const EditArticle = (props) => {
   const articleList = useArticleData();
+  const reports = useReportData();
   const [selectedVal, setSelectedVal] = useState({});
   const [uploading, setUploading] = useState(false);
-  const [articleSelected, setArticleSelected] = useState(false);
+  //   const [articleSelected, setArticleSelected] = useState(false);
   const [percent, setPercent] = useState(0);
 
   return (
@@ -36,9 +36,7 @@ const EditArticle = (props) => {
         <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
           <FormControl sx={{ minWidth: 100 }}>
             <InputLabel id="demo-simple-select-autowidth-label">
-              {selectedVal
-                ? selectedVal.title
-                : "Select article to add to carousel"}
+              Select article to add to carousel
             </InputLabel>
             <Select
               labelId="demo-simple-select-autowidth-label"
@@ -75,7 +73,7 @@ const EditArticle = (props) => {
                             links: `Articles/${item.id}`,
                           });
                           console.log(selectedVal);
-                          setArticleSelected(true);
+                          //   setArticleSelected(true);
                         }}
                       >
                         <em>{item.title}</em>
@@ -85,9 +83,55 @@ const EditArticle = (props) => {
                 })}
             </Select>
           </FormControl>
-          <Button className={articleSelected ? "hide-element" : "show-element"}>
-            Add To Carousel
-          </Button>
+
+          <FormControl sx={{ minWidth: 100 }}>
+            <InputLabel id="demo-simple-select-autowidth-label">
+              Select report
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-autowidth-label"
+              id="demo-simple-select-autowidth"
+              value={selectedVal.title}
+              onChange={(e) => handleChange(e)}
+              sx={{
+                background: "whitesmoke",
+                width: " 100%",
+              }}
+              label="Report"
+            >
+              {reports &&
+                reports !== [] &&
+                reports.map((item, id) => {
+                  return (
+                    <div
+                      style={{
+                        color: "#F9A21B",
+                        padding: 5,
+                        paddingLeft: 20,
+                      }}
+                      key={id}
+                    >
+                      <MenuItem
+                        key={item.id}
+                        value={item.title}
+                        onClick={() => {
+                          setSelectedVal({
+                            id: item.id,
+                            title: item.title,
+                            image: item.image,
+                            description: item.description,
+                            links: `Reports/${item.id}`,
+                          });
+                          console.log(selectedVal);
+                        }}
+                      >
+                        <em>{item.title}</em>
+                      </MenuItem>
+                    </div>
+                  );
+                })}
+            </Select>
+          </FormControl>
 
           <>
             <Grid container marginTop={5}>

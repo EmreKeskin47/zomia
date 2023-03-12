@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../store";
 import { Article } from "../../models/Article";
+import { Post } from "../../models/Post";
 import { toast } from "react-toastify";
 
 export const addToCarousel = (item) => {
@@ -37,44 +38,34 @@ export const addToCarousel = (item) => {
   };
 };
 
-export const fetchArticles = () => {
+export const fetchCarouselPosts = () => {
   return async (dispatch) => {
     try {
-      let articles = [];
+      let posts = [];
 
-      const querySnapshot = await getDocs(collection(db, "articles"));
+      const querySnapshot = await getDocs(collection(db, "carousel"));
 
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log("<<<<<<<doc", doc.data());
-        articles.push(
-          new Article(
+        posts.push(
+          new Post(
             doc.id,
-            doc.data().article.title ?? "",
-            doc.data().article.image ?? "",
-            doc.data().article.date ?? "",
-            doc.data().article.author ?? "",
-            doc.data().article.category ?? "",
-            doc.data().article.description ?? "",
-            doc.data().article.link ?? "",
-            doc.data().article.text ?? "",
-            doc.data().article.photoAttribution ?? "",
-            doc.data().article.additionalImg ?? ""
+            doc.data().post.title ?? "",
+            doc.data().post.image ?? "",
+            doc.data().post.category ?? "",
+            doc.data().post.description ?? "",
+            doc.data().post.link ?? ""
           )
         );
       });
 
-      // console.log("<<<<articles", articles);
-
-      // USE THIS TO CONNECT TO HARDCODED DATA IF GOOGLE CLOUD IS DOWN
-      // articles = mockArticles;
-
       dispatch({
-        type: FETCH_ARTICLES,
-        payload: articles,
+        type: FETCH_CAROUSEL_CONTENT,
+        payload: posts,
       });
     } catch (err) {
-      toast("fetch article error" + err);
+      toast("fetch posts error" + err);
     }
   };
 };

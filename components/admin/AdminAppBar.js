@@ -7,11 +7,11 @@ import palette from "../../theme/palette";
 const AdminAppBar = () => {
   return (
     <Box justifyContent="space-around" display="flex" width={"100%"}>
-      <Box width={"80%"} sx={{ marginRight: "10%" }}>
+      <Box width={"100%"}>
         <Box
           justifyContent="space-between"
           display="flex"
-          height={54}
+          height={74}
           alignItems={"center"}
           sx={{
             cursor: "pointer",
@@ -37,6 +37,18 @@ const AdminAppBar = () => {
           <Link href="/admin/edit-report" passhref="true">
             <Typography variant="h6" sx={{ color: "whitesmoke" }}>
               Edit Report
+            </Typography>
+          </Link>
+
+          <Link href="/admin/add-to-carousel" passhref="true">
+            <Typography variant="h6" sx={{ color: "whitesmoke" }}>
+              Add To Carousel
+            </Typography>
+          </Link>
+
+          <Link href="/admin/edit-carousel" passhref="true">
+            <Typography variant="h6" sx={{ color: "whitesmoke" }}>
+              Edit Carousel
             </Typography>
           </Link>
         </Box>

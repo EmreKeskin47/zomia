@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useArticleData, useReportData } from "../../../store/hooks/useData";
 import { CustomForm } from "../../../components/admin/Form";
 
-const EditArticle = (props) => {
+const AddToCarousel = (props) => {
   const articleList = useArticleData();
   const reports = useReportData();
   const [selectedVal, setSelectedVal] = useState({});
@@ -168,4 +168,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditArticle);
+export default connect(mapStateToProps, mapDispatchToProps)(AddToCarousel);

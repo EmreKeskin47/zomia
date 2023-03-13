@@ -1,36 +1,41 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState } from "react";
+
 import { connect } from "react-redux";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { reorder } from "../../../utils/draggable";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
 import { useCarouselData } from "../../../store/hooks/useData";
-import { set } from "lodash";
-import { fetchCarouselPosts } from "../../../store/actions/carousel-actions";
+import DraggableList from "../../components/DraggableList";
 import * as carouselActions from "../../../store/actions/carousel-actions";
 
 function EditCarousel(props) {
   const postList = useCarouselData();
-  // const fetch = async () => {
-  //   const posts = await fetchCarousel();
+  const [items, setItems] = useState();
+
+  useEffect(() => {
+    const orderedPosts =
+      postList &&
+      postList.map((post) => ({
+        id: post.id,
+        primary: post.title,
+        secondary: post.description,
+      }));
+    console.log("ordered", orderedPosts);
+    setItems(orderedPosts);
+  }, [postList]);
+
   console.log("<<<<<<<<<<<<", postList);
-  // };
 
-  // useEffect(() => {
-  //
-  // let statePosts;
+  const onDragEnd = ({ destination, source }) => {
+    // dropped outside the list
+    if (!destination) return;
 
-  // if (posts && posts !== []) {
-  //   statePosts = posts.map((post) => ({
-  //     id: post.id,
-  //     content: post.title,
-  //   }));
-  // }
-  // setState([statePosts]);
-  // statePosts && console.log(statePosts);
-  // }, [state.carouselStore.posts]);
+    const newItems = reorder(items, source.index, destination.index);
+
+    setItems(newItems);
+  };
 
   return (
     <>
@@ -44,7 +49,15 @@ function EditCarousel(props) {
       >
         <AdminAppBar />
 
-        <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
+        <Grid
+          container
+          direction={"column"}
+          width={"90%"}
+          marginX={"5%"}
+          style={{ background: "white" }}
+        >
+          {items && <DraggableList items={items} onDragEnd={onDragEnd} />}
+
           <ToastContainer />
         </Grid>
       </Box>

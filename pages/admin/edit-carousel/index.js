@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { reorder } from "../../../utils/draggable";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
@@ -12,7 +12,9 @@ import * as carouselActions from "../../../store/actions/carousel-actions";
 
 function EditCarousel(props) {
   const postList = useCarouselData();
+  const dispatch = useDispatch();
   const [items, setItems] = useState();
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     const orderedPosts =
@@ -37,6 +39,15 @@ function EditCarousel(props) {
     setItems(newItems);
   };
 
+  // const onDeleteItem = (id, { destination, source }) => {
+  //   // dropped outside the list
+  //   dispatch(carouselActions.deleteFromCarousel(id));
+
+  //   const newItems = reorder(items, source.index, destination.index);
+
+  //   setItems(newItems);
+  // };
+
   return (
     <>
       <Box
@@ -56,7 +67,15 @@ function EditCarousel(props) {
           marginX={"5%"}
           style={{ background: "white" }}
         >
-          {items && <DraggableList items={items} onDragEnd={onDragEnd} />}
+          {items && (
+            <DraggableList
+              items={items}
+              onDragEnd={onDragEnd}
+              render={render}
+              setRender={setRender}
+              // onDeleteItem={onDeleteItem}
+            />
+          )}
 
           <ToastContainer />
         </Grid>

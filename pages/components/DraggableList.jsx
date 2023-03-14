@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import DraggableListItem from "./DraggableListItems";
 import {
   DragDropContext,
@@ -6,14 +6,21 @@ import {
   OnDragEndResponder,
 } from "react-beautiful-dnd";
 
-const DraggableList = React.memo(({ items, onDragEnd }) => {
+const DraggableList = React.memo(({ items, onDragEnd, render, setRender }) => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable-list">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
             {items.map((item, index) => (
-              <DraggableListItem item={item} index={index} key={item.id} />
+              <DraggableListItem
+                item={item}
+                index={index}
+                key={item.id}
+                render={render}
+                setRender={setRender}
+                // onDeleteItem={onDeleteItem}
+              />
             ))}
             {provided.placeholder}
           </div>

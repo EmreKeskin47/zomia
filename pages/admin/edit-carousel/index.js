@@ -28,8 +28,6 @@ function EditCarousel(props) {
     setItems(orderedPosts);
   }, [postList]);
 
-  console.log("<<<<<<<<<<<<", postList);
-
   const onDragEnd = ({ destination, source }) => {
     // dropped outside the list
     if (!destination) return;
@@ -39,14 +37,18 @@ function EditCarousel(props) {
     setItems(newItems);
   };
 
-  // const onDeleteItem = (id, { destination, source }) => {
-  //   // dropped outside the list
-  //   dispatch(carouselActions.deleteFromCarousel(id));
+  const onDeleteItem = (id) => {
+    const newItems = (items) => {
+      const foundItemIndex = items.findIndex((entry) => entry.id === id);
+      console.log(foundItemIndex);
 
-  //   const newItems = reorder(items, source.index, destination.index);
+      if (foundItemIndex !== -1) items.splice(foundItemIndex, 1);
+      console.log(foundItemIndex);
 
-  //   setItems(newItems);
-  // };
+      return items;
+    };
+    setItems(newItems);
+  };
 
   return (
     <>
@@ -73,7 +75,7 @@ function EditCarousel(props) {
               onDragEnd={onDragEnd}
               render={render}
               setRender={setRender}
-              // onDeleteItem={onDeleteItem}
+              onDeleteItem={onDeleteItem}
             />
           )}
 

@@ -13,15 +13,18 @@ const useStyles = makeStyles({
   },
 });
 
-const DraggableListItem = ({ item, index, render, setRender }) => {
+const DraggableListItem = ({ item, index, onDeleteItem }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const deletePost = () => {
-    console.log("hhhhhhhhhhhh", item.id, index);
-    setRender(!render);
+  const handleDeletePost = (event) => {
+    const choice = window.confirm("Are you sure you want to delete this post?");
+    if (!choice) return;
     dispatch(carouselActions.deleteFromCarousel(item.id));
+    onDeleteItem(item.id);
+    console.log("deleted");
   };
+
   return (
     <Draggable draggableId={item.id} index={index}>
       {(provided, snapshot) => (
@@ -32,7 +35,7 @@ const DraggableListItem = ({ item, index, render, setRender }) => {
           className={snapshot.isDragging ? classes.draggingListItem : ""}
         >
           <ListItemText primary={item.primary} secondary={item.secondary} />
-          <button type="button" onClick={deletePost}>
+          <button type="button" onClick={handleDeletePost}>
             delete
           </button>
         </ListItem>

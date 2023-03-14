@@ -15,11 +15,17 @@ export default (state = Object.assign({}, initialState), action) => {
       state.posts = action.payload;
       return state;
     case DELETE_FROM_CAROUSEL:
-      state.posts.filter((item) => item.id === action.payload);
-      return state;
+      return {
+        ...state,
+        posts: [...state.posts.filter((item) => item.id !== action.payload)],
+      };
+
     case ADD_TO_CAROUSEL:
-      state.posts.push(action.payload);
-      console.log(state);
+      return {
+        ...state,
+        posts: [...state.posts, action.payload],
+      };
+
     case UPDATE_CAROUSEL_ORDER:
       //   const index = state.posts.findIndex((post) => post.id === post.id);
       //   state.posts[index] = action.payload;

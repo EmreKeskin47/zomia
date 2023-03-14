@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@mui/material";
+import { Paper, Button, Box } from "@mui/material";
 import { useArticleData } from "../store/hooks/useData";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
@@ -20,21 +20,20 @@ export function MainCarousel(props) {
 
 function Item(props) {
   return (
-    <Paper
-      className="main-carousel"
-      //   sx={{
-      //     backgroundImage: `url(${props.item.image})`,
-      //     backgroundSize: "auto",
-      //   }}
-    >
+    <Paper className="main-carousel">
       <ActiveLink href={`Articles/${props.item.id}`}>
-        <Image
-          src={props.item.image}
-          loader={imageLoader}
-          alt="Zomia Amblem"
-          width="1500rem"
-          height="600rem"
-        />
+        <Box>
+          <Image
+            src={props.item.image}
+            loader={imageLoader}
+            alt="Zomia Amblem"
+            unoptimized
+            width={"1300rem"}
+            height={"500rem"}
+            objectFit={"cover"}
+            objectPosition={"top center"}
+          />
+        </Box>
 
         <Typography className="carousel-text">
           <h2>{props.item.title}</h2>

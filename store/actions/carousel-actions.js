@@ -70,17 +70,17 @@ export const fetchCarouselPosts = () => {
   };
 };
 
-export const deleteArticle = (id) => {
+export const deleteFromCarousel = (id) => {
   return async (dispatch) => {
     try {
-      await deleteDoc(doc(db, "articles", id));
+      await deleteDoc(doc(db, "carousel", id));
       dispatch({
-        type: DELETE_ARTICLE,
+        type: DELETE_FROM_CAROUSEL,
         payload: id,
       });
-      toast("Article has been successfully deleted");
+      toast("Post has been successfully deleted");
     } catch (err) {
-      toast("delete article error" + err);
+      toast("delete post error" + err);
     }
   };
 };

@@ -10,6 +10,7 @@ import imageLoader from "../loader";
 export function MainCarousel(props) {
   const carouselList = useCarouselData();
   const posts = carouselList && carouselList.posts;
+  console.log(posts);
 
   return (
     <Carousel>
@@ -21,7 +22,7 @@ export function MainCarousel(props) {
 function Item(props) {
   return (
     <Paper className="main-carousel">
-      <ActiveLink href={`Articles/${props.item.id}`}>
+      <ActiveLink href={props.item.link}>
         <Box>
           <Image
             src={props.item.image}
@@ -29,16 +30,17 @@ function Item(props) {
             alt="Zomia Amblem"
             unoptimized
             width={"1300rem"}
-            height={"500rem"}
+            height={"525rem"}
             objectFit={"cover"}
             objectPosition={"top center"}
           />
         </Box>
-
-        <Typography className="carousel-text">
-          <h2>{props.item.title}</h2>
-          <p>{props.item.description}</p>
-        </Typography>
+        <Box>
+          <Typography>
+            <h2>{props.item.title}</h2>
+            <p>{props.item.description}</p>
+          </Typography>
+        </Box>
       </ActiveLink>
     </Paper>
   );

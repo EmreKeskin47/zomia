@@ -86,7 +86,9 @@ export const CustomForm = (props) => {
       contentType: isPdf ? "application/pdf" : "image/jpeg",
     };
     const storage = getStorage();
-    const storageRef = ref(storage, `images/${watchTitle}.pdf`);
+    const storageRef = isPdf
+      ? ref(storage, `pdf/${watchTitle}.pdf`)
+      : ref(storage, `images/${watchTitle}.img`);
 
     const uploadTask = uploadBytesResumable(
       storageRef,

@@ -59,7 +59,7 @@ export const fetchCarouselPosts = () => {
             doc.data().post.image ?? "",
             doc.data().post.category ?? "",
             doc.data().post.description ?? "",
-            doc.data().post.link ?? ""
+            doc.data().post.links ?? ""
           )
         );
       });

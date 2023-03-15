@@ -13,30 +13,32 @@ import { indexOf } from "lodash";
 
 function EditCarousel(props) {
   const carouselData = useCarouselData();
+  const posts = carouselData && carouselData.posts;
+  const order = carouselData && carouselData.order;
 
   const dispatch = useDispatch();
-  const [postList, setPostList] = useState();
-  const [postOrder, setPostOrder] = useState();
 
   const [items, setItems] = useState();
   const [render, setRender] = useState(false);
 
   useEffect(() => {
-    carouselData && setPostList(carouselData.posts);
-    carouselData && setPostOrder(carouselData.order);
-  }, [carouselData]);
-
-  useEffect(() => {
-    const orderedPosts =
-      postList &&
-      postList.map((post) => ({
+    //structure posts according to listItem structure
+    const structeredPosts =
+      posts &&
+      posts.map((post) => ({
         id: post.id,
         primary: post.title,
         secondary: post.description,
       }));
-    console.log("ordered", orderedPosts);
-    setItems(orderedPosts);
-  }, [postList]);
+    console.log("1", structeredPosts);
+    //sort posts according to carousel order
+    const orderedAndSrtucturedPosts =
+      order &&
+      structeredPosts.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+    console.log("2", order, orderedAndSrtucturedPosts);
+
+    setItems(orderedAndSrtucturedPosts);
+  }, [posts, order]);
 
   const onDragEnd = ({ destination, source }) => {
     // dropped outside the list
@@ -47,7 +49,7 @@ function EditCarousel(props) {
     setItems(newItems);
   };
 
-  const order = items && items.map((item) => item.id);
+  const newOrder = items && items.map((item) => item.id);
   const onDeleteItem = (id) => {
     const newItems = (items) => {
       const foundItemIndex = items.findIndex((entry) => entry.id === id);
@@ -62,7 +64,7 @@ function EditCarousel(props) {
   };
 
   const onSaveOrder = () => {
-    dispatch(carouselActions.updateCarouselOrder(order));
+    dispatch(carouselActions.updateCarouselOrder(newOrder));
   };
 
   return (
@@ -105,6 +107,7 @@ function EditCarousel(props) {
 const mapStateToProps = (state) => {
   return {
     posts: state.carouselStore.posts,
+    order: state.carouselStore.order,
   };
 };
 

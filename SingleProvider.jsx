@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import singleContext from "./SingleContext";
-import { useReportData, useArticleData } from "./store/hooks/useData";
+import {
+  useReportData,
+  useArticleData,
+  useCarouselData,
+} from "./store/hooks/useData";
 
 const SingleProvider = (props) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [adminAuth, setAdminAuth] = useState(false);
   const reportList = useReportData();
   const articleList = useArticleData();
+  const postList = useCarouselData();
 
   return (
     <singleContext.Provider
@@ -25,6 +30,7 @@ const SingleProvider = (props) => {
         },
         reportList: reportList,
         articleList: articleList,
+        postList: postList,
       }}
     >
       {props.children}

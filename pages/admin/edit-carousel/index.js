@@ -30,14 +30,8 @@ function EditCarousel(props) {
         primary: post.title,
         secondary: post.description,
       }));
-    console.log("1", structeredPosts);
-    //sort posts according to carousel order
-    const orderedAndSrtucturedPosts =
-      order &&
-      structeredPosts.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
-    console.log("2", order, orderedAndSrtucturedPosts);
 
-    setItems(orderedAndSrtucturedPosts);
+    setItems(structeredPosts);
   }, [posts, order]);
 
   const onDragEnd = ({ destination, source }) => {

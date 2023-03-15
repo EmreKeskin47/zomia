@@ -32,7 +32,11 @@ export default (state = Object.assign({}, initialState), action) => {
       return { ...state, order: action.payload.items };
 
     case FETCH_CAROUSEL_ORDER:
-      return { ...state, order: [...action.payload.order] };
+      const { posts } = state;
+      const order = [...action.payload.order];
+      //sort posts according to saved order
+      posts.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+      return { ...state, posts: [], order: order };
   }
   return state;
 };

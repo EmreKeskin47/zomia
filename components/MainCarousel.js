@@ -1,19 +1,19 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box } from "@mui/material";
-import { useArticleData } from "../store/hooks/useData";
+import { Paper, Box } from "@mui/material";
+import { useCarouselData } from "../store/hooks/useData";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import ActiveLink from "../pages/components/ActiveLink";
 import imageLoader from "../loader";
 
 export function MainCarousel(props) {
-  const articleList = useArticleData();
+  const carouselList = useCarouselData();
+  const posts = carouselList && carouselList.posts;
 
   return (
     <Carousel>
-      {articleList &&
-        articleList.map((article) => <Item key={article.id} item={article} />)}
+      {posts && posts.map((post) => <Item key={post.id} item={post} />)}
     </Carousel>
   );
 }
@@ -21,7 +21,7 @@ export function MainCarousel(props) {
 function Item(props) {
   return (
     <Paper className="main-carousel">
-      <ActiveLink href={`Articles/${props.item.id}`}>
+      <ActiveLink href={props.item.link}>
         <Box>
           <Image
             src={props.item.image}
@@ -29,16 +29,17 @@ function Item(props) {
             alt="Zomia Amblem"
             unoptimized
             width={"1300rem"}
-            height={"500rem"}
+            height={"525rem"}
             objectFit={"cover"}
             objectPosition={"top center"}
           />
         </Box>
-
-        <Typography className="carousel-text">
-          <h2>{props.item.title}</h2>
-          <p>{props.item.description}</p>
-        </Typography>
+        <Box>
+          <Typography>
+            <h2>{props.item.title}</h2>
+            <p>{props.item.description}</p>
+          </Typography>
+        </Box>
       </ActiveLink>
     </Paper>
   );

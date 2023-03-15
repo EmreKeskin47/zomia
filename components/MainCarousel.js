@@ -10,7 +10,6 @@ import imageLoader from "../loader";
 export function MainCarousel(props) {
   const carouselList = useCarouselData();
   const posts = carouselList && carouselList.posts;
-  console.log(posts);
 
   return (
     <Carousel>

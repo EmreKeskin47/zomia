@@ -3,6 +3,7 @@ import {
   ADD_TO_CAROUSEL,
   DELETE_FROM_CAROUSEL,
   UPDATE_CAROUSEL_ORDER,
+  FETCH_CAROUSEL_ORDER,
 } from "../actions/carousel-actions";
 
 const initialState = {
@@ -29,6 +30,9 @@ export default (state = Object.assign({}, initialState), action) => {
 
     case UPDATE_CAROUSEL_ORDER:
       return { ...state, order: action.payload.items };
+
+    case FETCH_CAROUSEL_ORDER:
+      return { ...state, order: [...action.payload.order] };
   }
   return state;
 };

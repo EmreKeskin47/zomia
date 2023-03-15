@@ -12,10 +12,19 @@ import * as carouselActions from "../../../store/actions/carousel-actions";
 import { indexOf } from "lodash";
 
 function EditCarousel(props) {
-  const postList = useCarouselData();
+  const carouselData = useCarouselData();
+
   const dispatch = useDispatch();
+  const [postList, setPostList] = useState();
+  const [postOrder, setPostOrder] = useState();
+
   const [items, setItems] = useState();
   const [render, setRender] = useState(false);
+
+  useEffect(() => {
+    carouselData && setPostList(carouselData.posts);
+    carouselData && setPostOrder(carouselData.order);
+  }, [carouselData]);
 
   useEffect(() => {
     const orderedPosts =
@@ -94,7 +103,6 @@ function EditCarousel(props) {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("state", state.carouselStore.posts);
   return {
     posts: state.carouselStore.posts,
   };

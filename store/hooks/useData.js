@@ -118,10 +118,11 @@ export function useArticleData() {
 export function useCarouselData() {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
-  const postList = useSelector((state) => state.carouselStore.posts);
-
+  const postList = useSelector((state) => state.carouselStore);
+  console.log("postlist", postList);
   useEffect(() => {
     dispatch(carouselActions.fetchCarouselPosts());
+    dispatch(carouselActions.fetchCarouselOrder());
     setData(postList);
   }, []);
   return data;

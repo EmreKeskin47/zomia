@@ -85,31 +85,27 @@ export const deleteFromCarousel = (id) => {
   };
 };
 
-export const updateArticle = (item) => {
+export const updateCarouselOrder = (items) => {
+  // hard coded id to keep updating the same array
+  const id = "lFtEzre8cWH2kCq9Ht3M";
   return async (dispatch) => {
     try {
-      await setDoc(doc(db, "articles", item.id), {
-        article: item,
+      setDoc(doc(db, "carousel-order", id), {
+        order: [...items],
       });
 
       dispatch({
-        type: UPDATE_ARTICLE,
+        type: UPDATE_CAROUSEL_ORDER,
         payload: {
-          title: item.title,
-          image: item.image,
-          date: item.date,
-          author: item.author,
-          description: item.description,
-          links: item.link,
-          text: item.text,
-          photoAttribution: item.photoAttribution,
-          additionalImg: item.additionalImg,
+          items,
         },
-        id: item.id,
+        id: id,
       });
-      toast("Article has been successfully updated");
+
+      toast("Order has been successfully updated");
+      console.log("in-actions: ", items);
     } catch (e) {
-      toast("Error updating document: " + e);
+      toast("Error updating order: " + e);
     }
   };
 };

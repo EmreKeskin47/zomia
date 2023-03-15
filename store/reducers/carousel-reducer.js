@@ -7,6 +7,7 @@ import {
 
 const initialState = {
   posts: [],
+  order: [],
 };
 
 export default (state = Object.assign({}, initialState), action) => {
@@ -27,9 +28,7 @@ export default (state = Object.assign({}, initialState), action) => {
       };
 
     case UPDATE_CAROUSEL_ORDER:
-      //   const index = state.posts.findIndex((post) => post.id === post.id);
-      //   state.posts[index] = action.payload;
-      return state;
+      return { ...state, order: action.payload.items };
   }
   return state;
 };

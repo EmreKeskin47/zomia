@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { reorder } from "../../../utils/draggable";
 import { Box } from "@mui/system";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
 import { useCarouselData } from "../../../store/hooks/useData";
 import DraggableList from "../../components/DraggableList";
 import * as carouselActions from "../../../store/actions/carousel-actions";
+import { indexOf } from "lodash";
 
 function EditCarousel(props) {
   const postList = useCarouselData();
@@ -37,6 +38,7 @@ function EditCarousel(props) {
     setItems(newItems);
   };
 
+  const order = items && items.map((item) => item.id);
   const onDeleteItem = (id) => {
     const newItems = (items) => {
       const foundItemIndex = items.findIndex((entry) => entry.id === id);
@@ -48,6 +50,10 @@ function EditCarousel(props) {
       return items;
     };
     setItems(newItems);
+  };
+
+  const onSaveOrder = () => {
+    dispatch(carouselActions.updateCarouselOrder(order));
   };
 
   return (
@@ -80,6 +86,7 @@ function EditCarousel(props) {
           )}
 
           <ToastContainer />
+          <Button onClick={onSaveOrder}>Save Carousel Order</Button>
         </Grid>
       </Box>
     </>
@@ -87,7 +94,7 @@ function EditCarousel(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log("state", state.carouselStore.posts);
+  // console.log("state", state.carouselStore.posts);
   return {
     posts: state.carouselStore.posts,
   };

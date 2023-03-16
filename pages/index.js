@@ -16,6 +16,7 @@ import {
 } from "../store/hooks/useData";
 import ActiveLink from "./components/ActiveLink";
 import { MainCarousel } from "../components/MainCarousel";
+import { CardTypes } from "../models/CardTypes";
 
 function App(props) {
   const [latestCount, setLatestCount] = useState(4);
@@ -72,7 +73,7 @@ function App(props) {
       <SectionBreaker text="Reports" link="/Reports" color="whitesmoke" />
       {/* Reports Section */}
       <Grid container direction="row" justifyContent="space-around">
-        <CardList type={"report"} />
+        <CardList type={CardTypes.reports} />
       </Grid>
       {/* End Reports Section */}
       <SectionBreaker text="Recent Publications" color="whitesmoke" />

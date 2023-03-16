@@ -6,6 +6,7 @@ import { useArticleData } from "../../../store/hooks/useData";
 import * as articleActions from "../../../store/actions/article-actions";
 import CardList from "../../components/CardList";
 import SectionBreaker from "../../components/SectionBreaker";
+import { CardTypes } from "../../../models/CardTypes";
 
 const ArticlePage = (props) => {
   const { id } = props;
@@ -24,7 +25,7 @@ const ArticlePage = (props) => {
       <>
         <SectionBreaker text="Related Articles" link="/Articles" />
         <Grid container direction="row" justifyContent="space-around">
-          <CardList type="article" />
+          <CardList type={CardTypes.articles} />
         </Grid>
       </>
     </Paper>

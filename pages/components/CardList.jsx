@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import ActiveLink from "./ActiveLink";
 import NewsSummary from "./NewsSummary";
@@ -6,88 +7,63 @@ import {
   useArticleData,
 } from "../../store/hooks/useData";
 import { getShortenedString } from "../../utils/ArticleParagraph";
+import { CardTypes } from "../../models/CardTypes";
 
 const CardList = ({ type }) => {
   const reportList = useReverseReportData();
   const articleList = useArticleData();
-  const generateList = () => {
-    if (type === "report") {
-      return (
-        <Grid container direction={"row"} justifyContent={"center"}>
-          {reportList &&
-            reportList.slice(0, 3).map((item) => (
-              <Grid
-                item
-                key={item.id}
-                sx={{
-                  paddingLeft: 1,
-                  paddingRight: 1,
-                }}
-              >
-                <ActiveLink
-                  href={`/Reports/${item.id}`}
-                  // sx={{ paddingLeft: 3, paddingRight: 3 }}
-                  // replace="true"
-                >
-                  <NewsSummary
-                    image={item.image}
-                    title={
-                      item.title.length > 70
-                        ? getShortenedString(item.title, 65)
-                        : item.title
-                    }
-                    // date={item.date}
-                    description={
-                      item.description
-                        ? getShortenedString(item.description, 110)
-                        : "No Description"
-                    }
-                    // author={item.author}
-                  />
-                </ActiveLink>
-              </Grid>
-            ))}
-        </Grid>
-      );
-    } else {
-      return (
-        <Grid container direction={"row"} justifyContent={"center"}>
-          {articleList &&
-            articleList.slice(0, 3).map((item) => (
-              <Grid
-                item
-                key={item.id}
-                sx={{
-                  paddingLeft: 3,
-                  paddingRight: 3,
-                }}
-              >
-                <ActiveLink
-                  href={`/Articles/${item.id}`}
-                  sx={{ paddingLeft: 3, paddingRight: 3 }}
-                  replace="true"
-                >
-                  <NewsSummary
-                    image={item.image}
-                    title={
-                      item.title.length > 51
-                        ? `${item.title.slice(0, 48)}...`
-                        : item.title
-                    }
-                    date={item.date}
-                    description={
-                      item.description
-                        ? item.description.slice(0, 400)
-                        : "No Description"
-                    }
-                    author={item.author}
-                  />
-                </ActiveLink>
-              </Grid>
-            ))}
-        </Grid>
-      );
+  const [content, setContent] = useState();
+
+  useEffect(() => {
+    switch (type) {
+      case CardTypes.articles:
+        setContent(articleList);
+        return;
+      case CardTypes.reports:
+        setContent(reportList);
+        return;
     }
+    return;
+  }, [type, reportList, articleList]);
+
+  const generateList = () => {
+    return (
+      <Grid container direction={"row"} justifyContent={"center"}>
+        {content &&
+          content.slice(0, 3).map((item) => (
+            <Grid
+              item
+              key={item.id}
+              sx={{
+                paddingLeft: 1,
+                paddingRight: 1,
+              }}
+            >
+              <ActiveLink
+                href={`/${type}/${item.id}`}
+                // sx={{ paddingLeft: 3, paddingRight: 3 }}
+                // replace="true"
+              >
+                <NewsSummary
+                  image={item.image}
+                  title={
+                    item.title.length > 70
+                      ? getShortenedString(item.title, 65)
+                      : item.title
+                  }
+                  // date={item.date}
+                  description={
+                    item.description
+                      ? getShortenedString(item.description, 110)
+                      : "No Description"
+                  }
+                  // author={item.author}
+                />
+              </ActiveLink>
+            </Grid>
+          ))}
+      </Grid>
+    );
   };
   return <Grid>{generateList()}</Grid>;
 };

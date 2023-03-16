@@ -7,101 +7,95 @@ import { Box, CardActionArea, Grid } from "@mui/material";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
 
-const getShortenedString = (string) => {
-    if (string.length >= 45) {
-        string = string.substring(0, 42) + '...';
-    }
-    return string;
-}
-
 const NewsSummary = (props) => {
-    const context = useContext(singleContext);
-    return (
-        <Grid
+  const context = useContext(singleContext);
+  return (
+    <Grid
+      sx={{
+        borderRadius: 0,
+        borderColor: palette.orange.main,
+        border: "10px",
+      }}
+    >
+      <Card sx={{ maxWidth: 420 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="220"
+            image={props.image}
+            alt="green iguana"
+          />
+          <CardContent
             sx={{
-                borderRadius: 0,
-                borderColor: palette.orange.main,
-                border: "10px",
+              backgroundColor: context.darkMode
+                ? palette.black.main
+                : "whitesmoke",
+              height: 170,
+              justifyContent: "flex-start",
+              flexDirection: "column",
+              alignItems: "baseline",
+              display: "flex",
+              padding: "1rem !important",
             }}
-        >
-            <Card sx={{ maxWidth: 375 }}>
-                <CardActionArea>
-                    <CardMedia
-                        component="img"
-                        height="350"
-                        image={props.image}
-                        alt="green iguana"
-                    />
-                    <CardContent
-                        sx={{
-                            backgroundColor: context.darkMode
-                                ? palette.black.main
-                                : "whitesmoke",
-                            height: 430,
-                            justifyContent: "flex-start",
-                            flexDirection: "column",
-                            alignItems: "baseline",
-                            display: "flex",
-                        }}
-                    >
-                        <Box sx={{ height: "105px" }}>
-                            <Box
-                                sx={{
-                                    textAlign: "left",
-                                    width: "100%",
-                                    height: "64px",
-                                }}
-                            >
-                                <Typography
-                                    gutterBottom
-                                    variant="h5"
-                                    sx={{
-                                        fontFamily: "Joan !important",
-                                        fontSize: "1.8rem !important",
-                                    }}
-                                >
-                                    {props.title &&
-                                        props.title.substring(0, 72)}
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    textAlign: "left",
-                                    width: "100%",
-                                    marginTop: "1rem",
-                                }}
-                            >
-                                <Typography
+          >
+            <Box sx={{ height: "55px" }}>
+              <Box
+                sx={{
+                  textAlign: "left",
+                  width: "100%",
+                  height: "50px",
+                }}
+              >
+                <Typography
+                  gutterBottom
+                  variant="h2"
+                  sx={{
+                    fontFamily: "Joan !important",
+                    fontSize: "1.4rem !important",
+                  }}
+                >
+                  {props.title && props.title}
+                </Typography>
+              </Box>
+              {/* <Box
+                sx={{
+                  textAlign: "left",
+                  width: "100%",
+                  marginTop: "1rem",
+                }}
+              >
+                {/* <Typography
                                     align="left"
                                     variant="caption"
                                     sx={{ fontSize: "1rem !important" }}
                                 >
                                     {getShortenedString(`${props.date} / ${props.author}`)}
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Typography
-                            variant="body2"
-                            sx={{
-                                fontSize: "1.1rem !important",
-                            }}
-                        >
-                            <hr
-                                style={{
-                                    width: "100%",
-                                    marginTop: "18px",
-                                    marginBottom: "18px",
-                                    border: "1px solid black",
-                                }}
-                            />
+                                </Typography> */}
+              {/* </Box> */}
+            </Box>
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: "1.1rem !important",
+                paddingTop: "1rem",
+              }}
+            >
+              {/* <hr
+                style={{
+                  width: "100%",
+                  marginTop: "18px",
+                  marginBottom: "18px",
+                  border: "1px solid black",
+                }}
+              /> */}
 
-                            {props.description && props.description}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        </Grid>
-    );
+              {props.description && props.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
+  );
 };
 
 export default NewsSummary;

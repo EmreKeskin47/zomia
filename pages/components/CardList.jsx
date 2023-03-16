@@ -1,10 +1,11 @@
-import { Grid, Link } from "@mui/material";
+import { Grid } from "@mui/material";
 import ActiveLink from "./ActiveLink";
 import NewsSummary from "./NewsSummary";
 import {
   useReverseReportData,
   useArticleData,
 } from "../../store/hooks/useData";
+import { getShortenedString } from "../../utils/ArticleParagraph";
 
 const CardList = ({ type }) => {
   const reportList = useReverseReportData();
@@ -19,8 +20,8 @@ const CardList = ({ type }) => {
                 item
                 key={item.id}
                 sx={{
-                  paddingLeft: 3,
-                  paddingRight: 3,
+                  paddingLeft: 1,
+                  paddingRight: 1,
                 }}
               >
                 <ActiveLink
@@ -31,17 +32,17 @@ const CardList = ({ type }) => {
                   <NewsSummary
                     image={item.image}
                     title={
-                      item.title.length > 52
-                        ? `${item.title.slice(0, 49)}...`
+                      item.title.length > 70
+                        ? getShortenedString(item.title, 65)
                         : item.title
                     }
-                    date={item.date}
+                    // date={item.date}
                     description={
                       item.description
-                        ? item.description.slice(0, 400)
+                        ? getShortenedString(item.description, 110)
                         : "No Description"
                     }
-                    author={item.author}
+                    // author={item.author}
                   />
                 </ActiveLink>
               </Grid>

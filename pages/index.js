@@ -75,7 +75,7 @@ function App(props) {
         <CardList type={"report"} />
       </Grid>
       {/* End Reports Section */}
-      <SectionBreaker text="Latest" color="whitesmoke" />
+      <SectionBreaker text="Recent Publications" color="whitesmoke" />
       {/* Popular Reads Section */}
       <Container sx={{ paddingBottom: "125px" }}>
         {writings &&

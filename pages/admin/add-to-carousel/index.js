@@ -12,6 +12,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useArticleData, useReportData } from "../../../store/hooks/useData";
 import { CustomForm } from "../../../components/admin/Form";
+import SelectExistingArticle from "../../components/SelectExistingArticle";
+import SelectExsistingReport from "../../components/SelectExsistingReport";
 
 const AddToCarousel = (props) => {
   const articleList = useArticleData();
@@ -33,106 +35,9 @@ const AddToCarousel = (props) => {
       >
         <AdminAppBar />
 
+        <SelectExistingArticle setSelectedVal={setSelectedVal} />
+        <SelectExsistingReport setSelectedVal={setSelectedVal} />
         <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
-          <FormControl sx={{ minWidth: 100 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">
-              Select article to add to carousel
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
-              sx={{
-                background: "whitesmoke",
-                width: " 100%",
-              }}
-              label="Article"
-            >
-              {articleList &&
-                articleList !== [] &&
-                articleList.map((item) => {
-                  // console.log("items:", item);
-                  return (
-                    <div
-                      style={{
-                        color: "#F9A21B",
-                        padding: 5,
-                        paddingLeft: 20,
-                      }}
-                      key={item.id}
-                    >
-                      <MenuItem
-                        key={item.id}
-                        value={item.title}
-                        defaultValue=""
-                        onClick={() => {
-                          setSelectedVal({
-                            id: item.id,
-                            title: item.title,
-                            image: item.image,
-                            description: item.description,
-                            links: `Articles/${item.id}`,
-                          });
-                          console.log(selectedVal);
-                          //   setArticleSelected(true);
-                        }}
-                      >
-                        <em>{item.title}</em>
-                      </MenuItem>
-                    </div>
-                  );
-                })}
-            </Select>
-          </FormControl>
-
-          <FormControl sx={{ minWidth: 100 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">
-              Select report
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
-              value={selectedVal.title}
-              onChange={(e) => handleChange(e)}
-              sx={{
-                background: "whitesmoke",
-                width: " 100%",
-              }}
-              label="Report"
-            >
-              {reports &&
-                reports !== [] &&
-                reports.map((item, id) => {
-                  return (
-                    <div
-                      style={{
-                        color: "#F9A21B",
-                        padding: 5,
-                        paddingLeft: 20,
-                      }}
-                      key={id}
-                    >
-                      <MenuItem
-                        key={item.id}
-                        value={item.title}
-                        onClick={() => {
-                          setSelectedVal({
-                            id: item.id,
-                            title: item.title,
-                            image: item.image,
-                            description: item.description,
-                            links: `Reports/${item.id}`,
-                          });
-                          console.log(selectedVal);
-                        }}
-                      >
-                        <em>{item.title}</em>
-                      </MenuItem>
-                    </div>
-                  );
-                })}
-            </Select>
-          </FormControl>
-
           <>
             <Grid container marginTop={5}>
               <Typography variant="h4" sx={{ color: "whitesmoke" }}>

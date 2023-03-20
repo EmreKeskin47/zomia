@@ -16,7 +16,7 @@ export const adjustNewLines = (text) => {
 };
 
 export const getShortenedString = (string, maxLength) => {
-  if (string.length >= 45) {
+  if (string.length >= maxLength) {
     string = string.substring(0, maxLength) + "...";
   }
   return string;

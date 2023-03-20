@@ -49,23 +49,19 @@ const CardList = ({ type }) => {
                 href={
                   type === CardTypes.cards ? item.link : `/${type}/${item.id}`
                 }
-                // sx={{ paddingLeft: 3, paddingRight: 3 }}
-                // replace="true"
               >
                 <NewsSummary
                   image={item.image}
                   title={
                     item.title.length > 70
-                      ? getShortenedString(item.title, 65)
+                      ? getShortenedString(item.title, 40)
                       : item.title
                   }
-                  // date={item.date}
                   description={
                     item.description
-                      ? getShortenedString(item.description, 110)
+                      ? getShortenedString(item.description, 80)
                       : "No Description"
                   }
-                  // author={item.author}
                 />
               </ActiveLink>
             </Grid>

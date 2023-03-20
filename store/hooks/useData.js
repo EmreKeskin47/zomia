@@ -76,7 +76,7 @@ export function useReportData() {
   useEffect(() => {
     dispatch(reportActions.fetchReports());
     setData(sortList(reportList).reverse());
-  }, [dispatch, reportList]);
+  }, [reportList]);
   return data;
 }
 

@@ -135,36 +135,10 @@ export const CustomForm = (props) => {
   //
   //   } else if (isReport && isEditable) {
   //     console.log("update report");
-  //     dispatch(
-  //       reportActions.updateReport({
-  //         id: data.id,
-  //         title: data.title,
-  //         author: data.author,
-  //         date: data.date,
-  //         text: preserveLineBreak(data.text),
-  //         description: preserveLineBreak(data.description),
-  //         photoAttribution: data.photoAttribution,
-  //         pdf: data.pdf,
-  //         image: data.image,
-  //         additionalImg: data.additionalImg,
-  //       })
-  //     );
+  //
   //   } else if (isReport) {
   //     console.log("create report");
-  //     dispatch(
-  //       reportActions.saveReport({
-  //         title: data.title,
-  //         author: data.author,
-  //         date: data.date,
-  //         text: preserveLineBreak(data.text),
-  //         description: preserveLineBreak(data.description),
-  //         photoAttribution: data.photoAttribution,
-  //         links: data.links,
-  //         pdf: data.pdf,
-  //         image: data.image,
-  //         additionalImg: data.additionalImg,
-  //       })
-  //     );
+  //
   //   } else if (isArticle) {
   //
   //   } else if (isCarousel) {

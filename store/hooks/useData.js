@@ -112,7 +112,7 @@ export function useArticleData() {
     dispatch(articleActions.fetchArticles());
     setData(sortList(articleList).reverse());
     // }, [dispatch, articleList, data]);
-  }, []);
+  }, [articleList]);
   return data;
 }
 

@@ -16,7 +16,15 @@ import {
 import { useDispatch } from "react-redux";
 
 export const CustomForm = (props) => {
-  const { isReport, isArticle, isEditable, isCarousel, values, isCard } = props;
+  const {
+    isReport,
+    isArticle,
+    isEditable,
+    isCarousel,
+    values,
+    isCard,
+    onSubmit,
+  } = props;
   const {
     watch,
     setValue,
@@ -118,96 +126,69 @@ export const CustomForm = (props) => {
     setDeleted(!deleted);
   };
 
-  const onSubmit = (data) => {
-    // console.log(data);
-    // data.title !== "" && {
-    if (isArticle && isEditable) {
-      console.log("updateArticle");
+  // const onSubmit = (data) => {
+  //   // console.log(data);
+  //   // data.title !== "" && {
+  //   if (isArticle && isEditable) {
+  //     console.log("updateArticle");
 
-      dispatch(
-        articleActions.updateArticle({
-          id: data.id,
-          title: data.title,
-          author: data.author,
-          date: data.date,
-          text: preserveLineBreak(data.text),
-          description: preserveLineBreak(data.description),
-          photoAttribution: data.photoAttribution,
-          links: data.links,
-          image: data.image,
-          additionalImg: data.additionalImg,
-        })
-      );
-    } else if (isReport && isEditable) {
-      console.log("update report");
-      dispatch(
-        reportActions.updateReport({
-          id: data.id,
-          title: data.title,
-          author: data.author,
-          date: data.date,
-          text: preserveLineBreak(data.text),
-          description: preserveLineBreak(data.description),
-          photoAttribution: data.photoAttribution,
-          pdf: data.pdf,
-          image: data.image,
-          additionalImg: data.additionalImg,
-        })
-      );
-    } else if (isReport) {
-      console.log("create report");
-      dispatch(
-        reportActions.saveReport({
-          title: data.title,
-          author: data.author,
-          date: data.date,
-          text: preserveLineBreak(data.text),
-          description: preserveLineBreak(data.description),
-          photoAttribution: data.photoAttribution,
-          links: data.links,
-          pdf: data.pdf,
-          image: data.image,
-          additionalImg: data.additionalImg,
-        })
-      );
-    } else if (isArticle) {
-      dispatch(
-        articleActions.saveArticle({
-          title: data.title,
-          author: data.author,
-          date: data.date,
-          text: preserveLineBreak(data.text),
-          description: preserveLineBreak(data.description),
-          photoAttribution: data.photoAttribution,
-          links: data.links,
-          pdf: "",
-          image: data.image,
-          additionalImg: data.additionalImg,
-        })
-      );
-      console.log("create Article");
-    } else if (isCarousel) {
-      dispatch(
-        carouselActions.addToCarousel({
-          title: data.title,
-          description: preserveLineBreak(data.description),
-          links: data.links,
-          image: data.image,
-        })
-      );
-    } else if (isCard) {
-      dispatch(
-        cardActions.addToCard({
-          title: data.title,
-          description: preserveLineBreak(data.description),
-          links: data.links,
-          image: data.image,
-        })
-      );
-    }
+  //
+  //   } else if (isReport && isEditable) {
+  //     console.log("update report");
+  //     dispatch(
+  //       reportActions.updateReport({
+  //         id: data.id,
+  //         title: data.title,
+  //         author: data.author,
+  //         date: data.date,
+  //         text: preserveLineBreak(data.text),
+  //         description: preserveLineBreak(data.description),
+  //         photoAttribution: data.photoAttribution,
+  //         pdf: data.pdf,
+  //         image: data.image,
+  //         additionalImg: data.additionalImg,
+  //       })
+  //     );
+  //   } else if (isReport) {
+  //     console.log("create report");
+  //     dispatch(
+  //       reportActions.saveReport({
+  //         title: data.title,
+  //         author: data.author,
+  //         date: data.date,
+  //         text: preserveLineBreak(data.text),
+  //         description: preserveLineBreak(data.description),
+  //         photoAttribution: data.photoAttribution,
+  //         links: data.links,
+  //         pdf: data.pdf,
+  //         image: data.image,
+  //         additionalImg: data.additionalImg,
+  //       })
+  //     );
+  //   } else if (isArticle) {
+  //
+  //   } else if (isCarousel) {
+  //     dispatch(
+  //       carouselActions.addToCarousel({
+  //         title: data.title,
+  //         description: preserveLineBreak(data.description),
+  //         links: data.links,
+  //         image: data.image,
+  //       })
+  //     );
+  //   } else if (isCard) {
+  //     dispatch(
+  //       cardActions.addToCard({
+  //         title: data.title,
+  //         description: preserveLineBreak(data.description),
+  //         links: data.links,
+  //         image: data.image,
+  //       })
+  //     );
+  //   }
 
-    // }
-  };
+  //   // }
+  // };
 
   return (
     <>

@@ -21,3 +21,10 @@ export const getShortenedString = (string, maxLength) => {
   }
   return string;
 };
+
+export const preserveLineBreak = (text) => {
+  while (text.includes("\n")) {
+    text = text.replace("\n", "\\n");
+  }
+  return text;
+};

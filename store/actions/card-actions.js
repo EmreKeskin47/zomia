@@ -1,6 +1,6 @@
 export const FETCH_CARDS = "FETCH_CARDS";
 export const ADD_TO_CARD = "ADD_TO_CARD";
-// export const DELETE_FROM_CAROUSEL = "DELETE_FROM_CAROUSEL";
+export const DELETE_CARD = "DELETE_CARD";
 export const UPDATE_CARD_ORDER = "UPDATE_CARD_ORDER";
 export const FETCH_CARD_ORDER = "FETCH_CARD_ORDER";
 import {
@@ -75,20 +75,20 @@ export const fetchCards = () => {
   };
 };
 
-// export const deleteFromCarousel = (id) => {
-//   return async (dispatch) => {
-//     try {
-//       await deleteDoc(doc(db, "carousel", id));
-//       dispatch({
-//         type: DELETE_FROM_CAROUSEL,
-//         payload: id,
-//       });
-//       toast("Post has been successfully deleted");
-//     } catch (err) {
-//       toast("delete post error" + err);
-//     }
-//   };
-// };
+export const deleteCard = (id) => {
+  return async (dispatch) => {
+    try {
+      await deleteDoc(doc(db, "cards", id));
+      dispatch({
+        type: DELETE_CARD,
+        payload: id,
+      });
+      toast("Card has been successfully deleted");
+    } catch (err) {
+      toast("delete card error" + err);
+    }
+  };
+};
 
 export const updateCardOrder = (items) => {
   return async (dispatch) => {

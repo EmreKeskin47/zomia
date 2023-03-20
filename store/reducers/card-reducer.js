@@ -1,7 +1,7 @@
 import {
   FETCH_CARDS,
   ADD_TO_CARD,
-  // DELETE_FROM_CARD,
+  DELETE_CARD,
   UPDATE_CARD_ORDER,
   FETCH_CARD_ORDER,
 } from "../actions/card-actions";
@@ -16,11 +16,11 @@ export default (state = Object.assign({}, initialState), action) => {
     case FETCH_CARDS:
       state.cards = action.payload;
       return state;
-    // case DELETE_FROM_CARD:
-    //   return {
-    //     ...state,
-    //     posts: [...state.posts.filter((item) => item.id !== action.payload)],
-    //   };
+    case DELETE_CARD:
+      return {
+        ...state,
+        cards: [...state.cards.filter((item) => item.id !== action.payload)],
+      };
 
     case ADD_TO_CARD:
       return {

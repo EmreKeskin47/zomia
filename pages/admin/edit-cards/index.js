@@ -40,7 +40,7 @@ function EditCards(props) {
   }, [cardList, order]);
 
   const handleDeleteItem = (id) => {
-    // dispatch(carouselActions.deleteFromCarousel(item.id));
+    dispatch(cardActions.deleteCard(id));
   };
 
   const onDragEnd = ({ destination, source }) => {

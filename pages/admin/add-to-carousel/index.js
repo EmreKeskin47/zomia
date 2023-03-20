@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
 import { connect } from "react-redux";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useArticleData, useReportData } from "../../../store/hooks/useData";
 import { CustomForm } from "../../../components/admin/Form";
 import SelectExistingArticle from "../../components/SelectExistingArticle";
 import SelectExsistingReport from "../../components/SelectExsistingReport";
+import * as carouselActions from "../../../store/actions/carousel-actions";
+import { preserveLineBreak } from "../../../utils/ArticleParagraph";
+import { useDispatch } from "react-redux";
 
 const AddToCarousel = (props) => {
-  const articleList = useArticleData();
-  const reports = useReportData();
+  const dispatch = useDispatch();
   const [selectedVal, setSelectedVal] = useState({});
   const [uploading, setUploading] = useState(false);
-  // const [added, setAdded] = useState(false);
   const [percent, setPercent] = useState(0);
+
+  const addPost = (data) => {
+    dispatch(
+      carouselActions.addToCarousel({
+        title: data.title,
+        description: preserveLineBreak(data.description),
+        links: data.links,
+        image: data.image,
+      })
+    );
+  };
 
   return (
     <>
@@ -44,7 +51,7 @@ const AddToCarousel = (props) => {
                 {"Add New Content"}
               </Typography>
 
-              <CustomForm isCarousel values={selectedVal} />
+              <CustomForm isCarousel values={selectedVal} onSubmit={addPost} />
             </Grid>
             {uploading &&
               percent > 0 &&

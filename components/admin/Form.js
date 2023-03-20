@@ -142,14 +142,7 @@ export const CustomForm = (props) => {
   //   } else if (isArticle) {
   //
   //   } else if (isCarousel) {
-  //     dispatch(
-  //       carouselActions.addToCarousel({
-  //         title: data.title,
-  //         description: preserveLineBreak(data.description),
-  //         links: data.links,
-  //         image: data.image,
-  //       })
-  //     );
+  //
   //   } else if (isCard) {
   //     dispatch(
   //       cardActions.addToCard({

@@ -7,7 +7,7 @@ import {
 } from "react-beautiful-dnd";
 
 const DraggableList = React.memo(
-  ({ items, onDragEnd, render, setRender, onDeleteItem }) => {
+  ({ items, onDragEnd, render, setRender, onDeleteItem, handleDeleteItem }) => {
     return (
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable-list">
@@ -21,6 +21,7 @@ const DraggableList = React.memo(
                   render={render}
                   setRender={setRender}
                   onDeleteItem={onDeleteItem}
+                  handleDeleteItem={handleDeleteItem}
                 />
               ))}
               {provided.placeholder}

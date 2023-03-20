@@ -5,6 +5,7 @@ import { createWrapper } from "next-redux-wrapper";
 import articleReducer from "./reducers/article-reducer";
 import reportReducer from "./reducers/report-reducer";
 import carouselReducer from "./reducers/carousel-reducer";
+import cardReducer from "./reducers/card-reducer";
 
 import app from "../firebase";
 import { getFirestore } from "firebase/firestore";
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   articleStore: articleReducer,
   reportStore: reportReducer,
   carouselStore: carouselReducer,
+  cardStore: cardReducer,
 });
 
 // creating store

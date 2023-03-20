@@ -1,27 +1,17 @@
 import React, { useState } from "react";
-import AdminAppBar from "../../../components/admin/AdminAppBar";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import { Box } from "@mui/system";
 import { connect } from "react-redux";
-import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/system";
+import { Grid, Typography } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useArticleData, useReportData } from "../../../store/hooks/useData";
-import { CustomForm } from "../../../components/admin/Form";
+import AdminAppBar from "../../../components/admin/AdminAppBar";
+
 import SelectExistingArticle from "../../components/SelectExistingArticle";
 import SelectExsistingReport from "../../components/SelectExsistingReport";
-
-const AddToCarousel = (props) => {
-  const articleList = useArticleData();
-  const reports = useReportData();
-  const [selectedVal, setSelectedVal] = useState({});
+import { CustomForm } from "../../../components/admin/Form";
+function AddCards() {
   const [uploading, setUploading] = useState(false);
-  // const [added, setAdded] = useState(false);
-  const [percent, setPercent] = useState(0);
+
+  const [selectedVal, setSelectedVal] = useState({});
 
   return (
     <>
@@ -34,7 +24,6 @@ const AddToCarousel = (props) => {
         }}
       >
         <AdminAppBar />
-
         <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
           <SelectExistingArticle setSelectedVal={setSelectedVal} />
           <SelectExsistingReport setSelectedVal={setSelectedVal} />
@@ -44,7 +33,7 @@ const AddToCarousel = (props) => {
                 {"Add New Content"}
               </Typography>
 
-              <CustomForm isCarousel values={selectedVal} />
+              <CustomForm isCard values={selectedVal} />
             </Grid>
             {uploading &&
               percent > 0 &&
@@ -59,18 +48,13 @@ const AddToCarousel = (props) => {
       </Box>
     </>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   return {
-    articles: state.articleStore.articles,
+    cards: state.cardStore.cards,
+    order: state.cardStore.order,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // fetchArticles: () => dispatch(articleActions.fetchArticles()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddToCarousel);
+export default connect(mapStateToProps)(AddCards);

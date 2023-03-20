@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import * as reportActions from "../../store/actions/report-actions";
 import * as articleActions from "../../store/actions/article-actions";
 import * as carouselActions from "../../store/actions/carousel-actions";
+import * as cardActions from "../../store/actions/card-actions";
 import { handleSnapshot, preserveLineBreak } from "../../utils/uploads";
 
 import {
@@ -15,7 +16,7 @@ import {
 import { useDispatch } from "react-redux";
 
 export const CustomForm = (props) => {
-  const { isReport, isArticle, isEditable, isCarousel, values } = props;
+  const { isReport, isArticle, isEditable, isCarousel, values, isCard } = props;
   const {
     watch,
     setValue,
@@ -194,6 +195,15 @@ export const CustomForm = (props) => {
           image: data.image,
         })
       );
+    } else if (isCard) {
+      dispatch(
+        cardActions.addToCard({
+          title: data.title,
+          description: preserveLineBreak(data.description),
+          links: data.links,
+          image: data.image,
+        })
+      );
     }
 
     // }
@@ -349,6 +359,7 @@ export const CustomForm = (props) => {
         )}
         {(isArticle || isReport) && <input type="submit" />}
         {isCarousel && <button type="submit">Add to Carousel</button>}
+        {isCard && <button type="submit">Add to Cards</button>}
       </form>
     </>
   );

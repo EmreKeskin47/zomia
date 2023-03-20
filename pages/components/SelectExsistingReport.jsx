@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -8,48 +8,48 @@ import { useReportData } from "../../store/hooks/useData";
 
 const SelectExsistingReport = ({ setSelectedVal }) => {
   const reports = useReportData();
+  const [title, setTitle] = useState();
+
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setTitle(event.target.value);
+  };
   return (
     <FormControl sx={{ minWidth: 100, width: "90%" }}>
-      <InputLabel id="demo-simple-select-autowidth-label">
-        Select report
-      </InputLabel>
+      <InputLabel>Select report</InputLabel>
       <Select
-        labelId="demo-simple-select-autowidth-label"
-        id="demo-simple-select-autowidth"
         sx={{
           background: "whitesmoke",
           width: " 100%",
         }}
         label="Report"
+        onChange={handleChange}
+        value={title}
       >
         {reports &&
           reports !== [] &&
-          reports.map((item, id) => {
+          reports.map((item) => {
             return (
-              <div
+              <MenuItem
                 style={{
                   color: "#F9A21B",
                   padding: 5,
                   paddingLeft: 20,
                 }}
-                key={id}
+                key={item.id}
+                value={item.title}
+                onClick={() => {
+                  setSelectedVal({
+                    id: item.id,
+                    title: item.title,
+                    image: item.image,
+                    description: item.description,
+                    links: `Reports/${item.id}`,
+                  });
+                }}
               >
-                <MenuItem
-                  key={item.id}
-                  value={item.title}
-                  onClick={() => {
-                    setSelectedVal({
-                      id: item.id,
-                      title: item.title,
-                      image: item.image,
-                      description: item.description,
-                      links: `Reports/${item.id}`,
-                    });
-                  }}
-                >
-                  <em>{item.title}</em>
-                </MenuItem>
-              </div>
+                <em>{item.title}</em>
+              </MenuItem>
             );
           })}
       </Select>

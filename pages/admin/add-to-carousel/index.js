@@ -20,7 +20,7 @@ const AddToCarousel = (props) => {
   const reports = useReportData();
   const [selectedVal, setSelectedVal] = useState({});
   const [uploading, setUploading] = useState(false);
-  //   const [articleSelected, setArticleSelected] = useState(false);
+  // const [added, setAdded] = useState(false);
   const [percent, setPercent] = useState(0);
 
   return (
@@ -35,9 +35,9 @@ const AddToCarousel = (props) => {
       >
         <AdminAppBar />
 
-        <SelectExistingArticle setSelectedVal={setSelectedVal} />
-        <SelectExsistingReport setSelectedVal={setSelectedVal} />
         <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
+          <SelectExistingArticle setSelectedVal={setSelectedVal} />
+          <SelectExsistingReport setSelectedVal={setSelectedVal} />
           <>
             <Grid container marginTop={5}>
               <Typography variant="h4" sx={{ color: "whitesmoke" }}>

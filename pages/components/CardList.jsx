@@ -5,6 +5,7 @@ import NewsSummary from "./NewsSummary";
 import {
   useReverseReportData,
   useArticleData,
+  useCardData,
 } from "../../store/hooks/useData";
 import { getShortenedString } from "../../utils/ArticleParagraph";
 import { CardTypes } from "../../models/CardTypes";
@@ -12,6 +13,8 @@ import { CardTypes } from "../../models/CardTypes";
 const CardList = ({ type }) => {
   const reportList = useReverseReportData();
   const articleList = useArticleData();
+  const cardData = useCardData();
+  const cardList = cardData && cardData.cards;
   const [content, setContent] = useState();
 
   useEffect(() => {
@@ -21,6 +24,9 @@ const CardList = ({ type }) => {
         return;
       case CardTypes.reports:
         setContent(reportList);
+        return;
+      case CardTypes.cards:
+        setContent(cardList);
         return;
     }
     return;
@@ -40,7 +46,9 @@ const CardList = ({ type }) => {
               }}
             >
               <ActiveLink
-                href={`/${type}/${item.id}`}
+                href={
+                  type === CardTypes.cards ? item.link : `/${type}/${item.id}`
+                }
                 // sx={{ paddingLeft: 3, paddingRight: 3 }}
                 // replace="true"
               >

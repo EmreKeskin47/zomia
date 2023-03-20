@@ -3,8 +3,6 @@ import { useForm, Controller } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import * as reportActions from "../../store/actions/report-actions";
 import * as articleActions from "../../store/actions/article-actions";
-import * as carouselActions from "../../store/actions/carousel-actions";
-import * as cardActions from "../../store/actions/card-actions";
 import { handleSnapshot, preserveLineBreak } from "../../utils/uploads";
 
 import {
@@ -126,37 +124,6 @@ export const CustomForm = (props) => {
     setDeleted(!deleted);
   };
 
-  // const onSubmit = (data) => {
-  //   // console.log(data);
-  //   // data.title !== "" && {
-  //   if (isArticle && isEditable) {
-  //     console.log("updateArticle");
-
-  //
-  //   } else if (isReport && isEditable) {
-  //     console.log("update report");
-  //
-  //   } else if (isReport) {
-  //     console.log("create report");
-  //
-  //   } else if (isArticle) {
-  //
-  //   } else if (isCarousel) {
-  //
-  //   } else if (isCard) {
-  //     dispatch(
-  //       cardActions.addToCard({
-  //         title: data.title,
-  //         description: preserveLineBreak(data.description),
-  //         links: data.links,
-  //         image: data.image,
-  //       })
-  //     );
-  //   }
-
-  //   // }
-  // };
-
   return (
     <>
       <form onSubmit={handleSubmit(deleted ? deleteDocument : onSubmit)}>
@@ -183,7 +150,7 @@ export const CustomForm = (props) => {
               label="Author(s)"
               fullWidth
               variant="outlined"
-              className={isCarousel ? "hide-element" : "show-element"}
+              className={isCarousel || isCard ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
@@ -198,20 +165,22 @@ export const CustomForm = (props) => {
               label="Date"
               fullWidth
               variant="outlined"
-              className={isCarousel ? "hide-element" : "show-element"}
+              className={isCarousel || isCard ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
           )}
         />
-        {(isArticle || isCarousel) && (
+        {(isArticle || isCarousel || isCard) && (
           <Controller
             name="links"
             control={control}
             render={({ field }) => (
               <TextField
                 id="outlined-multiline-static"
-                label={isCarousel ? "Link to original page" : "Link(s)"}
+                label={
+                  isCarousel || isCard ? "Link to original page" : "Link(s)"
+                }
                 fullWidth
                 variant="outlined"
                 style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
@@ -229,7 +198,7 @@ export const CustomForm = (props) => {
               label="Text"
               fullWidth
               variant="outlined"
-              className={isCarousel ? "hide-element" : "show-element"}
+              className={isCarousel || isCard ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />
@@ -258,7 +227,7 @@ export const CustomForm = (props) => {
               label="Photo attribution"
               fullWidth
               variant="outlined"
-              className={isCarousel ? "hide-element" : "show-element"}
+              className={isCarousel || isCard ? "hide-element" : "show-element"}
               style={{ backgroundColor: "#fafafa", marginBottom: 4 }}
               {...field}
             />

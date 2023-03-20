@@ -4,6 +4,7 @@ import {
   useReportData,
   useArticleData,
   useCarouselData,
+  useCardData,
 } from "./store/hooks/useData";
 
 const SingleProvider = (props) => {
@@ -12,6 +13,7 @@ const SingleProvider = (props) => {
   const reportList = useReportData();
   const articleList = useArticleData();
   const postList = useCarouselData();
+  const cardList = useCardData();
 
   return (
     <singleContext.Provider
@@ -31,6 +33,7 @@ const SingleProvider = (props) => {
         reportList: reportList,
         articleList: articleList,
         postList: postList,
+        cardList: cardList,
       }}
     >
       {props.children}

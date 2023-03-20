@@ -34,6 +34,10 @@ function EditCarousel(props) {
     setItems(structeredPosts);
   }, [posts, order]);
 
+  const handleDeleteItem = (id) => {
+    dispatch(carouselActions.deleteFromCarousel(id));
+  };
+
   const onDragEnd = ({ destination, source }) => {
     // dropped outside the list
     if (!destination) return;
@@ -87,6 +91,7 @@ function EditCarousel(props) {
               render={render}
               setRender={setRender}
               onDeleteItem={onDeleteItem}
+              handleDeleteItem={handleDeleteItem}
             />
           )}
 

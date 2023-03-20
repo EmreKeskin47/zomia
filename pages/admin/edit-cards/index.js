@@ -3,15 +3,19 @@ import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { reorder } from "../../../utils/draggable";
 import { Box } from "@mui/system";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import { useReportData } from "../../../store/hooks/useData";
+import { useCardData } from "../../../store/hooks/useData";
 import DraggableList from "../../components/DraggableList";
 import * as cardActions from "../../../store/actions/card-actions";
-
+import SelectExistingArticle from "../../components/SelectExistingArticle";
+import SelectExsistingReport from "../../components/SelectExsistingReport";
+import { CustomForm } from "../../../components/admin/Form";
 function EditCards(props) {
-  const reportList = useReportData();
+  const cardData = useCardData();
+  const cardList = cardData && cardData.cards;
+  const order = cardData && cardData.order;
   const dispatch = useDispatch();
 
   // const cardOrder = dispatch(cardActions.fetchCardOrder());
@@ -25,22 +29,19 @@ function EditCards(props) {
   useEffect(() => {
     //structure posts according to listItem structure
     const structeredReports =
-      reportList &&
-      reportList.map((report) => ({
+      cardList &&
+      cardList.map((report) => ({
         id: report.id,
         primary: report.title,
         secondary: report.description,
       }));
 
-    // const strucuredAndSorted =
-    //   cardOrder &&
-    //   structeredReports &&
-    //   structeredReports.sort(
-    //     (a, b) => cardOrder.indexOf(a.id) - cardOrder.indexOf(b.id)
-    //   );
-
     setItems(structeredReports);
-  }, [reportList]);
+  }, [cardList, order]);
+
+  const handleDeleteItem = (id) => {
+    // dispatch(carouselActions.deleteFromCarousel(item.id));
+  };
 
   const onDragEnd = ({ destination, source }) => {
     // dropped outside the list
@@ -95,6 +96,7 @@ function EditCards(props) {
               render={render}
               setRender={setRender}
               onDeleteItem={onDeleteItem}
+              handleDeleteItem={handleDeleteItem}
             />
           )}
 
@@ -108,8 +110,8 @@ function EditCards(props) {
 
 const mapStateToProps = (state) => {
   return {
-    // posts: state.carouselStore.posts,
-    // order: state.cardStore.order,
+    cards: state.cardStore.cards,
+    order: state.cardStore.order,
   };
 };
 

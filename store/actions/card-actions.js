@@ -1,4 +1,4 @@
-// export const FETCH_CAROUSEL_CONTENT = "FETCH_CAROUSEL_CONTENT";
+export const FETCH_CARDS = "FETCH_CARDS";
 export const ADD_TO_CARD = "ADD_TO_CARD";
 // export const DELETE_FROM_CAROUSEL = "DELETE_FROM_CAROUSEL";
 export const UPDATE_CARD_ORDER = "UPDATE_CARD_ORDER";
@@ -16,13 +16,14 @@ import { db } from "../store";
 import { Article } from "../../models/Article";
 import { Post } from "../../models/Post";
 import { toast } from "react-toastify";
+import { Card } from "../../models/Card";
 // hard coded id of oredered card content to keep updating the same array
 
 const id = "miAfvZeyenVPFl4yVjMY";
 export const addToCard = (item) => {
   return async (dispatch) => {
     try {
-      await addDoc(collection(db, "carod"), {
+      await addDoc(collection(db, "cards"), {
         card: item,
       });
 
@@ -35,44 +36,44 @@ export const addToCard = (item) => {
           link: item.link,
         },
       });
-      toast("Card has been successfully added to carousel");
+      toast("Card has been successfully added");
     } catch (e) {
       toast("Error adding card to homepage: " + e);
     }
   };
 };
 
-// export const fetchCarouselPosts = () => {
-//   return async (dispatch) => {
-//     try {
-//       let posts = [];
+export const fetchCards = () => {
+  return async (dispatch) => {
+    try {
+      let cards = [];
 
-//       const querySnapshot = await getDocs(collection(db, "carousel"));
+      const querySnapshot = await getDocs(collection(db, "cards"));
 
-//       querySnapshot.forEach((doc) => {
-//         // doc.data() is never undefined for query doc snapshots
-//         // console.log("<<<<<<<doc", doc.data());
-//         posts.push(
-//           new Post(
-//             doc.id,
-//             doc.data().post.title ?? "",
-//             doc.data().post.image ?? "",
-//             doc.data().post.category ?? "",
-//             doc.data().post.description ?? "",
-//             doc.data().post.links ?? ""
-//           )
-//         );
-//       });
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log("<<<<<<<doc", doc.data());
+        cards.push(
+          new Card(
+            doc.id,
+            doc.data().card.title ?? "",
+            doc.data().card.image ?? "",
+            doc.data().card.category ?? "",
+            doc.data().card.description ?? "",
+            doc.data().card.links ?? ""
+          )
+        );
+      });
 
-//       dispatch({
-//         type: FETCH_CAROUSEL_CONTENT,
-//         payload: posts,
-//       });
-//     } catch (err) {
-//       toast("fetch posts error" + err);
-//     }
-//   };
-// };
+      dispatch({
+        type: FETCH_CARDS,
+        payload: cards,
+      });
+    } catch (err) {
+      toast("fetch cards error" + err);
+    }
+  };
+};
 
 // export const deleteFromCarousel = (id) => {
 //   return async (dispatch) => {

@@ -51,6 +51,11 @@ const AdminAppBar = () => {
               Edit Carousel
             </Typography>
           </Link>
+          <Link href="/admin/add-card" passhref="true">
+            <Typography variant="h6" sx={{ color: "whitesmoke" }}>
+              Add Cards
+            </Typography>
+          </Link>
           <Link href="/admin/edit-cards" passhref="true">
             <Typography variant="h6" sx={{ color: "whitesmoke" }}>
               Edit Cards

@@ -1,5 +1,5 @@
 import {
-  // FETCH_CARD_CONTENT,
+  FETCH_CARDS,
   ADD_TO_CARD,
   // DELETE_FROM_CARD,
   UPDATE_CARD_ORDER,
@@ -13,9 +13,9 @@ const initialState = {
 
 export default (state = Object.assign({}, initialState), action) => {
   switch (action.type) {
-    // case FETCH_CARD_CONTENT:
-    //   state.posts = action.payload;
-    //   return state;
+    case FETCH_CARDS:
+      state.cards = action.payload;
+      return state;
     // case DELETE_FROM_CARD:
     //   return {
     //     ...state,
@@ -32,10 +32,10 @@ export default (state = Object.assign({}, initialState), action) => {
       return { ...state, order: action.payload.items };
 
     case FETCH_CARD_ORDER:
-      //   const { posts } = state;
+      const { cards } = state;
       const order = [...action.payload.order];
-      //sort posts according to saved order
-      //   posts.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+      //sort cards according to saved order
+      cards.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
       console.log(order);
       return { ...state, order: order };
   }

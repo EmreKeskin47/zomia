@@ -22,7 +22,6 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="cuDQRQhxPo64IWgmg4D3_T8DMlFcXr7CX6bpoIjFrYo"
           />
-          +
         </Head>
         <body>
           <Main />

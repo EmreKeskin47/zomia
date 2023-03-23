@@ -76,7 +76,7 @@ export function useReportData() {
   useEffect(() => {
     dispatch(reportActions.fetchReports());
     setData(sortList(reportList).reverse());
-  }, [dispatch, reportList]);
+  }, [reportList]);
   return data;
 }
 
@@ -112,7 +112,7 @@ export function useArticleData() {
     dispatch(articleActions.fetchArticles());
     setData(sortList(articleList).reverse());
     // }, [dispatch, articleList, data]);
-  }, []);
+  }, [articleList]);
   return data;
 }
 

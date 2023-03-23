@@ -5,8 +5,9 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 import { useArticleData } from "../../store/hooks/useData";
+import { connect } from "react-redux";
 
-const SelectExistingArticle = ({ setSelectedVal }) => {
+const SelectExistingArticle = ({ setSelectedVal, returnFullData }) => {
   const articleList = useArticleData();
   const [title, setTitle] = useState();
 
@@ -40,13 +41,26 @@ const SelectExistingArticle = ({ setSelectedVal }) => {
                 key={item.id}
                 value={item.title}
                 onClick={() => {
-                  setSelectedVal({
-                    id: item.id,
-                    title: item.title,
-                    image: item.image,
-                    description: item.description,
-                    links: `Articles/${item.id}`,
-                  });
+                  console.log("<<<<<<<<<<<<<", item);
+                  returnFullData
+                    ? setSelectedVal({
+                        id: item.id,
+                        title: item.title,
+                        author: item.author,
+                        date: item.date,
+                        text: item.text,
+                        photoAttribution: item.photoAttribution,
+                        image: item.image,
+                        description: item.description,
+                        links: item.link,
+                      })
+                    : setSelectedVal({
+                        id: item.id,
+                        title: item.title,
+                        image: item.image,
+                        description: item.description,
+                        links: `Articles/${item.id}`,
+                      });
                 }}
               >
                 <em>{item.title}</em>
@@ -58,4 +72,9 @@ const SelectExistingArticle = ({ setSelectedVal }) => {
   );
 };
 
-export default SelectExistingArticle;
+const mapStateToProps = (state) => {
+  return {
+    articles: state.articleStore.articles,
+  };
+};
+export default connect(mapStateToProps)(SelectExistingArticle);

@@ -1,113 +1,82 @@
 import React, { useState } from "react";
 import AdminAppBar from "../../../components/admin/AdminAppBar";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/system";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Grid, Stack } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useArticleData } from "../../../store/hooks/useData";
 import { CustomForm } from "../../../components/admin/Form";
+import SelectExistingArticle from "../../components/SelectExistingArticle";
+import * as articleActions from "../../../store/actions/article-actions";
+import { preserveLineBreak } from "../../../utils/ArticleParagraph";
+import { useDispatch } from "react-redux";
 
 const EditArticle = (props) => {
-  const articleList = useArticleData();
   const [selectedVal, setSelectedVal] = useState({});
   const [uploading, setUploading] = useState(false);
   const [percent, setPercent] = useState(0);
 
+  const dispatch = useDispatch();
+
+  console.log(selectedVal);
+
+  const updateArticle = (data) => {
+    dispatch(
+      articleActions.updateArticle({
+        id: data.id,
+        title: data.title,
+        author: data.author,
+        date: data.date,
+        text: preserveLineBreak(data.text),
+        description: preserveLineBreak(data.description),
+        photoAttribution: data.photoAttribution,
+        links: data.links,
+        image: data.image,
+        // additionalImg: data.additionalImg,
+      })
+    );
+  };
+
   return (
-    <>
-      <Box
-        sx={{
-          width: "80%",
-          marginTop: 8,
-          marginX: "10%",
-          height: "90%",
-        }}
-      >
-        <AdminAppBar />
+    <Box
+      sx={{
+        width: "80%",
+        marginTop: 8,
+        marginX: "10%",
+        height: "90%",
+      }}
+    >
+      <AdminAppBar />
 
-        <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
-          <FormControl sx={{ minWidth: 100 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">
-              Select article
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
-              sx={{
-                background: "whitesmoke",
-                width: " 100%",
-              }}
-              label="Article"
-              defaultValue=""
-            >
-              {articleList &&
-                articleList !== [] &&
-                articleList.map((item) => {
-                  // console.log("items:", item);
-                  return (
-                    <div
-                      style={{
-                        color: "#F9A21B",
-                        padding: 5,
-                        paddingLeft: 20,
-                      }}
-                      key={item.id}
-                    >
-                      <MenuItem
-                        key={item.id}
-                        value={item.title}
-                        defaultValue=""
-                        onClick={() => {
-                          setSelectedVal({
-                            id: item.id,
-                            title: item.title,
-                            image: item.image,
-                            date: item.date,
-                            photoAttribution: item.photoAttribution,
-                            author: item.author,
-                            description: item.description,
-                            link: item.link,
-                            text: item.text,
-                            additionalImg: item.additionalImg,
-                          });
-                          console.log(selectedVal);
-                        }}
-                      >
-                        <em>{item.title}</em>
-                      </MenuItem>
-                    </div>
-                  );
-                })}
-            </Select>
-          </FormControl>
+      <Grid container direction={"column"} width={"90%"} marginX={"5%"}>
+        <Stack>
+          <SelectExistingArticle
+            setSelectedVal={setSelectedVal}
+            returnFullData
+          />
 
-          <>
-            <Grid container marginTop={5}>
-              <Typography variant="h4" sx={{ color: "whitesmoke" }}>
-                {"Edit Article"}
-              </Typography>
+          <Typography variant="h4" sx={{ color: "whitesmoke" }}>
+            {"Edit Article"}
+          </Typography>
 
-              <CustomForm isArticle isEditable values={selectedVal} />
-            </Grid>
-            {uploading &&
-              percent > 0 &&
-              toast("Upload is " + percent + "% done", {
-                autoClose: 1000,
-                newestOnTop: false,
-              })}
+          <CustomForm
+            isArticle
+            isEditable
+            values={selectedVal}
+            onSubmit={updateArticle}
+          />
+          {uploading &&
+            percent > 0 &&
+            toast("Upload is " + percent + "% done", {
+              autoClose: 1000,
+              newestOnTop: false,
+            })}
 
-            <ToastContainer />
-          </>
-        </Grid>
-      </Box>
-    </>
+          <ToastContainer />
+        </Stack>
+      </Grid>
+    </Box>
   );
 };
 
@@ -117,10 +86,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // fetchArticles: () => dispatch(articleActions.fetchArticles()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditArticle);
+export default connect(mapStateToProps)(EditArticle);

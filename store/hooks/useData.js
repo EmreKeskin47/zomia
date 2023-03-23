@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as reportActions from "../actions/report-actions";
 import * as articleActions from "../actions/article-actions";
 import * as carouselActions from "../actions/carousel-actions";
+import * as cardActions from "../actions/card-actions";
 
 const monthList = {
   january: "1",
@@ -123,6 +124,18 @@ export function useCarouselData() {
     dispatch(carouselActions.fetchCarouselPosts());
     dispatch(carouselActions.fetchCarouselOrder());
     setData(postList);
+  }, []);
+  return data;
+}
+
+export function useCardData() {
+  const dispatch = useDispatch();
+  const [data, setData] = useState(null);
+  const cardList = useSelector((state) => state.cardStore);
+  useEffect(() => {
+    dispatch(cardActions.fetchCards());
+    dispatch(cardActions.fetchCardOrder());
+    setData(cardList);
   }, []);
   return data;
 }

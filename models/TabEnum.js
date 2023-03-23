@@ -1,3 +1,5 @@
+import { CardTypes } from "./CardTypes";
+
 export const Tabs = {
   OurWork: "OurWork",
   Publications: "Publications",
@@ -12,8 +14,8 @@ export const OurWork = {
 };
 
 export const Publications = {
-  reports: "Reports",
-  articles: "Articles",
+  reports: CardTypes.reports,
+  articles: CardTypes.articles,
   ourMethodology: "Our methodology",
 };
 

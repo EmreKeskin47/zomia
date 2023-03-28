@@ -58,9 +58,11 @@ const NewsSummary = (props) => {
               </Box>
             </Box>
             <Typography
+              className="article-card-desc"
               variant="body2"
               sx={{
                 fontSize: "1.1rem !important",
+                // marginTop: 10,
               }}
             >
               {props.description && props.description}

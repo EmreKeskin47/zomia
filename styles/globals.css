@@ -117,3 +117,7 @@ p.article-card-desc {
 .height-of-all-cards {
   height: 40px;
 }
+
+.body-container {
+  min-height: 100vh;
+}

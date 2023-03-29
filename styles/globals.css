@@ -109,3 +109,11 @@ a {
 p.article-card-desc {
   margin-top: 1rem;
 }
+
+.height-of-home-page-cards {
+  height: 30px;
+}
+
+.height-of-all-cards {
+  height: 40px;
+}

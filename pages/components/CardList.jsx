@@ -62,6 +62,7 @@ const CardList = ({ type }) => {
                       ? getShortenedString(item.description, 80)
                       : "No Description"
                   }
+                  type={type}
                 />
               </ActiveLink>
             </Grid>

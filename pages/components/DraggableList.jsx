@@ -33,4 +33,6 @@ const DraggableList = React.memo(
   }
 );
 
+DraggableList.displayName = "DraggableList";
+
 export default DraggableList;

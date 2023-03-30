@@ -6,9 +6,11 @@ import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Grid } from "@mui/material";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
+import { CardTypes } from "../../models/CardTypes";
 
 const NewsSummary = (props) => {
   const context = useContext(singleContext);
+  const { type } = props;
   return (
     <Grid
       sx={{
@@ -42,8 +44,12 @@ const NewsSummary = (props) => {
                 sx={{
                   textAlign: "left",
                   width: "100%",
-                  height: "40px",
                 }}
+                className={
+                  type === CardTypes.cards
+                    ? "height-of-home-page-cards"
+                    : "height-of-all-cards"
+                }
               >
                 <Typography
                   gutterBottom
@@ -58,9 +64,13 @@ const NewsSummary = (props) => {
               </Box>
             </Box>
             <Typography
+              className={
+                props.type === CardTypes.articles ? "article-card-desc" : ""
+              }
               variant="body2"
               sx={{
                 fontSize: "1.1rem !important",
+                // marginTop: 10,
               }}
             >
               {props.description && props.description}

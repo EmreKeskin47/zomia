@@ -20,7 +20,7 @@ const ArticlePage = (props) => {
   }, [articleList, id]);
 
   return (
-    <Paper sx={{ paddingTop: 5 }}>
+    <Paper sx={{ paddingY: 5 }}>
       {data && <Article article={data} />}
       <>
         <SectionBreaker text="Related Articles" link="/Articles" />

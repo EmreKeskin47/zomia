@@ -62,7 +62,7 @@ export const fetchArticles = () => {
             doc.data().article.author ?? "",
             doc.data().article.category ?? "",
             doc.data().article.description ?? "",
-            doc.data().article.link ?? "",
+            doc.data().article.links ?? "",
             doc.data().article.text ?? "",
             doc.data().article.photoAttribution ?? "",
             doc.data().article.additionalImg ?? ""

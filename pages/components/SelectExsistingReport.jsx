@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 import { useReportData } from "../../store/hooks/useData";
 
-const SelectExsistingReport = ({ setSelectedVal }) => {
+const SelectExsistingReport = ({ setSelectedVal, returnFullData }) => {
   const reports = useReportData();
   const [title, setTitle] = useState();
 
@@ -39,13 +39,26 @@ const SelectExsistingReport = ({ setSelectedVal }) => {
                 key={item.id}
                 value={item.title}
                 onClick={() => {
-                  setSelectedVal({
-                    id: item.id,
-                    title: item.title,
-                    image: item.image,
-                    description: item.description,
-                    links: `Reports/${item.id}`,
-                  });
+                  console.log(item);
+                  returnFullData
+                    ? setSelectedVal({
+                        id: item.id,
+                        title: item.title,
+                        author: item.author,
+                        date: item.date,
+                        text: item.text,
+                        photoAttribution: item.photoAttribution,
+                        image: item.image,
+                        description: item.description,
+                        pdf: item.pdfLink,
+                      })
+                    : setSelectedVal({
+                        id: item.id,
+                        title: item.title,
+                        image: item.image,
+                        description: item.description,
+                        links: `Reports/${item.id}`,
+                      });
                 }}
               >
                 <em>{item.title}</em>

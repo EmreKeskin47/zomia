@@ -118,6 +118,7 @@ p.article-card-desc {
   height: 40px;
 }
 
-.body-container {
+.height-of-screen {
   min-height: calc(100vh - 5rem);
+  /* padding-bottom: 1rem; */
 }

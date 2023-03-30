@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }) {
                   <Loader type={1} />
                 ) : (
                   <Paper
-                    className="body-container"
+                    className="height-of-screen "
                     sx={
                       isMobile
                         ? {
@@ -93,7 +93,7 @@ function MyApp({ Component, pageProps }) {
                           }
                         : {
                             paddingTop: { xs: 0, md: 5 },
-                            backgroundColor: palette.grey.main,
+                            backgroundColor: palette.black.main,
                           }
                     }
                   >

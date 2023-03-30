@@ -74,7 +74,7 @@ const About = () => {
               }
             />
 
-            <Box sx={{ marginLeft: { md: 2.5 } }}>
+            <Box>
               <RenderTitle text="Support Zomia" height="100px" oswald={true} />
             </Box>
 

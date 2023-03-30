@@ -9,10 +9,13 @@ import singleContext from "../../SingleContext";
 import { CardTypes } from "../../models/CardTypes";
 // import Button from "../../theme/overrides/Button";
 import { MainCarousel } from "../../components/MainCarousel";
+import GenericModal from "../../layout/GenericModal";
 
-const Programs = () => {
-  const context = useContext(singleContext);
+const RefugeesInTech = () => {
+  // const context = useContext(singleContext);
   //hardcoded data- need to fetch from db
+  const [openModal, setOpenModal] = React.useState(false);
+  // const [closeModal, setCloseModal] = React.useState(false);
 
   const imgForCarousel = [
     { image: "/refugees/class.png" },
@@ -23,25 +26,32 @@ const Programs = () => {
   ];
 
   return (
-    <Paper sx={{ paddingTop: 5 }} className={"height-of-screen"}>
-      <Container>
-        <Stack>
-          <Box>
-            <MainCarousel inRefugeePage content={imgForCarousel} />
-          </Box>
-          <Stack direction="row" spacing={2} justifyContent="center">
-            <Button>Learn to code</Button>
-            <Button>Hire a refugee in tech</Button>
-            <Button>Partner with Zomia</Button>
+    <>
+      <Paper sx={{ paddingTop: 5 }} className={"height-of-screen"}>
+        <Container>
+          <Stack>
+            <Box>
+              <MainCarousel inRefugeePage content={imgForCarousel} />
+            </Box>
+            <Stack direction="row" spacing={2} justifyContent="center">
+              <Button onClick={() => setOpenModal(true)}>Learn to code</Button>
+              <Button onClick={() => setOpenModal(true)}>
+                Hire a refugee in tech
+              </Button>
+              <Button onClick={() => setOpenModal(true)}>
+                Partner with Zomia
+              </Button>
+            </Stack>
+            <Box>
+              <CardList type={CardTypes.refugees} />
+            </Box>
+            <Box></Box>
           </Stack>
-          <Box>
-            <CardList type={CardTypes.refugees} />
-          </Box>
-          <Box></Box>
-        </Stack>
-      </Container>
-    </Paper>
+        </Container>
+      </Paper>
+      <GenericModal open={openModal} setOpenModal={setOpenModal} />
+    </>
   );
 };
 
-export default Programs;
+export default RefugeesInTech;

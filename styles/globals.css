@@ -130,3 +130,8 @@ p.article-card-desc {
 .defualt-card-width {
   width: 26rem;
 }
+
+img.refugee-carousel {
+  margin-left: 7rem !important;
+  height: 10px !important;
+}

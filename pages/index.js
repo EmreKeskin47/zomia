@@ -72,9 +72,9 @@ function App(props) {
 
       <SectionBreaker text="Reports" link="/Reports" color="whitesmoke" />
       {/* Reports Section */}
-      <Grid container direction="row" justifyContent="space-around">
-        <CardList type={CardTypes.cards} />
-      </Grid>
+
+      <CardList type={CardTypes.cards} />
+
       {/* End Reports Section */}
       <SectionBreaker text="Recent Publications" color="whitesmoke" />
       {/* Popular Reads Section */}

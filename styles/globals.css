@@ -122,3 +122,11 @@ p.article-card-desc {
   min-height: calc(100vh - 5rem);
   /* padding-bottom: 1rem; */
 }
+
+.refugee-card-width {
+  width: 20rem;
+}
+
+.defualt-card-width {
+  width: 26rem;
+}

@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
+import RenderTitle from "../../components/RenderTitle";
 
 import singleContext from "../../SingleContext";
 
@@ -11,11 +12,20 @@ const Programs = () => {
   //hardcoded data- need to fetch from db
 
   return (
-    <Paper sx={{ paddingTop: 5 }}>
+    <Paper sx={{ paddingTop: 5 }} className={"height-of-screen"}>
       <Helmet>
         <title>Zomia Center Programs</title>
       </Helmet>
       <Container>
+        <Box>
+          <RenderTitle
+            text="Programs"
+            height="100px"
+            onlyLogo={true}
+            oswald={true}
+          />
+        </Box>
+
         <Grid
           container
           justifyItems={"center"}

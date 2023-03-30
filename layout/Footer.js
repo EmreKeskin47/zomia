@@ -69,12 +69,12 @@ const Footer = (props) => {
     // reportList,
   ]);
 
-    // if (reportList && reportList != []) {
-    //   writingList.push(...reportList);
-    // }
-    // if (articleList && articleList != []) {
-    //   writingList.push(...articleList);
-    // }
+  // if (reportList && reportList != []) {
+  //   writingList.push(...reportList);
+  // }
+  // if (articleList && articleList != []) {
+  //   writingList.push(...articleList);
+  // }
 
   const monthList = {
     january: "1",
@@ -150,7 +150,7 @@ const Footer = (props) => {
       direction="row"
       justifyContent={"space-evenly"}
       bgcolor={palette.orange.main}
-      sx={{ padding: "1rem" }}
+      // sx={{ padding: "1rem" }}
     >
       {/* <Grid item sx={{ padding: "1rem" }}>
         <StyledButton>
@@ -182,98 +182,99 @@ const Footer = (props) => {
       {/* Third Column */}
       <Grid item>
         <Grid container direction="column" justifyContent={"space-around"}>
-          <Grid item>
-            <Grid container direction={"row"} justifyContent="space-evenly">
-              <Grid item>
-                <Typography
+          {/* <Grid item> */}
+          <Grid container direction={"row"} justifyContent="space-evenly">
+            <Grid item>
+              <Typography
+                variant="h6"
+                color={palette.black.main}
+                sx={{ paddingTop: "1.2rem" }}
+              >
+                Subscribe to our newsletter
+              </Typography>
+            </Grid>
+            <Grid item paddingLeft={"1rem"}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  // marginBottom: "1rem",
+                }}
+              >
+                <TextField
+                  id="input-with-sx"
+                  label="Email"
+                  variant="standard"
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={{ height: "1px" }}
+                />
+              </Box>
+            </Grid>
+            <Grid item sx={{ paddingTop: "1rem", border: "2px #000" }}>
+              <StyledButton>
+                <StyledTypography
                   variant="h6"
-                  color={palette.black.main}
-                  sx={{ padding: "1rem" }}
+                  component="div"
+                  onClick={saveEmail}
                 >
-                  Subscribe to our newsletter
-                </Typography>
-              </Grid>
-              <Grid item paddingLeft={"1rem"}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-end",
-                    marginBottom: "2rem",
-                  }}
-                >
-                  <TextField
-                    id="input-with-sx"
-                    label="Email"
-                    variant="standard"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </Box>
-              </Grid>
-              <Grid item sx={{ padding: "1rem", border: "2px #000" }}>
-                <StyledButton>
-                  <StyledTypography
-                    variant="h6"
-                    component="div"
-                    onClick={saveEmail}
+                  Sign Up
+                </StyledTypography>
+              </StyledButton>
+              <ToastContainer />
+            </Grid>
+            <Grid item sx={{ border: "2px #000" }}>
+              <Grid
+                container
+                flexDirection={"row"}
+                justifyContent={"space-around"}
+                sx={{ marginTop: "1.7rem" }}
+              >
+                <Grid item>
+                  <Link
+                    href="https://mobile.twitter.com/centerzomia"
+                    passhref="true"
                   >
-                    Sign Up
-                  </StyledTypography>
-                </StyledButton>
-                <ToastContainer />
-              </Grid>
-              <Grid item sx={{ padding: "1rem", border: "2px #000" }}>
-                <Grid
-                  container
-                  flexDirection={"row"}
-                  justifyContent={"space-around"}
-                  sx={{ marginTop: "1rem" }}
-                >
-                  <Grid item>
-                    <Link
-                      href="https://mobile.twitter.com/centerzomia"
-                      passhref="true"
-                    >
-                      <FaTwitter
+                    <FaTwitter
+                      style={{
+                        color: "#000",
+                        marginRight: "5px",
+                      }}
+                    />
+                  </Link>
+                </Grid>
+
+                <Grid item>
+                  <Link href="mailto: info@zomiacenter.org" passhref="true">
+                    <a target="_blank" rel="noopener noreferrer">
+                      <FaEnvelope
                         style={{
                           color: "#000",
                           marginRight: "5px",
                         }}
                       />
-                    </Link>
-                  </Grid>
+                    </a>
+                  </Link>
+                </Grid>
 
-                  <Grid item>
-                    <Link href="mailto: info@zomiacenter.org" passhref="true">
-                      <a target="_blank" rel="noopener noreferrer">
-                        <FaEnvelope
-                          style={{
-                            color: "#000",
-                            marginRight: "5px",
-                          }}
-                        />
-                      </a>
-                    </Link>
-                  </Grid>
-
-                  <Grid item>
-                    <Link
-                      href="https://www.linkedin.com/company/the-zomia-center/about/?viewAsMember=true"
-                      passhref="true"
-                    >
-                      <a target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin
-                          style={{
-                            color: "#000",
-                          }}
-                        />
-                      </a>
-                    </Link>
-                  </Grid>
+                <Grid item>
+                  <Link
+                    href="https://www.linkedin.com/company/the-zomia-center/about/?viewAsMember=true"
+                    passhref="true"
+                  >
+                    <a target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin
+                        style={{
+                          color: "#000",
+                        }}
+                      />
+                    </a>
+                  </Link>
                 </Grid>
               </Grid>
             </Grid>
+            {/* </Grid> */}
           </Grid>
-          
+
           <Grid container direction="row">
             <Grid item>
               <Grid container direction="column">
@@ -282,11 +283,19 @@ const Footer = (props) => {
                   sx={
                     !isMobile && {
                       paddingLeft: "3rem",
-                      paddingTop: "1rem",
+                      paddingBottom: "0.5rem",
                     }
                   }
                 >
-                <span style={{ color: "black !important", "margin-left": "-30px" }}>The Zomia Center is a 501(c)(3) nonprofit registered in the United States under EIN: 30-1201889</span>
+                  <span
+                    style={{
+                      color: "black !important",
+                      "margin-left": "-30px",
+                    }}
+                  >
+                    The Zomia Center is a 501(c)(3) nonprofit registered in the
+                    United States under EIN: 30-1201889
+                  </span>
                 </Typography>
               </Grid>
             </Grid>
@@ -297,17 +306,21 @@ const Footer = (props) => {
                   sx={
                     !isMobile && {
                       paddingLeft: "3rem",
-                      paddingTop: "1rem",
+                      paddingBottom: "0.5rem",
                     }
                   }
+                >
+                  <span
+                    style={{ color: "black !important", "margin-left": "30px" }}
                   >
-                  <span style={{ color: "black !important", "margin-left": "30px" }}>Developed by</span>
+                    Developed by
+                  </span>
                   <Link href="https://www.wowfreelance.com" passhref="true">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ textDecoration: "none" }}
-                      >
+                    >
                       {" wowfreelance.com"}
                     </a>
                   </Link>
@@ -315,8 +328,7 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
-
-        </Grid> 
+        </Grid>
       </Grid>
       {/* <Grid container justifyContent={"flex-end"} flexDirection={"row"}></Grid> */}
     </Grid>

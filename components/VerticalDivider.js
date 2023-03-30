@@ -9,14 +9,14 @@ const VerticalDivider = (props) => {
 
   if (onlyLogo) {
     return (
-      <Box sx={{ marginRight: { xs: 2 } }}>
+      <Box sx={{ marginRight: { xs: 1.5 } }}>
         <Image
           src="/static/o-logo.png"
           loader={imageLoader}
           unoptimized
           alt="Logo"
-          width="100px"
-          height="120px"
+          width="60px"
+          height="75px"
         />
       </Box>
     );
@@ -33,7 +33,7 @@ const VerticalDivider = (props) => {
           //   borderRadius: 8,
           width: 8,
           background: "#F9A21B",
-          marginRight: { xs: 5, md: 10 },
+          marginRight: { xs: 3, md: 10 },
         }}
       ></Divider>
     );

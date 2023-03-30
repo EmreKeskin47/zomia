@@ -105,3 +105,20 @@ a {
 .show-element {
   display: block;
 }
+
+p.article-card-desc {
+  margin-top: 1rem;
+}
+
+.height-of-home-page-cards {
+  height: 30px;
+}
+
+.height-of-all-cards {
+  height: 40px;
+}
+
+.height-of-screen {
+  min-height: calc(100vh - 5rem);
+  /* padding-bottom: 1rem; */
+}

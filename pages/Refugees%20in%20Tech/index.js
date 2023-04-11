@@ -10,7 +10,7 @@ import { CardTypes } from "../../models/CardTypes";
 // import Button from "../../theme/overrides/Button";
 import { MainCarousel } from "../../components/MainCarousel";
 import GenericModal from "../../layout/GenericModal";
-import { RefugeeInfo } from "../../models/RefugeeInfo";
+import { RefugeeInfo } from "../../models/RefugeeInfo.jsx";
 
 const RefugeesInTech = () => {
   // const context = useContext(singleContext);
@@ -18,13 +18,6 @@ const RefugeesInTech = () => {
   const [openModal, setOpenModal] = React.useState(false);
   const [content, setContent] = React.useState();
   const [title, setTitle] = React.useState();
-
-  // const learnToCode =
-  //   "Zomia Coding Project is currently accepting students for our open javascript coding course. We also recruit candidates for our web development immersive bootcamp. The program is open to Afghans who have arrived in the US in the last five years. For more information please email sol@zomiacenter.org.";
-  // const hireRefugee =
-  //   "Zomia and Code To Inspire have developed an extensive talent pool of Afghan software developers and graphic designers, both in Afghanistan and in North America. We are committed to providing excellent service to our clients, delivering web development, game-development and design services. For inquiries, please email valerie@zomiacenter.org.";
-  // const partner =
-  //   "Zomia Coding Project is a grassroots organization dedicated to supporting refugees through tech. Our philosophy is simple: Help first, worry about resources later. We are constantly finding new ways to serve, running pilot programs to validate our concepts. To support our programs or propose new partnerships to benefit refugees through tech, please reach out to sol@zomiacenter.org and valerie@zomiacenter.org";
 
   const handleClick = (newContent, newTitle) => {
     setOpenModal(true);

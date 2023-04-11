@@ -144,3 +144,26 @@ div.MuiBackdrop-root {
 #generic-modal {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
+
+.tech-text {
+  width: 80.5%;
+  position: relative;
+  margin-top: -30rem;
+  margin-left: 7rem;
+  z-index: 100;
+  height: 35rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: #fff;
+  padding: 2rem;
+  padding-top: 23rem;
+  text-align: justify;
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
+}

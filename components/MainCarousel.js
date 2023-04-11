@@ -61,9 +61,7 @@ function Item(props) {
                 objectFit={"cover"}
                 objectPosition={"top center"}
               />
-              <Typography variant="subtitle1">
-                {RefugeeInfo.textFotCarousel}
-              </Typography>
+              <Typography>{RefugeeInfo.textFotCarousel}</Typography>
             </Container>
           )}
         </Box>

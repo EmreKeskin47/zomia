@@ -168,3 +168,8 @@ div.MuiBackdrop-root {
   text-decoration: underline;
   color: blue;
 }
+
+.center-text {
+  width: 100%;
+  text-align: center;
+}

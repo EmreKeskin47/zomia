@@ -24,7 +24,7 @@ const ArticlePage = (props) => {
       {data && <Article article={data} />}
       <>
         <SectionBreaker text="Related Articles" link="/Articles" />
-        <CardList type={CardTypes.articles} />
+        <CardList type={CardTypes.articles} clickable />
       </>
     </Paper>
   );

@@ -38,7 +38,7 @@ const RefugeesInTech = () => {
     <>
       <Paper sx={{ paddingTop: 5 }} className={"height-of-screen"}>
         <Container>
-          <Stack>
+          <Stack gap={3}>
             <Box>
               <MainCarousel inRefugeePage content={imgForCarousel} />
             </Box>
@@ -75,7 +75,7 @@ const RefugeesInTech = () => {
               </Button>
             </Stack>
             <Box>
-              <CardList type={CardTypes.refugees} />
+              <CardList type={CardTypes.refugees} unclickable />
             </Box>
             <Box></Box>
           </Stack>

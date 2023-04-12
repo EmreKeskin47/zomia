@@ -66,4 +66,36 @@ export const RefugeeInfo = {
       </p>
     </div>
   ),
+  refugeePrograms: [
+    {
+      id: "6",
+
+      title: "CODE: by Refugees",
+    },
+    {
+      id: "5",
+
+      title: "Software bootcamp for refugees",
+    },
+    {
+      id: "4",
+
+      title: "Online Coding Courses",
+    },
+    {
+      id: "3",
+
+      title: "Partnership with American University of Afghanistan",
+    },
+    {
+      id: "2",
+
+      title: "Partnership with Arizona State University",
+    },
+    {
+      id: "1",
+
+      title: "Career development for refugees in tech",
+    },
+  ],
 };

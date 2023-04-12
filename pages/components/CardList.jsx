@@ -9,59 +9,16 @@ import {
 } from "../../store/hooks/useData";
 import { getShortenedString } from "../../utils/ArticleParagraph";
 import { CardTypes } from "../../models/CardTypes";
+import UnclickableCard from "./UnclickableCard";
+import { RefugeeInfo } from "../../models/RefugeeInfo";
 
-const CardList = ({ type }) => {
+const CardList = ({ type, clickable, unclickable }) => {
   const reportList = useReverseReportData();
   const articleList = useArticleData();
   const cardData = useCardData();
   const cardList = cardData && cardData.cards;
   const [content, setContent] = useState();
   console.log(content);
-
-  const refugeePrograms = [
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "6",
-
-      title: "CODE: by Refugees",
-    },
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "5",
-
-      title: "Software bootcamp for refugees",
-    },
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "4",
-
-      title: "Online Coding Courses",
-    },
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "3",
-
-      title: "Partnership with American University of Afghanistan",
-    },
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "2",
-
-      title: "Partnership with Arizona State University",
-    },
-    {
-      description:
-        "Taliban’s supreme leader Mullah Omar vanished, evading capture until his death",
-      id: "1",
-
-      title: "Career development for refugees in tech",
-    },
-  ];
 
   useEffect(() => {
     switch (type) {
@@ -75,7 +32,7 @@ const CardList = ({ type }) => {
         cardList && setContent(cardList.slice(0, 3));
         return;
       case CardTypes.refugees:
-        setContent(refugeePrograms);
+        setContent(RefugeeInfo.refugeePrograms);
         return;
     }
     return;
@@ -94,12 +51,32 @@ const CardList = ({ type }) => {
                 paddingY: 1,
               }}
             >
-              <ActiveLink
-                href={
-                  type === CardTypes.cards ? item.link : `/${type}/${item.id}`
-                }
-              >
-                <NewsSummary
+              {clickable && (
+                <ActiveLink
+                  href={
+                    type === CardTypes.articles || type === CardTypes.reports
+                      ? `/${type}/${item.id}`
+                      : item.link
+                  }
+                >
+                  <NewsSummary
+                    image={item.image}
+                    title={
+                      item.title.length > 70
+                        ? getShortenedString(item.title, 40)
+                        : item.title
+                    }
+                    description={
+                      item.description
+                        ? getShortenedString(item.description, 80)
+                        : ""
+                    }
+                    type={type}
+                  />
+                </ActiveLink>
+              )}
+              {unclickable && (
+                <UnclickableCard
                   image={item.image}
                   title={
                     item.title.length > 70
@@ -109,11 +86,11 @@ const CardList = ({ type }) => {
                   description={
                     item.description
                       ? getShortenedString(item.description, 80)
-                      : "No Description"
+                      : ""
                   }
                   type={type}
                 />
-              </ActiveLink>
+              )}
             </Grid>
           ))}
       </Grid>

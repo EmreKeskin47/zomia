@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { Box, Container, Stack, Button } from "@mui/material";
+import { Box, Container, Stack, Button, Divider } from "@mui/material";
 import RenderTitle from "../../components/RenderTitle";
 import CardList from "../components/CardList";
 import singleContext from "../../SingleContext";
@@ -11,6 +11,7 @@ import { CardTypes } from "../../models/CardTypes";
 import { MainCarousel } from "../../components/MainCarousel";
 import GenericModal from "../../layout/GenericModal";
 import { RefugeeInfo } from "../../models/RefugeeInfo.jsx";
+import OurPartners from "../../components/OurPartners";
 
 const RefugeesInTech = () => {
   // const context = useContext(singleContext);
@@ -77,7 +78,7 @@ const RefugeesInTech = () => {
             <Box>
               <CardList type={CardTypes.refugees} unclickable />
             </Box>
-            <Box></Box>
+            <OurPartners />
           </Stack>
         </Container>
       </Paper>

@@ -57,7 +57,7 @@ const RefugeesInTech = () => {
                 onClick={() =>
                   handleClick(
                     RefugeeInfo.hireRefugeeText,
-                    RefugeeInfo.learnToCode
+                    RefugeeInfo.hireRefugee
                   )
                 }
               >

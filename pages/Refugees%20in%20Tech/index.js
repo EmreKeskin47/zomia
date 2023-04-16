@@ -49,7 +49,17 @@ const RefugeesInTech = () => {
                 inRefugeePage
                 content={RefugeeInfo.imgForCarousel}
               />
-              <Typography>{RefugeeInfo.textForCarousel}</Typography>
+              <Typography
+                variant="body1"
+                textAlign={"center"}
+                sx={{
+                  fontSize: "1.4rem !important",
+                  paddingX: 3,
+                  paddingTop: 3,
+                }}
+              >
+                {RefugeeInfo.textForCarousel}
+              </Typography>
             </Box>
             <Stack direction="row" spacing={2} justifyContent="center">
               <Button

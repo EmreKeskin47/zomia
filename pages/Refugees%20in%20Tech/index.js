@@ -128,6 +128,12 @@ const RefugeesInTech = () => {
                 </Typography>
               </Button>
             </Stack>
+            <Divider>
+              <Typography>
+                {" "}
+                <h2>Programs</h2>
+              </Typography>
+            </Divider>
             <Box>
               <CardList type={CardTypes.refugees} unclickable />
             </Box>

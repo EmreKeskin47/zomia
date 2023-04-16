@@ -73,8 +73,7 @@ function App(props) {
         {/* End Intro */}
       </Container>
 
-      <SectionBreaker text="Reports" link="/Reports" color="whitesmoke" />
-      {/* Reports Section */}
+      <SectionBreaker text="Projects" color="whitesmoke" />
 
       <CardList type={CardTypes.cards} clickable />
 

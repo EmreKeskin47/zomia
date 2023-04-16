@@ -52,7 +52,7 @@ export const RefugeeInfo = {
   ),
   titleForCarousel: (
     <>
-      Zomia Coding Project helps refugees build new lives and brighter futures.
+      Zomia Coding Project: helping refugees build new lives and brighter futures.
     </>
   ),
 

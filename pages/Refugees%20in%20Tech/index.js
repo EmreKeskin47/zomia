@@ -2,7 +2,14 @@ import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { Box, Container, Stack, Button, Divider } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+  Button,
+  Divider,
+  CardActionArea,
+} from "@mui/material";
 import RenderTitle from "../../components/RenderTitle";
 import CardList from "../components/CardList";
 import singleContext from "../../SingleContext";
@@ -30,7 +37,7 @@ const RefugeesInTech = () => {
     <>
       <Paper sx={{ paddingX: 15, paddingY: 10 }} className={"height-of-screen"}>
         <Container>
-          <Stack gap={3}>
+          <Stack gap={5}>
             <RenderTitle
               text={RefugeeInfo.titleForCarousel}
               height={"150px"}
@@ -42,9 +49,7 @@ const RefugeesInTech = () => {
                 inRefugeePage
                 content={RefugeeInfo.imgForCarousel}
               />
-              <Typography>
-                <p>{RefugeeInfo.textForCarousel}</p>
-              </Typography>
+              <Typography>{RefugeeInfo.textForCarousel}</Typography>
             </Box>
             <Stack direction="row" spacing={2} justifyContent="center">
               <Button

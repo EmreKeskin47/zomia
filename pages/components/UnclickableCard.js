@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea, Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import palette from "../../theme/palette";
 import singleContext from "../../SingleContext";
 import { CardTypes } from "../../models/CardTypes";
@@ -18,40 +18,39 @@ const UnclickableCard = (props) => {
         border: "10px",
       }}
     >
-      <Card
-        className={
-          type === CardTypes.refugees
-            ? "refugee-card-width"
-            : "defualt-card-width"
-        }
-      >
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="220"
-            image={props.image}
-            alt="green iguana"
-            className={type === CardTypes.refugees && "hide-element"}
-          />
-          <CardContent
+      <Card className={type === CardTypes.refugees ? "refugee-card-width" : ""}>
+        <CardMedia
+          component="img"
+          height="220"
+          image={props.image}
+          alt="green iguana"
+          className={type === CardTypes.refugees && "hide-element"}
+        />
+        <CardContent
+          sx={{
+            backgroundColor: context.darkMode
+              ? palette.black.main
+              : "whitesmoke",
+            justifyContent: "flex-start",
+            flexDirection: "column",
+            alignItems: "baseline",
+            display: "flex",
+            padding: "1rem !important",
+            height: "5rem",
+            justifyContent: "center",
+            alignContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            className="center-text"
             sx={{
-              backgroundColor: context.darkMode
-                ? palette.black.main
-                : "whitesmoke",
-              justifyContent: "flex-start",
-              flexDirection: "column",
-              alignItems: "baseline",
-              display: "flex",
-              padding: "1rem !important",
-              height: "5rem",
-              justifyContent: "center",
-              alignContent: "center",
-              textAlign: "center",
+              fontFamily: "Tiro Telugu !important",
             }}
           >
-            <h2 className="center-text">{props.title && props.title}</h2>
-          </CardContent>
-        </CardActionArea>
+            {props.title && props.title}
+          </Typography>
+        </CardContent>
       </Card>
     </Grid>
   );

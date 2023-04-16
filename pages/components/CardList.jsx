@@ -50,6 +50,7 @@ const CardList = ({ type, clickable, unclickable }) => {
                 paddingX: 1,
                 paddingY: 1,
               }}
+              xs={type === CardTypes.refugees && 3.5}
             >
               {clickable && (
                 <ActiveLink

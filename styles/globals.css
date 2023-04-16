@@ -131,12 +131,6 @@ p.article-card-desc {
   width: 26rem;
 }
 
-img.refugee-carousel {
-  margin-left: 7rem !important;
-  height: 10px !important;
-}
-
-/* .MuiModal-backdrop */
 div.MuiBackdrop-root {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
@@ -147,21 +141,20 @@ div.MuiBackdrop-root {
 
 .tech-text {
   width: 80.5%;
-
   position: relative;
-  margin-top: -13rem;
+  margin-top: -5rem;
   margin-left: 7rem;
   z-index: 100;
-  height: 13rem;
+  height: 5rem;
   background: linear-gradient(
     0deg,
-    rgb(30, 30, 30) 10%,
+    rgb(30, 30, 30, 0.9) 20%,
     rgba(255, 255, 255, 0) 100%
   );
   color: #fff;
   padding: 2rem;
   /* padding-top: 1rem; */
-  text-align: justify;
+  text-align: center;
 }
 
 .link {

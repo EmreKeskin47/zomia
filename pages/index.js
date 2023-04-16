@@ -13,6 +13,7 @@ import {
   useArticleData,
   useReportData,
   useWritingData,
+  useCarouselData,
 } from "../store/hooks/useData";
 import ActiveLink from "./components/ActiveLink";
 import { MainCarousel } from "../components/MainCarousel";
@@ -24,6 +25,8 @@ function App(props) {
   const articleList = useArticleData();
   const reportList = useReportData();
   const writingList = useWritingData();
+  const carouselList = useCarouselData();
+  const posts = carouselList && carouselList.posts;
 
   var data = [];
   const writings = [];
@@ -64,7 +67,7 @@ function App(props) {
             alignSelf: "center",
           }}
         >
-          <MainCarousel />
+          <MainCarousel inHomePage content={posts} />
         </Grid>
         {/* </Grid> */}
         {/* End Intro */}
@@ -72,9 +75,9 @@ function App(props) {
 
       <SectionBreaker text="Reports" link="/Reports" color="whitesmoke" />
       {/* Reports Section */}
-      <Grid container direction="row" justifyContent="space-around">
-        <CardList type={CardTypes.cards} />
-      </Grid>
+
+      <CardList type={CardTypes.cards} clickable />
+
       {/* End Reports Section */}
       <SectionBreaker text="Recent Publications" color="whitesmoke" />
       {/* Popular Reads Section */}

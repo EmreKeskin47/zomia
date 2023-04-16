@@ -12,7 +12,7 @@ function ActiveLink({ children, href, color, textDecoration }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    router.push(href);
+    href && router.push(href);
   };
 
   return (

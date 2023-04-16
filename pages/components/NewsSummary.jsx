@@ -19,13 +19,20 @@ const NewsSummary = (props) => {
         border: "10px",
       }}
     >
-      <Card sx={{ maxWidth: 420 }}>
+      <Card
+        className={
+          type === CardTypes.refugees
+            ? "refugee-card-width"
+            : "defualt-card-width"
+        }
+      >
         <CardActionArea>
           <CardMedia
             component="img"
             height="220"
             image={props.image}
             alt="green iguana"
+            className={type === CardTypes.refugees && "hide-element"}
           />
           <CardContent
             sx={{
@@ -37,6 +44,7 @@ const NewsSummary = (props) => {
               alignItems: "baseline",
               display: "flex",
               padding: "1rem !important",
+              // height: "10rem",
             }}
           >
             <Box>
@@ -65,7 +73,9 @@ const NewsSummary = (props) => {
             </Box>
             <Typography
               className={
-                props.type === CardTypes.articles ? "article-card-desc" : ""
+                type === CardTypes.articles || type === CardTypes.refugees
+                  ? "article-card-desc"
+                  : ""
               }
               variant="body2"
               sx={{

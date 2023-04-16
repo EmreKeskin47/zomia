@@ -9,24 +9,30 @@ import {
 } from "../../store/hooks/useData";
 import { getShortenedString } from "../../utils/ArticleParagraph";
 import { CardTypes } from "../../models/CardTypes";
+import UnclickableCard from "./UnclickableCard";
+import { RefugeeInfo } from "../../models/RefugeeInfo";
 
-const CardList = ({ type }) => {
+const CardList = ({ type, clickable, unclickable }) => {
   const reportList = useReverseReportData();
   const articleList = useArticleData();
   const cardData = useCardData();
   const cardList = cardData && cardData.cards;
   const [content, setContent] = useState();
+  console.log(content);
 
   useEffect(() => {
     switch (type) {
       case CardTypes.articles:
-        setContent(articleList);
+        articleList && setContent(articleList.slice(0, 3));
         return;
       case CardTypes.reports:
-        setContent(reportList);
+        reportList && setContent(reportList.slice(0, 3));
         return;
       case CardTypes.cards:
-        setContent(cardList);
+        cardList && setContent(cardList.slice(0, 3));
+        return;
+      case CardTypes.refugees:
+        setContent(RefugeeInfo.refugeePrograms);
         return;
     }
     return;
@@ -36,21 +42,42 @@ const CardList = ({ type }) => {
     return (
       <Grid container direction={"row"} justifyContent={"center"}>
         {content &&
-          content.slice(0, 3).map((item) => (
+          content.map((item) => (
             <Grid
               item
               key={item.id}
               sx={{
-                paddingLeft: 1,
-                paddingRight: 1,
+                paddingX: 1,
+                paddingY: 1,
               }}
+              xs={type === CardTypes.refugees && 3.5}
             >
-              <ActiveLink
-                href={
-                  type === CardTypes.cards ? item.link : `/${type}/${item.id}`
-                }
-              >
-                <NewsSummary
+              {clickable && (
+                <ActiveLink
+                  href={
+                    type === CardTypes.articles || type === CardTypes.reports
+                      ? `/${type}/${item.id}`
+                      : item.link
+                  }
+                >
+                  <NewsSummary
+                    image={item.image}
+                    title={
+                      item.title.length > 70
+                        ? getShortenedString(item.title, 40)
+                        : item.title
+                    }
+                    description={
+                      item.description
+                        ? getShortenedString(item.description, 80)
+                        : ""
+                    }
+                    type={type}
+                  />
+                </ActiveLink>
+              )}
+              {unclickable && (
+                <UnclickableCard
                   image={item.image}
                   title={
                     item.title.length > 70
@@ -60,17 +87,21 @@ const CardList = ({ type }) => {
                   description={
                     item.description
                       ? getShortenedString(item.description, 80)
-                      : "No Description"
+                      : ""
                   }
                   type={type}
                 />
-              </ActiveLink>
+              )}
             </Grid>
           ))}
       </Grid>
     );
   };
-  return <Grid>{generateList()}</Grid>;
+  return (
+    <Grid container direction="row" justifyContent="space-around">
+      {generateList()}
+    </Grid>
+  );
 };
 
 export default CardList;

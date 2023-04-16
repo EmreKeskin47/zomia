@@ -12,7 +12,7 @@ import palette from "../theme/palette";
 const NavModel = {
   OurWork: [
     OurWork.refugeesInTech,
-    OurWork.programs,
+    //OurWork.programs,
     OurWork.publicHealth,
     OurWork.legacyOfWar,
   ],

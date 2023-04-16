@@ -162,8 +162,7 @@ const LegacyOfWar = () => {
                     sx={{ fontSize: "1.4rem !important" }}
                   >
                     <b> Coding Bootcamp for Afghan Refugees –</b>
-                    {` Since the summer of 2021, nearly 100,000 Afghans have escaped the Taliban and resettled in the US. The Zomia Coding Project teaches software development to Afghan refugees and helps them get jobs in tech. To date, over 50 Afghan refugees have participated in Zomia's pilot coding programs, learning Javascript and algorithms, and engaging in the career development workshop. In Q2 of 2023, Zomia will launch a free immersive coding bootcamp for Afghan refugees. Eight scholarship recipients will study full-stack web development full time for 6 months. The course curriculum includes Javascript, HTML, CSS, Node, Express, mySQL, API's, git, testing etc.  For inquiries please email sol@zomiacenter.org.
-                            `}
+                    {` Since the summer of 2021, over 85,000 Afghans refugees have resettled in the United States. Zomia Coding Project teaches software development to Afghan refugees and helps them get jobs in tech. To date, Zomia has reached nearly 500 Afghan refugees. In Q2 of 2023, Zomia launched our first free immersive coding bootcamp for Afghan refugees, providing scholarships for eight recipients to studying web development full time. The course curriculum includes Javascript, HTML, CSS, React, Node, Express, mySQL, API's, git, testing etc.  For inquiries please email sol@zomiacenter.org.`}
                   </Typography>
                 </Box>
               </Grid>

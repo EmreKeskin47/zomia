@@ -50,22 +50,16 @@ export const RefugeeInfo = {
       </a>
     </p>
   ),
-  textFotCarousel: (
-    <div className="tech-text">
-      <h2>
-        {" "}
-        Zomia Coding Project helps<br></br> refugees build new lives and
-        brighter futures.
-      </h2>
-      <br></br>
-      <p>
-        We teach coding and web development to refugees, and help them find work
-        in tech. Through partnerships with refugee resettlement agencies,
-        American University of Afghanistan, Arizona State University, and
-        others, we have reached over 500 students in the US and abroad.
-      </p>
-    </div>
+  titleForCarousel: (
+    <>
+      Zomia Coding Project helps refugees <br /> build new lives and brighter
+      futures.
+    </>
   ),
+
+  textForCarousel:
+    " We teach coding and web development to refugees, and help them find work in tech. Through partnerships with refugee resettlement agencies, American University of Afghanistan, Arizona State University, and others, we have reached over 500 students in the US and abroad.",
+
   refugeePrograms: [
     {
       id: "6",
@@ -96,6 +90,13 @@ export const RefugeeInfo = {
       id: "1",
 
       title: "Career development for refugees in tech",
+    },
+  ],
+  imgForCarousel: [
+    { image: "/refugees/class.png" },
+    { image: "/refugees/muzamel_k.jpg" },
+    {
+      image: "/refugees/sol_zubaida_diwa.jpg",
     },
   ],
 };

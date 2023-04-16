@@ -25,23 +25,26 @@ const RefugeesInTech = () => {
     setContent(newContent);
     setTitle(newTitle);
   };
-  // const [closeModal, setCloseModal] = React.useState(false);
-
-  const imgForCarousel = [
-    { image: "/refugees/class.png" },
-    { image: "/refugees/muzamel_k.jpg" },
-    {
-      image: "/refugees/sol_zubaida_diwa.jpg",
-    },
-  ];
 
   return (
     <>
-      <Paper sx={{ paddingTop: 5 }} className={"height-of-screen"}>
+      <Paper sx={{ paddingX: 15, paddingY: 10 }} className={"height-of-screen"}>
         <Container>
           <Stack gap={3}>
+            <RenderTitle
+              text={RefugeeInfo.titleForCarousel}
+              height={"150px"}
+              onlyLogo={true}
+              oswald={true}
+            />
             <Box>
-              <MainCarousel inRefugeePage content={imgForCarousel} />
+              <MainCarousel
+                inRefugeePage
+                content={RefugeeInfo.imgForCarousel}
+              />
+              <Typography>
+                <p>{RefugeeInfo.textForCarousel}</p>
+              </Typography>
             </Box>
             <Stack direction="row" spacing={2} justifyContent="center">
               <Button
@@ -52,8 +55,20 @@ const RefugeesInTech = () => {
                   )
                 }
               >
-                {RefugeeInfo.learnToCode}
+                <Typography
+                  textAlign={"center"}
+                  sx={{
+                    cursor: "pointer",
+                    borderStyle: "solid",
+                    borderWidth: "2.5px",
+                    padding: "0.7rem",
+                    fontFamily: "Tiro Telugu !important",
+                  }}
+                >
+                  {RefugeeInfo.learnToCode}
+                </Typography>
               </Button>
+
               <Button
                 onClick={() =>
                   handleClick(
@@ -62,7 +77,18 @@ const RefugeesInTech = () => {
                   )
                 }
               >
-                {RefugeeInfo.hireRefugee}
+                <Typography
+                  textAlign={"center"}
+                  sx={{
+                    cursor: "pointer",
+                    borderStyle: "solid",
+                    borderWidth: "2.5px",
+                    padding: "0.7rem",
+                    fontFamily: "Tiro Telugu !important",
+                  }}
+                >
+                  {RefugeeInfo.hireRefugee}
+                </Typography>
               </Button>
               <Button
                 onClick={() =>
@@ -72,7 +98,19 @@ const RefugeesInTech = () => {
                   )
                 }
               >
-                {RefugeeInfo.partnerWithZomia}
+                {" "}
+                <Typography
+                  textAlign={"center"}
+                  sx={{
+                    cursor: "pointer",
+                    borderStyle: "solid",
+                    borderWidth: "2.5px",
+                    padding: "0.7rem",
+                    fontFamily: "Tiro Telugu !important",
+                  }}
+                >
+                  {RefugeeInfo.partnerWithZomia}
+                </Typography>
               </Button>
             </Stack>
             <Box>

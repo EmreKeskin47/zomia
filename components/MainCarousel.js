@@ -14,7 +14,6 @@ export function MainCarousel({ content, inHomePage, inRefugeePage }) {
     <Carousel
       navButtonsAlwaysInvisible={inRefugeePage && true}
       indicators={inHomePage ? true : false}
-      id="carousel-img"
     >
       {content &&
         content.map((post) => (
@@ -56,12 +55,11 @@ function Item(props) {
                 loader={imageLoader}
                 alt="Zomia Amblem"
                 unoptimized
-                width={"1000rem"}
-                height={"530rem"}
+                width={"1200rem"}
+                height={"600rem"}
                 objectFit={"cover"}
                 objectPosition={"top center"}
               />
-              <Typography>{RefugeeInfo.textFotCarousel}</Typography>
             </Container>
           )}
         </Box>

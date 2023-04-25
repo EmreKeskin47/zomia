@@ -21,7 +21,7 @@ const OurHistory = () => {
   return (
     <Paper sx={{ paddingTop: 5 }}>
       <Helmet>
-        <title>Zomia Center Our History</title>
+        <title>Zomia Center Mission</title>
       </Helmet>
       <Grid
         container
@@ -34,7 +34,7 @@ const OurHistory = () => {
           <Box marginY={5} sx={{ paddingBottom: "125px" }}>
             <Box sx={{ marginLeft: { md: 2.5 } }}>
               <RenderTitle
-                text="Our History"
+                text="Mission"
                 height="100px"
                 onlyLogo={true}
                 oswald={true}

@@ -22,7 +22,7 @@ const NavModel = {
     // Publications.ourMethodology,
   ],
   About: [
-    About.ourHistory,
+    About.mission,
     About.team,
     // About.supportUs
   ],

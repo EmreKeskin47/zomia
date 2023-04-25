@@ -20,7 +20,7 @@ export const Publications = {
 };
 
 export const About = {
-  ourHistory: "Our history",
+  mission: "Mission",
   team: "Team",
   supportUs: "Support us",
 };

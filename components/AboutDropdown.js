@@ -99,7 +99,7 @@ export default function AboutDropdown() {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleClose}>
-                      <Link href="/mission" passhref="true">
+                      <Link href="/Mission" passhref="true">
                         <Typography variant="h6">
                           <span
                             style={{
@@ -108,7 +108,7 @@ export default function AboutDropdown() {
                                 : palette.black.main,
                             }}
                           >
-                            Mission
+
                           </span>
                         </Typography>
                       </Link>

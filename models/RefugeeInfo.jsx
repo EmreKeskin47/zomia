@@ -57,7 +57,7 @@ export const RefugeeInfo = {
   ),
 
   textForCarousel:
-    " Zomia teaches coding and web development to refugees, and help them find work in tech. We have reached over 500 refugees, both in the US and abroad.",
+    " Zomia teaches coding and web development to refugees, and helps them find work in tech. We have reached over 500 refugees, both in the US and abroad.",
 
   refugeePrograms: [
     {

@@ -47,10 +47,9 @@ const CardList = ({ type, clickable, unclickable }) => {
               item
               key={item.id}
               sx={{
-                paddingX: 1,
+                paddingX: type === CardTypes.refugees ? 5 : 1,
                 paddingY: 1,
               }}
-              xs={type === CardTypes.refugees && 3.5}
             >
               {clickable && (
                 <ActiveLink

@@ -89,7 +89,7 @@ const NewTabs = (props) => {
         </div>
       </div>
       <div className="about-tab">
-        <Link href="Misson" passhref="true">
+        <Link href="Mission" passhref="true">
           <Typography variant="h6">
             <span
               style={{
